@@ -6,7 +6,7 @@ open the site from disk without installing Jekyll. It renders the small
 Liquid surface the layout actually uses and rewrites absolute paths to
 relative ones so file:// works. Output: Website/_preview/ (never synced).
 """
-import html, pathlib, re, shutil, sys
+import html, json, pathlib, re, shutil, sys
 import markdown
 
 SITE = pathlib.Path(sys.argv[1])
@@ -121,6 +121,8 @@ def relativise(doc, depth, current_url):
         attr, url = m.group(1), m.group(2)
         if url.startswith("/assets/"):
             return f'{attr}="{rel}{url[1:]}"'
+        if url == "/favicon.ico":
+            return f'{attr}="{rel}favicon.ico"'
         for k, v in mapping.items():
             if url == k or url.startswith(k + "#"):
                 return f'{attr}="{v}{url[len(k):]}"'
@@ -139,8 +141,34 @@ for src, dest, url in PAGES:
     title = fm.get("title", "")
     desc = fm.get("description", SITE_DESC)
     body_class = fm.get("body_class", "prose-page")
+    og_image = fm.get("og_image", "/assets/images/social-card.png")
+    og_image_alt = fm.get(
+        "og_image_alt", "Ans — a scientific calculator for iPhone and iPad.")
 
     doc = LAYOUT
+
+    breadcrumb_pattern = re.compile(
+        r"    {% if page\.body_class contains 'science-page' %}\n"
+        r"(    <script type=\"application/ld\+json\" data-schema=\"science-breadcrumbs\">.*?</script>)\n"
+        r"    {% endif %}\n",
+        re.S)
+    breadcrumb_match = breadcrumb_pattern.search(doc)
+    if not breadcrumb_match:
+        sys.exit("Science breadcrumb template missing from layout")
+    if "science-page" in body_class:
+        breadcrumb = breadcrumb_match.group(1)
+        third_item_pattern = re.compile(
+            r"\n        {% unless page\.url == '/science/' %}(.*?)"
+            r"\n        {% endunless %}",
+            re.S)
+        if url == "/science/":
+            breadcrumb = third_item_pattern.sub("", breadcrumb)
+        else:
+            breadcrumb = third_item_pattern.sub(lambda match: match.group(1), breadcrumb)
+        doc = breadcrumb_pattern.sub(breadcrumb + "\n", doc)
+    else:
+        doc = breadcrumb_pattern.sub("", doc)
+
     doc = doc.replace(
         "{% if page.title %}{{ page.title }}{% else %}Ans — Scientific Calculator{% endif %}",
         title or "Ans — Scientific Calculator")
@@ -148,9 +176,17 @@ for src, dest, url in PAGES:
                       html.escape(desc, quote=True))
     doc = doc.replace("{{ page.title | default: site.title | escape }}",
                       html.escape(title or SITE_TITLE, quote=True))
+    doc = doc.replace("{{ page.title | jsonify }}",
+                      json.dumps(title or SITE_TITLE, ensure_ascii=False))
     doc = doc.replace("{{ site.url }}{{ page.url | replace: 'index.html', '' }}",
                       SITE_URL + url)
     doc = doc.replace("{{ site.url }}", SITE_URL)
+    doc = doc.replace(
+        "{{ page.og_image | default: '/assets/images/social-card.png' }}",
+        og_image)
+    doc = doc.replace(
+        "{{ page.og_image_alt | default: 'Ans — a scientific calculator for iPhone and iPad.' | escape }}",
+        html.escape(og_image_alt, quote=True))
     doc = doc.replace("{{ page.body_class | default: 'prose-page' }}", body_class)
 
     # Nav conditionals (must match _layouts/default.html exactly).
@@ -180,7 +216,9 @@ for src, dest, url in PAGES:
     print(f"rendered {dest} ({len(doc)} bytes)")
 
 shutil.copytree(SITE / "assets", OUT / "assets", dirs_exist_ok=True)
+shutil.copy(SITE / "favicon.ico", OUT / "favicon.ico")
 shutil.copy(SITE / "robots.txt", OUT / "robots.txt")   # clock sync target
+shutil.copy(SITE / "llms.txt", OUT / "llms.txt")
 (OUT / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n'
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

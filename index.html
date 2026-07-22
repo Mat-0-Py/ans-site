@@ -72,57 +72,6 @@ permalink: /
   <div><strong>No tracking</strong><span>Your work stays local</span></div>
 </section>
 
-<section class="tools-strip" aria-labelledby="tools-title">
-  <div class="section-shell">
-    <div class="tools-heading">
-      <p class="eyebrow">Free online instruments</p>
-      <h2 id="tools-title">The same promise, in your browser.</h2>
-      <p>
-        Free tools from the Ans family — no ads, no tracking, no account.
-        Instruments, not ad delivery vehicles.
-      </p>
-    </div>
-    <div class="tools-grid">
-      <a class="tool-card" href="/stopwatch/">
-        <span class="tool-card-lcd" aria-hidden="true">
-          <span class="tool-card-ind">Stopwatch</span>
-          <span class="tool-card-main">00:00.000</span>
-        </span>
-        <strong>Stopwatch &amp; timer</strong>
-        <span>Millisecond precision that survives background tabs and a closed lid.</span>
-      </a>
-      <a class="tool-card" href="/clock/">
-        <span class="tool-card-lcd" aria-hidden="true">
-          <span class="tool-card-ind">GMT / UTC</span>
-          <span class="tool-card-main" id="tool-card-clock">--:--:--</span>
-        </span>
-        <strong>World clock</strong>
-        <span>Exact GMT/UTC with stated accuracy; UK time labelled correctly by season.</span>
-      </a>
-      <a class="tool-card tool-card-science" href="/science/">
-        <span class="tool-card-lcd" aria-hidden="true">
-          <span class="tool-card-ind">Science</span>
-          <span class="tool-card-main">f = ma</span>
-        </span>
-        <strong>Science calculators</strong>
-        <span>36 focused instruments for maths, physics, optics, chemistry and computing.</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<script>
-(function () {
-  var el = document.getElementById("tool-card-clock");
-  if (!el || !window.Intl) { return; }
-  var f = new Intl.DateTimeFormat("en-GB", { hour: "2-digit",
-    minute: "2-digit", second: "2-digit", hour12: false, timeZone: "UTC" });
-  function tick() { el.textContent = f.format(Date.now()); }
-  tick();
-  setInterval(tick, 1000);
-})();
-</script>
-
 <section class="product-media section-block" id="in-action" aria-labelledby="media-title">
   <div class="section-shell product-media-heading">
     <div>
@@ -280,6 +229,57 @@ permalink: /
     <small>Requires iOS or iPadOS 17 or later.</small>
   </div>
 </section>
+
+<section class="tools-strip" aria-labelledby="tools-title">
+  <div class="section-shell">
+    <div class="tools-heading">
+      <p class="eyebrow">Also from Ans</p>
+      <h2 id="tools-title">Free tools, ready in your browser.</h2>
+      <p>
+        A stopwatch, world clock and 36 focused science calculators — all free,
+        with no ads, tracking or account.
+      </p>
+    </div>
+    <div class="tools-grid">
+      <a class="tool-card" href="/stopwatch/">
+        <span class="tool-card-lcd" aria-hidden="true">
+          <span class="tool-card-ind">Stopwatch</span>
+          <span class="tool-card-main">00:00.000</span>
+        </span>
+        <strong>Stopwatch &amp; timer</strong>
+        <span>Millisecond precision that survives background tabs and a closed lid.</span>
+      </a>
+      <a class="tool-card" href="/clock/">
+        <span class="tool-card-lcd" aria-hidden="true">
+          <span class="tool-card-ind">GMT / UTC</span>
+          <span class="tool-card-main" id="tool-card-clock">--:--:--</span>
+        </span>
+        <strong>World clock</strong>
+        <span>Exact GMT/UTC with stated accuracy; UK time labelled correctly by season.</span>
+      </a>
+      <a class="tool-card tool-card-science" href="/science/">
+        <span class="tool-card-lcd" aria-hidden="true">
+          <span class="tool-card-ind">Science</span>
+          <span class="tool-card-main">f = ma</span>
+        </span>
+        <strong>Science calculators</strong>
+        <span>36 focused instruments for maths, physics, optics, chemistry and computing.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var el = document.getElementById("tool-card-clock");
+  if (!el || !window.Intl) { return; }
+  var f = new Intl.DateTimeFormat("en-GB", { hour: "2-digit",
+    minute: "2-digit", second: "2-digit", hour12: false, timeZone: "UTC" });
+  function tick() { el.textContent = f.format(Date.now()); }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 
 <section class="section-shell final-cta section-block" aria-labelledby="final-title">
   <img src="/assets/images/ans-logo-on-dark.svg" alt="Ans" width="480" height="360">

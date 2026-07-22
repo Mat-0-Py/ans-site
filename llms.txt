@@ -1,0 +1,48 @@
+# Ans
+
+Ownership promise: A calculator you can own. £4.99 once. No subscriptions. No ads. No accounts. No tracking.
+Science tools promise: Free. No ads. No tracking. No account. Every tool shows its equation, units and stated assumptions.
+
+https://anscalc.com/ — Ans is a focused scientific calculator for iPhone and iPad with exact fractions, variables, replay editing and Home Screen widgets.
+https://anscalc.com/stopwatch/ — A free online stopwatch with laps, timestamp-based timing and honest handling of device sleep.
+https://anscalc.com/clock/ — A free full-screen world clock that shows local time, UTC and a chosen time zone without an account.
+https://anscalc.com/science/ — Browse 36 free science and maths calculators for school, university, engineering, optics, chemistry and computing.
+https://anscalc.com/science/gaussian-beam-waist/ — Calculate Gaussian beam radius, Rayleigh range, wavefront curvature and divergence from waist, wavelength and distance.
+https://anscalc.com/science/newtons-second-law/ — Solve Newton's second law for force, mass or acceleration by leaving the unknown value blank.
+https://anscalc.com/science/ohms-law/ — Solve Ohm's law for voltage, current or resistance and see the corresponding electrical power.
+https://anscalc.com/science/wave-speed/ — Solve wave speed, frequency or wavelength from the other two using v = fλ.
+https://anscalc.com/science/suvat-calculator/ — Solve constant-acceleration SUVAT problems from any three known quantities and see which equations were used.
+https://anscalc.com/science/energy-work-power/ — Calculate kinetic energy, gravitational energy, work done or average power with GCSE rearrangements.
+https://anscalc.com/science/momentum-impulse/ — Solve momentum, impulse, force, time or change in momentum from p = mv and J = Ft = Δp.
+https://anscalc.com/science/series-parallel-resistance/ — Compare the series and parallel equivalent resistance of two to eight resistors.
+https://anscalc.com/science/projectile-motion/ — Calculate projectile range, maximum height and flight time from launch speed and angle without air resistance.
+https://anscalc.com/science/trigonometry-calculator/ — Solve a right triangle from two known sides or one side and one acute angle using trigonometry and Pythagoras.
+https://anscalc.com/science/density-mass-volume/ — Solve density, mass or volume from the other two with common SI and laboratory units.
+https://anscalc.com/science/pressure/ — Solve force-per-area pressure or hydrostatic pressure from P = F/A and P = ρgh.
+https://anscalc.com/science/specific-heat/ — Solve thermal energy, mass, heat capacity, temperature change or latent heat using Q = mcΔT and Q = mL.
+https://anscalc.com/science/hookes-law/ — Solve Hooke's law and elastic potential energy for an ideal linear spring.
+https://anscalc.com/science/moments/ — Calculate a moment from force and perpendicular distance or balance moments about a pivot.
+https://anscalc.com/science/rayleigh-range/ — Calculate Gaussian-beam Rayleigh range and confocal parameter from waist radius and wavelength.
+https://anscalc.com/science/gaussian-beam-divergence/ — Calculate Gaussian far-field half-angle and full-angle divergence with optional M² beam quality.
+https://anscalc.com/science/beam-quality-m-squared/ — Estimate laser beam M² from waist radius, wavelength and measured far-field divergence.
+https://anscalc.com/science/thin-lens-imaging/ — Solve thin-lens object distance, image distance, focal length and signed magnification under a stated convention.
+https://anscalc.com/science/diffraction-limited-spot/ — Calculate the Airy first-dark-ring spot diameter and radius for a circular aperture.
+https://anscalc.com/science/snells-law-critical-angle/ — Solve Snell's law for index or angle and calculate the critical angle for total internal reflection.
+https://anscalc.com/science/transformer-ratios/ — Solve ideal transformer voltage and turns ratios or current from power conservation.
+https://anscalc.com/science/photon-energy/ — Convert photon wavelength or frequency into energy in joules and electronvolts.
+https://anscalc.com/science/half-life/ — Solve radioactive decay amount, activity, elapsed time or half-life from three known values.
+https://anscalc.com/science/capacitor-energy/ — Solve capacitor stored energy or an RC time constant with compatible SI units.
+https://anscalc.com/science/de-broglie/ — Solve de Broglie wavelength, particle mass or non-relativistic speed from λ = h/mv.
+https://anscalc.com/science/doppler/ — Calculate classical sound Doppler shifts or longitudinal relativistic light shifts with explicit signs.
+https://anscalc.com/science/escape-velocity/ — Calculate Newtonian escape speed, circular orbital speed and gravitational field from mass and radius.
+https://anscalc.com/science/ideal-gas/ — Solve pressure, volume, amount or absolute temperature from the ideal gas law PV = nRT.
+https://anscalc.com/science/moles-calculator/ — Solve moles from mass and molar mass or amount concentration from moles and volume.
+https://anscalc.com/science/binary-hex-converter/ — Convert exact non-negative integers between binary, decimal and hexadecimal.
+https://anscalc.com/science/numerical-aperture/ — Solve numerical aperture, refractive index, acceptance angle or paraxial f-number equivalence.
+https://anscalc.com/science/double-slit/ — Solve exact double-slit maxima or small-angle screen fringe spacing with the applicable assumptions shown.
+https://anscalc.com/science/braggs-law/ — Solve Bragg diffraction order, wavelength, plane spacing or angle from nλ = 2d sin θ.
+https://anscalc.com/science/gaussian-spot-size/ — Estimate focused Gaussian waist, spot diameter, Rayleigh range and depth of focus from a beam and lens.
+https://anscalc.com/science/lensmakers-equation/ — Calculate thin-lens focal length and optical power from refractive index and signed surface curvatures.
+https://anscalc.com/privacy — Read how the Ans app and website handle data, diagnostics and cookieless aggregate web measurement.
+https://anscalc.com/support — Find concise help and the support contact for Ans.
+https://anscalc.com/releases — Read the public Ans release notes and update history.
