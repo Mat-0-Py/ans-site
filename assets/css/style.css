@@ -140,7 +140,7 @@ a {
   color: var(--white);
 }
 
-/* Family nav (Website/FAMILY-DESIGN.md): an instrument label strip, not a
+/* Family nav (Website-Private-Docs/FAMILY-DESIGN.md): an instrument label strip, not a
    menu. Inactive items are Instrument White at reduced opacity; the active
    item is underlined in the page's own family accent — orange on
    calculator/home pages, teal on tool pages. Links wrap on mobile; the
@@ -440,7 +440,7 @@ a.button-secondary:hover {
   font-weight: 650;
 }
 
-/* Homepage family strip (FAMILY-DESIGN.md, "Homepage as family entry"):
+/* Homepage family strip (Website-Private-Docs/FAMILY-DESIGN.md, "Homepage as family entry"):
    one teal-accented card per tool; the cards ARE small instruments —
    LCD-styled numerals, one line each, no screenshots. */
 
@@ -1224,7 +1224,7 @@ a.button-secondary:hover {
   }
 }
 
-/* Tool instruments (family design: Website/FAMILY-DESIGN.md).
+/* Tool instruments (family design: Website-Private-Docs/FAMILY-DESIGN.md).
    .tool-lcd is the shared display component for the stopwatch and world
    clock pages — one implementation so the instruments cannot drift. */
 
@@ -1289,7 +1289,7 @@ a.button-secondary:hover {
   font-variant-numeric: tabular-nums;
 }
 
-/* Shared tool-page anatomy (FAMILY-DESIGN.md): shell, head, ownership
+/* Shared tool-page anatomy (Website-Private-Docs/FAMILY-DESIGN.md): shell, head, ownership
    line, "How it keeps time" notes and calculator cross-link are one
    implementation for every tool page. Page-specific controls stay in
    each page. */
@@ -1411,7 +1411,7 @@ a.button-secondary:hover {
   clip: rect(0 0 0 0);
 }
 
-/* ---- Science pages (PHYSICS-DESIGN.md, WP-P2) -------------------------
+/* ---- Science pages (Website-Private-Docs/PHYSICS-DESIGN.md, WP-P2) -----
    The science family (physics-led, plus adjacent chemistry/computing) is
    a distinct product with its own accent, Solar Violet. A science page
    carries both `tool-page` (the shared anatomy) and `science-page` (the

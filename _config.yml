@@ -5,3 +5,6 @@ baseurl: ""
 markdown: kramdown
 plugins:
   - jekyll-sitemap
+exclude:
+  - render-preview.py
+  - tests

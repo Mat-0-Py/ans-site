@@ -1,7 +1,8 @@
 /*
   AnsPhysics — shared machinery for the anscalc.com physics calculators.
 
-  One implementation for every physics page (PHYSICS-DESIGN.md, WP-P2):
+  One implementation for every physics page
+  (Website-Private-Docs/PHYSICS-DESIGN.md, WP-P2):
   SI-prefix unit conversion, display-precision + scientific-notation
   formatting, and the physics functions themselves. No external requests,
   no dependencies — the same file loads in the browser (global AnsPhysics)
@@ -494,6 +495,52 @@
     }
   };
 
+  // ---- school mathematics ---------------------------------------------
+  // Right-triangle solver. Supply exactly two known values from opposite
+  // side a, adjacent side b, hypotenuse c and acute angle theta (radians),
+  // with at least one side. Returns every value or null for an impossible
+  // or under/over-specified triangle.
+  var maths = {
+    rightTriangle: function (o) {
+      function known(x) { return typeof x === "number" && isFinite(x); }
+      var a = o.a, b = o.b, c = o.c, theta = o.theta;
+      var count = [a, b, c, theta].filter(known).length;
+      if (count !== 2 || (!known(a) && !known(b) && !known(c))) { return null; }
+      if ((known(a) && a <= 0) || (known(b) && b <= 0) ||
+          (known(c) && c <= 0) ||
+          (known(theta) && (theta <= 0 || theta >= Math.PI / 2))) {
+        return null;
+      }
+
+      if (known(a) && known(b)) {
+        c = Math.hypot(a, b);
+        theta = Math.atan2(a, b);
+      } else if (known(a) && known(c)) {
+        if (a >= c) { return null; }
+        b = Math.sqrt(c * c - a * a);
+        theta = Math.asin(a / c);
+      } else if (known(b) && known(c)) {
+        if (b >= c) { return null; }
+        a = Math.sqrt(c * c - b * b);
+        theta = Math.acos(b / c);
+      } else if (known(theta) && known(a)) {
+        b = a / Math.tan(theta);
+        c = a / Math.sin(theta);
+      } else if (known(theta) && known(b)) {
+        a = b * Math.tan(theta);
+        c = b / Math.cos(theta);
+      } else if (known(theta) && known(c)) {
+        a = c * Math.sin(theta);
+        b = c * Math.cos(theta);
+      } else {
+        return null;
+      }
+
+      if (![a, b, c, theta].every(known)) { return null; }
+      return { a: a, b: b, c: c, theta: theta };
+    }
+  };
+
   var computing = {
     // Exact non-negative integer conversion. BigInt keeps values beyond the
     // ordinary JavaScript Number precision limit exact in every base.
@@ -841,6 +888,7 @@
     waves: waves,
     gravity: gravity,
     chemistry: chemistry,
+    maths: maths,
     computing: computing,
     gcse: gcse
   };

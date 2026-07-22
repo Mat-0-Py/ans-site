@@ -1,0 +1,282 @@
+---
+layout: default
+title: Trigonometry Calculator — Right Triangle & SOHCAHTOA — Ans
+description: Free right-triangle trigonometry calculator. Enter two sides, or one side and an angle, to solve with SOHCAHTOA and Pythagoras. GCSE maths.
+body_class: tool-page science-page
+permalink: /science/trigonometry-calculator/
+---
+
+<style>
+  .triangle-status {
+    min-height: 1.4em;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .phys-results dd.is-calc {
+    color: var(--violet);
+    font-weight: 700;
+  }
+</style>
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Right-triangle trigonometry.</h1>
+    <p>
+      This trigonometry calculator solves a right-angled triangle from
+      <b>any two known values</b>. Enter two sides, or one side and the acute
+      angle <b>θ</b>, then leave the other boxes blank. It calculates the
+      remaining sides and angle using SOHCAHTOA and Pythagoras — useful for
+      GCSE maths revision and practical geometry.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Right Triangle Trigonometry Calculator",
+    "url": "https://anscalc.com/science/trigonometry-calculator/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "A free right-triangle calculator for SOHCAHTOA, Pythagoras and GCSE maths. Enter any two sides, or one side and an acute angle, to solve the remaining values.",
+    "educationalLevel": "GCSE",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-a">Opposite side <b>a</b></label>
+      <span class="phys-control">
+        <input id="in-a" inputmode="decimal" autocomplete="off">
+        <select id="u-a" aria-label="Opposite side unit">
+          <option value="0.001">mm</option>
+          <option value="0.01" selected>cm</option>
+          <option value="1">m</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-b">Adjacent side <b>b</b></label>
+      <span class="phys-control">
+        <input id="in-b" inputmode="decimal" autocomplete="off" value="4">
+        <select id="u-b" aria-label="Adjacent side unit">
+          <option value="0.001">mm</option>
+          <option value="0.01" selected>cm</option>
+          <option value="1">m</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-c">Hypotenuse <b>c</b></label>
+      <span class="phys-control">
+        <input id="in-c" inputmode="decimal" autocomplete="off" value="5">
+        <select id="u-c" aria-label="Hypotenuse unit">
+          <option value="0.001">mm</option>
+          <option value="0.01" selected>cm</option>
+          <option value="1">m</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-theta">Acute angle <b>θ</b></label>
+      <span class="phys-control">
+        <input id="in-theta" inputmode="decimal" autocomplete="off">
+        <select id="u-theta" aria-label="Angle unit">
+          <option value="0.017453292519943295" selected>°</option>
+          <option value="1">rad</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active" id="lcd-label">Right triangle</span>
+      <span id="lcd-note"></span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub">enter any two values</div>
+  </div>
+
+  <p class="triangle-status" id="triangle-status" aria-live="polite"></p>
+
+  <dl class="phys-results">
+    <div><dt>Opposite side a</dt><dd id="out-a">—</dd></div>
+    <div><dt>Adjacent side b</dt><dd id="out-b">—</dd></div>
+    <div><dt>Hypotenuse c</dt><dd id="out-c">—</dd></div>
+    <div><dt>Acute angle θ</dt><dd id="out-theta">—</dd></div>
+  </dl>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="Right-triangle formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo>
+        <msup><mi>b</mi><mn>2</mn></msup><mo>=</mo>
+        <msup><mi>c</mi><mn>2</mn></msup></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi mathvariant="normal">sin</mi><mi>θ</mi><mo>=</mo><mfrac><mi>a</mi><mi>c</mi></mfrac>
+        <mo>,</mo><mspace width="0.8em"/>
+        <mi mathvariant="normal">cos</mi><mi>θ</mi><mo>=</mo><mfrac><mi>b</mi><mi>c</mi></mfrac>
+        <mo>,</mo><mspace width="0.8em"/>
+        <mi mathvariant="normal">tan</mi><mi>θ</mi><mo>=</mo><mfrac><mi>a</mi><mi>b</mi></mfrac></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>a</b> opposite side · <b>b</b> adjacent side · <b>c</b> hypotenuse · <b>θ</b> acute angle between b and c</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>The triangle is right-angled, with the 90° angle between sides <b>a</b> and <b>b</b>.</li>
+      <li><b>θ</b> is the acute angle between the adjacent side <b>b</b> and hypotenuse <b>c</b>; side <b>a</b> is opposite θ.</li>
+      <li>Every side length is positive and the hypotenuse is longer than either other side.</li>
+      <li>Lengths are converted to metres internally, so the two entered sides may use different units.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Pythagoras links all three sides of a right-angled triangle:
+      a² + b² = c². Knowing any two sides therefore determines the third.
+    </p>
+    <p>
+      SOHCAHTOA gives the sine, cosine and tangent ratios for θ. If two sides
+      are known, the inverse trigonometric function finds the angle. If one
+      side and θ are known, the same ratios find both missing sides.
+    </p>
+    <p>
+      Enter exactly two known values and leave the other boxes blank. Results
+      use up to three significant figures by default (adjustable above),
+      without padding trailing zeroes; calculation uses full browser number
+      precision before display rounding.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/projectile-motion/">Projectile motion calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics;
+  var keys = ["a", "b", "c", "theta"];
+  var labels = { a: "Opposite side a", b: "Adjacent side b",
+                 c: "Hypotenuse c", theta: "Acute angle θ" };
+  function el(id) { return document.getElementById(id); }
+  function fac(k) { return parseFloat(el("u-" + k).value); }
+  function unitTxt(k) {
+    var select = el("u-" + k);
+    return select.options[select.selectedIndex].text;
+  }
+  var status = el("triangle-status");
+  var lcdLabel = el("lcd-label"), lcdMain = el("lcd-main"),
+      lcdSub = el("lcd-sub"), lcdNote = el("lcd-note");
+
+  function clearOut(message) {
+    keys.forEach(function (k) {
+      var output = el("out-" + k);
+      output.textContent = "—";
+      output.classList.remove("is-calc");
+    });
+    lcdLabel.textContent = "Right triangle";
+    lcdMain.textContent = "—";
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = message;
+    lcdNote.textContent = "";
+    status.textContent = "";
+  }
+
+  function compute() {
+    var values = {}, known = {}, count = 0;
+    keys.forEach(function (k) {
+      var input = el("in-" + k);
+      var raw = input.value.trim().replace(",", ".");
+      var value = parseFloat(raw);
+      var valid = raw !== "" && isFinite(value);
+      input.classList.remove("is-result");
+      input.classList.toggle("is-invalid", raw !== "" && !valid);
+      values[k] = valid ? value * fac(k) : null;
+      if (valid) { known[k] = true; count += 1; }
+    });
+
+    if (count !== 2) {
+      clearOut(count < 2 ? "enter any two values" : "leave two values blank");
+      return;
+    }
+
+    var result = P.maths.rightTriangle(values);
+    if (!result) {
+      clearOut("those values do not make a right triangle");
+      return;
+    }
+
+    var sf = parseInt(el("u-sf").value, 10) || 3;
+    var calculated = keys.filter(function (k) { return !known[k]; });
+    calculated.forEach(function (k) { el("in-" + k).classList.add("is-result"); });
+
+    function display(k) {
+      return P.format(result[k] / fac(k), sf) + " " + unitTxt(k);
+    }
+
+    lcdLabel.textContent = labels[calculated[0]];
+    lcdMain.textContent = display(calculated[0]);
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = labels[calculated[1]].toLowerCase() + " = " + display(calculated[1]);
+    lcdNote.textContent = "Solved";
+    status.textContent = known.theta
+      ? "Solved using the trigonometric ratios."
+      : "Solved using Pythagoras and the trigonometric ratios.";
+
+    keys.forEach(function (k) {
+      var output = el("out-" + k);
+      output.textContent = display(k);
+      output.classList.toggle("is-calc", !known[k]);
+    });
+  }
+
+  keys.forEach(function (k) {
+    el("in-" + k).addEventListener("input", compute);
+    el("u-" + k).addEventListener("change", compute);
+  });
+  el("u-sf").addEventListener("change", compute);
+  compute();
+})();
+</script>

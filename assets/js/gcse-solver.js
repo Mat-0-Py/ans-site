@@ -1,6 +1,7 @@
 /*
   AnsSolve — shared "leave the unknown blank" wiring for the GCSE/A-level
-  rearrangement pages (PHYSICS-DESIGN.md, interaction convention). One
+  rearrangement pages (Website-Private-Docs/PHYSICS-DESIGN.md, interaction
+  convention). One
   implementation so every page behaves identically: type the values you
   know, leave the one you want blank, and it appears on the LCD. No
   "Solve for" menu, no placeholder hints. Depends on AnsPhysics.
