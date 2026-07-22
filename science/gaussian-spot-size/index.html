@@ -1,0 +1,255 @@
+---
+layout: default
+title: Focused Laser Spot Size Calculator (M², Lens f) — Beam Waist at Focus — Ans
+description: Free focused laser spot size calculator. Enter wavelength, beam radius at the lens, focal length and M² to get the focused waist w₀′, spot diameter, Rayleigh range and depth of focus. Assumptions stated. No ads, no tracking.
+body_class: tool-page science-page
+permalink: /science/gaussian-spot-size/
+---
+
+<style>
+  .beam-unit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Focused laser spot size.</h1>
+    <p>
+      A near-collimated beam of radius <b>w</b> at a lens of focal length
+      <b>f</b> focuses to a waist <b>w₀′ = M² λ f / (π w)</b>. Enter the
+      wavelength, beam radius at the lens, focal length and beam quality
+      M², and read the focused spot, its diameter and depth of focus. The
+      assumptions are stated below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Focused Laser Spot Size Calculator",
+    "url": "https://anscalc.com/science/gaussian-spot-size/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Focused laser spot size from wavelength, beam radius at the lens, focal length and M²: focused waist w0', spot diameter, Rayleigh range and depth of focus.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-lambda">Wavelength <b>λ</b></label>
+      <span class="phys-control">
+        <input id="in-lambda" inputmode="decimal" autocomplete="off" value="1064">
+        <select id="u-lambda" aria-label="Wavelength unit">
+          <option value="1e-9" selected>nm</option>
+          <option value="1e-6">µm</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-w">Beam radius at lens <b>w</b> (1/e²)</label>
+      <span class="phys-control">
+        <input id="in-w" inputmode="decimal" autocomplete="off" value="5">
+        <select id="u-w" aria-label="Beam radius unit">
+          <option value="1e-6">µm</option>
+          <option value="1e-3" selected>mm</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-f">Focal length <b>f</b></label>
+      <span class="phys-control">
+        <input id="in-f" inputmode="decimal" autocomplete="off" value="100">
+        <select id="u-f" aria-label="Focal length unit">
+          <option value="1e-3" selected>mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1">m</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-m2">Beam quality <b>M²</b> (1 = ideal)</label>
+      <span class="phys-control">
+        <input id="in-m2" inputmode="decimal" autocomplete="off" value="1">
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active">Focused waist w₀′</span>
+      <span id="ind-note"></span>
+    </div>
+    <div class="tool-lcd-main" id="out-w0">—</div>
+    <div class="tool-lcd-sub" id="out-w0-sub">radius at focus (1/e²)</div>
+  </div>
+
+  <div class="beam-unit">
+    <label for="u-out">Show w₀′ in</label>
+    <span class="phys-control">
+      <select id="u-out" aria-label="Spot radius output unit">
+        <option value="1e-6" selected>µm</option>
+        <option value="1e-9">nm</option>
+        <option value="1e-3">mm</option>
+      </select>
+    </span>
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3">3 s.f.</option>
+        <option value="4" selected>4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <dl class="phys-results">
+    <div><dt>Spot diameter 2w₀′</dt><dd id="out-d">—</dd></div>
+    <div><dt>Rayleigh range z<sub>R</sub>′</dt><dd id="out-zr">—</dd></div>
+    <div><dt>Depth of focus 2z<sub>R</sub>′</dt><dd id="out-dof">—</dd></div>
+  </dl>
+
+  <div class="formula" aria-label="Formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+        <msubsup><mi>w</mi><mn>0</mn><mo>′</mo></msubsup><mo>=</mo>
+        <mfrac>
+          <mrow><msup><mi>M</mi><mn>2</mn></msup><mi>λ</mi><mi>f</mi></mrow>
+          <mrow><mi>π</mi><mi>w</mi></mrow>
+        </mfrac>
+      </mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+        <msubsup><mi>z</mi><mi>R</mi><mo>′</mo></msubsup><mo>=</mo>
+        <mfrac>
+          <mrow><mi>π</mi><msup><mrow><mo stretchy="false">(</mo><msubsup><mi>w</mi><mn>0</mn><mo>′</mo></msubsup><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow>
+          <mrow><msup><mi>M</mi><mn>2</mn></msup><mi>λ</mi></mrow>
+        </mfrac>
+      </mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>w</b> beam radius at the lens (1/e²) · <b>f</b> focal length · <b>λ</b> wavelength · <b>M²</b> beam-quality factor</li>
+    <li><b>w₀′</b> focused waist radius · <b>z<sub>R</sub>′</b> Rayleigh range of the focus (half the depth of focus)</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>The beam is (near) collimated at the lens — its waist sits at the
+        lens and f is well inside the incoming Rayleigh range.</li>
+      <li>Thin lens, and the aperture comfortably passes the beam (no
+        clipping); ideal focusing, no aberrations.</li>
+      <li>Radii are 1/e² intensity radii; M² ≥ 1 scales an ideal Gaussian
+        (M² = 1) to a real beam.</li>
+      <li>Single homogeneous medium — use the wavelength in that medium if
+        not in air/vacuum.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Focusing is diffraction-limited: a bigger beam at the lens (larger w)
+      or a shorter focal length gives a tighter focus, while a longer
+      wavelength or a poorer beam (higher M²) spreads it out. The depth of
+      focus is roughly twice the Rayleigh range z<sub>R</sub>′ — the region
+      either side of the waist where the spot stays close to w₀′.
+    </p>
+    <p>
+      This is the standard far-field result for a collimated input; if the
+      beam is converging or diverging at the lens, or f approaches the
+      input Rayleigh range, the exact ABCD result differs. Values use up to
+      four significant figures by default (adjustable above), without
+      padding the display with trailing zeroes.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/diffraction-limited-spot/">Diffraction-limited spot calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics, G = P.gaussianBeam;
+  function el(id) { return document.getElementById(id); }
+  function fac(s) { return parseFloat(s.value); }
+  function num(id) {
+    var raw = el(id).value.trim().replace(",", ".");
+    var v = parseFloat(raw);
+    el(id).classList.toggle("is-invalid", raw !== "" && !isFinite(v));
+    return raw === "" ? NaN : v;
+  }
+
+  var uLam = el("u-lambda"), uW = el("u-w"), uF = el("u-f"),
+      uOut = el("u-out"), uSf = el("u-sf");
+  var outW0 = el("out-w0"), outD = el("out-d"), outZr = el("out-zr"),
+      outDof = el("out-dof"), indNote = el("ind-note"), sub = el("out-w0-sub");
+
+  function compute() {
+    var lam = num("in-lambda") * fac(uLam);
+    var w = num("in-w") * fac(uW);
+    var f = num("in-f") * fac(uF);
+    var M2 = num("in-m2");
+    if (!(lam > 0) || !(w > 0) || !(f > 0) || !(M2 >= 1)) {
+      outW0.textContent = "—";
+      P.fitDisplay(outW0);
+      sub.textContent = (M2 < 1 ? "M² must be ≥ 1" : "enter λ, w, f and M²");
+      outD.textContent = outZr.textContent = outDof.textContent = "—";
+      indNote.textContent = "";
+      return;
+    }
+    var w0 = G.focusedWaist(w, lam, f, M2);
+    var zR = Math.PI * w0 * w0 / (M2 * lam);
+    var sf = parseInt(uSf.value, 10) || 4;
+    var of = fac(uOut), ul = uOut.options[uOut.selectedIndex].text;
+    outW0.textContent = P.format(w0 / of, sf) + " " + ul;
+    P.fitDisplay(outW0);
+    outD.textContent = P.format((2 * w0) / of, sf) + " " + ul;
+    outZr.textContent = P.format(zR * 1e3, sf) + " mm";
+    outDof.textContent = P.format(2 * zR * 1e3, sf) + " mm";
+    indNote.textContent = M2 > 1 ? "M² = " + P.format(M2, sf) : "diffraction-limited";
+    sub.textContent = "radius at focus (1/e²)";
+  }
+
+  ["in-lambda", "in-w", "in-f", "in-m2"].forEach(function (id) {
+    el(id).addEventListener("input", compute);
+  });
+  [uLam, uW, uF, uOut, uSf].forEach(function (s) {
+    s.addEventListener("change", compute);
+  });
+  compute();
+})();
+</script>

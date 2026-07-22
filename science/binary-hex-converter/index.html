@@ -1,0 +1,67 @@
+---
+layout: default
+title: Binary, Decimal and Hex Converter — Exact Integer Tool — Ans
+description: Free binary and hexadecimal converter. Convert exact non-negative integers between base 2, base 10 and base 16 with a clear place-value explanation.
+body_class: tool-page science-page
+permalink: /science/binary-hex-converter/
+---
+<style>.binary-main{overflow-wrap:anywhere;word-break:break-all;white-space:normal;line-height:1.05}</style>
+<div class="tool-shell">
+  <div class="tool-head"><p class="eyebrow">Science calculator</p><h1>Binary and hexadecimal.</h1><p>Convert an exact non-negative integer between binary, decimal and hexadecimal. Letters A–F may be entered in either case.</p></div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Binary Decimal Hexadecimal Converter","url":"https://anscalc.com/science/binary-hex-converter/","applicationCategory":"EducationalApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Exact integer converter for binary, decimal and hexadecimal number bases.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+  <div class="phys-fields"><div class="phys-field"><label for="in-value">Integer</label><span class="phys-control"><input id="in-value" inputmode="text" autocomplete="off" spellcheck="false" value="101010"></span></div><div class="phys-field"><label for="u-input-base">Input base</label><span class="phys-control"><select id="u-input-base" aria-label="Input number base"><option value="2" selected>Binary · base 2</option><option value="10">Decimal · base 10</option><option value="16">Hexadecimal · base 16</option></select></span></div><div class="phys-field"><label for="u-output-base">LCD base</label><span class="phys-control"><select id="u-output-base" aria-label="LCD output base"><option value="binary">Binary · base 2</option><option value="decimal">Decimal · base 10</option><option value="hexadecimal" selected>Hexadecimal · base 16</option></select></span></div></div>
+  <div class="tool-lcd" aria-live="polite"><div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">Hexadecimal</span><span id="lcd-note">Exact integer</span></div><div class="tool-lcd-main binary-main" id="lcd-main">—</div><div class="tool-lcd-sub" id="lcd-sub">base 16</div></div>
+  <dl class="phys-results"><div><dt>Binary · base 2</dt><dd id="out-binary">—</dd></div><div><dt>Decimal · base 10</dt><dd id="out-decimal">—</dd></div><div><dt>Hexadecimal · base 16</dt><dd id="out-hexadecimal">—</dd></div></dl>
+  <div class="formula" aria-label="Positional notation formula"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>N</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>k</mi></munderover><msub><mi>d</mi><mi>i</mi></msub><msup><mi>b</mi><mi>i</mi></msup></mrow></math></div>
+  <ul class="formula-legend"><li><b>N</b> integer value · <b>dᵢ</b> digit at position i · <b>b</b> number base · <b>i</b> place-value power</li></ul>
+  <section class="assumptions" aria-label="Assumptions"><h2>Assumptions</h2><ul><li>Inputs are non-negative whole numbers; signs, fractions and decimal points are not accepted.</li><li>Binary uses digits 0–1, decimal 0–9, and hexadecimal 0–9 plus A–F.</li><li>Leading zeroes do not change the value and are removed from converted output.</li><li>No signed word size or two's-complement interpretation is applied; conversion is arbitrary-precision integer arithmetic.</li></ul></section>
+  <section class="tool-notes" aria-label="How it works"><h2>How it works</h2><p>Every digit has a place value equal to a power of its base. Binary places are powers of 2, decimal places powers of 10, and hexadecimal places powers of 16.</p><p>Hexadecimal groups binary neatly because one hexadecimal digit represents exactly four binary digits. For example, binary 1010 is hexadecimal A.</p><p>Select the input base and type an integer. All three exact representations update together; choose which one is largest on the LCD.</p></section>
+  <p class="science-related">Related: <a href="/science/">Browse all science calculators</a></p>
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul><div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/physics.js"></script><script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics, input = document.getElementById("in-value"),
+      inputBase = document.getElementById("u-input-base"),
+      outputBase = document.getElementById("u-output-base"),
+      main = document.getElementById("lcd-main"), label = document.getElementById("lcd-label"),
+      note = document.getElementById("lcd-note"), sub = document.getElementById("lcd-sub"),
+      names = { binary: "Binary", decimal: "Decimal", hexadecimal: "Hexadecimal" },
+      bases = { binary: "base 2", decimal: "base 10", hexadecimal: "base 16" };
+
+  function clearResults(message) {
+    main.textContent = "—";
+    ["binary", "decimal", "hexadecimal"].forEach(function (key) {
+      document.getElementById("out-" + key).textContent = "—";
+    });
+    note.textContent = message;
+    P.fitDisplay(main);
+  }
+
+  function compute() {
+    input.classList.remove("is-invalid");
+    if (input.value.trim() === "") { clearResults("enter an integer"); return; }
+    var result = P.computing.convertInteger(input.value, parseInt(inputBase.value, 10));
+    var key = outputBase.value;
+    if (!result) {
+      input.classList.add("is-invalid");
+      clearResults("digits do not match the selected base");
+      return;
+    }
+    label.textContent = names[key];
+    sub.textContent = bases[key];
+    note.textContent = "Exact integer";
+    main.textContent = result[key];
+    P.fitDisplay(main);
+    ["binary", "decimal", "hexadecimal"].forEach(function (name) {
+      document.getElementById("out-" + name).textContent = result[name];
+    });
+  }
+
+  input.addEventListener("input", compute);
+  inputBase.addEventListener("change", compute);
+  outputBase.addEventListener("change", compute);
+  compute();
+})();
+</script>

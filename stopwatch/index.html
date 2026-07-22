@@ -1,0 +1,634 @@
+---
+layout: default
+title: Free Online Stopwatch & Timer — Milliseconds, No Ads — Ans
+description: A free online stopwatch and timer with millisecond precision. No ads, no tracking, no account. Accurate in background tabs and through system sleep, with laps, presets and keyboard shortcuts.
+body_class: tool-page
+permalink: /stopwatch/
+---
+
+<style>
+  /* Page-specific controls only; the shared tool-page anatomy (.tool-shell,
+     .tool-lcd, ownership/notes/cross-link) lives in the site stylesheet. */
+  .tool-mode {
+    display: inline-flex;
+    margin-bottom: 18px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .tool-mode button {
+    border: 0;
+    border-radius: 999px;
+    padding: 8px 22px;
+    background: transparent;
+    color: var(--muted);
+    font: 600 15px var(--sans);
+    cursor: pointer;
+  }
+
+  .tool-mode button[aria-pressed="true"] {
+    background: var(--teal);
+    color: var(--lcd-text);
+  }
+
+  .tool-keys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .tool-key {
+    flex: 1 1 120px;
+    border: 0;
+    border-radius: 14px;
+    padding: 16px 10px;
+    background: var(--key);
+    color: var(--white);
+    font: 600 17px var(--sans);
+    cursor: pointer;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.28);
+  }
+
+  .tool-key:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+  }
+
+  .tool-key-primary {
+    background: var(--teal);
+    color: var(--lcd-text);
+  }
+
+  .tool-key[disabled] {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  .tool-key kbd {
+    display: block;
+    margin-top: 3px;
+    font: 500 11px var(--mono);
+    color: currentColor;
+    opacity: 0.65;
+  }
+
+  /* Touch devices get no keyboard-shortcut hints (the shortcuts still
+     work if a keyboard is attached — only the labels hide). */
+  @media (hover: none) and (pointer: coarse) {
+    .tool-key kbd {
+      display: none;
+    }
+  }
+
+  .timer-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .timer-presets button {
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    padding: 9px 14px;
+    background: var(--body);
+    color: var(--white);
+    font: 600 15px var(--mono);
+    cursor: pointer;
+  }
+
+  .timer-presets button:hover {
+    border-color: var(--teal);
+  }
+
+  .timer-custom {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+  }
+
+  .timer-field {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .timer-field input {
+    width: 84px;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    padding: 9px 12px;
+    background: var(--body);
+    color: var(--white);
+    font: 600 17px var(--mono);
+    text-align: right;
+  }
+
+  .timer-field label {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .timer-field input:focus {
+    outline: 3px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  .lap-list {
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lap-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 9px 4px;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+  }
+
+  .lap-list li:first-child {
+    color: var(--teal);
+  }
+
+  .lap-list .lap-name {
+    color: var(--muted);
+  }
+
+  .lap-list li:first-child .lap-name {
+    color: inherit;
+  }
+
+</style>
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Free online tool</p>
+    <h1>Free online stopwatch &amp; timer.</h1>
+    <p>
+      A stopwatch to the millisecond and a countdown timer — an instrument,
+      not an ad delivery vehicle. Accurate even when the tab is in the
+      background or your laptop sleeps, because it counts timestamps rather
+      than ticks. Nothing about you is tracked or sold.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ans Stopwatch & Timer",
+    "url": "https://anscalc.com/stopwatch/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free online stopwatch and timer with millisecond precision. No ads, no tracking, no account. Accurate in background tabs and through system sleep.",
+    "featureList": "Millisecond stopwatch with laps, countdown timer with presets, keyboard shortcuts, works offline once loaded",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="tool-mode" role="group" aria-label="Choose instrument">
+    <button type="button" id="mode-stopwatch" aria-pressed="true">Stopwatch</button>
+    <button type="button" id="mode-timer" aria-pressed="false">Timer</button>
+  </div>
+
+  <div class="tool-lcd" role="timer" aria-label="Display">
+    <div class="tool-lcd-indicators">
+      <span id="ind-mode" class="is-active">Stopwatch</span>
+      <span id="ind-slept" hidden></span>
+      <span id="ind-state">Ready</span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">00:00.000</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <section id="panel-stopwatch" aria-label="Stopwatch controls">
+    <div class="tool-keys">
+      <button class="tool-key tool-key-primary" id="sw-startstop">
+        Start <kbd>space</kbd>
+      </button>
+      <button class="tool-key" id="sw-lap" disabled>Lap <kbd>L</kbd></button>
+      <button class="tool-key" id="sw-reset" disabled>Reset <kbd>R</kbd></button>
+    </div>
+    <ol class="lap-list" id="lap-list" reversed aria-label="Laps"></ol>
+  </section>
+
+  <section id="panel-timer" hidden aria-label="Timer controls">
+    <div class="timer-presets" role="group" aria-label="Preset durations">
+      <button type="button" data-min="1">1:00</button>
+      <button type="button" data-min="3">3:00</button>
+      <button type="button" data-min="5">5:00</button>
+      <button type="button" data-min="10">10:00</button>
+      <button type="button" data-min="15">15:00</button>
+      <button type="button" data-min="25">25:00</button>
+      <button type="button" data-min="45">45:00</button>
+      <button type="button" data-min="60">60:00</button>
+    </div>
+    <div class="timer-custom" role="group" aria-label="Custom duration">
+      <span class="timer-field">
+        <input id="timer-min" inputmode="numeric" autocomplete="off" placeholder="0" aria-label="Minutes" maxlength="3">
+        <label for="timer-min">min</label>
+      </span>
+      <span class="timer-field">
+        <input id="timer-sec" inputmode="numeric" autocomplete="off" placeholder="00" aria-label="Seconds" maxlength="2">
+        <label for="timer-sec">sec</label>
+      </span>
+    </div>
+    <div class="tool-keys">
+      <button class="tool-key tool-key-primary" id="tm-startpause" disabled>
+        Start <kbd>space</kbd>
+      </button>
+      <button class="tool-key" id="tm-reset" disabled>Reset <kbd>R</kbd></button>
+    </div>
+  </section>
+
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <section class="tool-notes" aria-label="How it keeps time">
+    <h2>How it keeps time</h2>
+    <p>
+      Time is measured from clock timestamps, never counted in ticks, so a
+      backgrounded or throttled tab stays exact — check back after five
+      minutes and it hasn't drifted.
+    </p>
+    <p>
+      If your machine sleeps mid-run, real time keeps counting, the way a
+      physical stopwatch would in a closed drawer. When that happens the
+      display adds a small <strong>SLEPT</strong> note showing how much of
+      the run passed while asleep — already included in the total, not
+      missing from it.
+    </p>
+    <p>
+      The timer's completion sound is scheduled the moment you press
+      Start, so it rings on time even from a background tab.
+    </p>
+  </section>
+
+  <p class="tool-crosslink">
+    From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper tool, nothing in the way.
+  </p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var lcdMain = document.getElementById("lcd-main");
+  var lcdSub = document.getElementById("lcd-sub");
+  var indMode = document.getElementById("ind-mode");
+  var indState = document.getElementById("ind-state");
+  var indSlept = document.getElementById("ind-slept");
+  var baseTitle = document.title;
+
+  // ---- formatting -------------------------------------------------------
+
+  function pad(n, w) { return String(n).padStart(w || 2, "0"); }
+
+  function formatStopwatch(ms) {
+    var milli = Math.floor(ms) % 1000;
+    var s = Math.floor(ms / 1000) % 60;
+    var m = Math.floor(ms / 60000) % 60;
+    var h = Math.floor(ms / 3600000);
+    return (h > 0 ? h + ":" + pad(m) : pad(m)) + ":" + pad(s) + "." + pad(milli, 3);
+  }
+
+  function formatTimer(ms) {
+    // Ceiling, so the display reads 5:00 the moment 5:00 starts and 0:00
+    // only at genuine completion.
+    var t = Math.max(0, Math.ceil(ms / 1000));
+    var s = t % 60;
+    var m = Math.floor(t / 60) % 60;
+    var h = Math.floor(t / 3600);
+    return (h > 0 ? h + ":" + pad(m) : String(m)) + ":" + pad(s);
+  }
+
+  // ---- stopwatch engine (timestamps, never tick counting) ---------------
+  // Anchored to the wall clock (Date.now), not performance.now: the
+  // monotonic clock freezes while the machine sleeps, and an instrument
+  // must keep counting real time through a closed lid.
+
+  var sw = { running: false, startedAt: 0, accumulated: 0, laps: [], sleptMs: 0 };
+
+  function swElapsed() {
+    return sw.accumulated + (sw.running ? Date.now() - sw.startedAt : 0);
+  }
+
+  // ---- timer engine -----------------------------------------------------
+
+  var tm = { running: false, endAt: 0, remaining: 0, duration: 0,
+             finished: false, sleptMs: 0 };
+
+  function tmRemaining() {
+    return tm.running ? Math.max(0, tm.endAt - Date.now()) : tm.remaining;
+  }
+
+  // ---- sleep detection --------------------------------------------------
+  // The wall clock advances through system sleep; performance.now does not.
+  // Growing drift between the two means the machine slept (or the system
+  // clock was adjusted) — either way, honesty demands a note. Checked from
+  // the render loop, so the first frame after waking picks it up.
+
+  var drift = { wall: Date.now(), mono: performance.now() };
+
+  function checkSleep() {
+    var wallD = Date.now() - drift.wall;
+    var monoD = performance.now() - drift.mono;
+    drift.wall += wallD;
+    drift.mono += monoD;
+    var gap = wallD - monoD;
+    if (gap < 2000) { return; }                 // throttling never drifts; sleep does
+    if (sw.running) { sw.sleptMs += gap; }
+    if (tm.running) {
+      tm.sleptMs += gap;
+      scheduleBeeps(tmRemaining() / 1000);      // audio clock also slept; re-aim
+    }
+  }
+
+  // Completion sound: scheduled on the Web Audio clock at start, so it
+  // fires on time even while the tab is throttled in the background. The
+  // context is created inside the starting gesture, which unlocks it.
+  var audio = { ctx: null, nodes: [], firstBeepAt: 0 };
+
+  function cancelBeeps() {
+    audio.nodes.forEach(function (n) { try { n.stop(); } catch (e) {} });
+    audio.nodes = [];
+  }
+
+  function scheduleBeeps(inSeconds) {
+    if (!audio.ctx) {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) { return; }
+      audio.ctx = new Ctx();
+    }
+    if (audio.ctx.state === "suspended") { audio.ctx.resume(); }
+    cancelBeeps();
+    var t0 = audio.ctx.currentTime + inSeconds;
+    audio.firstBeepAt = t0;
+    for (var i = 0; i < 6; i++) {
+      var osc = audio.ctx.createOscillator();
+      var gain = audio.ctx.createGain();
+      osc.type = "square";
+      osc.frequency.value = 1244;              // D#6 — bright, not shrill
+      gain.gain.value = 0.0001;
+      var at = t0 + i * 0.45;
+      gain.gain.setValueAtTime(0.0001, at);
+      gain.gain.exponentialRampToValueAtTime(0.18, at + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, at + 0.28);
+      osc.connect(gain).connect(audio.ctx.destination);
+      osc.start(at);
+      osc.stop(at + 0.3);
+      audio.nodes.push(osc);
+    }
+  }
+
+  // ---- rendering --------------------------------------------------------
+
+  var mode = "stopwatch";
+  var lastTitleSecond = -1;
+
+  function render() {
+    checkSleep();
+    var slept = mode === "stopwatch" ? sw.sleptMs : tm.sleptMs;
+    indSlept.hidden = slept < 1000;
+    if (!indSlept.hidden) {
+      indSlept.textContent = "slept " + formatTimer(slept) + " · counted";
+    }
+    if (mode === "stopwatch") {
+      var el = swElapsed();
+      lcdMain.textContent = formatStopwatch(el);
+      lcdSub.textContent = sw.laps.length
+        ? "Lap " + (sw.laps.length + 1) + "  +" +
+          formatStopwatch(el - sw.laps[sw.laps.length - 1].total)
+        : "";
+      indState.textContent = sw.running ? "Running" : (el > 0 ? "Stopped" : "Ready");
+      updateTitle(sw.running, formatStopwatch(el));
+    } else {
+      var rem = tmRemaining();
+      if (tm.running && rem <= 0) { finishTimer(); return; }
+      lcdMain.textContent = tm.duration ? formatTimer(rem) : "0:00";
+      lcdSub.textContent = tm.finished ? "Time's up" :
+        (tm.duration ? "of " + formatTimer(tm.duration) : "Choose a duration");
+      indState.textContent = tm.finished ? "Done" :
+        (tm.running ? "Running" :
+          (tm.duration && rem < tm.duration ? "Paused" : "Ready"));
+      if (tm.finished) {
+        // Keep the completion visible in the tab strip until reset/restart.
+        var doneTitle = "Time's up — " + baseTitle;
+        if (document.title !== doneTitle) { document.title = doneTitle; }
+      } else {
+        updateTitle(tm.running, formatTimer(rem));
+      }
+    }
+  }
+
+  function updateTitle(active, text) {
+    if (!active) {
+      lastTitleSecond = -1;
+      if (document.title !== baseTitle) { document.title = baseTitle; }
+      return;
+    }
+    var second = Math.floor(Date.now() / 1000);
+    if (second === lastTitleSecond) { return; }
+    lastTitleSecond = second;
+    document.title = text + " — " + baseTitle;
+  }
+
+  // rAF drives the visible display; a 500 ms interval keeps state moving
+  // (and completion detected) while the tab is hidden and rAF is paused.
+  function frame() {
+    if (sw.running || tm.running) { render(); }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  setInterval(function () {
+    if (document.hidden && (sw.running || tm.running)) { render(); }
+  }, 500);
+  document.addEventListener("visibilitychange", render);
+
+  // ---- stopwatch controls ----------------------------------------------
+
+  var swStartStop = document.getElementById("sw-startstop");
+  var swLap = document.getElementById("sw-lap");
+  var swReset = document.getElementById("sw-reset");
+  var lapList = document.getElementById("lap-list");
+
+  function swToggle() {
+    if (sw.running) {
+      sw.accumulated = swElapsed();
+      sw.running = false;
+    } else {
+      sw.startedAt = Date.now();
+      sw.running = true;
+    }
+    swStartStop.firstChild.textContent = sw.running ? "Stop " : "Start ";
+    swLap.disabled = !sw.running;
+    swReset.disabled = sw.running || swElapsed() === 0;
+    render();
+  }
+
+  function swDoLap() {
+    if (!sw.running) { return; }
+    var total = swElapsed();
+    var prev = sw.laps.length ? sw.laps[sw.laps.length - 1].total : 0;
+    sw.laps.push({ total: total, split: total - prev });
+    var li = document.createElement("li");
+    li.innerHTML = '<span class="lap-name">Lap ' + sw.laps.length + "</span>" +
+      "<span>+" + formatStopwatch(total - prev) + "</span>" +
+      "<span>" + formatStopwatch(total) + "</span>";
+    lapList.insertBefore(li, lapList.firstChild);
+  }
+
+  function swDoReset() {
+    if (sw.running) { return; }
+    sw.accumulated = 0;
+    sw.laps = [];
+    sw.sleptMs = 0;
+    lapList.textContent = "";
+    swReset.disabled = true;
+    render();
+  }
+
+  swStartStop.addEventListener("click", swToggle);
+  swLap.addEventListener("click", swDoLap);
+  swReset.addEventListener("click", swDoReset);
+
+  // ---- timer controls ---------------------------------------------------
+
+  var tmStartPause = document.getElementById("tm-startpause");
+  var tmReset = document.getElementById("tm-reset");
+  var tmMin = document.getElementById("timer-min");
+  var tmSec = document.getElementById("timer-sec");
+
+  function setDuration(ms) {
+    tm.duration = ms;
+    tm.remaining = ms;
+    tm.running = false;
+    tm.finished = false;
+    tm.sleptMs = 0;
+    cancelBeeps();
+    tmStartPause.disabled = ms === 0;
+    tmStartPause.firstChild.textContent = "Start ";
+    tmReset.disabled = ms === 0;
+    render();
+  }
+
+  // Two plain numeric fields (minutes + seconds) — no colon to type, so
+  // the phone's number keyboard is all that's needed. Seconds over 59 just
+  // carry (90 sec = 1:30).
+  function readCustom() {
+    var m = parseInt(tmMin.value, 10) || 0;
+    var s = parseInt(tmSec.value, 10) || 0;
+    return (m * 60 + s) * 1000;
+  }
+
+  function tmToggle() {
+    if (!tm.duration) { return; }
+    if (tm.finished) { setDuration(tm.duration); }        // Start after "Time's up" restarts
+    if (tm.running) {
+      tm.remaining = tmRemaining();
+      tm.running = false;
+      cancelBeeps();
+    } else {
+      tm.endAt = Date.now() + tm.remaining;
+      tm.running = true;
+      scheduleBeeps(tm.remaining / 1000);
+    }
+    tmStartPause.firstChild.textContent = tm.running ? "Pause " : "Start ";
+    render();
+  }
+
+  function finishTimer() {
+    tm.running = false;
+    tm.remaining = 0;
+    tm.finished = true;
+    // If the audio clock is still short of the scheduled beep time even
+    // though wall time says the timer is due, the context slept with the
+    // machine — fire the completion now instead of arbitrarily later.
+    if (audio.ctx && audio.firstBeepAt &&
+        audio.ctx.currentTime < audio.firstBeepAt - 0.75) {
+      scheduleBeeps(0);
+    }
+    tmStartPause.firstChild.textContent = "Start ";
+    render();
+  }
+
+  tmStartPause.addEventListener("click", tmToggle);
+  tmReset.addEventListener("click", function () { setDuration(tm.duration); });
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".timer-presets button"),
+    function (b) {
+      b.addEventListener("click", function () {
+        tmMin.value = ""; tmSec.value = "";
+        setDuration(+b.dataset.min * 60000);
+      });
+    }
+  );
+
+  function customField(f) {
+    f.addEventListener("input", function () {
+      var c = f.value.replace(/[^0-9]/g, "");   // digits only; no colon needed
+      if (c !== f.value) { f.value = c; }
+      setDuration(readCustom());
+    });
+    f.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); tmToggle(); }
+    });
+  }
+  customField(tmMin);
+  customField(tmSec);
+
+  // ---- mode switch ------------------------------------------------------
+
+  var modeSw = document.getElementById("mode-stopwatch");
+  var modeTm = document.getElementById("mode-timer");
+  var panelSw = document.getElementById("panel-stopwatch");
+  var panelTm = document.getElementById("panel-timer");
+
+  function setMode(next) {
+    mode = next;
+    var isSw = next === "stopwatch";
+    modeSw.setAttribute("aria-pressed", String(isSw));
+    modeTm.setAttribute("aria-pressed", String(!isSw));
+    panelSw.hidden = !isSw;
+    panelTm.hidden = isSw;
+    indMode.textContent = isSw ? "Stopwatch" : "Timer";
+    render();
+  }
+  modeSw.addEventListener("click", function () { setMode("stopwatch"); });
+  modeTm.addEventListener("click", function () { setMode("timer"); });
+
+  // ---- keyboard ---------------------------------------------------------
+
+  document.addEventListener("keydown", function (e) {
+    if (e.target === tmMin || e.target === tmSec || e.metaKey || e.ctrlKey || e.altKey) { return; }
+    if (e.code === "Space") {
+      e.preventDefault();
+      (mode === "stopwatch" ? swToggle : tmToggle)();
+    } else if (mode === "stopwatch" && (e.key === "l" || e.key === "L")) {
+      swDoLap();
+    } else if (e.key === "r" || e.key === "R") {
+      (mode === "stopwatch" ? swDoReset : function () { setDuration(tm.duration); })();
+    }
+  });
+
+  render();
+})();
+</script>

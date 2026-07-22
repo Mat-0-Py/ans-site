@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#14181E">
+    <meta name="color-scheme" content="dark">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}Ans — Scientific Calculator{% endif %}</title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ans">
+    <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+    <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ans — a scientific calculator for iPhone and iPad.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body class="{{ page.body_class | default: 'prose-page' }}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="Ans home">
+          <img src="/assets/images/ans-logo-on-dark.svg" width="480" height="360" alt="Ans">
+        </a>
+        <nav class="site-nav family-nav" aria-label="Ans family">
+          <a href="/"{% unless page.body_class contains 'tool-page' %} class="is-active"{% endunless %}{% if page.url == '/' %} aria-current="page"{% endif %}>Calculator</a>
+          <a href="/stopwatch/"{% if page.url == '/stopwatch/' %} class="is-active" aria-current="page"{% endif %}>Stopwatch</a>
+          <a href="/clock/"{% if page.url == '/clock/' %} class="is-active" aria-current="page"{% endif %}>World clock</a>
+          <a href="/science/"{% if page.body_class contains 'science-page' %} class="is-active" aria-current="page"{% endif %}>Science</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="/assets/images/ans-logo-on-dark.svg" width="480" height="360" alt="Ans">
+          <p>A calculator you can own.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/stopwatch/">Stopwatch</a>
+          <a href="/clock/">World clock</a>
+          <a href="/science/">Science</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/support">Support</a>
+          <a href="/releases">Release notes</a>
+          <a href="mailto:support@anscalc.com">Email</a>
+        </nav>
+        <p class="footer-meta">© 2026 Mat. Ans is independently made in the UK.</p>
+      </div>
+    </footer>
+    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "85c9fa5e809643439b41464c91e9df8d"}'></script><!-- End Cloudflare Web Analytics -->
+  </body>
+</html>

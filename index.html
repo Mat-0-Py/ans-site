@@ -1,0 +1,291 @@
+---
+layout: default
+title: Ans — Scientific Calculator App for iPhone & iPad, No Ads
+description: A proper scientific calculator app for iPhone and iPad — exact fractions, natural display, variables and memory, like the calculator you used at school. £4.99 once, with no subscriptions, ads, accounts or tracking.
+body_class: home-page
+permalink: /
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Ans — Scientific Calculator",
+  "url": "https://anscalc.com/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "GBP" },
+  "description": "A proper scientific calculator app for iPhone and iPad — exact fractions, natural display, variables and memory. £4.99 once; no subscriptions, ads, accounts or tracking.",
+  "featureList": "Exact fractions, natural two-line display, replay editing, variables, Home Screen widgets, DEG/RAD/GRAD, scientific notation",
+  "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+}
+</script>
+
+<section class="hero section-shell" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">Scientific calculator for iPhone and iPad</p>
+    <h1 id="hero-title">A proper scientific calculator. <span>Yours.</span></h1>
+    <p class="hero-lead">
+      Designed by a scientist for people who work with numbers. Ans is fast,
+      focused and deliberately simple—without giving up the mathematics that
+      matters.
+    </p>
+
+    <div class="hero-actions" aria-label="Launch information">
+      <span class="button button-primary">Coming soon to the App Store</span>
+      <a class="button button-secondary" href="#in-action">See Ans in action</a>
+    </div>
+
+    <ul class="ownership-line" aria-label="Purchase promise">
+      <li><strong>£4.99</strong> once</li>
+      <li>No subscriptions</li>
+      <li>No ads</li>
+    </ul>
+  </div>
+
+  <div class="product-stage" aria-label="Ans app icon and calculation principles">
+    <div class="solar-detail" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="app-icon-wrap">
+      <img src="/assets/images/app-icon.png" width="1024" height="1024" alt="Ans app icon">
+    </div>
+    <div class="proof-chip proof-chip-fraction">
+      <span class="proof-label">Exact fraction</span>
+      <strong>⅓ × 3 = 1</strong>
+    </div>
+    <div class="proof-chip proof-chip-pi">
+      <span class="proof-label">Exact pi</span>
+      <strong>sin(π) = 0</strong>
+    </div>
+    <div class="proof-chip proof-chip-privacy">
+      <span class="status-dot" aria-hidden="true"></span>
+      <strong>Works offline</strong>
+    </div>
+  </div>
+</section>
+
+<section class="promise-strip" aria-label="Ans promises">
+  <div><strong>£4.99 once</strong><span>One purchase</span></div>
+  <div><strong>No subscriptions</strong><span>No recurring charge</span></div>
+  <div><strong>No ads</strong><span>No interruptions</span></div>
+  <div><strong>No tracking</strong><span>Your work stays local</span></div>
+</section>
+
+<section class="tools-strip" aria-labelledby="tools-title">
+  <div class="section-shell">
+    <div class="tools-heading">
+      <p class="eyebrow">Free online instruments</p>
+      <h2 id="tools-title">The same promise, in your browser.</h2>
+      <p>
+        Free tools from the Ans family — no ads, no tracking, no account.
+        Instruments, not ad delivery vehicles.
+      </p>
+    </div>
+    <div class="tools-grid">
+      <a class="tool-card" href="/stopwatch/">
+        <span class="tool-card-lcd" aria-hidden="true">
+          <span class="tool-card-ind">Stopwatch</span>
+          <span class="tool-card-main">00:00.000</span>
+        </span>
+        <strong>Stopwatch &amp; timer</strong>
+        <span>Millisecond precision that survives background tabs and a closed lid.</span>
+      </a>
+      <a class="tool-card" href="/clock/">
+        <span class="tool-card-lcd" aria-hidden="true">
+          <span class="tool-card-ind">GMT / UTC</span>
+          <span class="tool-card-main" id="tool-card-clock">--:--:--</span>
+        </span>
+        <strong>World clock</strong>
+        <span>Exact GMT/UTC with stated accuracy; UK time labelled correctly by season.</span>
+      </a>
+      <a class="tool-card tool-card-science" href="/science/">
+        <span class="tool-card-lcd" aria-hidden="true">
+          <span class="tool-card-ind">Science</span>
+          <span class="tool-card-main">f = ma</span>
+        </span>
+        <strong>Science calculators</strong>
+        <span>35 focused instruments for physics, optics, chemistry and computing.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var el = document.getElementById("tool-card-clock");
+  if (!el || !window.Intl) { return; }
+  var f = new Intl.DateTimeFormat("en-GB", { hour: "2-digit",
+    minute: "2-digit", second: "2-digit", hour12: false, timeZone: "UTC" });
+  function tick() { el.textContent = f.format(Date.now()); }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+<section class="product-media section-block" id="in-action" aria-labelledby="media-title">
+  <div class="section-shell product-media-heading">
+    <div>
+      <p class="eyebrow">The real calculator</p>
+      <h2 id="media-title">Clear on iPhone.<br>Focused on iPad.</h2>
+    </div>
+    <p>
+      The same structured expression, exact result and familiar controls on
+      both devices—without shrinking a desktop interface onto a touch screen.
+    </p>
+  </div>
+
+  <div class="section-shell product-media-grid">
+    <figure class="product-capture product-capture-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/screenshots/iphone-scientific-identity.png"
+             width="1320" height="2868"
+             alt="Ans on iPhone calculating sine squared of 30 degrees plus cosine squared of 30 degrees, with the exact result 1">
+      </div>
+      <figcaption><strong>iPhone</strong><span>The complete scientific face, always ready.</span></figcaption>
+    </figure>
+
+    <figure class="product-capture product-capture-pad">
+      <div class="capture-frame">
+        <img src="/assets/images/screenshots/ipad-exact-fraction.png"
+             width="2064" height="2752"
+             alt="Ans on a 13-inch iPad showing one third plus five twelfths as the exact fraction three quarters">
+      </div>
+      <figcaption><strong>iPad</strong><span>A centred instrument with room to think.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section-shell section-block" id="features" aria-labelledby="features-title">
+  <div class="section-heading">
+    <p class="eyebrow">Made for serious thinking</p>
+    <h2 id="features-title">Simple where it should be.<br>Capable where it counts.</h2>
+    <p>
+      Ans feels like a dedicated instrument: clear controls, an expression you
+      can edit, and results that respect the way you entered the problem.
+    </p>
+  </div>
+
+  <div class="feature-grid">
+    <article class="feature-card feature-card-lcd">
+      <div class="feature-demo fraction-demo" aria-hidden="true">
+        <span>7</span><i></i><span>12</span>
+      </div>
+      <p class="feature-number">01</p>
+      <h3>Fractions stay fractions</h3>
+      <p>Exact arithmetic remains exact. Switch to a decimal only when you want one.</p>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-demo ans-demo" aria-hidden="true">Ans × 4</div>
+      <p class="feature-number">02</p>
+      <h3>Built around your answer</h3>
+      <p>Reuse results naturally, continue with an operator, or revisit and edit earlier expressions.</p>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-demo variable-demo" aria-hidden="true">
+        <span>A</span><span>B</span><span>C</span><span>D</span><span>X</span><span>Y</span>
+      </div>
+      <p class="feature-number">03</p>
+      <h3>Variables without clutter</h3>
+      <p>Store six reusable values, give them names and inspect them without leaving your calculation.</p>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-demo function-demo" aria-hidden="true">sin&nbsp; cos&nbsp; tan&nbsp; √</div>
+      <p class="feature-number">04</p>
+      <h3>A complete scientific tool</h3>
+      <p>Trigonometry, logarithms, powers, roots, scientific notation, memory and precise display modes.</p>
+    </article>
+  </div>
+</section>
+
+<section class="widgets section-block" id="widgets" aria-labelledby="widgets-title">
+  <div class="section-shell widgets-heading">
+    <div>
+      <p class="eyebrow">Answers at a glance</p>
+      <h2 id="widgets-title">Your calculation history,<br>right on the Home Screen.</h2>
+    </div>
+    <p>
+      Small, medium and large widgets share Ans&rsquo;s calculator styling. Use
+      the arrow keys to move through recent work, then open the selected
+      calculation in the full app.
+    </p>
+  </div>
+
+  <div class="section-shell widget-gallery">
+    <figure class="widget-capture widget-capture-small">
+      <div class="widget-shot">
+        <img src="/assets/images/screenshots/widget-small.png"
+             width="600" height="600"
+             alt="Small Ans calculator widget showing a recent expression, answer and history arrow buttons"
+             loading="lazy">
+      </div>
+      <figcaption><strong>Small</strong><span>Latest work, compactly.</span></figcaption>
+    </figure>
+
+    <figure class="widget-capture widget-capture-medium">
+      <div class="widget-shot">
+        <img src="/assets/images/screenshots/widget-medium-home.png"
+             width="1320" height="680"
+             alt="Medium Ans calculator widget with a wider calculation display and history controls"
+             loading="lazy">
+      </div>
+      <figcaption><strong>Medium</strong><span>More room for the expression.</span></figcaption>
+    </figure>
+
+    <figure class="widget-capture widget-capture-large">
+      <div class="widget-shot">
+        <img src="/assets/images/screenshots/widget-large-home.png"
+             width="1320" height="1320"
+             alt="Large Ans calculator widget with a multi-line expression, answer, history buttons and branded open button"
+             loading="lazy">
+      </div>
+      <figcaption><strong>Large</strong><span>The clearest view of recent calculations.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="principles section-block" id="principles" aria-labelledby="principles-title">
+  <div class="section-shell principles-inner">
+    <div class="principles-statement">
+      <p class="eyebrow">The ownership promise</p>
+      <h2 id="principles-title">A calculator should be a tool, not a service.</h2>
+      <p>
+        Buy Ans once and the whole calculator is yours. There is no account,
+        recurring payment, advertising business model or deliberately limited
+        free tier.
+      </p>
+    </div>
+
+    <dl class="principles-list">
+      <div><dt>No subscriptions</dt><dd>Not now. Not later.</dd></div>
+      <div><dt>No advertising</dt><dd>No banners, placements or interruptions.</dd></div>
+      <div><dt>No account</dt><dd>Open it and calculate.</dd></div>
+      <div><dt>No tracking</dt><dd>Your work stays on your device.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section-shell purchase-section section-block" id="price" aria-labelledby="price-title">
+  <div>
+    <p class="eyebrow">Honest ownership</p>
+    <h2 id="price-title">£4.99. Once.</h2>
+    <p>The complete scientific calculator. No locked functions and no recurring charge.</p>
+  </div>
+  <div class="purchase-meta">
+    <span>Launching soon</span>
+    <strong>Ans — Scientific Calculator</strong>
+    <small>Requires iOS or iPadOS 17 or later.</small>
+  </div>
+</section>
+
+<section class="section-shell final-cta section-block" aria-labelledby="final-title">
+  <img src="/assets/images/ans-logo-on-dark.svg" alt="Ans" width="480" height="360">
+  <div>
+    <h2 id="final-title">Made for people who work with numbers.</h2>
+    <p>Questions, feedback or an especially awkward calculation?</p>
+  </div>
+  <a class="button button-secondary" href="/support">Talk to the developer</a>
+</section>

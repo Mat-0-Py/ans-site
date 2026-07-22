@@ -1,0 +1,423 @@
+---
+layout: default
+title: Energy, Work and Power Calculator — KE, GPE, W = Fs, P = W/t — Ans
+description: Free energy, work and power calculator. Solve kinetic energy, gravitational potential energy, work done or power by leaving one value blank. GCSE physics, assumptions stated. No ads, no tracking, no account.
+body_class: tool-page science-page
+permalink: /science/energy-work-power/
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Energy, work and power.</h1>
+    <p>
+      Solve kinetic energy, gravitational potential energy, work done or
+      power. Choose the relationship, type the values you know and leave
+      the unknown blank; the answer appears on the display. GCSE physics,
+      with the assumptions stated below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Energy, Work and Power Calculator",
+    "url": "https://anscalc.com/science/energy-work-power/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free GCSE physics calculator for kinetic energy, gravitational potential energy, work done and power, with blank-to-solve inputs and SI-prefix units.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-aux">
+    <label for="relation">Relationship</label>
+    <span class="phys-control">
+      <select id="relation" aria-label="Energy, work or power relationship">
+        <option value="ke" selected>Kinetic energy</option>
+        <option value="gpe">Gravitational potential energy</option>
+        <option value="work">Work done</option>
+        <option value="power">Power</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="phys-fields" data-relation="ke">
+    <div class="phys-field">
+      <label for="in-ke-E">Kinetic energy <b>E<sub>k</sub></b></label>
+      <span class="phys-control">
+        <input id="in-ke-E" inputmode="decimal" autocomplete="off">
+        <select id="u-ke-E" aria-label="Kinetic energy unit">
+          <option value="1e-3">mJ</option>
+          <option value="1" selected>J</option>
+          <option value="1e3">kJ</option>
+          <option value="1e6">MJ</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-ke-m">Mass <b>m</b></label>
+      <span class="phys-control">
+        <input id="in-ke-m" inputmode="decimal" autocomplete="off" value="2">
+        <select id="u-ke-m" aria-label="Mass unit">
+          <option value="1e-3">g</option>
+          <option value="1" selected>kg</option>
+          <option value="1e3">t</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-ke-v">Speed <b>v</b></label>
+      <span class="phys-control">
+        <input id="in-ke-v" inputmode="decimal" autocomplete="off" value="3">
+        <select id="u-ke-v" aria-label="Speed unit">
+          <option value="1" selected>m/s</option>
+          <option value="0.2777777777777778">km/h</option>
+          <option value="1e3">km/s</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="phys-fields" data-relation="gpe" hidden>
+    <div class="phys-field">
+      <label for="in-gpe-E">GPE change <b>ΔE<sub>p</sub></b></label>
+      <span class="phys-control">
+        <input id="in-gpe-E" inputmode="decimal" autocomplete="off">
+        <select id="u-gpe-E" aria-label="Gravitational potential energy unit">
+          <option value="1e-3">mJ</option>
+          <option value="1" selected>J</option>
+          <option value="1e3">kJ</option>
+          <option value="1e6">MJ</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-gpe-m">Mass <b>m</b></label>
+      <span class="phys-control">
+        <input id="in-gpe-m" inputmode="decimal" autocomplete="off" value="2">
+        <select id="u-gpe-m" aria-label="Mass unit">
+          <option value="1e-3">g</option>
+          <option value="1" selected>kg</option>
+          <option value="1e3">t</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-gpe-g">Field strength <b>g</b></label>
+      <span class="phys-control">
+        <input id="in-gpe-g" inputmode="decimal" autocomplete="off" value="9.81">
+        <select id="u-gpe-g" aria-label="Gravitational field strength unit">
+          <option value="1" selected>N/kg</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-gpe-h">Height change <b>Δh</b></label>
+      <span class="phys-control">
+        <input id="in-gpe-h" inputmode="decimal" autocomplete="off" value="5">
+        <select id="u-gpe-h" aria-label="Height change unit">
+          <option value="1e-3">mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1" selected>m</option>
+          <option value="1e3">km</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="phys-fields" data-relation="work" hidden>
+    <div class="phys-field">
+      <label for="in-work-W">Work done <b>W</b></label>
+      <span class="phys-control">
+        <input id="in-work-W" inputmode="decimal" autocomplete="off">
+        <select id="u-work-W" aria-label="Work done unit">
+          <option value="1e-3">mJ</option>
+          <option value="1" selected>J</option>
+          <option value="1e3">kJ</option>
+          <option value="1e6">MJ</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-work-F">Force component <b>F</b></label>
+      <span class="phys-control">
+        <input id="in-work-F" inputmode="decimal" autocomplete="off" value="12">
+        <select id="u-work-F" aria-label="Force unit">
+          <option value="1e-3">mN</option>
+          <option value="1" selected>N</option>
+          <option value="1e3">kN</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-work-s">Displacement <b>s</b></label>
+      <span class="phys-control">
+        <input id="in-work-s" inputmode="decimal" autocomplete="off" value="5">
+        <select id="u-work-s" aria-label="Displacement unit">
+          <option value="1e-3">mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1" selected>m</option>
+          <option value="1e3">km</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="phys-fields" data-relation="power" hidden>
+    <div class="phys-field">
+      <label for="in-power-P">Average power <b>P</b></label>
+      <span class="phys-control">
+        <input id="in-power-P" inputmode="decimal" autocomplete="off">
+        <select id="u-power-P" aria-label="Power unit">
+          <option value="1e-3">mW</option>
+          <option value="1" selected>W</option>
+          <option value="1e3">kW</option>
+          <option value="1e6">MW</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-power-W">Energy transferred <b>W</b></label>
+      <span class="phys-control">
+        <input id="in-power-W" inputmode="decimal" autocomplete="off" value="600">
+        <select id="u-power-W" aria-label="Energy transferred unit">
+          <option value="1e-3">mJ</option>
+          <option value="1" selected>J</option>
+          <option value="1e3">kJ</option>
+          <option value="1e6">MJ</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-power-t">Time <b>t</b></label>
+      <span class="phys-control">
+        <input id="in-power-t" inputmode="decimal" autocomplete="off" value="20">
+        <select id="u-power-t" aria-label="Time unit">
+          <option value="1e-3">ms</option>
+          <option value="1" selected>s</option>
+          <option value="60">min</option>
+          <option value="3600">h</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active" id="lcd-label">Kinetic energy Eₖ</span>
+      <span id="lcd-note"></span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub">Eₖ = ½mv²</div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="Energy, work and power formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><msub><mi>E</mi><mi>k</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac>
+        <mi>m</mi><msup><mi>v</mi><mn>2</mn></msup></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>Δ</mi><msub><mi>E</mi><mi>p</mi></msub><mo>=</mo>
+        <mi>m</mi><mo>&#x2062;</mo><mi>g</mi><mo>&#x2062;</mo><mi>Δ</mi><mi>h</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>W</mi><mo>=</mo><mi>F</mi><mo>&#x2062;</mo><mi>s</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>P</mi><mo>=</mo><mfrac><mi>W</mi><mi>t</mi></mfrac></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>E<sub>k</sub></b> kinetic energy (J) · <b>ΔE<sub>p</sub></b> change in gravitational potential energy (J) · <b>m</b> mass (kg) · <b>v</b> speed (m/s)</li>
+    <li><b>g</b> gravitational field strength (N/kg) · <b>Δh</b> height change (m) · <b>W</b> work or energy transferred (J) · <b>F</b> force component (N) · <b>s</b> displacement (m) · <b>P</b> average power (W) · <b>t</b> time (s)</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>Kinetic energy is classical translational energy: mass is positive,
+        speed is a non-negative magnitude, and relativistic effects are negligible.</li>
+      <li>For gravitational potential energy, <b>g</b> is uniform over the
+        height change. The preset 9.81 N/kg is suitable near Earth's surface;
+        choose a reference height and keep the sign of Δh.</li>
+      <li><b>W = Fs</b> uses the constant component of force parallel to the
+        displacement. A force opposite to the displacement does negative work.</li>
+      <li><b>P = W/t</b> gives average power over a positive time interval,
+        not an instantaneous value.</li>
+      <li>Calculations use SI units internally; the unit menus convert at the edges.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Choose the relationship that matches the question, then leave its
+      unknown quantity blank. The calculator rearranges that equation and
+      states the equation it used, which mirrors the working expected in a
+      GCSE physics calculation.
+    </p>
+    <p>
+      Energy is measured in joules. Work is an energy transfer, while power
+      is the rate of energy transfer: one watt is one joule per second.
+      Gravitational potential energy is a change relative to a chosen height,
+      so raising and lowering can carry opposite signs.
+    </p>
+    <p>
+      Results use up to three significant figures by default (adjustable
+      above). Trailing zeroes are not added just to fill the chosen limit.
+      Computation keeps full JavaScript number precision and rounds only the
+      displayed result; your input measurements still set the real limit.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/hookes-law/">Hooke's law and elastic energy calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics;
+  function el(id) { return document.getElementById(id); }
+  var relationSelect = el("relation");
+  var lcdLabel = el("lcd-label"), lcdMain = el("lcd-main"),
+      lcdSub = el("lcd-sub"), lcdNote = el("lcd-note");
+
+  var relations = {
+    ke: {
+      keys: ["E", "m", "v"], labels: { E: "Kinetic energy Eₖ", m: "Mass m", v: "Speed v" },
+      equation: "Eₖ = ½mv²", solve: P.gcse.kineticEnergy,
+      valid: function (o) { return o.E >= 0 && o.m > 0 && o.v >= 0; }
+    },
+    gpe: {
+      keys: ["E", "m", "g", "h"], labels: { E: "GPE change ΔEₚ", m: "Mass m", g: "Field strength g", h: "Height change Δh" },
+      equation: "ΔEₚ = mgΔh", solve: P.gcse.gravitationalPotentialEnergy,
+      valid: function (o) { return o.m > 0 && o.g > 0; }
+    },
+    work: {
+      keys: ["W", "F", "s"], labels: { W: "Work done W", F: "Force component F", s: "Displacement s" },
+      equation: "W = Fs", solve: P.gcse.work,
+      valid: function () { return true; }
+    },
+    power: {
+      keys: ["P", "W", "t"], labels: { P: "Average power P", W: "Energy transferred W", t: "Time t" },
+      equation: "P = W/t", solve: P.gcse.powerFromWork,
+      valid: function (o) { return o.t > 0; }
+    }
+  };
+
+  function field(prefix, key) {
+    return { input: el("in-" + prefix + "-" + key), unit: el("u-" + prefix + "-" + key) };
+  }
+
+  function unitText(select) {
+    return select.options[select.selectedIndex].text;
+  }
+
+  function resetDisplay(message) {
+    lcdLabel.textContent = "Result";
+    lcdMain.textContent = "—";
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = message;
+    lcdNote.textContent = "";
+  }
+
+  function compute() {
+    var prefix = relationSelect.value, cfg = relations[prefix];
+    var values = {}, blanks = [], invalid = false;
+
+    cfg.keys.forEach(function (key) {
+      var f = field(prefix, key);
+      var raw = f.input.value.trim().replace(",", ".");
+      f.input.classList.remove("is-invalid", "is-result");
+      if (raw === "") { blanks.push(key); values[key] = null; return; }
+      var value = Number(raw);
+      if (!isFinite(value)) {
+        f.input.classList.add("is-invalid");
+        invalid = true;
+        values[key] = null;
+        return;
+      }
+      values[key] = value * parseFloat(f.unit.value);
+    });
+
+    if (invalid) { resetDisplay("check the highlighted value"); return; }
+    if (blanks.length !== 1) {
+      resetDisplay(blanks.length === 0 ? "leave the value you want blank" : "fill in all but one value");
+      return;
+    }
+
+    var unknown = blanks[0];
+    var result = cfg.solve(values);
+    var complete = cfg.keys.every(function (key) { return isFinite(result[key]); });
+    if (!complete || !cfg.valid(result)) {
+      resetDisplay("no physical solution for those values");
+      return;
+    }
+
+    var f = field(prefix, unknown);
+    var sf = parseInt(el("u-sf").value, 10) || 3;
+    f.input.classList.add("is-result");
+    lcdLabel.textContent = cfg.labels[unknown];
+    lcdMain.textContent = P.format(result[unknown] / parseFloat(f.unit.value), sf) + " " + unitText(f.unit);
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = cfg.equation;
+    lcdNote.textContent = "Solved";
+  }
+
+  function showRelation() {
+    document.querySelectorAll("[data-relation]").forEach(function (group) {
+      var active = group.getAttribute("data-relation") === relationSelect.value;
+      group.hidden = !active;
+      group.style.display = active ? "" : "none";
+      group.setAttribute("aria-hidden", active ? "false" : "true");
+    });
+    compute();
+  }
+
+  Object.keys(relations).forEach(function (prefix) {
+    relations[prefix].keys.forEach(function (key) {
+      var f = field(prefix, key);
+      f.input.addEventListener("input", compute);
+      f.unit.addEventListener("change", compute);
+    });
+  });
+  relationSelect.addEventListener("change", showRelation);
+  el("u-sf").addEventListener("change", compute);
+  showRelation();
+})();
+</script>

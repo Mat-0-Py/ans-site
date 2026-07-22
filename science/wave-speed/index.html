@@ -1,0 +1,169 @@
+---
+layout: default
+title: Wave Speed Calculator (v = fλ) — Speed, Frequency, Wavelength — Ans
+description: Free wave speed calculator. Solve for wave speed, frequency or wavelength from the other two, with SI-prefix units. GCSE and A-level physics, assumptions stated. No ads, no tracking, no account.
+body_class: tool-page science-page
+permalink: /science/wave-speed/
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Wave speed.</h1>
+    <p>
+      A wave's speed is its frequency times its wavelength, <b>v = f λ</b>.
+      Type the two values you know — Hz and metres, or the prefixed units
+      you prefer — and leave the one you want blank; it appears on the
+      display. GCSE and A-level; assumptions below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Wave Speed Calculator (v = fλ)",
+    "url": "https://anscalc.com/science/wave-speed/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free wave speed calculator: solve for speed, frequency or wavelength from the other two, with SI-prefix units. GCSE and A-level physics.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-v">Speed <b>v</b></label>
+      <span class="phys-control">
+        <input id="in-v" inputmode="decimal" autocomplete="off">
+        <select id="u-v" aria-label="Speed unit">
+          <option value="1" selected>m/s</option>
+          <option value="0.2777777777777778">km/h</option>
+          <option value="1e3">km/s</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-f">Frequency <b>f</b></label>
+      <span class="phys-control">
+        <input id="in-f" inputmode="decimal" autocomplete="off" value="50">
+        <select id="u-f" aria-label="Frequency unit">
+          <option value="1" selected>Hz</option>
+          <option value="1e3">kHz</option>
+          <option value="1e6">MHz</option>
+          <option value="1e9">GHz</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-L">Wavelength <b>λ</b></label>
+      <span class="phys-control">
+        <input id="in-L" inputmode="decimal" autocomplete="off" value="6">
+        <select id="u-L" aria-label="Wavelength unit">
+          <option value="1e-9">nm</option>
+          <option value="1e-6">µm</option>
+          <option value="1e-3">mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1" selected>m</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active" id="lcd-label">Speed v</span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="Formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>v</mi><mo>=</mo><mi>f</mi><mo>&#x2062;</mo><mi>λ</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>f</mi><mo>=</mo><mfrac><mi>v</mi><mi>λ</mi></mfrac></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>λ</mi><mo>=</mo><mfrac><mi>v</mi><mi>f</mi></mfrac></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>v</b> wave speed (m/s) · <b>f</b> frequency (Hz) · <b>λ</b> wavelength (m)</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>One wave travelling through a single, uniform medium.</li>
+      <li>Speed is constant in that medium — change medium and v changes,
+        while f stays fixed and λ adjusts.</li>
+      <li>Frequency in hertz (waves per second), wavelength in metres.</li>
+      <li>For light in vacuum, v = c ≈ 3.00 × 10⁸ m/s.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Every second, <em>f</em> whole waves pass, each <em>λ</em> long, so
+      the wave advances <em>f</em> × <em>λ</em> metres — its speed. Rearrange
+      to find any one from the other two; leave that box blank. When a
+      wave crosses into a new medium its frequency is unchanged, so a change
+      in speed shows up as a change in wavelength.
+    </p>
+    <p>
+      Results use up to three significant figures by default (adjustable
+      above), without padding the display with trailing zeroes. Mixed units
+      are fine — enter kHz and mm if that's what you have, and the result
+      stays consistent.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/doppler/">Doppler effect calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script src="/assets/js/gcse-solver.js"></script>
+<script>
+  AnsSolve({
+    keys: ["v", "f", "L"],
+    map: { v: "v", f: "f", L: "lambda" },
+    labels: { v: "Speed v", f: "Frequency f", L: "Wavelength λ" },
+    solve: window.AnsPhysics.gcse.wave,
+    sub: "v = f λ"
+  });
+</script>

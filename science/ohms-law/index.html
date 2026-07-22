@@ -1,0 +1,175 @@
+---
+layout: default
+title: Ohm's Law Calculator (V = IR) — Voltage, Current, Resistance, Power — Ans
+description: Free Ohm's law calculator. Solve for voltage, current or resistance from the other two, with electrical power P = VI shown too. GCSE and A-level physics, assumptions stated. No ads, no tracking.
+body_class: tool-page science-page
+permalink: /science/ohms-law/
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Ohm's law.</h1>
+    <p>
+      For an ohmic conductor the voltage across it equals current times
+      resistance, <b>V = I R</b>. Type the two values you know and leave
+      the one you want blank — it appears on the display, with the
+      electrical power <b>P = V I</b> shown alongside. GCSE and A-level;
+      assumptions below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ohm's Law Calculator (V = IR)",
+    "url": "https://anscalc.com/science/ohms-law/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free Ohm's law calculator: solve for voltage, current or resistance from the other two, with electrical power P = VI. GCSE and A-level physics.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-V">Voltage <b>V</b></label>
+      <span class="phys-control">
+        <input id="in-V" inputmode="decimal" autocomplete="off">
+        <select id="u-V" aria-label="Voltage unit">
+          <option value="1e-3">mV</option>
+          <option value="1" selected>V</option>
+          <option value="1e3">kV</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-I">Current <b>I</b></label>
+      <span class="phys-control">
+        <input id="in-I" inputmode="decimal" autocomplete="off" value="2">
+        <select id="u-I" aria-label="Current unit">
+          <option value="1e-6">µA</option>
+          <option value="1e-3">mA</option>
+          <option value="1" selected>A</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-R">Resistance <b>R</b></label>
+      <span class="phys-control">
+        <input id="in-R" inputmode="decimal" autocomplete="off" value="4">
+        <select id="u-R" aria-label="Resistance unit">
+          <option value="1" selected>Ω</option>
+          <option value="1e3">kΩ</option>
+          <option value="1e6">MΩ</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active" id="lcd-label">Voltage V</span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <dl class="phys-results">
+    <div><dt>Electrical power P = V I</dt><dd id="out-P">—</dd></div>
+  </dl>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="Formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>V</mi><mo>=</mo><mi>I</mi><mo>&#x2062;</mo><mi>R</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>I</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>R</mi><mo>=</mo><mfrac><mi>V</mi><mi>I</mi></mfrac></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>P</mi><mo>=</mo><mi>V</mi><mo>&#x2062;</mo><mi>I</mi></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>V</b> voltage (V) · <b>I</b> current (A) · <b>R</b> resistance (Ω) · <b>P</b> power (W)</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>An <em>ohmic</em> conductor: resistance is constant, so current is
+        proportional to voltage.</li>
+      <li>Constant temperature — a filament lamp or thermistor is not ohmic
+        and won't follow this line.</li>
+      <li>Steady (DC) values; R is the total resistance across which V is
+        measured.</li>
+      <li>SI units: volts, amps, ohms; power in watts.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Ohm's law ties the three quantities together: for a fixed resistance,
+      more voltage drives more current. Rearranged, it finds any one from
+      the other two — leave that box blank. The power dissipated is
+      P = V I (equivalently I²R or V²/R), shown for every result.
+    </p>
+    <p>
+      Results use up to three significant figures by default (adjustable
+      above), without padding the display with trailing zeroes. Remember it
+      only holds for ohmic components at constant temperature.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/series-parallel-resistance/">Series and parallel resistance calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script src="/assets/js/gcse-solver.js"></script>
+<script>
+  AnsSolve({
+    keys: ["V", "I", "R"],
+    map: { V: "V", I: "I", R: "R" },
+    labels: { V: "Voltage V", I: "Current I", R: "Resistance R" },
+    solve: window.AnsPhysics.gcse.ohms,
+    sub: "V = I × R",
+    extras: [{ key: "P", srckey: "P", unit: "W", factor: 1 }]
+  });
+</script>

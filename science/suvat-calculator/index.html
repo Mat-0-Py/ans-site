@@ -1,0 +1,299 @@
+---
+layout: default
+title: SUVAT Calculator — Constant Acceleration Kinematics — Ans
+description: Free SUVAT calculator. Enter any three of displacement, initial velocity, final velocity, acceleration and time, and it solves the other two using the five equations of motion. GCSE and A-level, assumptions stated. No ads, no tracking.
+body_class: tool-page science-page
+permalink: /science/suvat-calculator/
+---
+
+<style>
+  .suvat-status {
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+    min-height: 1.4em;
+  }
+  .phys-results dd.is-calc {
+    color: var(--violet);
+    font-weight: 700;
+  }
+  .phys-aux {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>SUVAT calculator.</h1>
+    <p>
+      The five equations of motion for constant acceleration. Enter <b>any
+      three</b> of displacement <b>s</b>, initial velocity <b>u</b>, final
+      velocity <b>v</b>, acceleration <b>a</b> and time <b>t</b> — leave the
+      other two blank — and it solves the rest. GCSE and A-level; the
+      assumptions are stated below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SUVAT Calculator",
+    "url": "https://anscalc.com/science/suvat-calculator/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free SUVAT calculator: enter any three of s, u, v, a, t and solve the other two with the five constant-acceleration equations of motion. GCSE and A-level physics.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-s">Displacement <b>s</b></label>
+      <span class="phys-control">
+        <input id="in-s" inputmode="decimal" autocomplete="off">
+        <select id="u-s" aria-label="Displacement unit">
+          <option value="1e-3">mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1" selected>m</option>
+          <option value="1e3">km</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-u">Initial velocity <b>u</b></label>
+      <span class="phys-control">
+        <input id="in-u" inputmode="decimal" autocomplete="off">
+        <select id="u-u" aria-label="Initial velocity unit">
+          <option value="1" selected>m/s</option>
+          <option value="0.2777777777777778">km/h</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-v">Final velocity <b>v</b></label>
+      <span class="phys-control">
+        <input id="in-v" inputmode="decimal" autocomplete="off">
+        <select id="u-v" aria-label="Final velocity unit">
+          <option value="1" selected>m/s</option>
+          <option value="0.2777777777777778">km/h</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-a">Acceleration <b>a</b></label>
+      <span class="phys-control">
+        <input id="in-a" inputmode="decimal" autocomplete="off">
+        <select id="u-a" aria-label="Acceleration unit">
+          <option value="1" selected>m/s²</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-t">Time <b>t</b></label>
+      <span class="phys-control">
+        <input id="in-t" inputmode="decimal" autocomplete="off">
+        <select id="u-t" aria-label="Time unit">
+          <option value="1e-3">ms</option>
+          <option value="1" selected>s</option>
+          <option value="60">min</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active" id="lcd-label">SUVAT</span>
+      <span id="lcd-note"></span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub">enter any three values</div>
+  </div>
+
+  <p class="suvat-status" id="suvat-status" aria-live="polite"></p>
+
+  <dl class="phys-results">
+    <div><dt>Displacement s</dt><dd id="out-s">—</dd></div>
+    <div><dt>Initial velocity u</dt><dd id="out-u">—</dd></div>
+    <div><dt>Final velocity v</dt><dd id="out-v">—</dd></div>
+    <div><dt>Acceleration a</dt><dd id="out-a">—</dd></div>
+    <div><dt>Time t</dt><dd id="out-t">—</dd></div>
+  </dl>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="The five equations of motion">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>v</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>a</mi><mo>&#x2062;</mo><mi>t</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>s</mi><mo>=</mo><mi>u</mi><mo>&#x2062;</mo><mi>t</mi><mo>+</mo>
+        <mfrac><mn>1</mn><mn>2</mn></mfrac><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>s</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac>
+        <mrow><mo stretchy="false">(</mo><mi>u</mi><mo>+</mo><mi>v</mi><mo stretchy="false">)</mo></mrow>
+        <mi>t</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup>
+        <mo>+</mo><mn>2</mn><mi>a</mi><mo>&#x2062;</mo><mi>s</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>s</mi><mo>=</mo><mi>v</mi><mo>&#x2062;</mo><mi>t</mi><mo>−</mo>
+        <mfrac><mn>1</mn><mn>2</mn></mfrac><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>s</b> displacement (m) · <b>u</b> initial velocity (m/s) · <b>v</b> final velocity (m/s) · <b>a</b> acceleration (m/s²) · <b>t</b> time (s)</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li><b>Constant (uniform) acceleration</b> throughout — the five
+        equations don't hold if a changes.</li>
+      <li>Motion in a straight line. Pick one direction as positive and
+        keep every quantity's sign consistent (a decelerating object has a
+        negative a, a downward throw a negative u, and so on).</li>
+      <li>When time comes from a quadratic (e.g. a projectile passing a
+        height twice), the <b>first</b> — smallest non-negative — solution
+        is shown.</li>
+      <li>SI units throughout: metres, metres per second, m/s², seconds.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Each of the five equations links four of the five quantities, leaving
+      one out. Give any three and there is always a pair of equations that
+      pins down the other two — the calculator picks them for you, so you
+      don't have to remember which equation to reach for.
+    </p>
+    <p>
+      Signs carry the physics: keep a single positive direction and let
+      velocities and accelerations be negative when they point the other
+      way. Results use up to three significant figures by default
+      (adjustable above), without padding with trailing zeroes; the two the
+      calculator worked out are highlighted.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/projectile-motion/">Projectile motion calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics;
+  var keys = ["s", "u", "v", "a", "t"];
+  function el(id) { return document.getElementById(id); }
+  function fac(k) { return parseFloat(el("u-" + k).value); }
+  function unitTxt(k) { var s = el("u-" + k); return s.options[s.selectedIndex].text; }
+  var status = el("suvat-status");
+  var lcdLabel = el("lcd-label"), lcdMain = el("lcd-main"),
+      lcdSub = el("lcd-sub"), lcdNote = el("lcd-note");
+  var labels = { s: "Displacement s", u: "Initial velocity u",
+                 v: "Final velocity v", a: "Acceleration a", t: "Time t" };
+
+  function clearOut(subText) {
+    keys.forEach(function (k) { var o = el("out-" + k); o.textContent = "—"; o.classList.remove("is-calc"); });
+    lcdLabel.textContent = "SUVAT";
+    lcdMain.textContent = "—";
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = subText;
+    lcdNote.textContent = "";
+    status.textContent = "";
+  }
+
+  function compute() {
+    var knownSI = {}, known = {}, count = 0;
+    keys.forEach(function (k) {
+      var input = el("in-" + k);
+      var raw = input.value.trim().replace(",", ".");
+      var val = parseFloat(raw);
+      var ok = raw !== "" && isFinite(val);
+      input.classList.remove("is-result");
+      input.classList.toggle("is-invalid", raw !== "" && !ok);
+      if (ok) { knownSI[k] = val * fac(k); known[k] = true; count++; }
+    });
+
+    var sf = parseInt(el("u-sf").value, 10) || 3;
+
+    if (count !== 3) {
+      clearOut(count < 3 ? "enter any three values"
+                         : "leave the two you want blank");
+      return;
+    }
+
+    var used = [];
+    var res = P.gcse.suvat(knownSI, used);
+    var solved = res && keys.every(function (k) { return isFinite(res[k]); });
+    if (!solved) {
+      clearOut("no real solution for those values");
+      return;
+    }
+
+    var calc = keys.filter(function (k) { return !known[k]; });
+    calc.forEach(function (k) { el("in-" + k).classList.add("is-result"); });
+    lcdLabel.textContent = labels[calc[0]];
+    lcdMain.textContent = P.format(res[calc[0]] / fac(calc[0]), sf) + " " + unitTxt(calc[0]);
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = labels[calc[1]].toLowerCase() + " = " +
+      P.format(res[calc[1]] / fac(calc[1]), sf) + " " + unitTxt(calc[1]);
+    lcdNote.textContent = "Solved";
+    status.textContent = "Solved using " + used.join(" and ") + ".";
+    keys.forEach(function (k) {
+      var o = el("out-" + k);
+      o.textContent = P.format(res[k] / fac(k), sf) + " " + unitTxt(k);
+      o.classList.toggle("is-calc", !known[k]);
+    });
+  }
+
+  keys.forEach(function (k) {
+    el("in-" + k).addEventListener("input", compute);
+    el("u-" + k).addEventListener("change", compute);
+  });
+  el("u-sf").addEventListener("change", compute);
+  compute();
+})();
+</script>

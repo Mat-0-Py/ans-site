@@ -1,0 +1,37 @@
+---
+layout: default
+title: Density Calculator — Mass, Volume and Density ρ = m/V — Ans
+description: Free GCSE density calculator. Enter any two of density, mass and volume to find the third, with kg/m³, g/cm³, litres and cubic units. Assumptions stated; no ads or tracking.
+body_class: tool-page science-page
+permalink: /science/density-mass-volume/
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Density, mass and volume.</h1>
+    <p>Enter the two values you know and leave the unknown blank. This GCSE physics calculator uses <b>ρ = m/V</b> and converts mixed mass, volume and density units.</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Density, Mass and Volume Calculator","url":"https://anscalc.com/science/density-mass-volume/","applicationCategory":"EducationalApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Free GCSE density calculator for density, mass or volume with SI-prefix and cubic units.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+
+  <div class="phys-fields">
+    <div class="phys-field"><label for="in-rho">Density <b>ρ</b></label><span class="phys-control"><input id="in-rho" inputmode="decimal" autocomplete="off"><select id="u-rho" aria-label="Density unit"><option value="1" selected>kg/m³</option><option value="1000">g/cm³</option></select></span></div>
+    <div class="phys-field"><label for="in-m">Mass <b>m</b></label><span class="phys-control"><input id="in-m" inputmode="decimal" autocomplete="off" value="2"><select id="u-m" aria-label="Mass unit"><option value="0.001">g</option><option value="1" selected>kg</option><option value="1000">t</option></select></span></div>
+    <div class="phys-field"><label for="in-V">Volume <b>V</b></label><span class="phys-control"><input id="in-V" inputmode="decimal" autocomplete="off" value="2"><select id="u-V" aria-label="Volume unit"><option value="1e-9">mm³</option><option value="1e-6">cm³</option><option value="1e-6">mL</option><option value="0.001" selected>L</option><option value="1">m³</option></select></span></div>
+  </div>
+  <div class="tool-lcd" aria-live="polite"><div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">Density ρ</span></div><div class="tool-lcd-main" id="lcd-main">—</div><div class="tool-lcd-sub" id="lcd-sub"></div></div>
+  <div class="phys-aux"><label for="u-sf">Display precision</label><span class="phys-control"><select id="u-sf" aria-label="Display precision"><option value="3" selected>3 s.f.</option><option value="4">4 s.f.</option><option value="5">5 s.f.</option><option value="6">6 s.f.</option><option value="7">7 s.f.</option><option value="8">8 s.f.</option><option value="9">9 s.f.</option><option value="10">10 s.f.</option></select></span></div>
+
+  <div class="formula" aria-label="Density formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>ρ</mi><mo>=</mo><mfrac><mi>m</mi><mi>V</mi></mfrac></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>m</mi><mo>=</mo><mi>ρ</mi><mi>V</mi><mspace width="2em"/><mi>V</mi><mo>=</mo><mfrac><mi>m</mi><mi>ρ</mi></mfrac></mrow></math>
+  </div>
+  <ul class="formula-legend"><li><b>ρ</b> density · <b>m</b> mass · <b>V</b> volume</li></ul>
+  <section class="assumptions" aria-label="Assumptions"><h2>Assumptions</h2><ul><li>The sample is uniform, so one density describes all of it.</li><li>Mass and volume refer to the same sample under the same conditions.</li><li>Temperature and pressure are treated as fixed; either can change a material's density.</li><li>Mass, volume and density are non-negative, and volume must be greater than zero when finding density.</li></ul></section>
+  <section class="tool-notes" aria-label="How it works"><h2>How it works</h2><p>Density is mass per unit volume. A denser material packs more mass into the same space, so divide mass by volume to find ρ.</p><p>For exam rearrangements, multiply ρ by V to find mass, or divide mass by ρ to find volume. Leave that quantity blank and the calculator performs the rearrangement.</p><p>Every entry is converted to SI internally. Results use up to three significant figures by default, without adding meaningless trailing zeroes.</p></section>
+  <p class="science-related">Related: <a href="/science/pressure/">Pressure calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul>
+  <div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/physics.js"></script><script src="/assets/js/gcse-solver.js"></script>
+<script>AnsSolve({keys:["rho","m","V"],map:{rho:"rho",m:"m",V:"V"},labels:{rho:"Density ρ",m:"Mass m",V:"Volume V"},solve:window.AnsPhysics.gcse.density,sub:"ρ = m / V"});</script>

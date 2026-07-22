@@ -1,0 +1,239 @@
+---
+layout: default
+title: Projectile Motion Calculator — Range, Height and Flight Time — Ans
+description: Free A-level projectile motion calculator. Enter launch speed and angle to find horizontal range, maximum height and time of flight without air resistance. Assumptions stated; no ads, tracking or account.
+body_class: tool-page science-page
+permalink: /science/projectile-motion/
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Projectile motion.</h1>
+    <p>
+      Enter a launch speed and angle to find the horizontal range, maximum
+      height and time of flight. This level-ground model neglects air
+      resistance; its assumptions are stated below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Projectile Motion Calculator",
+    "url": "https://anscalc.com/science/projectile-motion/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free A-level physics calculator for a projectile's horizontal range, maximum height and time of flight from its launch speed and angle, without air resistance.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-speed">Launch speed <b>u</b></label>
+      <span class="phys-control">
+        <input id="in-speed" inputmode="decimal" autocomplete="off" value="20">
+        <select id="u-speed" aria-label="Launch speed unit">
+          <option value="1" selected>m/s</option>
+          <option value="0.2777777777777778">km/h</option>
+          <option value="1000">km/s</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-angle">Launch angle <b>θ</b></label>
+      <span class="phys-control">
+        <input id="in-angle" inputmode="decimal" autocomplete="off" value="45">
+        <select id="u-angle" aria-label="Launch angle unit">
+          <option value="0.017453292519943295" selected>°</option>
+          <option value="1">rad</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-g">Gravitational field strength <b>g</b></label>
+      <span class="phys-control">
+        <input id="in-g" inputmode="decimal" autocomplete="off" value="9.81">
+        <select id="u-g" aria-label="Gravitational field strength unit">
+          <option value="1" selected>m/s²</option>
+          <option value="1">N/kg</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active">Horizontal range R</span>
+      <span id="lcd-note">level ground</span>
+    </div>
+    <div class="tool-lcd-main" id="out-range">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub">horizontal distance on level ground</div>
+  </div>
+
+  <dl class="phys-results">
+    <div><dt>Maximum height H</dt><dd id="out-height">—</dd></div>
+    <div><dt>Time of flight T</dt><dd id="out-time">—</dd></div>
+  </dl>
+
+  <div class="phys-aux">
+    <label for="u-out">Distance unit</label>
+    <span class="phys-control">
+      <select id="u-out" aria-label="Distance output unit">
+        <option value="0.001">mm</option>
+        <option value="0.01">cm</option>
+        <option value="1" selected>m</option>
+        <option value="1000">km</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="Projectile motion formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>R</mi><mo>=</mo><mfrac>
+        <mrow><msup><mi>u</mi><mn>2</mn></msup><mi mathvariant="normal">sin</mi>
+          <mo stretchy="false">(</mo><mn>2</mn><mi>θ</mi><mo stretchy="false">)</mo></mrow>
+        <mi>g</mi></mfrac></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>H</mi><mo>=</mo><mfrac>
+        <mrow><msup><mi>u</mi><mn>2</mn></msup><msup>
+          <mrow><mi mathvariant="normal">sin</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow>
+        <mrow><mn>2</mn><mi>g</mi></mrow></mfrac></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>T</mi><mo>=</mo><mfrac>
+        <mrow><mn>2</mn><mi>u</mi><mi mathvariant="normal">sin</mi>
+          <mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow>
+        <mi>g</mi></mfrac></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>u</b> launch speed · <b>θ</b> angle above the horizontal · <b>g</b> gravitational field strength</li>
+    <li><b>R</b> horizontal range · <b>H</b> maximum height above launch level · <b>T</b> time of flight</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>The projectile lands at the same vertical level from which it was launched.</li>
+      <li>Air resistance, lift, wind and spin are neglected.</li>
+      <li>The gravitational field is uniform and acts vertically downwards.</li>
+      <li>The projectile is treated as a point particle; the launch speed and angle are its values immediately after release.</li>
+      <li>The launch angle is measured above the horizontal and must be between 0° and 90°.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Projectile motion separates into independent horizontal and vertical
+      components. The horizontal velocity u cos(θ) stays constant, while the
+      vertical velocity u sin(θ) changes under the acceleration −g.
+    </p>
+    <p>
+      On level ground, the upward and downward parts of the flight take equal
+      times. Substituting that flight time into horizontal distance gives the
+      range formula. The greatest height occurs when vertical velocity reaches
+      zero. These shortcuts do not apply unchanged when launch and landing
+      heights differ.
+    </p>
+    <p>
+      Results use up to three significant figures by default (adjustable
+      above), without padding with trailing zeroes. Calculation uses full
+      browser number precision before the display is rounded.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/suvat-calculator/">SUVAT calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics, G = P.gcse;
+  function el(id) { return document.getElementById(id); }
+  function fac(select) { return parseFloat(select.value); }
+  function num(id) {
+    var input = el(id), raw = input.value.trim().replace(",", ".");
+    var value = Number(raw), valid = raw !== "" && isFinite(value);
+    input.classList.toggle("is-invalid", raw !== "" && !valid);
+    return valid ? value : NaN;
+  }
+
+  var speedUnit = el("u-speed"), angleUnit = el("u-angle"), gravityUnit = el("u-g"),
+      outUnit = el("u-out"), sfSelect = el("u-sf"),
+      outRange = el("out-range"), outHeight = el("out-height"),
+      outTime = el("out-time"), lcdSub = el("lcd-sub"), lcdNote = el("lcd-note");
+
+  function clearResult(message) {
+    outRange.textContent = "—"; P.fitDisplay(outRange);
+    outHeight.textContent = outTime.textContent = "—";
+    lcdSub.textContent = message; lcdNote.textContent = "";
+  }
+
+  function compute() {
+    var speed = num("in-speed") * fac(speedUnit);
+    var angle = num("in-angle") * fac(angleUnit);
+    var gravity = num("in-g") * fac(gravityUnit);
+    if (!(speed >= 0) || !(angle >= 0 && angle <= Math.PI / 2) || !(gravity > 0)) {
+      clearResult("enter u ≥ 0, 0° ≤ θ ≤ 90°, and g > 0"); return;
+    }
+    var result = G.projectile({ speed: speed, angle: angle, gravity: gravity });
+    if (!isFinite(result.range) || !isFinite(result.maxHeight) || !isFinite(result.flightTime)) {
+      clearResult("check the launch values"); return;
+    }
+    var factor = fac(outUnit), unit = outUnit.options[outUnit.selectedIndex].text;
+    var sf = parseInt(sfSelect.value, 10) || 3;
+    outRange.textContent = P.format(result.range / factor, sf) + " " + unit;
+    P.fitDisplay(outRange);
+    outHeight.textContent = P.format(result.maxHeight / factor, sf) + " " + unit;
+    outTime.textContent = P.format(result.flightTime, sf) + " s";
+    lcdSub.textContent = "horizontal distance on level ground";
+    lcdNote.textContent = "level ground";
+  }
+
+  ["in-speed", "in-angle", "in-g"].forEach(function (id) {
+    el(id).addEventListener("input", compute);
+  });
+  [speedUnit, angleUnit, gravityUnit, outUnit, sfSelect].forEach(function (select) {
+    select.addEventListener("change", compute);
+  });
+  compute();
+})();
+</script>

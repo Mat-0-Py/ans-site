@@ -1,0 +1,359 @@
+---
+layout: default
+title: Momentum and Impulse Calculator — p = mv, J = Ft = Δp — Ans
+description: Free GCSE momentum and impulse physics calculator. Solve momentum, mass, velocity, force, time or change in momentum with SI-prefix units and assumptions stated. No ads, no tracking, no account.
+body_class: tool-page science-page
+permalink: /science/momentum-impulse/
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Momentum and impulse.</h1>
+    <p>
+      A free GCSE physics calculator for momentum and impulse. Choose the
+      relationship, type the values you know and leave the unknown blank;
+      the answer appears on the display. Useful for revision and quick
+      checks, with sign conventions and assumptions stated below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Momentum and Impulse Calculator",
+    "url": "https://anscalc.com/science/momentum-impulse/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free GCSE physics calculator for momentum p = mv, impulse J = Ft and change in momentum J = Δp, with blank-to-solve inputs and SI-prefix units.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-aux">
+    <label for="relation">Relationship</label>
+    <span class="phys-control">
+      <select id="relation" aria-label="Momentum or impulse relationship">
+        <option value="momentum" selected>Momentum</option>
+        <option value="impulse">Impulse from force and time</option>
+        <option value="change">Change in momentum</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="phys-fields" data-relation="momentum">
+    <div class="phys-field">
+      <label for="in-momentum-p">Momentum <b>p</b></label>
+      <span class="phys-control">
+        <input id="in-momentum-p" inputmode="decimal" autocomplete="off">
+        <select id="u-momentum-p" aria-label="Momentum unit">
+          <option value="1e-3">g·m/s</option>
+          <option value="1" selected>kg·m/s</option>
+          <option value="1">N·s</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-momentum-m">Mass <b>m</b></label>
+      <span class="phys-control">
+        <input id="in-momentum-m" inputmode="decimal" autocomplete="off" value="2">
+        <select id="u-momentum-m" aria-label="Mass unit">
+          <option value="1e-3">g</option>
+          <option value="1" selected>kg</option>
+          <option value="1e3">t</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-momentum-v">Velocity <b>v</b></label>
+      <span class="phys-control">
+        <input id="in-momentum-v" inputmode="decimal" autocomplete="off" value="5">
+        <select id="u-momentum-v" aria-label="Velocity unit">
+          <option value="1" selected>m/s</option>
+          <option value="0.2777777777777778">km/h</option>
+          <option value="1e3">km/s</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="phys-fields" data-relation="impulse" hidden>
+    <div class="phys-field">
+      <label for="in-impulse-J">Impulse <b>J</b></label>
+      <span class="phys-control">
+        <input id="in-impulse-J" inputmode="decimal" autocomplete="off">
+        <select id="u-impulse-J" aria-label="Impulse unit">
+          <option value="1e-3">mN·s</option>
+          <option value="1" selected>N·s</option>
+          <option value="1e3">kN·s</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-impulse-F">Resultant force <b>F</b></label>
+      <span class="phys-control">
+        <input id="in-impulse-F" inputmode="decimal" autocomplete="off" value="50">
+        <select id="u-impulse-F" aria-label="Force unit">
+          <option value="1e-3">mN</option>
+          <option value="1" selected>N</option>
+          <option value="1e3">kN</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-impulse-t">Time <b>t</b></label>
+      <span class="phys-control">
+        <input id="in-impulse-t" inputmode="decimal" autocomplete="off" value="0.2">
+        <select id="u-impulse-t" aria-label="Time unit">
+          <option value="1e-3">ms</option>
+          <option value="1" selected>s</option>
+          <option value="60">min</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="phys-fields" data-relation="change" hidden>
+    <div class="phys-field">
+      <label for="in-change-J">Impulse <b>J</b></label>
+      <span class="phys-control">
+        <input id="in-change-J" inputmode="decimal" autocomplete="off">
+        <select id="u-change-J" aria-label="Impulse unit">
+          <option value="1e-3">g·m/s</option>
+          <option value="1" selected>kg·m/s</option>
+          <option value="1">N·s</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-change-pInitial">Initial momentum <b>p<sub>i</sub></b></label>
+      <span class="phys-control">
+        <input id="in-change-pInitial" inputmode="decimal" autocomplete="off" value="5">
+        <select id="u-change-pInitial" aria-label="Initial momentum unit">
+          <option value="1e-3">g·m/s</option>
+          <option value="1" selected>kg·m/s</option>
+          <option value="1">N·s</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-change-pFinal">Final momentum <b>p<sub>f</sub></b></label>
+      <span class="phys-control">
+        <input id="in-change-pFinal" inputmode="decimal" autocomplete="off" value="17">
+        <select id="u-change-pFinal" aria-label="Final momentum unit">
+          <option value="1e-3">g·m/s</option>
+          <option value="1" selected>kg·m/s</option>
+          <option value="1">N·s</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active" id="lcd-label">Momentum p</span>
+      <span id="lcd-note"></span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub">p = mv</div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="Momentum and impulse formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>p</mi><mo>=</mo><mi>m</mi><mo>&#x2062;</mo><mi>v</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>J</mi><mo>=</mo><mi>F</mi><mo>&#x2062;</mo><mi>t</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>J</mi><mo>=</mo><mi>Δ</mi><mi>p</mi><mo>=</mo>
+        <msub><mi>p</mi><mi>f</mi></msub><mo>−</mo><msub><mi>p</mi><mi>i</mi></msub></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>p</b> momentum (kg·m/s) · <b>m</b> mass (kg) · <b>v</b> velocity (m/s)</li>
+    <li><b>J</b> impulse (N·s, equal to kg·m/s) · <b>F</b> resultant force (N) · <b>t</b> time (s) · <b>p<sub>i</sub></b> initial momentum · <b>p<sub>f</sub></b> final momentum</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>Motion is treated in one dimension. Choose one direction as
+        positive and keep velocity, force, momentum and impulse signs consistent.</li>
+      <li>Mass is positive and constant; speeds are non-relativistic.</li>
+      <li><b>J = Ft</b> uses a constant resultant force, or the average
+        resultant force over the stated time interval.</li>
+      <li>The time interval is positive. Impulse and change in momentum can
+        be negative when they act opposite to the chosen positive direction.</li>
+      <li>Calculations use SI units internally; the unit menus convert at the edges.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Momentum combines mass and velocity. It is a vector quantity, so in a
+      one-dimensional GCSE question its sign records direction: an object
+      moving in the negative direction has negative momentum.
+    </p>
+    <p>
+      Impulse is the change in momentum caused by a resultant force. For a
+      constant force it is force × time; on a force–time graph it is the
+      signed area under the graph. Select the matching relationship and
+      leave the quantity you need blank.
+    </p>
+    <p>
+      Results use up to three significant figures by default (adjustable
+      above), without padding with trailing zeroes. Calculations retain full
+      number precision and round only the display.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/newtons-second-law/">Newton's second law calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics;
+  function el(id) { return document.getElementById(id); }
+  var relationSelect = el("relation");
+  var lcdLabel = el("lcd-label"), lcdMain = el("lcd-main"),
+      lcdSub = el("lcd-sub"), lcdNote = el("lcd-note");
+
+  var relations = {
+    momentum: {
+      keys: ["p", "m", "v"],
+      labels: { p: "Momentum p", m: "Mass m", v: "Velocity v" },
+      equation: "p = mv", solve: P.gcse.momentum,
+      valid: function (o) { return o.m > 0; }
+    },
+    impulse: {
+      keys: ["J", "F", "t"],
+      labels: { J: "Impulse J", F: "Resultant force F", t: "Time t" },
+      equation: "J = Ft", solve: P.gcse.impulse,
+      valid: function (o) { return o.t > 0; }
+    },
+    change: {
+      keys: ["J", "pInitial", "pFinal"],
+      labels: { J: "Impulse J", pInitial: "Initial momentum p_i", pFinal: "Final momentum p_f" },
+      equation: "J = Δp = p_f − p_i", solve: P.gcse.changeInMomentum,
+      valid: function () { return true; }
+    }
+  };
+
+  function field(prefix, key) {
+    return { input: el("in-" + prefix + "-" + key), unit: el("u-" + prefix + "-" + key) };
+  }
+
+  function unitText(select) {
+    return select.options[select.selectedIndex].text;
+  }
+
+  function resetDisplay(message) {
+    lcdLabel.textContent = "Result";
+    lcdMain.textContent = "—";
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = message;
+    lcdNote.textContent = "";
+  }
+
+  function compute() {
+    var prefix = relationSelect.value, cfg = relations[prefix];
+    var values = {}, blanks = [], invalid = false;
+
+    cfg.keys.forEach(function (key) {
+      var f = field(prefix, key);
+      var raw = f.input.value.trim().replace(",", ".");
+      f.input.classList.remove("is-invalid", "is-result");
+      if (raw === "") { blanks.push(key); values[key] = null; return; }
+      var value = Number(raw);
+      if (!isFinite(value)) {
+        f.input.classList.add("is-invalid");
+        invalid = true;
+        values[key] = null;
+        return;
+      }
+      values[key] = value * parseFloat(f.unit.value);
+    });
+
+    if (invalid) { resetDisplay("check the highlighted value"); return; }
+    if (blanks.length !== 1) {
+      resetDisplay(blanks.length === 0 ? "leave the value you want blank" : "fill in all but one value");
+      return;
+    }
+
+    var unknown = blanks[0];
+    var result = cfg.solve(values);
+    var complete = cfg.keys.every(function (key) { return isFinite(result[key]); });
+    if (!complete || !cfg.valid(result)) {
+      resetDisplay("no physical solution for those values");
+      return;
+    }
+
+    var f = field(prefix, unknown);
+    var sf = parseInt(el("u-sf").value, 10) || 3;
+    f.input.classList.add("is-result");
+    lcdLabel.textContent = cfg.labels[unknown];
+    lcdMain.textContent = P.format(result[unknown] / parseFloat(f.unit.value), sf) + " " + unitText(f.unit);
+    P.fitDisplay(lcdMain);
+    lcdSub.textContent = cfg.equation;
+    lcdNote.textContent = "Solved";
+  }
+
+  function showRelation() {
+    document.querySelectorAll("[data-relation]").forEach(function (group) {
+      var active = group.getAttribute("data-relation") === relationSelect.value;
+      group.hidden = !active;
+      group.style.display = active ? "" : "none";
+      group.setAttribute("aria-hidden", active ? "false" : "true");
+    });
+    compute();
+  }
+
+  Object.keys(relations).forEach(function (prefix) {
+    relations[prefix].keys.forEach(function (key) {
+      var f = field(prefix, key);
+      f.input.addEventListener("input", compute);
+      f.unit.addEventListener("change", compute);
+    });
+  });
+  relationSelect.addEventListener("change", showRelation);
+  el("u-sf").addEventListener("change", compute);
+  showRelation();
+})();
+</script>

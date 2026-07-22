@@ -1,0 +1,1834 @@
+:root {
+  --desk: #14181e;
+  --body: #20262e;
+  --body-raised: #28313b;
+  --lcd: #c9d2b0;
+  --lcd-text: #2e3440;
+  --key: #4d5563;
+  --key-dark: #3c434e;
+  --orange: #e8833a;
+  --solar: #41335a;
+  --teal: #5bafa6;
+  --teal-dark: #1d5f58;
+  --violet: #9b8cc9;
+  --violet-dark: #4a3d6e;
+  --white: #f2f4f7;
+  --muted: #aeb6c1;
+  --line: rgba(242, 244, 247, 0.11);
+  --line-strong: rgba(242, 244, 247, 0.2);
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --radius-lg: 36px;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--desk);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--desk);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(232, 131, 58, 0.65);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-color: var(--orange);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--lcd);
+  color: var(--lcd-text);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.section-shell,
+.header-inner,
+.footer-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.site-header {
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: rgba(20, 24, 30, 0.96);
+}
+
+.header-inner {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 62px;
+  height: auto;
+}
+
+.site-nav,
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.site-nav a,
+.footer-nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.footer-nav a:hover {
+  color: var(--white);
+}
+
+/* Family nav (Website/FAMILY-DESIGN.md): an instrument label strip, not a
+   menu. Inactive items are Instrument White at reduced opacity; the active
+   item is underlined in the page's own family accent — orange on
+   calculator/home pages, teal on tool pages. Links wrap on mobile; the
+   family is deliberately small enough not to need a hamburger. */
+.family-nav {
+  flex-wrap: wrap;
+}
+
+.family-nav a {
+  color: var(--white);
+  opacity: 0.58;
+}
+
+.family-nav a:hover {
+  opacity: 1;
+}
+
+.family-nav a.is-active {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+  text-decoration-color: var(--orange);
+}
+
+.tool-page .family-nav a.is-active {
+  text-decoration-color: var(--teal);
+}
+
+.hero {
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(420px, 0.94fr);
+  align-items: center;
+  gap: clamp(52px, 8vw, 108px);
+  padding-block: 86px 104px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 28px;
+  font-size: clamp(3.4rem, 6.3vw, 6.25rem);
+  font-weight: 760;
+}
+
+h1 span {
+  color: var(--orange);
+}
+
+h2 {
+  margin-bottom: 24px;
+  font-size: clamp(2.35rem, 4.5vw, 4.35rem);
+  font-weight: 740;
+}
+
+h3 {
+  margin-bottom: 14px;
+  font-size: 1.45rem;
+}
+
+.hero-lead,
+.section-heading > p:last-child,
+.product-media-heading > p:last-child,
+.widgets-heading > p:last-child,
+.principles-statement > p:last-child {
+  max-width: 670px;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 1.7vw, 1.27rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.button {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 21px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  font-size: 0.95rem;
+  font-weight: 730;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--orange);
+  color: var(--body);
+}
+
+.button-secondary {
+  border-color: var(--line-strong);
+  background: rgba(242, 244, 247, 0.04);
+  color: var(--white);
+}
+
+a.button-secondary:hover {
+  border-color: var(--teal);
+  background: rgba(91, 175, 166, 0.08);
+}
+
+.ownership-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 28px 0 0;
+  padding: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  list-style: none;
+}
+
+.ownership-line li:not(:last-child)::after {
+  content: "·";
+  margin-left: 22px;
+  color: var(--key);
+}
+
+.ownership-line strong {
+  color: var(--white);
+}
+
+.product-stage {
+  position: relative;
+  min-height: 560px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--body);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.product-stage::before,
+.product-stage::after {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--line);
+}
+
+.product-stage::before {
+  inset: 64px;
+  border-radius: 50%;
+}
+
+.product-stage::after {
+  width: 360px;
+  height: 360px;
+  top: 100px;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.solar-detail {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  display: flex;
+  gap: 5px;
+}
+
+.solar-detail span {
+  width: 25px;
+  height: 32px;
+  background: var(--solar);
+}
+
+.app-icon-wrap {
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  top: 116px;
+  left: 50%;
+  border-radius: 28%;
+  box-shadow: 0 32px 60px rgba(0, 0, 0, 0.42);
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.proof-chip {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  gap: 2px;
+  padding: 13px 16px;
+  border: 1px solid rgba(46, 52, 64, 0.12);
+  border-radius: 13px;
+  background: var(--lcd);
+  color: var(--lcd-text);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.26);
+  font-family: var(--mono);
+}
+
+.proof-chip strong {
+  font-size: 0.95rem;
+}
+
+.proof-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.64;
+  text-transform: uppercase;
+}
+
+.proof-chip-fraction {
+  top: 90px;
+  left: 25px;
+  transform: rotate(-3deg);
+}
+
+.proof-chip-pi {
+  right: 22px;
+  bottom: 100px;
+  transform: rotate(2deg);
+}
+
+.proof-chip-privacy {
+  left: 38px;
+  bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--body-raised);
+  color: var(--white);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.promise-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-block: 1px solid var(--line);
+  background: var(--body);
+}
+
+.promise-strip div {
+  min-height: 126px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  border-right: 1px solid var(--line);
+}
+
+.promise-strip div:last-child {
+  border-right: 0;
+}
+
+.promise-strip strong {
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  text-align: center;
+}
+
+.promise-strip span {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+/* Homepage family strip (FAMILY-DESIGN.md, "Homepage as family entry"):
+   one teal-accented card per tool; the cards ARE small instruments —
+   LCD-styled numerals, one line each, no screenshots. */
+
+.tools-strip {
+  padding-block: 84px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tools-heading {
+  max-width: 720px;
+  margin-bottom: 44px;
+}
+
+.tools-heading h2 {
+  margin-bottom: 12px;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+.tools-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--body);
+  text-decoration: none;
+}
+
+.tool-card:hover {
+  border-color: var(--teal);
+}
+
+.tool-card-lcd {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: var(--lcd);
+  color: var(--lcd-text);
+  font-family: var(--mono);
+}
+
+.tool-card-ind {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+}
+
+.tool-card-main {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-variant-numeric: tabular-nums;
+}
+
+.tool-card > strong {
+  color: var(--white);
+}
+
+.tool-card > span:last-child {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.tool-card-science:hover { border-color: var(--violet); }
+.tool-card-science .tool-card-ind { color: var(--violet-dark); }
+
+.product-media {
+  border-bottom: 1px solid var(--line);
+  background: #101419;
+  overflow: hidden;
+}
+
+.product-media-heading,
+.widgets-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(48px, 8vw, 112px);
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.product-media-heading h2,
+.widgets-heading h2 {
+  margin-bottom: 0;
+}
+
+.product-media-heading > p,
+.widgets-heading > p {
+  margin: 0 0 8px;
+}
+
+.product-media-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.68fr) minmax(460px, 1.32fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: end;
+}
+
+.product-capture,
+.widget-capture {
+  margin: 0;
+}
+
+.capture-frame {
+  padding: 10px;
+  border: 1px solid var(--line-strong);
+  background: var(--body-raised);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.product-capture-phone {
+  justify-self: center;
+  width: min(100%, 430px);
+}
+
+.product-capture-phone .capture-frame {
+  border-radius: 52px;
+}
+
+.product-capture-phone img {
+  border-radius: 43px;
+}
+
+.product-capture-pad .capture-frame {
+  border-radius: 30px;
+}
+
+.product-capture-pad img {
+  border-radius: 21px;
+}
+
+.product-capture figcaption,
+.widget-capture figcaption {
+  display: grid;
+  gap: 2px;
+  margin-top: 18px;
+}
+
+.product-capture figcaption strong,
+.widget-capture figcaption strong {
+  color: var(--white);
+  font-size: 0.92rem;
+}
+
+.product-capture figcaption span,
+.widget-capture figcaption span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.section-block {
+  padding-block: 132px;
+}
+
+.section-heading {
+  max-width: 840px;
+  margin-bottom: 66px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.widgets {
+  border-top: 1px solid var(--line);
+}
+
+.widget-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.widget-capture {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--body);
+}
+
+.widget-capture-small {
+  grid-column: span 4;
+}
+
+.widget-capture-medium {
+  grid-column: span 8;
+}
+
+.widget-capture-large {
+  grid-column: 4 / span 6;
+}
+
+.widget-shot {
+  position: relative;
+  border-radius: 16px;
+  background: #11161c;
+  overflow: hidden;
+}
+
+.widget-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Each ratio matches the crop produced by Tools/generate_website_media.swift;
+   change one and you must change the other. */
+.widget-capture-medium .widget-shot {
+  aspect-ratio: 1320 / 680;
+}
+
+.widget-capture-large .widget-shot {
+  aspect-ratio: 1 / 1;
+}
+
+.feature-card {
+  min-height: 410px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(26px, 4vw, 44px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--body);
+  overflow: hidden;
+}
+
+.feature-card > p:last-child {
+  max-width: 520px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.feature-number {
+  margin: 0 0 18px;
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.feature-demo {
+  position: absolute;
+  top: 40px;
+  right: 42px;
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.feature-card-lcd::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  width: 190px;
+  height: 128px;
+  border-radius: 14px;
+  background: var(--lcd);
+}
+
+.fraction-demo {
+  width: 72px;
+  top: 49px;
+  right: 87px;
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  color: var(--lcd-text);
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.fraction-demo i {
+  width: 58px;
+  height: 3px;
+  background: currentColor;
+}
+
+.ans-demo {
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: var(--lcd);
+  color: var(--lcd-text);
+}
+
+.variable-demo {
+  display: flex;
+  gap: 8px;
+}
+
+.variable-demo span {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(91, 175, 166, 0.34);
+  border-radius: 8px;
+  color: var(--teal);
+}
+
+.function-demo {
+  color: var(--orange);
+  font-size: clamp(1rem, 2.3vw, 1.55rem);
+}
+
+.principles {
+  border-block: 1px solid var(--line);
+  background: var(--body);
+}
+
+.principles-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: clamp(60px, 10vw, 140px);
+  align-items: center;
+}
+
+.principles-list {
+  margin: 0;
+}
+
+.principles-list div {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.principles-list div:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.principles-list dt {
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 720;
+}
+
+.principles-list dd {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.purchase-section {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  padding-inline: clamp(30px, 6vw, 76px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--lcd);
+  color: var(--lcd-text);
+}
+
+.purchase-section .eyebrow {
+  color: var(--teal-dark);
+}
+
+.purchase-section h2 {
+  margin-bottom: 12px;
+}
+
+.purchase-section p {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: rgba(46, 52, 64, 0.78);
+}
+
+.purchase-meta {
+  display: grid;
+  gap: 8px;
+  padding: 26px;
+  border: 1px solid rgba(46, 52, 64, 0.15);
+  border-radius: 16px;
+  background: rgba(242, 244, 247, 0.35);
+}
+
+.purchase-meta span {
+  color: var(--teal-dark);
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.purchase-meta small {
+  opacity: 0.67;
+}
+
+.final-cta {
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  gap: 34px;
+  align-items: center;
+}
+
+.final-cta img {
+  width: 86px;
+}
+
+.final-cta h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+}
+
+.final-cta p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  padding-block: 68px 42px;
+  border-top: 1px solid var(--line);
+  background: #101419;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 52px;
+}
+
+.footer-brand img {
+  width: 72px;
+}
+
+.footer-brand p,
+.footer-meta {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.footer-meta {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.prose-page .site-main {
+  width: min(800px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: 90px 130px;
+}
+
+.prose-page .site-main h1 {
+  margin-bottom: 46px;
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+}
+
+.prose-page .site-main h2 {
+  margin-top: 60px;
+  margin-bottom: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.prose-page .site-main h3 {
+  margin-top: 38px;
+}
+
+.prose-page .site-main p,
+.prose-page .site-main li {
+  color: #c5cbd3;
+}
+
+.prose-page .site-main strong {
+  color: var(--white);
+}
+
+.prose-page .site-main hr {
+  height: 1px;
+  margin: 54px 0;
+  border: 0;
+  background: var(--line);
+}
+
+.prose-page .site-main code {
+  padding: 0.16em 0.36em;
+  border-radius: 5px;
+  background: var(--body);
+  color: var(--lcd);
+  font-family: var(--mono);
+  font-size: 0.88em;
+}
+
+.prose-page .site-main a {
+  color: var(--lcd);
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .principles-inner,
+  .product-media-heading,
+  .widgets-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .product-stage {
+    width: min(100%, 620px);
+    margin-inline: auto;
+  }
+
+  .principles-inner {
+    gap: 64px;
+  }
+
+  .product-media-heading,
+  .widgets-heading {
+    gap: 22px;
+  }
+
+  .purchase-section {
+    grid-template-columns: 1fr;
+  }
+
+  .final-cta {
+    grid-template-columns: 76px 1fr;
+  }
+
+  .final-cta .button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .section-shell,
+  .header-inner,
+  .footer-inner,
+  .prose-page .site-main {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .header-inner {
+    min-height: 78px;
+  }
+
+  .brand img {
+    width: 52px;
+  }
+
+  .site-nav {
+    gap: 18px;
+  }
+
+  .site-nav a {
+    font-size: 0.78rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: 56px 72px;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 14vw, 4.65rem);
+  }
+
+  .product-stage {
+    min-height: 500px;
+  }
+
+  .app-icon-wrap {
+    width: 250px;
+    top: 120px;
+  }
+
+  .proof-chip-fraction {
+    top: 72px;
+  }
+
+  .promise-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tools-strip {
+    padding-block: 64px;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promise-strip div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .promise-strip div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-block {
+    padding-block: 90px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: 380px;
+  }
+
+  .product-media-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .product-capture-phone {
+    width: min(100%, 360px);
+  }
+
+  .widget-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .widget-capture-small,
+  .widget-capture-medium,
+  .widget-capture-large {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .purchase-section {
+    width: calc(100% - 32px);
+    border-radius: 24px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 14px 24px;
+  }
+
+  .footer-meta {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions,
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .ownership-line {
+    display: grid;
+    gap: 6px;
+  }
+
+  .ownership-line li::after {
+    display: none;
+  }
+
+  .product-stage {
+    min-height: 440px;
+    border-radius: 26px;
+  }
+
+  .product-stage::before {
+    inset: 54px;
+  }
+
+  .product-stage::after {
+    width: 300px;
+    height: 300px;
+    top: 86px;
+  }
+
+  .app-icon-wrap {
+    width: 210px;
+    top: 112px;
+  }
+
+  .solar-detail span {
+    width: 18px;
+    height: 24px;
+  }
+
+  .proof-chip {
+    padding: 10px 12px;
+  }
+
+  .proof-chip-fraction {
+    left: 12px;
+  }
+
+  .proof-chip-pi {
+    right: 10px;
+    bottom: 86px;
+  }
+
+  .proof-chip-privacy {
+    left: 20px;
+    bottom: 28px;
+  }
+
+  .feature-demo {
+    right: 26px;
+  }
+
+  .feature-card-lcd::before {
+    right: 20px;
+  }
+
+  .fraction-demo {
+    right: 79px;
+  }
+
+  .variable-demo {
+    gap: 5px;
+  }
+
+  .variable-demo span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .capture-frame {
+    padding: 7px;
+  }
+
+  .product-capture-phone .capture-frame {
+    border-radius: 40px;
+  }
+
+  .product-capture-phone img {
+    border-radius: 33px;
+  }
+
+  .final-cta {
+    grid-template-columns: 64px 1fr;
+    gap: 20px;
+  }
+
+  .final-cta img {
+    width: 62px;
+  }
+
+  .final-cta .button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Tool instruments (family design: Website/FAMILY-DESIGN.md).
+   .tool-lcd is the shared display component for the stopwatch and world
+   clock pages — one implementation so the instruments cannot drift. */
+
+.tool-lcd {
+  background: var(--lcd);
+  color: var(--lcd-text);
+  border-radius: var(--radius-md);
+  padding: 18px 26px 22px;
+  box-shadow: inset 0 2px 10px rgba(46, 52, 64, 0.22), 0 1px 0 rgba(242, 244, 247, 0.08);
+  font-family: var(--mono);
+}
+
+.tool-lcd-indicators {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(46, 52, 64, 0.55);
+}
+
+.tool-lcd-indicators .is-active {
+  color: var(--teal-dark);
+}
+
+.tool-lcd-main {
+  margin-top: 4px;
+  font-size: clamp(44px, 11vw, 84px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Science results can legitimately carry ten significant figures plus a
+   compound unit. Keep short answers at full instrument size, then tighten
+   only when the rendered main line needs it. */
+.science-page .tool-lcd-main.is-compact {
+  font-size: clamp(34px, 8.5vw, 64px);
+  letter-spacing: 0;
+}
+
+.science-page .tool-lcd-main.is-condensed {
+  font-size: clamp(28px, 7vw, 52px);
+  letter-spacing: 0;
+}
+
+.science-page .tool-lcd-main.is-tight {
+  font-size: clamp(23px, 5.8vw, 42px);
+  letter-spacing: -0.01em;
+}
+
+.tool-lcd-sub {
+  min-height: 1.5em;
+  font-size: clamp(15px, 3vw, 20px);
+  text-align: right;
+  color: rgba(46, 52, 64, 0.75);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Shared tool-page anatomy (FAMILY-DESIGN.md): shell, head, ownership
+   line, "How it keeps time" notes and calculator cross-link are one
+   implementation for every tool page. Page-specific controls stay in
+   each page. */
+
+.tool-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 72px;
+}
+
+.tool-shell .eyebrow {
+  color: var(--teal);
+}
+
+.tool-head h1 {
+  margin: 6px 0 10px;
+  font-size: clamp(34px, 6vw, 48px);
+  line-height: 1.1;
+}
+
+.tool-head p {
+  margin: 0 0 26px;
+  color: var(--muted);
+  max-width: 54ch;
+}
+
+.tool-ownership {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 44px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.tool-ownership strong {
+  color: var(--white);
+}
+
+.tool-notes {
+  margin-top: 40px;
+  max-width: 54ch;
+}
+
+.tool-notes h2 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.tool-notes p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.tool-notes strong {
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+}
+
+.tool-crosslink {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tool-crosslink a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration-color: rgba(232, 131, 58, 0.65);
+}
+
+.tool-crosslink p {
+  margin: 0;
+}
+
+.tool-crosslink .tool-crosslink-icon {
+  flex: 0 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.tool-crosslink-icon img {
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+
+@media (max-width: 420px) {
+  .tool-crosslink {
+    gap: 14px;
+  }
+
+  .tool-crosslink .tool-crosslink-icon {
+    border-radius: 13px;
+  }
+
+  .tool-crosslink-icon img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* ---- Science pages (PHYSICS-DESIGN.md, WP-P2) -------------------------
+   The science family (physics-led, plus adjacent chemistry/computing) is
+   a distinct product with its own accent, Solar Violet. A science page
+   carries both `tool-page` (the shared anatomy) and `science-page` (the
+   accent swap teal → violet). Everything below is shared machinery for
+   every science calculator; page-specific layout stays in each page. */
+
+.science-page .family-nav a.is-active { text-decoration-color: var(--violet); }
+.science-page .tool-shell .eyebrow { color: var(--violet); }
+.science-page .tool-lcd-indicators .is-active { color: var(--violet-dark); }
+.science-page .tool-key-primary { background: var(--violet); }
+.science-page :focus-visible { outline-color: var(--violet); }
+
+/* Science hub — the catalogue uses the same instrument language as the
+   calculators, widened into grouped, crawlable cards rather than a generic
+   directory list. */
+.science-hub {
+  width: min(100% - 40px, 1120px);
+  margin: 0 auto;
+  padding: 64px 0 88px;
+}
+
+.science-hub-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  align-items: center;
+  gap: clamp(40px, 8vw, 100px);
+  padding-bottom: 58px;
+}
+
+.science-hub .eyebrow { color: var(--violet); }
+
+.science-hub-hero h1 {
+  max-width: 15ch;
+  margin: 8px 0 18px;
+  font-size: clamp(42px, 6.5vw, 76px);
+  line-height: 0.98;
+}
+
+.science-hub-hero p:last-child {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.science-hub-lcd {
+  display: grid;
+  padding: 22px;
+  border-radius: var(--radius-md);
+  background: var(--lcd);
+  color: var(--lcd-text);
+  box-shadow: inset 0 2px 10px rgba(46, 52, 64, 0.22);
+  font-family: var(--mono);
+}
+
+.science-hub-lcd span,
+.science-hub-lcd small {
+  color: var(--violet-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.science-hub-lcd strong {
+  justify-self: end;
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.science-hub-lcd small { justify-self: end; }
+
+.science-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 18px 0 52px;
+  border-top: 1px solid var(--line);
+}
+
+.science-jump a {
+  padding: 8px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.84rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.science-jump a:hover { border-color: var(--violet); }
+
+.science-category {
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 28px;
+}
+
+.science-category-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.science-category-head h2 {
+  max-width: 18ch;
+  margin: 8px 0 0;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.05;
+}
+
+.science-category-head > p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.science-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.science-card {
+  display: grid;
+  gap: 7px;
+  min-height: 142px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--body-raised);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.science-card:hover {
+  border-color: var(--violet);
+  transform: translateY(-1px);
+}
+
+.science-card > span {
+  color: var(--violet);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.science-card strong { font-size: 1.08rem; }
+
+.science-card small {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.science-honesty {
+  max-width: 720px;
+  padding: 70px 0 18px;
+}
+
+.science-honesty h2 {
+  margin: 8px 0 14px;
+  font-size: clamp(30px, 4.5vw, 48px);
+}
+
+.science-honesty p:last-child { color: var(--muted); }
+
+.science-related {
+  margin: 34px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.science-related a {
+  color: var(--violet);
+  font-weight: 650;
+}
+
+@media (max-width: 720px) {
+  .science-hub { width: min(100% - 32px, 1120px); padding-top: 44px; }
+  .science-hub-hero,
+  .science-category-head { grid-template-columns: 1fr; gap: 24px; }
+  .science-hub-lcd { width: min(100%, 260px); }
+  .science-grid { grid-template-columns: 1fr; }
+  .science-card { min-height: 0; }
+}
+
+/* Solve-for row (GCSE/A-level rearrangement pages): pick the unknown. */
+
+.phys-solvefor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 18px;
+}
+
+.phys-solvefor > label {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* Auxiliary display controls (e.g. display precision) under the LCD. */
+.phys-aux {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.science-page .phys-aux > .phys-control {
+  min-width: 0;
+}
+
+.science-page .phys-aux > .phys-control select {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.science-page .phys-clear {
+  min-height: 40px;
+  margin-left: auto;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.86rem;
+}
+
+.science-page .phys-clear:hover {
+  border-color: var(--violet);
+  background: rgba(155, 140, 201, 0.1);
+}
+
+.science-page .phys-clear-row { justify-content: flex-end; }
+
+/* The field being solved for: greyed and locked; its answer shows on the
+   LCD, and its unit menu stays live so the result unit is the user's. */
+.phys-control input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.science-page .phys-control input.is-result {
+  border-color: var(--violet);
+  opacity: 0.65;
+}
+
+/* Inputs: a stack of labelled fields, each a number entry plus a unit
+   menu. One shared component so every physics page's instrument matches. */
+
+.phys-fields {
+  display: grid;
+  gap: 14px;
+  margin: 4px 0 24px;
+}
+
+.phys-field {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.phys-field > label {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.phys-field > label b {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.phys-control {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.phys-control input {
+  width: 120px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  padding: 9px 12px;
+  background: var(--body);
+  color: var(--white);
+  font: 600 17px var(--mono);
+  text-align: right;
+}
+
+.phys-control select {
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  padding: 9px 10px;
+  background: var(--body);
+  color: var(--white);
+  font: 600 15px var(--mono);
+  cursor: pointer;
+}
+
+.phys-control input:focus,
+.phys-control select:focus {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+
+.phys-control input.is-invalid {
+  border-color: var(--orange);
+}
+
+/* Secondary results below the headline LCD line: a quiet definition list. */
+
+.phys-results {
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.phys-results div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 11px 14px;
+  background: var(--body);
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.phys-results dt {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.phys-results dd {
+  margin: 0;
+  font-size: 17px;
+  color: var(--white);
+}
+
+/* The formula, in proper notation — native MathML, rendered by the
+   browser itself (how Wikipedia does it). No external library, no
+   request, a few hundred bytes: the weight budget stays intact while the
+   maths gets real radicals, stacked fractions and true superscripts. */
+
+.formula {
+  margin: 34px 0 0;
+  padding: 26px 18px;
+  background: var(--body-raised);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  overflow-x: auto;
+}
+
+.formula math {
+  display: block;
+  margin: 22px auto;
+  font-size: 1.55em;
+  color: var(--white);
+}
+
+.formula math:first-of-type { margin-top: 4px; }
+.formula math:last-of-type { margin-bottom: 4px; }
+
+.formula-legend {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.formula-legend b {
+  color: var(--white);
+  font-family: var(--mono);
+  font-weight: 600;
+}
+
+/* The assumptions block — mandatory on every physics page, the honesty
+   signature. Violet-edged so it reads as instrument, not fine print. */
+
+.assumptions {
+  margin: 34px 0 0;
+  padding: 18px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+}
+
+.assumptions h2 {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--violet);
+}
+
+.assumptions ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 420px) {
+  .phys-field {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .phys-control input { width: 100%; flex: 1; }
+}

@@ -1,0 +1,165 @@
+---
+layout: default
+title: Newton's Second Law Calculator (F = ma) — Force, Mass, Acceleration — Ans
+description: Free F = ma calculator. Solve for force, mass or acceleration — enter the other two, in the units you like. GCSE and A-level physics, assumptions stated. No ads, no tracking, no account.
+body_class: tool-page science-page
+permalink: /science/newtons-second-law/
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Newton's second law.</h1>
+    <p>
+      The resultant force on an object equals its mass times its
+      acceleration, <b>F = m a</b>. Type the two values you know, in
+      whatever units suit, and leave the one you want blank — it appears on
+      the display. GCSE and A-level; the assumptions are stated below.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Newton's Second Law Calculator (F = ma)",
+    "url": "https://anscalc.com/science/newtons-second-law/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free F = ma calculator: solve for force, mass or acceleration from the other two, with unit menus. GCSE and A-level physics.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-F">Force <b>F</b></label>
+      <span class="phys-control">
+        <input id="in-F" inputmode="decimal" autocomplete="off">
+        <select id="u-F" aria-label="Force unit">
+          <option value="1e-3">mN</option>
+          <option value="1" selected>N</option>
+          <option value="1e3">kN</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-m">Mass <b>m</b></label>
+      <span class="phys-control">
+        <input id="in-m" inputmode="decimal" autocomplete="off" value="2">
+        <select id="u-m" aria-label="Mass unit">
+          <option value="1e-3">g</option>
+          <option value="1" selected>kg</option>
+          <option value="1e3">t</option>
+        </select>
+      </span>
+    </div>
+    <div class="phys-field">
+      <label for="in-a">Acceleration <b>a</b></label>
+      <span class="phys-control">
+        <input id="in-a" inputmode="decimal" autocomplete="off" value="5">
+        <select id="u-a" aria-label="Acceleration unit">
+          <option value="1" selected>m/s²</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active" id="lcd-label">Force F</span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3" selected>3 s.f.</option>
+        <option value="4">4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="formula" aria-label="Formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>F</mi><mo>=</mo><mi>m</mi><mo>&#x2062;</mo><mi>a</mi></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>m</mi><mo>=</mo><mfrac><mi>F</mi><mi>a</mi></mfrac></mrow>
+    </math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow><mi>a</mi><mo>=</mo><mfrac><mi>F</mi><mi>m</mi></mfrac></mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>F</b> resultant force (N) · <b>m</b> mass (kg) · <b>a</b> acceleration (m/s²)</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li><b>F</b> is the <em>resultant</em> (net) force — add up all forces
+        first, including friction and weight.</li>
+      <li>Mass is constant (nothing gained or lost; non-relativistic).</li>
+      <li>Force and acceleration act along the same line — treated as
+        magnitudes in one dimension.</li>
+      <li>SI units: newtons, kilograms, metres per second squared.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      A resultant force makes a mass accelerate: double the force for the
+      same mass and you double the acceleration; double the mass for the
+      same force and you halve it. The same equation rearranges to find any
+      of the three — whichever box you leave blank is the one that gets
+      solved.
+    </p>
+    <p>
+      Results use up to three significant figures by default (adjustable
+      above), without padding the display with trailing zeroes. Enter the
+      resultant force, not a single push — if several forces act, combine
+      them first.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/momentum-impulse/">Momentum and impulse calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script src="/assets/js/gcse-solver.js"></script>
+<script>
+  AnsSolve({
+    keys: ["F", "m", "a"],
+    map: { F: "F", m: "m", a: "a" },
+    labels: { F: "Force F", m: "Mass m", a: "Acceleration a" },
+    solve: window.AnsPhysics.gcse.fma,
+    sub: "F = m × a"
+  });
+</script>

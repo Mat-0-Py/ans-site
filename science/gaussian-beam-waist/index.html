@@ -1,0 +1,326 @@
+---
+layout: default
+title: Gaussian Beam Waist Calculator — Spot Size, Rayleigh Range, Divergence — Ans
+description: Free Gaussian beam calculator. Enter the waist, wavelength and distance to get the beam radius w(z), Rayleigh range, wavefront curvature and far-field divergence. TEM00, paraxial, stated on the page. No ads, no tracking.
+body_class: tool-page science-page
+permalink: /science/gaussian-beam-waist/
+---
+
+<style>
+  /* Page-specific bits only; the shared science anatomy (.phys-fields,
+     .phys-control, .phys-results, .formula, .assumptions) lives in the
+     site stylesheet so every science page matches. */
+  .beam-unit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Gaussian beam waist.</h1>
+    <p>
+      For a fundamental (TEM<sub>00</sub>) Gaussian beam, enter the waist
+      radius, wavelength and axial distance to get the beam radius at that
+      point, the Rayleigh range, the wavefront's radius of curvature and
+      the far-field divergence. The model is stated in full below — an
+      instrument that says what it assumes.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Gaussian Beam Waist Calculator",
+    "url": "https://anscalc.com/science/gaussian-beam-waist/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Free Gaussian beam calculator: beam radius w(z), Rayleigh range, wavefront radius of curvature and far-field divergence from waist, wavelength and distance. TEM00, paraxial.",
+    "featureList": "Beam radius at distance, Rayleigh range, radius of curvature, divergence half-angle, SI-prefix unit menus",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-w0">Waist radius <b>w₀</b> (1/e² intensity)</label>
+      <span class="phys-control">
+        <input id="in-w0" inputmode="decimal" autocomplete="off" value="1">
+        <select id="u-w0" aria-label="Waist radius unit">
+          <option value="1e-9">nm</option>
+          <option value="1e-6">µm</option>
+          <option value="1e-3" selected>mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1">m</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="phys-field">
+      <label for="in-lambda">Wavelength <b>λ</b></label>
+      <span class="phys-control">
+        <input id="in-lambda" inputmode="decimal" autocomplete="off" value="632.8">
+        <select id="u-lambda" aria-label="Wavelength unit">
+          <option value="1e-9" selected>nm</option>
+          <option value="1e-6">µm</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="phys-field">
+      <label for="in-z">Distance from waist <b>z</b></label>
+      <span class="phys-control">
+        <input id="in-z" inputmode="decimal" autocomplete="off" value="2">
+        <select id="u-z" aria-label="Distance unit">
+          <option value="1e-3">mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1" selected>m</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active">Beam radius w(z)</span>
+      <span id="ind-note"></span>
+    </div>
+    <div class="tool-lcd-main" id="out-wz">—</div>
+    <div class="tool-lcd-sub" id="out-wz-sub">at the chosen distance</div>
+  </div>
+
+  <div class="beam-unit">
+    <label for="u-out">Show w(z) in</label>
+    <span class="phys-control">
+      <select id="u-out" aria-label="Beam radius output unit">
+        <option value="1e-6">µm</option>
+        <option value="1e-3" selected>mm</option>
+        <option value="1">m</option>
+      </select>
+    </span>
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3">3 s.f.</option>
+        <option value="4" selected>4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <dl class="phys-results">
+    <div><dt>Rayleigh range z<sub>R</sub></dt><dd id="out-zr">—</dd></div>
+    <div><dt>Wavefront curvature R(z)</dt><dd id="out-r">—</dd></div>
+    <div><dt>Divergence half-angle θ</dt><dd id="out-theta">—</dd></div>
+  </dl>
+
+  <div class="formula" aria-label="Formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+        <mi>w</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo>
+        <msub><mi>w</mi><mn>0</mn></msub>
+        <msqrt>
+          <mrow>
+            <mn>1</mn><mo>+</mo>
+            <msup>
+              <mrow><mo>(</mo>
+                <mfrac><mi>z</mi><msub><mi>z</mi><mi>R</mi></msub></mfrac>
+              <mo>)</mo></mrow>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </msqrt>
+      </mrow>
+    </math>
+
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+        <msub><mi>z</mi><mi>R</mi></msub><mo>=</mo>
+        <mfrac>
+          <mrow><mi>π</mi><msubsup><mi>w</mi><mn>0</mn><mn>2</mn></msubsup></mrow>
+          <mi>λ</mi>
+        </mfrac>
+      </mrow>
+    </math>
+
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+        <mi>R</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo>
+        <mi>z</mi>
+        <mrow><mo>[</mo>
+          <mn>1</mn><mo>+</mo>
+          <msup>
+            <mrow><mo>(</mo>
+              <mfrac><msub><mi>z</mi><mi>R</mi></msub><mi>z</mi></mfrac>
+            <mo>)</mo></mrow>
+            <mn>2</mn>
+          </msup>
+        <mo>]</mo></mrow>
+      </mrow>
+    </math>
+
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+        <mi>θ</mi><mo>=</mo>
+        <mfrac>
+          <mi>λ</mi>
+          <mrow><mi>π</mi><msub><mi>w</mi><mn>0</mn></msub></mrow>
+        </mfrac>
+      </mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>w₀</b> waist radius (1/e² intensity) · <b>λ</b> wavelength · <b>z</b> axial distance from the waist</li>
+    <li><b>z<sub>R</sub></b> Rayleigh range · <b>R(z)</b> wavefront radius of curvature · <b>θ</b> far-field divergence half-angle</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>Fundamental Gaussian mode, TEM<sub>00</sub> (M² = 1). A real beam
+        diverges M² times faster — use the beam-quality page for that.</li>
+      <li>Paraxial: the divergence half-angle is small, so θ ≈ λ/(πw₀).</li>
+      <li>A single homogeneous medium. Use the wavelength <em>in that
+        medium</em> (λ = λ₀/n) if the beam is not in vacuum or air.</li>
+      <li>All radii are the 1/e² intensity radius; z is measured from the
+        waist, where the wavefront is flat (R → ∞).</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      A Gaussian beam is narrowest at its waist and spreads as it
+      propagates. The Rayleigh range z<sub>R</sub> = πw₀²/λ is the distance
+      over which the radius grows by √2; twice it is the usual depth of
+      focus. Tighter waists reach the far field sooner and diverge faster.
+    </p>
+    <p>
+      Close to the waist the wavefront is nearly flat, so R(z) is very
+      large; it passes through a minimum near z = z<sub>R</sub> and then
+      approaches R ≈ z far away, where the beam looks like it came from a
+      point at the waist and opens into a cone of half-angle θ.
+    </p>
+    <p>
+      Results use up to four significant figures by default — enough for
+      design and a quick bench check without claiming precision the inputs
+      don't have. Trailing zeroes are not added to fill the chosen limit.
+      The arithmetic runs at full double precision; only the display is
+      rounded, and very large or small values use a proper ×10ⁿ.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/rayleigh-range/">Rayleigh range calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics;
+  var G = P.gaussianBeam;
+
+  function field(inputId, unitId) {
+    return {
+      input: document.getElementById(inputId),
+      unit: document.getElementById(unitId)
+    };
+  }
+  var w0 = field("in-w0", "u-w0");
+  var lam = field("in-lambda", "u-lambda");
+  var z = field("in-z", "u-z");
+  var uOut = document.getElementById("u-out");
+  var uSf = document.getElementById("u-sf");
+
+  var outWz = document.getElementById("out-wz");
+  var outWzSub = document.getElementById("out-wz-sub");
+  var outZr = document.getElementById("out-zr");
+  var outR = document.getElementById("out-r");
+  var outTheta = document.getElementById("out-theta");
+  var indNote = document.getElementById("ind-note");
+
+  function read(f) {
+    var raw = f.input.value.trim().replace(",", ".");
+    var val = parseFloat(raw);
+    var ok = raw !== "" && isFinite(val);
+    f.input.classList.toggle("is-invalid", !ok && raw !== "");
+    return ok ? P.toSI(val, parseFloat(f.unit.value)) : NaN;
+  }
+
+  function unitLabel(sel) {
+    return sel.options[sel.selectedIndex].text;
+  }
+
+  function compute() {
+    var W0 = read(w0);        // metres
+    var L = read(lam);        // metres
+    var Z = read(z);          // metres
+
+    if (!(W0 > 0) || !(L > 0) || isNaN(Z)) {
+      outWz.textContent = "—";
+      P.fitDisplay(outWz);
+      outWzSub.textContent = "enter waist, wavelength and distance";
+      outZr.textContent = outR.textContent = outTheta.textContent = "—";
+      indNote.textContent = "";
+      return;
+    }
+
+    var zR = G.rayleighRange(W0, L);
+    var wz = G.beamRadius(W0, L, Z);
+    var R = G.radiusOfCurvature(W0, L, Z);
+    var th = G.divergence(W0, L);
+
+    var sf = parseInt(uSf.value, 10) || 4;
+    var outFactor = parseFloat(uOut.value);
+    outWz.textContent = P.format(P.fromSI(wz, outFactor), sf);
+    P.fitDisplay(outWz);
+    outWzSub.textContent = "w(z) in " + unitLabel(uOut) +
+      " · at z = " + P.format(P.fromSI(Z, parseFloat(z.unit.value)), sf) +
+      " " + unitLabel(z.unit);
+
+    outZr.textContent = P.format(zR, sf) + " m";
+    outR.textContent = isFinite(R)
+      ? P.format(R, sf) + " m"
+      : "∞ (plane wavefront)";
+    outTheta.textContent = P.format(P.fromSI(th, 1e-3), sf) + " mrad";
+
+    indNote.textContent = Math.abs(Z) < zR ? "near field" : "far field";
+  }
+
+  [w0, lam, z].forEach(function (f) {
+    f.input.addEventListener("input", compute);
+    f.unit.addEventListener("change", compute);
+  });
+  uOut.addEventListener("change", compute);
+  uSf.addEventListener("change", compute);
+
+  compute();
+})();
+</script>

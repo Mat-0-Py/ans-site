@@ -1,0 +1,321 @@
+---
+layout: default
+title: GMT Time Now — Exact UTC & UK Time (GMT/BST) World Clock — Ans
+description: The current GMT / UTC time now, measured against our own server and shown with its stated accuracy. UK time labelled GMT or BST correctly by season, plus your local time. Free, no ads, no tracking, no third-party time APIs.
+body_class: tool-page
+permalink: /clock/
+---
+
+<style>
+  /* Page-specific layout only; the shared tool-page anatomy (.tool-shell,
+     .tool-lcd, ownership/notes/cross-link) lives in the site stylesheet. */
+  .clock-sync {
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+    min-height: 1.5em;
+  }
+
+  .clock-rows {
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .clock-rows li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    padding: 11px 4px;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+  }
+
+  .clock-rows .clock-zone {
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .clock-rows .clock-zone small {
+    color: var(--teal);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+</style>
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Free online tool</p>
+    <h1>World clock.</h1>
+    <p>
+      The current GMT / UTC time now, measured against our own server and
+      shown with the accuracy it actually achieved — plus UK time (GMT or
+      BST by season) and your local time. An instrument that says what it
+      knows. No third-party time APIs, no ads, no personal data collected.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ans World Clock",
+    "alternateName": "GMT Time Now",
+    "url": "https://anscalc.com/clock/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Exact GMT/UTC time with stated measured accuracy, UK time labelled GMT or BST correctly by season, and your local time. No ads, no tracking, no third-party time APIs.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="tool-lcd" role="timer" aria-label="Display">
+    <div class="tool-lcd-indicators">
+      <span class="is-active">GMT / UTC</span>
+      <span id="ind-sync">Syncing</span>
+    </div>
+    <div class="tool-lcd-main" id="lcd-main">--:--:--</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <p class="clock-sync" id="sync-line">Measuring against the server…</p>
+
+  <ul class="clock-rows" aria-label="Other clocks">
+    <li>
+      <span class="clock-zone">United Kingdom <small id="uk-name"></small></span>
+      <span id="uk-time">--:--:--</span>
+    </li>
+    <li>
+      <span class="clock-zone">Your time <small id="local-name"></small></span>
+      <span id="local-time">--:--:--</span>
+    </li>
+  </ul>
+
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>No third-party time APIs</li>
+  </ul>
+
+  <section class="tool-notes" aria-label="How it keeps time">
+    <h2>How it keeps time</h2>
+    <p>
+      The clock syncs against anscalc.com itself — the same server this
+      page came from — so no third-party time service ever sees your
+      visit. It takes several timed readings of the server's clock,
+      intersects them across a second boundary, and states the accuracy
+      that measurement actually achieved. Wall-clock grade, and it says
+      so; if the server can't be reached it shows your device clock,
+      honestly labelled.
+    </p>
+    <p>
+      Between syncs, time is held on a monotonic clock that ignores any
+      changes to your device's own clock, and the display re-syncs when
+      you return to the tab or after the machine sleeps.
+    </p>
+    <p>
+      Is the UK on GMT or BST? GMT (Greenwich Mean Time) is UTC+0 all
+      year round; in summer the UK runs on <strong>BST</strong> (British
+      Summer Time, UTC+1), not GMT — so "GMT" and "UK time" differ for
+      half the year. This page labels the UK clock correctly by season,
+      which most clock sites fudge.
+    </p>
+  </section>
+
+  <p class="tool-crosslink">
+    From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper tool, nothing in the way.
+  </p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var lcdMain = document.getElementById("lcd-main");
+  var lcdSub = document.getElementById("lcd-sub");
+  var indSync = document.getElementById("ind-sync");
+  var syncLine = document.getElementById("sync-line");
+  var ukTime = document.getElementById("uk-time");
+  var ukName = document.getElementById("uk-name");
+  var localTime = document.getElementById("local-time");
+  var localName = document.getElementById("local-name");
+
+  var fmt = function (zone) {
+    return new Intl.DateTimeFormat("en-GB", { hour: "2-digit",
+      minute: "2-digit", second: "2-digit", hour12: false, timeZone: zone });
+  };
+  var fmtUTC = fmt("UTC");
+  var fmtUK = fmt("Europe/London");
+  var fmtLocal = fmt(undefined);
+  var fmtDate = new Intl.DateTimeFormat("en-GB", { weekday: "short",
+    day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  var fmtUKName = new Intl.DateTimeFormat("en-GB",
+    { timeZone: "Europe/London", timeZoneName: "short" });
+  localName.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+
+  // ---- sync engine ------------------------------------------------------
+  // The server's Date header is whole seconds, so one reading only pins
+  // its clock to a one-second window. Take several readings spread across
+  // more than a second (so at least one pair straddles the server's
+  // second tick) and intersect the windows: the overlap narrows to
+  // roughly the request spacing plus round-trip time. Held between syncs
+  // on performance.now (monotonic — immune to device clock changes).
+  // A cache-busting query keeps the CDN from replaying a stale Date; the
+  // Age header is honoured as belt and braces.
+
+  var sync = { ok: false, off: 0, unc: 0, atMono: 0, busy: false, n: 0 };
+
+  // Each sample is a plain GET via XMLHttpRequest — deliberately the most
+  // boring, battle-tested request a browser can make (HEAD via fetch
+  // proved fragile against real CDNs). The path is random and has never
+  // existed, so the 404 response cannot come from any cache and its Date
+  // header is generated fresh, now. This matters: the live CDN was
+  // observed refreshing Date at delivery on *cached* objects while also
+  // reporting Age, so Date+Age arithmetic overshot by the cache age
+  // (a stopwatch-grade bug: "your device is 7 s slow", varying by
+  // refresh). Any response still claiming Age > 0 is skipped. Headers
+  // are all we need, so the request is aborted before the body arrives.
+  function sample() {
+    return new Promise(function (resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      var done = false;
+      var sendM = performance.now();
+      xhr.open("GET", "/clocksync/" + (++sync.n) + "-" +
+               Math.random().toString(36).slice(2), true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState < 2 || done) { return; }   // 2 = headers received
+        done = true;
+        var recvM = performance.now();
+        var d = Date.parse(xhr.getResponseHeader("Date") || "");
+        var age = parseInt(xhr.getResponseHeader("Age"), 10) || 0;
+        try { xhr.abort(); } catch (e) {}             // skip the 404 body
+        if (!isFinite(d)) { reject(new Error("no Date header")); return; }
+        if (age > 0) { reject(new Error("cached response (Age " + age + ")")); return; }
+        resolve({ lo: d - recvM, hi: d + 1000 - sendM });
+      };
+      xhr.onerror = function () {
+        if (!done) { done = true; reject(new Error("network error")); }
+      };
+      xhr.timeout = 8000;
+      xhr.ontimeout = function () {
+        if (!done) { done = true; reject(new Error("timeout")); }
+      };
+      xhr.send();
+    });
+  }
+
+  function doSync() {
+    if (sync.busy) { return; }
+    sync.busy = true;
+    indSync.textContent = "Syncing";
+    var lo = -Infinity, hi = Infinity, good = 0, tries = 0, lastErr = null;
+    function step() {
+      tries++;
+      sample().then(function (s) {
+        good++;
+        var nLo = Math.max(lo, s.lo);
+        var nHi = Math.min(hi, s.hi);
+        if (nHi < nLo) { nLo = s.lo; nHi = s.hi; }  // contradiction: restart from this reading
+        lo = nLo;
+        hi = nHi;
+        next();
+      }).catch(function (e) { lastErr = e; next(); }); // one bad sample isn't a failed sync
+    }
+    function next() {
+      if (tries < 8 && (good < 3 || hi - lo > 250)) { setTimeout(step, 170); }
+      else if (good > 0) { finish(); }
+      else { fail(); }
+    }
+    function finish() {
+      sync.off = (lo + hi) / 2;
+      sync.unc = Math.max(0, (hi - lo) / 2);
+      sync.ok = true;
+      sync.busy = false;
+      sync.atMono = performance.now();
+      var uncS = Math.ceil(sync.unc / 10) / 100;             // never overclaim
+      var dev = (serverNow() - Date.now()) / 1000;
+      var devAbs = Math.abs(dev);
+      indSync.textContent = "Synced ±" + uncS.toFixed(2) + " s";
+      syncLine.textContent = devAbs < Math.max(uncS, 0.05)
+        ? "Your device clock agrees with the server to within ±" + uncS.toFixed(2) + " s."
+        : "Your device clock is " + devAbs.toFixed(1) + " s " +
+          (dev > 0 ? "slow" : "fast") + " — the time shown here is the " +
+          "server's, accurate to ±" + uncS.toFixed(2) + " s.";
+    }
+    function fail() {
+      sync.ok = false;
+      sync.busy = false;
+      indSync.textContent = "Device clock";
+      syncLine.textContent =
+        "Couldn't reach the server — showing your device clock, unverified.";
+      if (window.console && console.warn) {       // never fail silently
+        console.warn("Ans clock: sync failed —", lastErr);
+      }
+    }
+    step();
+  }
+
+  function serverNow() {
+    return sync.ok ? performance.now() + sync.off : Date.now();
+  }
+
+  // ---- sleep / staleness ------------------------------------------------
+  // performance.now freezes during system sleep, so a slept-through sync
+  // is wrong on wake: wall-vs-monotonic drift detects it and re-syncs.
+
+  var drift = { wall: Date.now(), mono: performance.now() };
+
+  function checkSleep() {
+    var wallD = Date.now() - drift.wall;
+    var monoD = performance.now() - drift.mono;
+    drift.wall += wallD;
+    drift.mono += monoD;
+    if (wallD - monoD > 2000 && sync.ok) {
+      sync.ok = false;                          // honest until re-measured
+      doSync();
+    }
+  }
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) { return; }
+    checkSleep();
+    if (!sync.ok || performance.now() - sync.atMono > 5 * 60000) { doSync(); }
+  });
+
+  // ---- rendering --------------------------------------------------------
+
+  var lastSec = -1;
+
+  function frame() {
+    checkSleep();
+    var now = serverNow();
+    var sec = Math.floor(now / 1000);
+    if (sec !== lastSec) {
+      lastSec = sec;
+      lcdMain.textContent = fmtUTC.format(now);
+      lcdSub.textContent = fmtDate.format(now) + " · UTC";
+      ukTime.textContent = fmtUK.format(now);
+      localTime.textContent = fmtLocal.format(now);
+      var parts = fmtUKName.formatToParts(now);
+      for (var i = 0; i < parts.length; i++) {
+        if (parts[i].type === "timeZoneName") {
+          ukName.textContent = parts[i].value;   // "GMT" or "BST" by season
+        }
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  requestAnimationFrame(frame);
+  doSync();
+})();
+</script>

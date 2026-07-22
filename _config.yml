@@ -1,0 +1,7 @@
+title: Ans
+description: A proper scientific calculator for iPhone and iPad. £4.99 once, with no subscriptions, ads, accounts or tracking.
+url: https://anscalc.com
+baseurl: ""
+markdown: kramdown
+plugins:
+  - jekyll-sitemap

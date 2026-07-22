@@ -1,0 +1,372 @@
+---
+layout: default
+title: Lensmaker's Equation Calculator — Focal Length from Radii & Index — Ans
+description: Free lensmaker's equation calculator. Get the focal length and power of a thin lens from its refractive index and the two surface radii — choose each surface as convex, flat or concave, so the sign convention is handled for you. No ads, no tracking.
+body_class: tool-page science-page
+permalink: /science/lensmakers-equation/
+---
+
+<style>
+  .lens-surface { margin: 0 0 16px; }
+  .lens-surface-head {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .lens-surface-head b { font-weight: 600; }
+  .lens-surface-head small { color: var(--muted); margin-left: 6px; }
+  .lens-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+    align-items: center;
+  }
+  .lens-row select.shape {
+    flex: 1 1 200px;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    padding: 9px 10px;
+    background: var(--body);
+    color: var(--white);
+    font: 600 15px var(--sans);
+    cursor: pointer;
+  }
+  .lens-row select.shape:focus { outline: 3px solid var(--violet); outline-offset: 2px; }
+  /* Keep the sign + number + unit tight as one group, well clear of the
+     shape menu (the .lens-row gap) so the sign clearly belongs to the number. */
+  .lens-row .phys-control { gap: 6px; }
+  /* Live sign glyph sitting immediately left of the radius, so a concave
+     surface visibly reads as a negative radius. White, to match the number. */
+  .lens-sign {
+    font: 700 20px var(--mono);
+    color: var(--white);
+    min-width: 0.75em;
+    text-align: center;
+    align-self: center;
+  }
+  /* Flat surface: the ∞ shows inside the (disabled) number box itself. */
+  .lens-row input.is-flat-box {
+    text-align: center;
+    font-size: 22px;
+    color: var(--white);
+    opacity: 0.7;
+  }
+  .beam-unit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Science calculator</p>
+    <h1>Lensmaker's equation.</h1>
+    <p>
+      The focal length of a thin lens from its refractive index and the two
+      surface radii. Instead of asking you to sign the radii, each surface
+      is chosen as <b>convex</b>, <b>flat</b> or <b>concave</b> — the
+      convention is applied for you, and the signed radii it used are shown
+      so you can check.
+    </p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Lensmaker's Equation Calculator",
+    "url": "https://anscalc.com/science/lensmakers-equation/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "description": "Lensmaker's equation calculator: thin-lens focal length and power from refractive index and surface radii, with a convex/flat/concave chooser that handles the sign convention.",
+    "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
+  }
+  </script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-n">Refractive index <b>n</b></label>
+      <span class="phys-control">
+        <input id="in-n" inputmode="decimal" autocomplete="off" value="1.5">
+      </span>
+    </div>
+  </div>
+
+  <div class="lens-surface">
+    <div class="lens-surface-head"><b>Surface 1</b> <small>light enters at this surface</small></div>
+    <div class="lens-row">
+      <select id="shape-1" class="shape" aria-label="Surface 1 shape">
+        <option value="convex" selected>Convex — curves outward</option>
+        <option value="flat">Flat — plane</option>
+        <option value="concave">Concave — curves inward</option>
+      </select>
+      <span class="phys-control">
+        <span class="lens-sign" id="sign-1" aria-hidden="true">+</span>
+        <input id="in-R1" inputmode="decimal" autocomplete="off" value="100" aria-label="Surface 1 radius magnitude">
+        <select id="u-R1" aria-label="Surface 1 radius unit">
+          <option value="1e-3" selected>mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1">m</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="lens-surface">
+    <div class="lens-surface-head"><b>Surface 2</b> <small>light exits at this surface</small></div>
+    <div class="lens-row">
+      <select id="shape-2" class="shape" aria-label="Surface 2 shape">
+        <option value="convex" selected>Convex — curves outward</option>
+        <option value="flat">Flat — plane</option>
+        <option value="concave">Concave — curves inward</option>
+      </select>
+      <span class="phys-control">
+        <span class="lens-sign" id="sign-2" aria-hidden="true">+</span>
+        <input id="in-R2" inputmode="decimal" autocomplete="off" value="100" aria-label="Surface 2 radius magnitude">
+        <select id="u-R2" aria-label="Surface 2 radius unit">
+          <option value="1e-3" selected>mm</option>
+          <option value="1e-2">cm</option>
+          <option value="1">m</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators">
+      <span class="is-active">Focal length f</span>
+      <span id="ind-type"></span>
+    </div>
+    <div class="tool-lcd-main" id="out-f">—</div>
+    <div class="tool-lcd-sub" id="out-f-sub">thin lens in air</div>
+  </div>
+
+  <div class="beam-unit">
+    <label for="u-out">Show f in</label>
+    <span class="phys-control">
+      <select id="u-out" aria-label="Focal length output unit">
+        <option value="1e-3" selected>mm</option>
+        <option value="1e-2">cm</option>
+        <option value="1">m</option>
+      </select>
+    </span>
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control">
+      <select id="u-sf" aria-label="Display precision">
+        <option value="3">3 s.f.</option>
+        <option value="4" selected>4 s.f.</option>
+        <option value="5">5 s.f.</option>
+        <option value="6">6 s.f.</option>
+        <option value="7">7 s.f.</option>
+        <option value="8">8 s.f.</option>
+        <option value="9">9 s.f.</option>
+        <option value="10">10 s.f.</option>
+      </select>
+    </span>
+  </div>
+
+  <dl class="phys-results">
+    <div><dt>Optical power 1/f</dt><dd id="out-power">—</dd></div>
+    <div><dt>Signed R₁ used</dt><dd id="out-R1">—</dd></div>
+    <div><dt>Signed R₂ used</dt><dd id="out-R2">—</dd></div>
+  </dl>
+
+  <div class="formula" aria-label="Formula">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+        <mfrac><mn>1</mn><mi>f</mi></mfrac><mo>=</mo>
+        <mrow><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+        <mrow><mo>(</mo>
+          <mfrac><mn>1</mn><msub><mi>R</mi><mn>1</mn></msub></mfrac>
+          <mo>+</mo>
+          <mfrac><mn>1</mn><msub><mi>R</mi><mn>2</mn></msub></mfrac>
+        <mo>)</mo></mrow>
+      </mrow>
+    </math>
+  </div>
+  <ul class="formula-legend">
+    <li><b>n</b> refractive index of the lens · <b>R₁</b>, <b>R₂</b> the two surface radii (signed) · <b>f</b> focal length</li>
+  </ul>
+
+  <section class="assumptions" aria-label="Sign convention and assumptions">
+    <h2>Sign convention &amp; assumptions</h2>
+    <ul>
+      <li><b>Convex surface → positive radius. Concave → negative. Flat →
+        infinite</b> (adds no power). The same rule applies to both
+        surfaces; the chooser sets the sign and shows the signed R₁ and R₂
+        it used above.</li>
+      <li>Light enters at Surface 1 and exits at Surface 2, but the sign
+        depends only on each surface's own shape, not the order.</li>
+      <li>Worked shapes: <b>biconvex</b> (both convex) → converging;
+        <b>plano-convex</b> (one flat); <b>biconcave</b> (both concave) →
+        diverging; <b>meniscus</b> (one convex, one concave).</li>
+      <li><b>Thin lens in air</b> (thickness ≪ radii; surrounding index 1).
+        A positive f converges, a negative f diverges.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>
+      Each surface bends light by an amount set by its curvature and the
+      index step; the lensmaker's equation adds the two contributions. A
+      more strongly curved surface (smaller radius) or a higher index gives
+      a shorter focal length. Power in dioptres is simply 1/f with f in
+      metres.
+    </p>
+    <p>
+      The convex/flat/concave chooser exists because the signs are where
+      lensmaker's calculations usually go wrong. The rule here is uniform: a
+      convex surface is a positive radius, a concave one negative, a flat
+      one infinite. That pairs with the sum form 1/f = (n−1)(1/R₁ + 1/R₂)
+      shown above — identical to the textbook 1/f = (n−1)(1/R₁ − 1/R₂) once
+      R₂ is signed the Cartesian way. Thin-lens approximation only; a thick
+      lens needs the extra centre-thickness term.
+    </p>
+  </section>
+
+  <p class="science-related">Related: <a href="/science/thin-lens-imaging/">Thin-lens imaging calculator</a></p>
+  <ul class="tool-ownership" aria-label="Promise">
+    <li><strong>Free</strong></li>
+    <li>No ads</li>
+    <li>No tracking</li>
+    <li>No account</li>
+    <li>Works offline once loaded</li>
+  </ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <p>From the maker of <a href="/">Ans — a scientific calculator you can
+    own</a>. Same idea: a proper instrument, nothing in the way.</p>
+  </div>
+</div>
+
+<script src="/assets/js/physics.js"></script>
+<script>
+(function () {
+  "use strict";
+  var P = window.AnsPhysics, L = P.lens;
+  function el(id) { return document.getElementById(id); }
+  function fac(s) { return parseFloat(s.value); }
+  function num(id) {
+    var raw = el(id).value.trim().replace(",", ".");
+    var v = parseFloat(raw);
+    el(id).classList.toggle("is-invalid", raw !== "" && !isFinite(v));
+    return raw === "" ? NaN : v;
+  }
+
+  var uOut = el("u-out"), uSf = el("u-sf");
+  var outF = el("out-f"), outPower = el("out-power"), outR1 = el("out-R1"),
+      outR2 = el("out-R2"), indType = el("ind-type"), sub = el("out-f-sub");
+
+  // Uniform sign rule for both surfaces: convex -> +R, concave -> -R,
+  // flat -> Infinity (no power). Pairs with the sum form of the equation.
+  function signedR(shape, mag, factor) {
+    if (shape === "flat") { return Infinity; }
+    var R = mag * factor;
+    return shape === "convex" ? R : -R;
+  }
+
+  // Remember each magnitude across a flat toggle so it comes back.
+  var lastMag = { "in-R1": "", "in-R2": "" };
+
+  // Convex -> "+" glyph, concave -> "−" glyph. Flat shows "∞" INSIDE the
+  // (disabled) number box, with no glyph beside it.
+  function applyShape(inId, signId, shape) {
+    var input = el(inId), sign = el(signId);
+    if (shape === "flat") {
+      if (input.value !== "∞") { lastMag[inId] = input.value; }
+      input.value = "∞";
+      input.disabled = true;
+      input.classList.remove("is-invalid");
+      input.classList.add("is-flat-box");
+      sign.textContent = "";
+    } else {
+      if (input.value === "∞") { input.value = lastMag[inId]; }
+      input.disabled = false;
+      input.classList.remove("is-flat-box");
+      sign.textContent = shape === "convex" ? "+" : "−";
+    }
+  }
+
+  // Radius fields are positive magnitudes: block a typed sign, sanitise paste.
+  function magField(id) {
+    var e = el(id);
+    e.addEventListener("keydown", function (ev) {
+      if (ev.key === "-" || ev.key === "+" || ev.key === "e" || ev.key === "E") {
+        ev.preventDefault();
+      }
+    });
+    e.addEventListener("input", function () {
+      var c = e.value.replace(/[^0-9.]/g, "");
+      var i = c.indexOf(".");
+      if (i >= 0) { c = c.slice(0, i + 1) + c.slice(i + 1).replace(/\./g, ""); }
+      if (c !== e.value) { e.value = c; }
+      compute();
+    });
+  }
+
+  function fmtR(R, factor, unitTxt, sf) {
+    if (!isFinite(R)) { return "∞ (flat)"; }
+    return P.format(R / factor, sf) + " " + unitTxt;
+  }
+
+  function compute() {
+    var n = num("in-n");
+    var s1 = el("shape-1").value, s2 = el("shape-2").value;
+    applyShape("in-R1", "sign-1", s1);
+    applyShape("in-R2", "sign-2", s2);
+    var mag1 = s1 === "flat" ? 0 : num("in-R1");
+    var mag2 = s2 === "flat" ? 0 : num("in-R2");
+
+    if (!(n > 1)) {
+      outF.textContent = "—"; P.fitDisplay(outF);
+      sub.textContent = "refractive index must be > 1";
+      outPower.textContent = outR1.textContent = outR2.textContent = "—";
+      indType.textContent = ""; return;
+    }
+    if ((s1 !== "flat" && !(mag1 > 0)) || (s2 !== "flat" && !(mag2 > 0))) {
+      outF.textContent = "—"; P.fitDisplay(outF);
+      sub.textContent = "enter each curved radius";
+      outPower.textContent = outR1.textContent = outR2.textContent = "—";
+      indType.textContent = ""; return;
+    }
+
+    var R1 = signedR(s1, mag1, fac(el("u-R1")));
+    var R2 = signedR(s2, mag2, fac(el("u-R2")));
+    var sf = parseInt(uSf.value, 10) || 4;
+    var f = L.lensmaker(n, R1, R2);
+
+    outR1.textContent = fmtR(R1, fac(el("u-R1")), el("u-R1").options[el("u-R1").selectedIndex].text, sf);
+    outR2.textContent = fmtR(R2, fac(el("u-R2")), el("u-R2").options[el("u-R2").selectedIndex].text, sf);
+
+    if (!isFinite(f)) {
+      outF.textContent = "∞";
+      P.fitDisplay(outF);
+      sub.textContent = "no net power (flat / equal-curvature)";
+      outPower.textContent = "0 D";
+      indType.textContent = "no power";
+      return;
+    }
+    var of = fac(uOut), ul = uOut.options[uOut.selectedIndex].text;
+    outF.textContent = P.format(f / of, sf) + " " + ul;
+    P.fitDisplay(outF);
+    outPower.textContent = P.format(1 / f, sf) + " D";
+    indType.textContent = f > 0 ? "converging" : "diverging";
+    sub.textContent = "thin lens in air";
+  }
+
+  ["in-n", "in-R1", "in-R2"].forEach(magField);
+  ["shape-1", "shape-2", "u-R1", "u-R2", "u-out", "u-sf"].forEach(function (id) {
+    el(id).addEventListener("change", compute);
+  });
+  compute();
+})();
+</script>
