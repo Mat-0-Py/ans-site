@@ -667,12 +667,16 @@ a.button-secondary:hover {
 
 /* Each ratio matches the crop produced by Tools/generate_website_media.swift;
    change one and you must change the other. */
+.widget-capture-small .widget-shot {
+  aspect-ratio: 1 / 1;
+}
+
 .widget-capture-medium .widget-shot {
-  aspect-ratio: 1320 / 680;
+  aspect-ratio: 1149 / 557;
 }
 
 .widget-capture-large .widget-shot {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1149 / 1217;
 }
 
 .feature-card {
@@ -1831,4 +1835,54 @@ a.button-secondary:hover {
     gap: 6px;
   }
   .phys-control input { width: 100%; flex: 1; }
+}
+
+/* Mac band — the 1.1 platform story. Sits between the device captures and the
+   feature grid, raised off the page background so it reads as its own beat. */
+.mac-band {
+  border-block: 1px solid var(--line);
+  background: var(--body);
+}
+
+.mac-band-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(28px, 4vw, 60px);
+  align-items: center;
+}
+
+.mac-band-copy h2 {
+  margin: 6px 0 18px;
+}
+
+.mac-band-note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.mac-band-shot {
+  margin: 0;
+}
+
+.mac-band-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.mac-band-shot figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .mac-band-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

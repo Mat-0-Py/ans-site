@@ -18,6 +18,44 @@ SITE_URL = "https://anscalc.com"
 
 LAYOUT = (SITE / "_layouts" / "default.html").read_text()
 
+# Site-level switches read straight from _config.yml, so the preview cannot
+# drift from what GitHub Pages will build.
+CONFIG = (SITE / "_config.yml").read_text()
+
+
+def config_value(key, default=""):
+    m = re.search(rf"^{key}:\s*(.*)$", CONFIG, re.M)
+    if not m:
+        return default
+    value = m.group(1).strip().strip('"').strip("'")
+    if value in ("true", "false"):
+        return value == "true"
+    return value
+
+
+SITE_VARS = {
+    "appstore_url": config_value("appstore_url"),
+    "mac_available": config_value("mac_available", False),
+}
+
+SITE_IF = re.compile(
+    r"{%\s*if\s+site\.(?P<var>\w+)\s*%}(?P<then>.*?)"
+    r"(?:{%\s*else\s*%}(?P<otherwise>.*?))?{%\s*endif\s*%}",
+    re.S,
+)
+
+
+def resolve_site_liquid(text):
+    """Only the flat `{% if site.X %}…{% else %}…{% endif %}` form the pages
+    actually use. Nesting is deliberately unsupported — if a page ever needs
+    it, install Jekyll rather than growing this."""
+    def choose(m):
+        return m.group("then") if SITE_VARS.get(m.group("var")) else (m.group("otherwise") or "")
+    text = SITE_IF.sub(choose, text)
+    for name, value in SITE_VARS.items():
+        text = text.replace("{{ site.%s }}" % name, str(value) if value else "")
+    return text
+
 PAGES = [
     # (source, output path, page.url)
     ("index.html", "index.html", "/"),
@@ -202,6 +240,8 @@ for src, dest, url in PAGES:
                       ' class="is-active" aria-current="page"' if "science-page" in body_class else "")
 
     doc = doc.replace("{{ content }}", content)
+
+    doc = resolve_site_liquid(doc)
 
     leftover = re.findall(r"({%.*?%}|{{.*?}})", doc)
     if leftover:

@@ -2,6 +2,23 @@ title: Ans
 description: A proper scientific calculator for iPhone and iPad. £4.99 once, with no subscriptions, ads, accounts or tracking.
 url: https://anscalc.com
 baseurl: ""
+
+# The App Store listing. While this is empty the site falls back to
+# "Coming soon" wording everywhere it would otherwise link, so the page is
+# never broken and never claims something that isn't there yet.
+#
+# Geo-neutral form (no /gb/): Apple redirects each visitor to their own
+# storefront. A regional link would send US and EU visitors to the UK store.
+appstore_url: "https://apps.apple.com/app/id6790899698"
+
+# Flip to true the moment the macOS build is approved and on sale. Until
+# then the site says Ans is coming to Mac rather than offering it — the Mac
+# app is a universal purchase on the same listing, so no second link.
+#
+# When flipping it, also widen the two places that name the platforms in
+# prose and cannot read this flag: `description` above, and the `title` and
+# `description` front matter at the top of index.html.
+mac_available: false
 markdown: kramdown
 plugins:
   - jekyll-sitemap

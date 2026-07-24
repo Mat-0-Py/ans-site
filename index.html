@@ -10,11 +10,16 @@ permalink: /
 {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  "name": "Ans — Scientific Calculator",
+  "name": "Ans: Scientific Calculator",
   "url": "https://anscalc.com/",
   "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "iOS 17.0 or later",
-  "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "GBP" },
+  "operatingSystem": "iOS 17.0 or later{% if site.mac_available %}, macOS 13.0 or later{% endif %}",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "GBP"{% if site.appstore_url %},
+    "url": "{{ site.appstore_url }}"{% endif %}
+  },
   "description": "A proper scientific calculator app for iPhone and iPad — exact fractions, natural display, variables and memory. £4.99 once; no subscriptions, ads, accounts or tracking.",
   "featureList": "Exact fractions, natural two-line display, replay editing, variables, Home Screen widgets, DEG/RAD/GRAD, scientific notation",
   "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
@@ -23,7 +28,7 @@ permalink: /
 
 <section class="hero section-shell" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Scientific calculator for iPhone and iPad</p>
+    <p class="eyebrow">Scientific calculator for iPhone and iPad{% if site.mac_available %} and Mac{% endif %}</p>
     <h1 id="hero-title">A proper scientific calculator. <span>Yours.</span></h1>
     <p class="hero-lead">
       Designed by a scientist for people who work with numbers. Ans is fast,
@@ -31,8 +36,12 @@ permalink: /
       matters.
     </p>
 
-    <div class="hero-actions" aria-label="Launch information">
+    <div class="hero-actions">
+      {% if site.appstore_url %}
+      <a class="button button-primary" href="{{ site.appstore_url }}">Get Ans on the App Store</a>
+      {% else %}
       <span class="button button-primary">Coming soon to the App Store</span>
+      {% endif %}
       <a class="button button-secondary" href="#in-action">See Ans in action</a>
     </div>
 
@@ -98,9 +107,41 @@ permalink: /
       <div class="capture-frame">
         <img src="/assets/images/screenshots/ipad-exact-fraction.png"
              width="2064" height="2752"
-             alt="Ans on a 13-inch iPad showing one third plus five twelfths as the exact fraction three quarters">
+             alt="Ans on a 13-inch iPad evaluating open bracket A plus B close bracket times open bracket A minus B close bracket, with the exact fraction seventeen over one hundred and forty-four">
       </div>
       <figcaption><strong>iPad</strong><span>A centred instrument with room to think.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="mac-band section-block" id="mac" aria-labelledby="mac-title">
+  <div class="section-shell mac-band-inner">
+    <div class="mac-band-copy">
+      <p class="eyebrow">{% if site.mac_available %}Now on Mac{% else %}Coming to Mac{% endif %}</p>
+      <h2 id="mac-title">A real desk calculator.</h2>
+      <p>
+        A compact window that can keep itself in front while you write in the
+        document behind it. Type calculations straight from the keyboard—Return
+        for equals—hold Shift while clicking for a key's second function, and
+        open all six variables in a window of their own.
+      </p>
+      <p class="mac-band-note">
+        {% if site.mac_available %}
+        Included in the same purchase: buy Ans once and it is yours on iPhone,
+        iPad and Mac.
+        {% else %}
+        It will be included in the same purchase. If you already own Ans, there
+        will be nothing new to buy.
+        {% endif %}
+      </p>
+    </div>
+
+    <figure class="mac-band-shot">
+      <img src="/assets/images/screenshots/mac-keep-in-front.png"
+           width="1920" height="1080"
+           alt="Ans on a Mac, pinned in front of a thesis page and a notes window, computing the transmitted fraction that the page describes"
+           loading="lazy">
+      <figcaption>Keep in Front, over the work it is for.</figcaption>
     </figure>
   </div>
 </section>
@@ -167,7 +208,7 @@ permalink: /
     <figure class="widget-capture widget-capture-small">
       <div class="widget-shot">
         <img src="/assets/images/screenshots/widget-small.png"
-             width="600" height="600"
+             width="553" height="553"
              alt="Small Ans calculator widget showing a recent expression, answer and history arrow buttons"
              loading="lazy">
       </div>
@@ -177,7 +218,7 @@ permalink: /
     <figure class="widget-capture widget-capture-medium">
       <div class="widget-shot">
         <img src="/assets/images/screenshots/widget-medium-home.png"
-             width="1320" height="680"
+             width="1149" height="557"
              alt="Medium Ans calculator widget with a wider calculation display and history controls"
              loading="lazy">
       </div>
@@ -187,7 +228,7 @@ permalink: /
     <figure class="widget-capture widget-capture-large">
       <div class="widget-shot">
         <img src="/assets/images/screenshots/widget-large-home.png"
-             width="1320" height="1320"
+             width="1149" height="1217"
              alt="Large Ans calculator widget with a multi-line expression, answer, history buttons and branded open button"
              loading="lazy">
       </div>
@@ -224,9 +265,16 @@ permalink: /
     <p>The complete scientific calculator. No locked functions and no recurring charge.</p>
   </div>
   <div class="purchase-meta">
+    {% if site.appstore_url %}
+    <a class="button button-primary" href="{{ site.appstore_url }}">Get Ans on the App Store</a>
+    {% else %}
     <span>Launching soon</span>
-    <strong>Ans — Scientific Calculator</strong>
-    <small>Requires iOS or iPadOS 17 or later.</small>
+    {% endif %}
+    <strong>Ans: Scientific Calculator</strong>
+    <small>
+      Requires iOS or iPadOS 17 or later{% if site.mac_available %}, or macOS 13 or later{% endif %}.
+      One purchase covers every device you own.
+    </small>
   </div>
 </section>
 
