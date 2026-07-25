@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Ans — Scientific Calculator App for iPhone & iPad, No Ads
-description: A proper scientific calculator app for iPhone and iPad — exact fractions, natural display, variables and memory, like the calculator you used at school. £4.99 once, with no subscriptions, ads, accounts or tracking.
+title: Ans — Scientific Calculator App for iPhone, iPad & Mac, No Ads
+description: A proper scientific calculator app for iPhone, iPad and Mac — exact fractions, natural display, variables and memory, like the calculator you used at school. £4.99 once, with no subscriptions, ads, accounts or tracking.
 body_class: home-page
 permalink: /
 ---
@@ -20,7 +20,7 @@ permalink: /
     "priceCurrency": "GBP"{% if site.appstore_url %},
     "url": "{{ site.appstore_url }}"{% endif %}
   },
-  "description": "A proper scientific calculator app for iPhone and iPad — exact fractions, natural display, variables and memory. £4.99 once; no subscriptions, ads, accounts or tracking.",
+  "description": "A proper scientific calculator app for iPhone, iPad and Mac — exact fractions, natural display, variables and memory. £4.99 once; no subscriptions, ads, accounts or tracking.",
   "featureList": "Exact fractions, natural two-line display, replay editing, variables, Home Screen widgets, DEG/RAD/GRAD, scientific notation",
   "publisher": { "@type": "Organization", "name": "Ans", "url": "https://anscalc.com" }
 }
@@ -28,7 +28,7 @@ permalink: /
 
 <section class="hero section-shell" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Scientific calculator for iPhone and iPad{% if site.mac_available %} and Mac{% endif %}</p>
+    <p class="eyebrow">{% if site.mac_available %}Scientific calculator for iPhone, iPad and Mac{% else %}Scientific calculator for iPhone and iPad{% endif %}</p>
     <h1 id="hero-title">A proper scientific calculator. <span>Yours.</span></h1>
     <p class="hero-lead">
       Designed by a scientist for people who work with numbers. Ans is fast,

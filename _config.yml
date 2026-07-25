@@ -1,5 +1,5 @@
 title: Ans
-description: A proper scientific calculator for iPhone and iPad. £4.99 once, with no subscriptions, ads, accounts or tracking.
+description: A proper scientific calculator for iPhone, iPad and Mac. £4.99 once, with no subscriptions, ads, accounts or tracking.
 url: https://anscalc.com
 baseurl: ""
 
@@ -18,7 +18,7 @@ appstore_url: "https://apps.apple.com/app/id6790899698"
 # When flipping it, also widen the two places that name the platforms in
 # prose and cannot read this flag: `description` above, and the `title` and
 # `description` front matter at the top of index.html.
-mac_available: false
+mac_available: true
 markdown: kramdown
 plugins:
   - jekyll-sitemap
