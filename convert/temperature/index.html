@@ -1,0 +1,96 @@
+---
+layout: default
+title: Temperature Converter — °C to °F — Ans
+description: Free temperature converter. Convert °C to °F and 3 other units, each one defined. No ads or tracking.
+body_class: tool-page convert-page
+permalink: /convert/temperature/
+og_image: /assets/images/convert-social-card.png
+og_image_alt: Ans Convert — free unit converters with exact definitions and named unit systems.
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Unit converter</p>
+    <h1>Temperature.</h1>
+    <p>Convert °C to °F, or pick any of the 5 units in the menus. Type in either box and the other follows. The only conversion in this collection that is not a multiplication: the scales disagree about where zero is, as well as how big a degree is.</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Temperature Converter","url":"https://anscalc.com/convert/temperature/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Free temperature converter. Convert °C to °F and 3 other units, each one defined. No ads or tracking.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+
+  <div class="phys-fields">
+    <div class="phys-field"><label for="in-from">From</label><span class="phys-control"><input id="in-from" inputmode="decimal" autocomplete="off" value="20"><select id="u-from" aria-label="Convert from unit"></select></span></div>
+    <div class="convert-swap-row"><button type="button" class="convert-swap" id="convert-swap" aria-label="Swap the two units">⇄ Swap</button></div>
+    <div class="phys-field"><label for="in-to">To</label><span class="phys-control"><input id="in-to" inputmode="decimal" autocomplete="off"><select id="u-to" aria-label="Convert to unit"></select></span></div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">°C → °F</span><span id="lcd-note">Exact definition</span></div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control"><select id="u-sf" aria-label="Display precision"><option value="3">3 s.f.</option><option value="4">4 s.f.</option><option value="5">5 s.f.</option><option value="6" selected>6 s.f.</option><option value="7">7 s.f.</option><option value="8">8 s.f.</option><option value="9">9 s.f.</option><option value="10">10 s.f.</option></select></span>
+  </div>
+
+<div class="convert-table-wrap">
+  <table class="convert-table">
+    <caption>Degrees Celsius to degrees Fahrenheit — common values, to 6 significant figures.</caption>
+    <thead><tr><th scope="col">°C</th><th scope="col">°F</th></tr></thead>
+    <tbody>
+      <tr><td>−40 °C</td><td>−40 °F</td></tr>
+      <tr><td>−20 °C</td><td>−4 °F</td></tr>
+      <tr><td>−10 °C</td><td>14 °F</td></tr>
+      <tr><td>0 °C</td><td>32 °F</td></tr>
+      <tr><td>5 °C</td><td>41 °F</td></tr>
+      <tr><td>10 °C</td><td>50 °F</td></tr>
+      <tr><td>15 °C</td><td>59 °F</td></tr>
+      <tr><td>20 °C</td><td>68 °F</td></tr>
+      <tr><td>25 °C</td><td>77 °F</td></tr>
+      <tr><td>30 °C</td><td>86 °F</td></tr>
+      <tr><td>37 °C</td><td>98.6 °F</td></tr>
+      <tr><td>40 °C</td><td>104 °F</td></tr>
+      <tr><td>50 °C</td><td>122 °F</td></tr>
+      <tr><td>75 °C</td><td>167 °F</td></tr>
+      <tr><td>100 °C</td><td>212 °F</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  <div class="formula" aria-label="Temperature conversion formula">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>°F</mtext><mo>=</mo><mtext>°C</mtext><mo>×</mo><mfrac><mn>9</mn><mn>5</mn></mfrac><mo>+</mo><mn>32</mn></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>°C</mtext><mo>=</mo><mfrac><mn>5</mn><mn>9</mn></mfrac><mo>×</mo><mrow><mo>(</mo><mtext>°F</mtext><mo>−</mo><mn>32</mn><mo>)</mo></mrow></mrow></math>
+  </div>
+  <ul class="formula-legend"><li>Every unit in the menus is defined against K, so any pairing converts by the same single route.</li></ul>
+
+  <section class="assumptions" aria-label="Definitions">
+    <h2>Definitions</h2>
+    <ul>
+      <li>Celsius puts 0 at the freezing point of water and 100 at its boiling point at standard pressure. A Celsius degree is the same size as a kelvin.</li>
+      <li>Fahrenheit puts water's freezing point at 32 and its boiling point at 212, so a Fahrenheit degree is five ninths of a Celsius one.</li>
+      <li>Temperature scales have different zero points, so conversion is a scale AND a shift. A temperature and a temperature difference do not convert the same way.</li>
+      <li>Every unit in the menus is exact by definition, so the only rounding on this page is the one you choose for the display.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>Every value is converted into kelvin and then back out into the unit you asked for. One route covers every pairing in the menus, so an unusual combination is no less accurate than a common one, and adding a unit affects only that unit.</p>
+    <p>Both boxes are live. Whichever one you last typed in is the source, changing either menu recalculates straight away, and Swap exchanges the units and the values so the number you are reading stays where you are looking.</p>
+    <p>Display precision limits significant figures rather than decimal places, so a reading near zero keeps its detail instead of collapsing to one digit. Rounding is applied to the large display only, never to the arithmetic behind it. The editable box always holds a plain number at full working precision, so you can carry on from either side.</p>
+    <p>Common questions this answers: what 20 °C is in degrees Fahrenheit (68 °F), what 0 °C is (32 °F), and why a rise of 10 °C is a rise of 18 °F, not 50.</p>
+  </section>
+
+  <ul class="convert-pairs" aria-label="Related converters">
+    <li><a href="/convert/fahrenheit-to-celsius/">Fahrenheit to Celsius</a></li>
+    <li><a href="/convert/celsius-to-kelvin/">Celsius to kelvin</a></li>
+    <li><a href="/convert/kelvin-to-celsius/">Kelvin to Celsius</a></li>
+    <li><a href="/convert/fahrenheit-to-kelvin/">Fahrenheit to kelvin</a></li>
+    <li><a href="/convert/">All converters</a></li>
+  </ul>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul>
+  <div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/convert-core.js"></script><script src="/assets/js/units/temperature.js"></script><script src="/assets/js/converter.js"></script>
+<script>AnsConverter({ quantity: "temperature", from: "C", to: "F" });</script>

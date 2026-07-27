@@ -46,3 +46,145 @@ https://anscalc.com/science/lensmakers-equation/ — Calculate thin-lens focal l
 https://anscalc.com/privacy — Read how the Ans app and website handle data, diagnostics and cookieless aggregate web measurement.
 https://anscalc.com/support — Find concise help and the support contact for Ans.
 https://anscalc.com/releases — Read the public Ans release notes and update history.
+
+# Unit converters (generated catalogue)
+Unit converter promise: Free. No ads. No tracking. No account. Every page names its unit system and states whether its values are exact definitions.
+https://anscalc.com/convert/ — Free unit converters with exact definitions. Convert metric, imperial, US customary and scientific units, with a conversion table on every page.
+https://anscalc.com/convert/acceleration/ — Free acceleration converter. Convert g₀ to m/s² and 3 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/acres-to-hectares/ — Free ac to ha converter. Convert acres to hectares and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/acres-to-square-feet/ — Free ac to ft² converter. Convert acres to square feet and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/amount-of-substance/ — Free amount of substance converter. Convert mmol to mol and 2 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/angle/ — Free angle converter. Convert ° to rad and 8 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/angular-velocity/ — Free angular velocity converter. Convert rpm to rad/s and 2 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/area/ — Free area converter. Convert ft² to m² and 13 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/atm-to-psi/ — Free atm to psi converter. Convert atmospheres to PSI and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/bar-to-kpa/ — Free bar to kPa converter. Convert bar to kilopascals and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/bar-to-psi/ — Free bar to psi converter. Convert bar to PSI and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/btu-to-kwh/ — Free BTU to kW·h converter. Convert BTU to kilowatt-hours and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/bytes-to-bits/ — Free B to bit converter. Convert bytes to bits and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/calories-to-kj/ — Free kcal to kJ converter. Convert food calories to kilojoules and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/celsius-to-fahrenheit/ — Free Celsius to Fahrenheit converter. Convert °C to °F and back with the exact formula, a conversion table, and temperature changes handled properly.
+https://anscalc.com/convert/celsius-to-kelvin/ — Free °C to K converter. Convert celsius to kelvin and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/charge/ — Free electric charge converter. Convert mA·h to C and 2 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/cm-to-feet/ — Free cm to ft converter. Convert centimetres to feet and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/cm-to-feet-and-inches/ — Free cm to ft + in converter. Convert centimetres to feet and inches and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/cm-to-inches/ — Free cm to in converter. Convert centimetres to inches and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/concentration/ — Free amount concentration converter. Convert mol/L to mmol/L and 2 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/cubic-feet-to-cubic-metres/ — Free ft³ to m³ converter. Convert cubic feet to cubic metres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/cubic-metres-to-litres/ — Free m³ to L converter. Convert cubic metres to litres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/cups-to-ml/ — Free cup (US) to mL converter. Convert US cups to millilitres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/data/ — Free digital storage converter. Convert MB to GB and 17 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/data-rate/ — Free data transfer rate converter. Convert Mbit/s to MB/s and 5 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/days-to-years/ — Free d to yr converter. Convert days to Julian years and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/degrees-to-radians/ — Free ° to rad converter. Convert degrees to radians and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/density/ — Free density converter. Convert kg/m³ to g/cm³ and 8 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/dose/ — Free radiation dose converter. Convert mSv to rem and 3 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/energy/ — Free energy converter. Convert kcal to kJ and 15 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/ev-efficiency/ — Free ev efficiency converter. Convert Wh/mi to Wh/km and 2 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/fahrenheit-to-celsius/ — Free °F to °C converter. Convert fahrenheit to Celsius and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/fahrenheit-to-kelvin/ — Free °F to K converter. Convert fahrenheit to kelvin and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/feet-and-inches-to-cm/ — Free ft + in to cm converter. Convert feet and inches to centimetres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/feet-to-cm/ — Free ft to cm converter. Convert feet to centimetres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/feet-to-inches/ — Free ft to in converter. Convert feet to inches and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/feet-to-metres/ — Free ft to m converter. Convert feet to metres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/flow/ — Free volumetric flow converter. Convert L/min to gal (imp)/min and 6 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/force/ — Free force converter. Convert lbf to N and 8 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/frequency/ — Free frequency converter. Convert Hz to rpm and 5 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/fuel-economy/ — Free fuel economy converter. Convert mpg (UK) to L/100 km and 5 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/g-to-kg/ — Free g to kg converter. Convert grams to kilograms and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/gallons-to-litres/ — Free gal (imp) to L converter. Convert imperial gallons to litres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/gb-to-gib/ — Free GB to GiB converter. Convert gigabytes to gibibytes and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/gb-to-mb/ — Free GB to MB converter. Convert gigabytes to megabytes and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/gb-to-tb/ — Free GB to TB converter. Convert gigabytes to terabytes and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/grams-to-ounces/ — Free g to oz converter. Convert grams to ounces and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/grams-to-pounds/ — Free g to lb converter. Convert grams to pounds and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/hectares-to-acres/ — Free ha to ac converter. Convert hectares to acres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/hours-to-days/ — Free h to d converter. Convert hours to days and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/hours-to-minutes/ — Free h to min converter. Convert hours to minutes and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/hp-to-kw/ — Free hp to kW converter. Convert mechanical horsepower to kilowatts and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/illuminance/ — Free illuminance converter. Convert fc to lx and 1 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/inches-to-cm/ — Free in to cm converter. Convert inches to centimetres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/inches-to-feet/ — Free in to ft converter. Convert inches to feet and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/inches-to-mm/ — Free in to mm converter. Convert inches to millimetres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/joules-to-calories/ — Free J to cal converter. Convert joules to thermochemical calories and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kelvin-to-celsius/ — Free K to °C converter. Convert kelvin to Celsius and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kg-to-g/ — Free kg to g converter. Convert kilograms to grams and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kg-to-lbs/ — Free kg to lbs converter. Convert kilograms to pounds and back instantly, with the exact definition, a conversion table, and stone and ounces alongside.
+https://anscalc.com/convert/kg-to-pounds-and-ounces/ — Free kg to lb + oz converter. Convert kilograms to pounds and ounces and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kg-to-stone/ — Free kg to st converter. Convert kilograms to stone and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kg-to-stone-and-pounds/ — Free kg to st + lb converter. Convert kilograms to stone and pounds and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kg-to-tons/ — Free kg to short ton converter. Convert kilograms to short tons and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kinematic-viscosity/ — Free kinematic viscosity converter. Convert cSt to m²/s and 1 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/kj-to-calories/ — Free kJ to kcal converter. Convert kilojoules to food calories and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/km-to-m/ — Free km to m converter. Convert kilometres to metres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/km-to-miles/ — Free km to mi converter. Convert kilometres to miles and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kmh-to-mph/ — Free km/h to mph converter. Convert kilometres per hour to miles per hour and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/knots-to-kmh/ — Free kn to km/h converter. Convert knots to kilometres per hour and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/knots-to-mph/ — Free kn to mph converter. Convert knots to miles per hour and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kpa-to-psi/ — Free kPa to psi converter. Convert kilopascals to PSI and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kw-to-hp/ — Free kW to hp converter. Convert kilowatts to mechanical horsepower and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/kwh-to-mj/ — Free kW·h to MJ converter. Convert kilowatt-hours to megajoules and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/l100km-to-mpg/ — Free L/100 km to mpg (UK) converter. Convert litres per 100 kilometres to UK MPG and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/lbs-to-kg/ — Free lb to kg converter. Convert pounds to kilograms and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/length/ — Free length and distance converter. Convert cm to inches, feet to metres and miles to km, with exact 1959 definitions and a conversion table.
+https://anscalc.com/convert/litres-to-gallons/ — Free L to gal (imp) converter. Convert litres to imperial gallons and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/litres-to-ml/ — Free L to mL converter. Convert litres to millilitres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/litres-to-pints/ — Free L to pt (imp) converter. Convert litres to imperial pints and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/m-to-cm/ — Free m to cm converter. Convert metres to centimetres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/magnetic-field/ — Free magnetic flux density converter. Convert G to T and 3 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/mass/ — Free mass & weight converter. Convert kg to lb and 23 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/mass-flow/ — Free mass flow converter. Convert kg/h to lb/h and 3 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/mb-to-gb/ — Free MB to GB converter. Convert megabytes to gigabytes and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mbps-to-mbs/ — Free Mbit/s to MB/s converter. Convert megabits per second to megabytes per second and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/metres-to-feet/ — Free m to ft converter. Convert metres to feet and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/metres-to-yards/ — Free m to yd converter. Convert metres to yards and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/miles-to-km/ — Free mi to km converter. Convert miles to kilometres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/minutes-to-hours/ — Free min to h converter. Convert minutes to hours and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/minutes-to-hours-and-minutes/ — Free min to h + min converter. Convert minutes to hours and minutes and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/minutes-to-seconds/ — Free min to s converter. Convert minutes to seconds and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/ml-to-cups/ — Free mL to cup (US) converter. Convert millilitres to US cups and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/ml-to-litres/ — Free mL to L converter. Convert millilitres to litres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/ml-to-oz/ — Free mL to fl oz (US) converter. Convert millilitres to US fluid ounces and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mm-to-cm/ — Free mm to cm converter. Convert millimetres to centimetres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mm-to-inches/ — Free mm to in converter. Convert millimetres to inches and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mpg-to-l100km/ — Free mpg (UK) to L/100 km converter. Convert UK MPG to litres per 100 kilometres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mpg-us-to-mpg-uk/ — Free mpg (US) to mpg (UK) converter. Convert US MPG to UK MPG and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mph-to-kmh/ — Free mph to km/h converter. Convert miles per hour to kilometres per hour and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mps-to-kmh/ — Free m/s to km/h converter. Convert metres per second to kilometres per hour and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/mps-to-mph/ — Free m/s to mph converter. Convert metres per second to miles per hour and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/nautical-miles-to-km/ — Free nmi to km converter. Convert nautical miles to kilometres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/ounces-to-grams/ — Free oz to g converter. Convert ounces to grams and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/oven-temperatures/ — Oven temperature conversion chart. Gas mark to °C and °F, with fan oven settings, and an honest note on how far a domestic oven actually strays.
+https://anscalc.com/convert/oz-to-ml/ — Free fl oz (US) to mL converter. Convert US fluid ounces to millilitres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/pints-to-litres/ — Free pt (imp) to L converter. Convert imperial pints to litres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/pounds-and-ounces-to-kg/ — Free lb + oz to kg converter. Convert pounds and ounces to kilograms and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/pounds-to-grams/ — Free lb to g converter. Convert pounds to grams and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/power/ — Free power converter. Convert hp to kW and 11 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/pressure/ — Free pressure converter. Convert psi to bar and 15 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/ps-to-hp/ — Free PS to hp converter. Convert metric horsepower to mechanical horsepower and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/psi-to-bar/ — Free psi to bar converter. Convert PSI to bar and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/psi-to-kpa/ — Free psi to kPa converter. Convert PSI to kilopascals and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/quarts-to-litres/ — Free qt (US) to L converter. Convert US liquid quarts to litres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/radians-to-degrees/ — Free rad to ° converter. Convert radians to degrees and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/radioactivity/ — Free radioactivity converter. Convert Ci to Bq and 5 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/seconds-to-minutes/ — Free s to min converter. Convert seconds to minutes and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/seconds-to-minutes-and-seconds/ — Free s to min + s converter. Convert seconds to minutes and seconds and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/specific-energy/ — Free specific energy converter. Convert Wh/kg to kJ/kg and 4 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/speed/ — Free speed converter. Convert mph to km/h and 10 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/square-feet-to-square-metres/ — Free ft² to m² converter. Convert square feet to square metres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/square-metres-to-square-feet/ — Free m² to ft² converter. Convert square metres to square feet and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/stone-and-pounds-to-kg/ — Free st + lb to kg converter. Convert stone and pounds to kilograms and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/stone-to-kg/ — Free st to kg converter. Convert stone to kilograms and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/stone-to-pounds/ — Free st to lb converter. Convert stone to pounds and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/tablespoons-to-ml/ — Free tbsp (metric) to mL converter. Convert metric tablespoons to millilitres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/teaspoons-to-ml/ — Free tsp (metric) to mL converter. Convert metric teaspoons to millilitres and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/temperature/ — Free temperature converter. Convert °C to °F and 3 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/thermal-conductivity/ — Free thermal conductivity converter. Convert BTU/(h·ft·°F) to W/(m·K) and 0 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/time/ — Free time converter. Convert min to h and 14 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/tons-to-kg/ — Free short ton to kg converter. Convert short tons to kilograms and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/torque/ — Free torque converter. Convert lbf·ft to N·m and 5 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/troy-ounces-to-grams/ — Free oz t to g converter. Convert troy ounces to grams and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/viscosity/ — Free dynamic viscosity converter. Convert cP to Pa·s and 2 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/volume/ — Free volume & capacity converter. Convert mL to fl oz (US) and 32 other units, each one defined. No ads or tracking.
+https://anscalc.com/convert/watts-to-btu/ — Free W to BTU/h converter. Convert watts to BTU per hour and back, with each unit defined and a conversion table. No tracking.
+https://anscalc.com/convert/yards-to-metres/ — Free yd to m converter. Convert yards to metres and back, with each unit defined and a conversion table. No tracking.

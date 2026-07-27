@@ -1,0 +1,98 @@
+---
+layout: default
+title: Length Converter — cm, inches, feet, metres, miles — Ans
+description: Free length and distance converter. Convert cm to inches, feet to metres and miles to km, with exact 1959 definitions and a conversion table.
+body_class: tool-page convert-page
+permalink: /convert/length/
+og_image: /assets/images/convert-social-card.png
+og_image_alt: Ans Convert — free unit converters with exact definitions and named unit systems.
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Unit converter</p>
+    <h1>Length and distance.</h1>
+    <p>Convert cm to inches, feet to metres, miles to kilometres, mm to inches and twenty other units of length. Type in either box and the other follows. Every imperial unit here is defined exactly in metres, so nothing is approximated on the way through.</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Length and Distance Converter","url":"https://anscalc.com/convert/length/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Free two-way length converter covering metric, imperial, nautical and astronomical units with exact definitions.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-from">From</label>
+      <span class="phys-control"><input id="in-from" inputmode="decimal" autocomplete="off" value="30"><select id="u-from" aria-label="Convert from unit"></select></span>
+    </div>
+    <div class="convert-swap-row"><button type="button" class="convert-swap" id="convert-swap" aria-label="Swap the two units">⇄ Swap</button></div>
+    <div class="phys-field">
+      <label for="in-to">To</label>
+      <span class="phys-control"><input id="in-to" inputmode="decimal" autocomplete="off"><select id="u-to" aria-label="Convert to unit"></select></span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">cm → in</span><span id="lcd-note">Exact definition</span></div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control"><select id="u-sf" aria-label="Display precision"><option value="3">3 s.f.</option><option value="4">4 s.f.</option><option value="5">5 s.f.</option><option value="6" selected>6 s.f.</option><option value="7">7 s.f.</option><option value="8">8 s.f.</option><option value="9">9 s.f.</option><option value="10">10 s.f.</option></select></span>
+  </div>
+
+  <div class="convert-table-wrap">
+    <table class="convert-table">
+      <caption>Centimetres to inches — common values, to 6 significant figures.</caption>
+      <thead><tr><th scope="col">cm</th><th scope="col">in</th></tr></thead>
+      <tbody>
+        <tr><td>1 cm</td><td>0.393701 in</td></tr>
+        <tr><td>2 cm</td><td>0.787402 in</td></tr>
+        <tr><td>5 cm</td><td>1.9685 in</td></tr>
+        <tr><td>10 cm</td><td>3.93701 in</td></tr>
+        <tr><td>15 cm</td><td>5.90551 in</td></tr>
+        <tr><td>20 cm</td><td>7.87402 in</td></tr>
+        <tr><td>25 cm</td><td>9.84252 in</td></tr>
+        <tr><td>30 cm</td><td>11.811 in</td></tr>
+        <tr><td>50 cm</td><td>19.685 in</td></tr>
+        <tr><td>100 cm</td><td>39.3701 in</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="formula" aria-label="Length conversion definitions">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mtext>&#xA0;in</mtext><mo>=</mo><mn>25.4</mn><mtext>&#xA0;mm</mtext><mspace width="1.5em"/><mn>1</mn><mtext>&#xA0;ft</mtext><mo>=</mo><mn>0.3048</mn><mtext>&#xA0;m</mtext></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mtext>&#xA0;yd</mtext><mo>=</mo><mn>0.9144</mn><mtext>&#xA0;m</mtext><mspace width="1.5em"/><mn>1</mn><mtext>&#xA0;mi</mtext><mo>=</mo><mn>1609.344</mn><mtext>&#xA0;m</mtext></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>x</mi><mtext>to</mtext></msub><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mtext>from</mtext></msub><mo>×</mo><msub><mi>k</mi><mtext>from</mtext></msub></mrow><msub><mi>k</mi><mtext>to</mtext></msub></mfrac></mrow></math>
+  </div>
+  <ul class="formula-legend"><li><b>k</b> the unit's size in metres · every conversion goes through the metre, never directly between two non-SI units</li></ul>
+
+  <section class="assumptions" aria-label="Definitions">
+    <h2>Definitions</h2>
+    <ul>
+      <li>The inch, foot, yard and mile are the international units fixed by the 1959 yard and pound agreement: the yard is exactly 0.9144 m, and everything else follows from it. These conversions are exact by definition.</li>
+      <li>The US survey foot, very slightly longer, was retired at the end of 2022 and is not offered here. If you are reading an old US land survey, the difference is about 2 parts per million — 3 mm over a kilometre.</li>
+      <li>The nautical mile is exactly 1852 m, defined for navigation rather than derived from the yard. A knot is one nautical mile per hour.</li>
+      <li>The astronomical unit (exactly 149 597 870 700 m) and the light-year (exactly 9 460 730 472 580 800 m) are defined constants. The parsec follows from the au and the definition of the arcsecond, so it is the one length here that is not a round defined number.</li>
+      <li>The menus include <b>ft + in</b>, which keeps the whole feet whole and puts the remainder in inches — so 175 cm reads as 5 ft 8.9 in rather than 5.74 ft.</li>
+      <li>Length is otherwise converted, not rounded to a "nice" imperial fraction: 30 cm reads as 11.811 in, not 11¾ in. Fractional-inch display is a separate job.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>To convert cm to inches, divide by 2.54. To convert inches to cm, multiply by 2.54. To convert feet to metres, multiply by 0.3048; for metres to feet, divide by the same number. Miles to kilometres is a multiplication by 1.609344, and the reverse is a division — the familiar "multiply by 1.6" is that number rounded.</p>
+    <p>Every unit on this page is stored as its size in metres, and a conversion is one multiplication into metres followed by one division out. That is why an unusual pairing — furlongs to fathoms, ångströms to thou — is no less accurate than a common one, and why adding a new unit affects only that unit.</p>
+    <p>The display precision menu sets a maximum number of significant figures; trailing zeroes are trimmed, so 1 m reads as 100 cm rather than 100.000 cm. Very large and very small results switch to scientific notation with a proper superscript exponent — a light-year in millimetres is shown as 9.46073×10¹⁸ mm, not as a wall of digits.</p>
+    <p>Common questions this answers: how many cm in an inch (2.54), how many inches in a foot (12), how many feet in a metre (3.28084), what 5 foot 9 is in cm (175.26 cm), and how many km in a mile (1.609344).</p>
+  </section>
+
+  <ul class="convert-pairs" aria-label="Related converters">
+    <li><a href="/convert/kg-to-lbs/">kg to lbs</a></li>
+    <li><a href="/convert/celsius-to-fahrenheit/">°C to °F</a></li>
+    <li><a href="/convert/">All converters</a></li>
+  </ul>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul>
+  <div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/convert-core.js"></script><script src="/assets/js/units/length.js"></script><script src="/assets/js/converter.js"></script>
+<script>AnsConverter({ quantity: "length", from: "cm", to: "in" });</script>

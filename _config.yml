@@ -25,3 +25,4 @@ plugins:
 exclude:
   - render-preview.py
   - tests
+  - tools

@@ -1,0 +1,92 @@
+---
+layout: default
+title: Radiation Dose Converter — mSv to rem — Ans
+description: Free radiation dose converter. Convert mSv to rem and 3 other units, each one defined. No ads or tracking.
+body_class: tool-page convert-page
+permalink: /convert/dose/
+og_image: /assets/images/convert-social-card.png
+og_image_alt: Ans Convert — free unit converters with exact definitions and named unit systems.
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Unit converter</p>
+    <h1>Radiation dose.</h1>
+    <p>Convert mSv to rem, or pick any of the 5 units in the menus. Type in either box and the other follows. Equivalent dose, weighted for biological effect. The gray measures absorbed energy and is a different quantity, deliberately kept off this page.</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Radiation Dose Converter","url":"https://anscalc.com/convert/dose/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Free radiation dose converter. Convert mSv to rem and 3 other units, each one defined. No ads or tracking.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+
+  <div class="phys-fields">
+    <div class="phys-field"><label for="in-from">From</label><span class="phys-control"><input id="in-from" inputmode="decimal" autocomplete="off" value="1"><select id="u-from" aria-label="Convert from unit"></select></span></div>
+    <div class="convert-swap-row"><button type="button" class="convert-swap" id="convert-swap" aria-label="Swap the two units">⇄ Swap</button></div>
+    <div class="phys-field"><label for="in-to">To</label><span class="phys-control"><input id="in-to" inputmode="decimal" autocomplete="off"><select id="u-to" aria-label="Convert to unit"></select></span></div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">mSv → rem</span><span id="lcd-note">Exact definition</span></div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control"><select id="u-sf" aria-label="Display precision"><option value="3">3 s.f.</option><option value="4">4 s.f.</option><option value="5">5 s.f.</option><option value="6" selected>6 s.f.</option><option value="7">7 s.f.</option><option value="8">8 s.f.</option><option value="9">9 s.f.</option><option value="10">10 s.f.</option></select></span>
+  </div>
+
+<div class="convert-table-wrap">
+  <table class="convert-table">
+    <caption>Millisieverts to rems — common values, to 6 significant figures.</caption>
+    <thead><tr><th scope="col">mSv</th><th scope="col">rem</th></tr></thead>
+    <tbody>
+      <tr><td>1 mSv</td><td>0.1 rem</td></tr>
+      <tr><td>2 mSv</td><td>0.2 rem</td></tr>
+      <tr><td>3 mSv</td><td>0.3 rem</td></tr>
+      <tr><td>4 mSv</td><td>0.4 rem</td></tr>
+      <tr><td>5 mSv</td><td>0.5 rem</td></tr>
+      <tr><td>10 mSv</td><td>1 rem</td></tr>
+      <tr><td>15 mSv</td><td>1.5 rem</td></tr>
+      <tr><td>20 mSv</td><td>2 rem</td></tr>
+      <tr><td>25 mSv</td><td>2.5 rem</td></tr>
+      <tr><td>50 mSv</td><td>5 rem</td></tr>
+      <tr><td>75 mSv</td><td>7.5 rem</td></tr>
+      <tr><td>100 mSv</td><td>10 rem</td></tr>
+      <tr><td>250 mSv</td><td>25 rem</td></tr>
+      <tr><td>500 mSv</td><td>50 rem</td></tr>
+      <tr><td>1000 mSv</td><td>100 rem</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  <div class="formula" aria-label="Radiation dose conversion formula">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mtext>&#xA0;mSv</mtext><mo>=</mo><mn>0.1</mn><mtext>&#xA0;rem</mtext></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mtext>&#xA0;rem</mtext><mo>=</mo><mn>10</mn><mtext>&#xA0;mSv</mtext></mrow></math>
+  </div>
+  <ul class="formula-legend"><li>Every unit in the menus is defined against Sv, so any pairing converts by the same single route.</li></ul>
+
+  <section class="assumptions" aria-label="Definitions">
+    <h2>Definitions</h2>
+    <ul>
+      <li>The millisievert measures equivalent dose — absorbed energy weighted for biological harm. UK natural background is about 2.7 mSv a year.</li>
+      <li>The rem is the older US unit, exactly 0.01 Sv. A chest X-ray is roughly 0.01 rem.</li>
+      <li>The sievert measures equivalent or effective dose. The gray measures absorbed dose; they are different physical quantities and are not mixed here.</li>
+      <li>Every unit in the menus is exact by definition, so the only rounding on this page is the one you choose for the display.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>Every value is converted into sieverts and then back out into the unit you asked for. One route covers every pairing in the menus, so an unusual combination is no less accurate than a common one, and adding a unit affects only that unit.</p>
+    <p>Both boxes are live. Whichever one you last typed in is the source, changing either menu recalculates straight away, and Swap exchanges the units and the values so the number you are reading stays where you are looking.</p>
+    <p>Display precision sets a maximum number of significant figures and trims trailing zeroes, so it changes what you see and never what was calculated. The editable box always holds a plain number at full working precision, so you can carry on from either side.</p>
+    <p>Common questions this answers: how many rems in a millisievert (0.1), how many millisieverts in a rem (10), and what 1 mSv is in rems (0.1 rem).</p>
+  </section>
+
+  <ul class="convert-pairs" aria-label="Related converters">
+    <li><a href="/convert/">All converters</a></li>
+  </ul>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul>
+  <div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/convert-core.js"></script><script src="/assets/js/units/dose.js"></script><script src="/assets/js/converter.js"></script>
+<script>AnsConverter({ quantity: "dose", from: "msv", to: "rem" });</script>

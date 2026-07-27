@@ -1,0 +1,102 @@
+---
+layout: default
+title: Celsius to Fahrenheit Converter — °C to °F — Ans
+description: Free Celsius to Fahrenheit converter. Convert °C to °F and back with the exact formula, a conversion table, and temperature changes handled properly.
+body_class: tool-page convert-page
+permalink: /convert/celsius-to-fahrenheit/
+og_image: /assets/images/convert-social-card.png
+og_image_alt: Ans Convert — free unit converters with exact definitions and named unit systems.
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Unit converter</p>
+    <h1>Celsius to Fahrenheit.</h1>
+    <p>Convert °C to °F and °F to °C. Type in either box and the other follows. Temperature scales have different zero points, so this conversion is a stretch <i>and</i> a shift — which is why it needs a formula rather than a single multiplier.</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Celsius to Fahrenheit Converter","url":"https://anscalc.com/convert/celsius-to-fahrenheit/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Free two-way converter between Celsius, Fahrenheit, kelvin, Rankine and Réaumur with the exact affine formula.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+
+  <div class="phys-fields">
+    <div class="phys-field">
+      <label for="in-from">From</label>
+      <span class="phys-control"><input id="in-from" inputmode="decimal" autocomplete="off" value="20"><select id="u-from" aria-label="Convert from unit"></select></span>
+    </div>
+    <div class="convert-swap-row"><button type="button" class="convert-swap" id="convert-swap" aria-label="Swap the two units">⇄ Swap</button></div>
+    <div class="phys-field">
+      <label for="in-to">To</label>
+      <span class="phys-control"><input id="in-to" inputmode="decimal" autocomplete="off"><select id="u-to" aria-label="Convert to unit"></select></span>
+    </div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">°C → °F</span><span id="lcd-note">Exact definition</span></div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control"><select id="u-sf" aria-label="Display precision"><option value="3">3 s.f.</option><option value="4">4 s.f.</option><option value="5">5 s.f.</option><option value="6" selected>6 s.f.</option><option value="7">7 s.f.</option><option value="8">8 s.f.</option><option value="9">9 s.f.</option><option value="10">10 s.f.</option></select></span>
+  </div>
+
+  <div class="convert-table-wrap">
+    <table class="convert-table">
+      <caption>Degrees Celsius to degrees Fahrenheit — common values, to 6 significant figures.</caption>
+      <thead><tr><th scope="col">°C</th><th scope="col">°F</th></tr></thead>
+      <tbody>
+        <tr><td>−40 °C</td><td>−40 °F</td></tr>
+        <tr><td>−20 °C</td><td>−4 °F</td></tr>
+        <tr><td>−10 °C</td><td>14 °F</td></tr>
+        <tr><td>0 °C</td><td>32 °F</td></tr>
+        <tr><td>5 °C</td><td>41 °F</td></tr>
+        <tr><td>10 °C</td><td>50 °F</td></tr>
+        <tr><td>15 °C</td><td>59 °F</td></tr>
+        <tr><td>20 °C</td><td>68 °F</td></tr>
+        <tr><td>25 °C</td><td>77 °F</td></tr>
+        <tr><td>30 °C</td><td>86 °F</td></tr>
+        <tr><td>37 °C</td><td>98.6 °F</td></tr>
+        <tr><td>40 °C</td><td>104 °F</td></tr>
+        <tr><td>50 °C</td><td>122 °F</td></tr>
+        <tr><td>75 °C</td><td>167 °F</td></tr>
+        <tr><td>100 °C</td><td>212 °F</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="formula" aria-label="Temperature conversion formulae">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mi>C</mi><mo>×</mo><mfrac><mn>9</mn><mn>5</mn></mfrac><mo>+</mo><mn>32</mn></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>C</mi><mo>=</mo><mrow><mo stretchy="true">(</mo><mrow><mi>F</mi><mo>−</mo><mn>32</mn></mrow><mo stretchy="true">)</mo></mrow><mo>×</mo><mfrac><mn>5</mn><mn>9</mn></mfrac></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>K</mi><mo>=</mo><mi>C</mi><mo>+</mo><mn>273.15</mn></mrow></math>
+  </div>
+  <ul class="formula-legend"><li><b>C</b> Celsius · <b>F</b> Fahrenheit · <b>K</b> kelvin (SI base unit) · the two scales cross at −40°</li></ul>
+
+  <section class="assumptions" aria-label="Definitions">
+    <h2>Definitions</h2>
+    <ul>
+      <li>Both scales are defined against the kelvin, so the conversion is exact: 0 °C is exactly 273.15 K, and one Fahrenheit degree is exactly 5⁄9 of a kelvin.</li>
+      <li>A temperature and a <b>temperature change</b> convert differently. A reading of 10 °C is 50 °F, but a <i>rise</i> of 10 °C is a rise of 18 °F — the offset applies to the reading, not to the interval.</li>
+      <li>Kelvin takes no degree sign and no "degrees": it is written 298.15 K, not 298.15 °K.</li>
+      <li>Absolute zero is 0 K = −273.15 °C = −459.67 °F. Values below it are physically meaningless; the converter will still calculate them, because it converts numbers and does not police your physics.</li>
+      <li>Réaumur and Rankine are included for completeness. Rankine is Fahrenheit-sized degrees counted from absolute zero, used in some US engineering work.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>To convert Celsius to Fahrenheit, multiply by 9/5 (that is, 1.8) and add 32. To convert Fahrenheit to Celsius, subtract 32 first, then multiply by 5/9. The order matters: the subtraction undoes the offset before the scaling, and doing it the other way round is the classic wrong answer.</p>
+    <p>The mental shortcut is to double and add 30: 20 °C gives roughly 70 °F against the true 68 °F. It is close enough for weather and wrong enough for anything else, which is why the exact formula is on the page.</p>
+    <p>Internally every temperature is converted to kelvin, the SI base unit, and back out to the unit you chose. Handling the scale factor and the offset separately is what lets kelvin, Rankine and Réaumur share one calculation with Celsius and Fahrenheit instead of each needing its own special case.</p>
+    <p>Common questions this answers: what 20 degrees C is in F (68 °F), what 100 °F is in Celsius (37.8 °C), normal body temperature (37 °C = 98.6 °F), a fan oven at 180 °C (356 °F), and the one temperature where the two scales agree (−40°).</p>
+  </section>
+
+  <ul class="convert-pairs" aria-label="Related converters">
+    <li><a href="/convert/kg-to-lbs/">kg to lbs</a></li>
+    <li><a href="/convert/length/">Length converter</a></li>
+    <li><a href="/convert/">All converters</a></li>
+  </ul>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul>
+  <div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/convert-core.js"></script><script src="/assets/js/units/temperature.js"></script><script src="/assets/js/converter.js"></script>
+<script>AnsConverter({ quantity: "temperature", from: "C", to: "F" });</script>

@@ -21,16 +21,28 @@
     <meta property="og:image:alt" content="{{ page.og_image_alt | default: 'Ans — a scientific calculator for iPhone and iPad.' | escape }}">
     <meta name="twitter:card" content="summary_large_image">
 
+    {% comment %}
+      Breadcrumbs for the two catalogue families. Google still renders these
+      in the result itself, so a hub page's name appears above the title —
+      worth having on every page that sits under a hub, not just Science.
+    {% endcomment %}
     {% if page.body_class contains 'science-page' %}
-    <script type="application/ld+json" data-schema="science-breadcrumbs">
+      {% assign crumb_name = 'Science' %}
+      {% assign crumb_url = '/science/' %}
+    {% elsif page.body_class contains 'convert-page' %}
+      {% assign crumb_name = 'Convert' %}
+      {% assign crumb_url = '/convert/' %}
+    {% endif %}
+    {% if crumb_name %}
+    <script type="application/ld+json" data-schema="family-breadcrumbs">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
-        { "@type": "ListItem", "position": 2, "name": "Science", "item": "{{ site.url }}/science/" }
-        {% unless page.url == '/science/' %},
-        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ site.url }}{{ page.url | replace: 'index.html', '' }}" }
+        { "@type": "ListItem", "position": 2, "name": "{{ crumb_name }}", "item": "{{ site.url }}{{ crumb_url }}" }
+        {% unless page.url == crumb_url %},
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | split: ' — ' | first | jsonify }}, "item": "{{ site.url }}{{ page.url | replace: 'index.html', '' }}" }
         {% endunless %}
       ]
     }
@@ -55,6 +67,7 @@
           <a href="/stopwatch/"{% if page.url == '/stopwatch/' %} class="is-active" aria-current="page"{% endif %}>Stopwatch</a>
           <a href="/clock/"{% if page.url == '/clock/' %} class="is-active" aria-current="page"{% endif %}>World clock</a>
           <a href="/science/"{% if page.body_class contains 'science-page' %} class="is-active" aria-current="page"{% endif %}>Science</a>
+          <a href="/convert/"{% if page.body_class contains 'convert-page' %} class="is-active" aria-current="page"{% endif %}>Convert</a>
         </nav>
       </div>
     </header>
@@ -73,6 +86,7 @@
           <a href="/stopwatch/">Stopwatch</a>
           <a href="/clock/">World clock</a>
           <a href="/science/">Science</a>
+          <a href="/convert/">Convert</a>
           <a href="/privacy">Privacy</a>
           <a href="/support">Support</a>
           <a href="/releases">Release notes</a>

@@ -1,0 +1,90 @@
+---
+layout: default
+title: Fahrenheit to Kelvin Converter — °F to K — Ans
+description: Free °F to K converter. Convert fahrenheit to kelvin and back, with each unit defined and a conversion table. No tracking.
+body_class: tool-page convert-page
+permalink: /convert/fahrenheit-to-kelvin/
+og_image: /assets/images/convert-social-card.png
+og_image_alt: Ans Convert — free unit converters with exact definitions and named unit systems.
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Unit converter</p>
+    <h1>Fahrenheit to kelvin.</h1>
+    <p>Convert °F to K and K to °F. Type in either box and the other follows. Two conversions in one: Fahrenheit degrees are five ninths the size of a kelvin, and kelvin counts from absolute zero rather than from a freezing point.</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fahrenheit to Kelvin Converter","url":"https://anscalc.com/convert/fahrenheit-to-kelvin/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Free °F to K converter. Convert fahrenheit to kelvin and back, with each unit defined and a conversion table. No tracking.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+
+  <div class="phys-fields">
+    <div class="phys-field"><label for="in-from">From</label><span class="phys-control"><input id="in-from" inputmode="decimal" autocomplete="off" value="20"><select id="u-from" aria-label="Convert from unit"></select></span></div>
+    <div class="convert-swap-row"><button type="button" class="convert-swap" id="convert-swap" aria-label="Swap the two units">⇄ Swap</button></div>
+    <div class="phys-field"><label for="in-to">To</label><span class="phys-control"><input id="in-to" inputmode="decimal" autocomplete="off"><select id="u-to" aria-label="Convert to unit"></select></span></div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">°F → K</span><span id="lcd-note">Exact definition</span></div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control"><select id="u-sf" aria-label="Display precision"><option value="3">3 s.f.</option><option value="4">4 s.f.</option><option value="5">5 s.f.</option><option value="6" selected>6 s.f.</option><option value="7">7 s.f.</option><option value="8">8 s.f.</option><option value="9">9 s.f.</option><option value="10">10 s.f.</option></select></span>
+  </div>
+
+<div class="convert-table-wrap">
+  <table class="convert-table">
+    <caption>Degrees Fahrenheit to kelvin — common values, to 6 significant figures.</caption>
+    <thead><tr><th scope="col">°F</th><th scope="col">K</th></tr></thead>
+    <tbody>
+      <tr><td>−459.67 °F</td><td>−2.84217×10⁻¹⁴ K</td></tr>
+      <tr><td>−40 °F</td><td>233.15 K</td></tr>
+      <tr><td>0 °F</td><td>255.372 K</td></tr>
+      <tr><td>32 °F</td><td>273.15 K</td></tr>
+      <tr><td>68 °F</td><td>293.15 K</td></tr>
+      <tr><td>98.6 °F</td><td>310.15 K</td></tr>
+      <tr><td>212 °F</td><td>373.15 K</td></tr>
+      <tr><td>500 °F</td><td>533.15 K</td></tr>
+      <tr><td>1000 °F</td><td>810.928 K</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  <div class="formula" aria-label="Temperature conversion formula">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>K</mtext><mo>=</mo><mtext>°F</mtext><mo>×</mo><mfrac><mn>5</mn><mn>9</mn></mfrac><mo>+</mo><mn>255.3722222</mn></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>°F</mtext><mo>=</mo><mtext>K</mtext><mo>×</mo><mfrac><mn>9</mn><mn>5</mn></mfrac><mo>−</mo><mn>459.67</mn></mrow></math>
+  </div>
+  <ul class="formula-legend"><li>Both scales are fixed against the kelvin, so the conversion is a stretch and a shift, applied in that order.</li></ul>
+
+  <section class="assumptions" aria-label="Definitions">
+    <h2>Definitions</h2>
+    <ul>
+      <li>Fahrenheit puts water's freezing point at 32 and its boiling point at 212, so a Fahrenheit degree is five ninths of a Celsius one.</li>
+      <li>The kelvin is the SI base unit of temperature, counted from absolute zero. It takes no degree sign: 298.15 K, never 298.15 °K.</li>
+      <li>This conversion is exact by definition. K = °F × 0.5555555556 + 255.3722222.</li>
+      <li>Temperature scales have different zero points, so conversion is a scale AND a shift. A temperature and a temperature difference do not convert the same way.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>The two scales differ in step size and in where they start counting, so the conversion applies a scale and a shift — and the order matters. Reversing it means undoing the shift first, then the scale.</p>
+    <p>The value passes through K, the unit every other temperature unit on the site is defined against, rather than a number written into this page on its own. That is why the figure here, the figure in the table above and the general temperature converter always agree.</p>
+    <p>Display precision limits significant figures rather than decimal places, so a reading near zero keeps its detail instead of collapsing to one digit. Rounding is applied to the large display only, never to the arithmetic behind it. The editable box always holds a plain number at full working precision, so you can carry on from either side.</p>
+    <p>Common questions this answers: what 20 °F is in kelvin (266.483 K), what 0 °F is (255.372 K), and why a rise of 10 °F is a rise of 5.55556 K, not 260.928.</p>
+  </section>
+
+  <ul class="convert-pairs" aria-label="Related converters">
+    <li><a href="/convert/temperature/">Temperature converter</a></li>
+    <li><a href="/convert/fahrenheit-to-celsius/">Fahrenheit to Celsius</a></li>
+    <li><a href="/convert/celsius-to-kelvin/">Celsius to kelvin</a></li>
+    <li><a href="/convert/kelvin-to-celsius/">Kelvin to Celsius</a></li>
+    <li><a href="/convert/">All converters</a></li>
+  </ul>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul>
+  <div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/convert-core.js"></script><script src="/assets/js/units/temperature.js"></script><script src="/assets/js/converter.js"></script>
+<script>AnsConverter({ quantity: "temperature", from: "F", to: "K" });</script>

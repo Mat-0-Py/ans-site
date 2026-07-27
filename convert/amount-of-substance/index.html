@@ -1,0 +1,93 @@
+---
+layout: default
+title: Amount of Substance Converter — mmol to mol — Ans
+description: Free amount of substance converter. Convert mmol to mol and 2 other units, each one defined. No ads or tracking.
+body_class: tool-page convert-page
+permalink: /convert/amount-of-substance/
+og_image: /assets/images/convert-social-card.png
+og_image_alt: Ans Convert — free unit converters with exact definitions and named unit systems.
+---
+
+<div class="tool-shell">
+  <div class="tool-head">
+    <p class="eyebrow">Unit converter</p>
+    <h1>Amount of substance.</h1>
+    <p>Convert mmol to mol, or pick any of the 4 units in the menus. Type in either box and the other follows. Moles: a count of entities, fixed at exactly 6.022 140 76×10²³ since the 2019 redefinition.</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Amount of Substance Converter","url":"https://anscalc.com/convert/amount-of-substance/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Free amount of substance converter. Convert mmol to mol and 2 other units, each one defined. No ads or tracking.","publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
+
+  <div class="phys-fields">
+    <div class="phys-field"><label for="in-from">From</label><span class="phys-control"><input id="in-from" inputmode="decimal" autocomplete="off" value="1000"><select id="u-from" aria-label="Convert from unit"></select></span></div>
+    <div class="convert-swap-row"><button type="button" class="convert-swap" id="convert-swap" aria-label="Swap the two units">⇄ Swap</button></div>
+    <div class="phys-field"><label for="in-to">To</label><span class="phys-control"><input id="in-to" inputmode="decimal" autocomplete="off"><select id="u-to" aria-label="Convert to unit"></select></span></div>
+  </div>
+
+  <div class="tool-lcd" aria-live="polite">
+    <div class="tool-lcd-indicators"><span class="is-active" id="lcd-label">mmol → mol</span><span id="lcd-note">Exact definition</span></div>
+    <div class="tool-lcd-main" id="lcd-main">—</div>
+    <div class="tool-lcd-sub" id="lcd-sub"></div>
+  </div>
+
+  <div class="phys-aux">
+    <label for="u-sf">Display precision</label>
+    <span class="phys-control"><select id="u-sf" aria-label="Display precision"><option value="3">3 s.f.</option><option value="4">4 s.f.</option><option value="5">5 s.f.</option><option value="6" selected>6 s.f.</option><option value="7">7 s.f.</option><option value="8">8 s.f.</option><option value="9">9 s.f.</option><option value="10">10 s.f.</option></select></span>
+  </div>
+
+<div class="convert-table-wrap">
+  <table class="convert-table">
+    <caption>Millimoles to moles — common values, to 6 significant figures.</caption>
+    <thead><tr><th scope="col">mmol</th><th scope="col">mol</th></tr></thead>
+    <tbody>
+      <tr><td>1 mmol</td><td>0.001 mol</td></tr>
+      <tr><td>2 mmol</td><td>0.002 mol</td></tr>
+      <tr><td>3 mmol</td><td>0.003 mol</td></tr>
+      <tr><td>4 mmol</td><td>0.004 mol</td></tr>
+      <tr><td>5 mmol</td><td>0.005 mol</td></tr>
+      <tr><td>10 mmol</td><td>0.01 mol</td></tr>
+      <tr><td>15 mmol</td><td>0.015 mol</td></tr>
+      <tr><td>20 mmol</td><td>0.02 mol</td></tr>
+      <tr><td>25 mmol</td><td>0.025 mol</td></tr>
+      <tr><td>50 mmol</td><td>0.05 mol</td></tr>
+      <tr><td>75 mmol</td><td>0.075 mol</td></tr>
+      <tr><td>100 mmol</td><td>0.1 mol</td></tr>
+      <tr><td>250 mmol</td><td>0.25 mol</td></tr>
+      <tr><td>500 mmol</td><td>0.5 mol</td></tr>
+      <tr><td>1000 mmol</td><td>1 mol</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  <div class="formula" aria-label="Amount of substance conversion formula">
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mtext>&#xA0;mmol</mtext><mo>=</mo><mn>0.001</mn><mtext>&#xA0;mol</mtext></mrow></math>
+    <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mtext>&#xA0;mol</mtext><mo>=</mo><mn>1000</mn><mtext>&#xA0;mmol</mtext></mrow></math>
+  </div>
+  <ul class="formula-legend"><li>Every unit in the menus is defined against mol, so any pairing converts by the same single route.</li></ul>
+
+  <section class="assumptions" aria-label="Definitions">
+    <h2>Definitions</h2>
+    <ul>
+      <li>The millimole is a thousandth of a mole, the scale most clinical and bench chemistry works at.</li>
+      <li>The mole is the SI base unit of amount of substance: exactly 6.022 140 76×10²³ entities.</li>
+      <li>Every unit here is defined against the mol.</li>
+      <li>Every unit in the menus is exact by definition, so the only rounding on this page is the one you choose for the display.</li>
+    </ul>
+  </section>
+
+  <section class="tool-notes" aria-label="How it works">
+    <h2>How it works</h2>
+    <p>Every value is converted into moles and then back out into the unit you asked for. One route covers every pairing in the menus, so an unusual combination is no less accurate than a common one, and adding a unit affects only that unit.</p>
+    <p>Both boxes are live. Whichever one you last typed in is the source, changing either menu recalculates straight away, and Swap exchanges the units and the values so the number you are reading stays where you are looking.</p>
+    <p>Display precision sets a maximum number of significant figures and trims trailing zeroes, so it changes what you see and never what was calculated. The editable box always holds a plain number at full working precision, so you can carry on from either side.</p>
+    <p>Common questions this answers: how many moles in a millimole (0.001), how many millimoles in a mole (1000), and what 1000 mmol is in moles (1 mol).</p>
+  </section>
+
+  <ul class="convert-pairs" aria-label="Related converters">
+    <li><a href="/science/moles-calculator/">Moles calculator</a></li>
+    <li><a href="/convert/">All converters</a></li>
+  </ul>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Works offline once loaded</li></ul>
+  <div class="tool-crosslink"><a class="tool-crosslink-icon" href="/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a><p>From the maker of <a href="/">Ans — a scientific calculator you can own</a>. Same idea: a proper instrument, nothing in the way.</p></div>
+</div>
+<script src="/assets/js/convert-core.js"></script><script src="/assets/js/units/amount.js"></script><script src="/assets/js/converter.js"></script>
+<script>AnsConverter({ quantity: "amount", from: "mmol", to: "mol" });</script>

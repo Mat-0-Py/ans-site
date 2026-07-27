@@ -12,17 +12,15 @@ The permanent changelog for Ans. The newest version is listed first.
 
 ## 1.2
 
-- **Large SHIFT and VAR Labels**: a new option that moves each key's second
-  function onto the key itself, at full size, while that mode is on —
-  instead of leaving it in the small label above the key. Press SHIFT and
-  the orange functions move onto their keys; press VAR and the teal variable
-  letters do the same. The key's usual function takes its place in that
-  small label, so nothing goes unnamed.
+- **Large SHIFT and VAR Labels** is a new option that moves each key's second
+  function onto the key itself, at full size, while that mode is on. Press
+  SHIFT and the orange functions move onto their keys; press VAR and the teal
+  variable letters do the same. The key's usual function takes its place in
+  the small label above it, so nothing goes unnamed.
 - Settings now gathers this and Large Display Text under an **Accessibility**
   heading, on both iPhone/iPad and Mac. On the Mac they are in the View menu
   as well.
-- Both are off by default, and neither changes how the calculator works or
-  how quickly it responds.
+- Both options are off by default and do not change how the calculator works.
 
 ## 1.1
 

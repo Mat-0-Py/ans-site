@@ -7,9 +7,13 @@ Liquid surface the layout actually uses and rewrites absolute paths to
 relative ones so file:// works. Output: Website/_preview/ (never synced).
 """
 import html, json, pathlib, re, shutil, sys
-import markdown
+try:
+    import markdown
+except ModuleNotFoundError:
+    markdown = None
 
 SITE = pathlib.Path(sys.argv[1])
+HTML_ONLY = "--html-only" in sys.argv[2:]
 OUT = SITE / "_preview"
 SITE_TITLE = "Ans"
 SITE_DESC = ("A proper scientific calculator for iPhone and iPad. £4.99 once, "
@@ -134,10 +138,23 @@ PAGES = [
      "science/gaussian-spot-size/index.html", "/science/gaussian-spot-size/"),
     ("science/lensmakers-equation/index.html",
      "science/lensmakers-equation/index.html", "/science/lensmakers-equation/"),
+    ("convert/index.html", "convert/index.html", "/convert/"),
     ("privacy.md", "privacy.html", "/privacy"),
     ("support.md", "support.html", "/support"),
     ("releases.md", "releases.html", "/releases"),
 ]
+
+# Converter pages are registry/generated catalogue entries. Discovering them
+# here keeps the local preview in lockstep as the catalogue grows.
+for convert_source in sorted((SITE / "convert").glob("*/index.html")):
+    relative = convert_source.relative_to(SITE).as_posix()
+    route = "/" + convert_source.parent.relative_to(SITE).as_posix() + "/"
+    PAGES.append((relative, relative, route))
+
+if HTML_ONLY:
+    PAGES = [page for page in PAGES if not page[0].endswith(".md")]
+elif markdown is None:
+    sys.exit("Python Markdown is required for prose pages; pass --html-only to render the tools without it.")
 
 
 def front_matter(text):
@@ -185,24 +202,38 @@ for src, dest, url in PAGES:
 
     doc = LAYOUT
 
+    # Breadcrumbs: the layout now serves both catalogue families through a
+    # {% assign %}, so the preview resolves the family here and renders the
+    # same JSON-LD the real build would.
     breadcrumb_pattern = re.compile(
-        r"    {% if page\.body_class contains 'science-page' %}\n"
-        r"(    <script type=\"application/ld\+json\" data-schema=\"science-breadcrumbs\">.*?</script>)\n"
+        r"    {% comment %}.*?{% endcomment %}\n"
+        r"    {% if page\.body_class contains 'science-page' %}.*?{% endif %}\n"
+        r"    {% if crumb_name %}\n"
+        r"(    <script type=\"application/ld\+json\" data-schema=\"family-breadcrumbs\">.*?</script>)\n"
         r"    {% endif %}\n",
         re.S)
     breadcrumb_match = breadcrumb_pattern.search(doc)
     if not breadcrumb_match:
-        sys.exit("Science breadcrumb template missing from layout")
+        sys.exit("Family breadcrumb template missing from layout")
     if "science-page" in body_class:
+        crumb_name, crumb_url = "Science", "/science/"
+    elif "convert-page" in body_class:
+        crumb_name, crumb_url = "Convert", "/convert/"
+    else:
+        crumb_name = crumb_url = None
+    if crumb_name:
         breadcrumb = breadcrumb_match.group(1)
         third_item_pattern = re.compile(
-            r"\n        {% unless page\.url == '/science/' %}(.*?)"
+            r"\n        {% unless page\.url == crumb_url %}(.*?)"
             r"\n        {% endunless %}",
             re.S)
-        if url == "/science/":
+        if url == crumb_url:
             breadcrumb = third_item_pattern.sub("", breadcrumb)
         else:
             breadcrumb = third_item_pattern.sub(lambda match: match.group(1), breadcrumb)
+        breadcrumb = (breadcrumb
+                      .replace("{{ crumb_name }}", crumb_name)
+                      .replace("{{ site.url }}{{ crumb_url }}", SITE_URL + crumb_url))
         doc = breadcrumb_pattern.sub(breadcrumb + "\n", doc)
     else:
         doc = breadcrumb_pattern.sub("", doc)
@@ -214,8 +245,11 @@ for src, dest, url in PAGES:
                       html.escape(desc, quote=True))
     doc = doc.replace("{{ page.title | default: site.title | escape }}",
                       html.escape(title or SITE_TITLE, quote=True))
-    doc = doc.replace("{{ page.title | jsonify }}",
-                      json.dumps(title or SITE_TITLE, ensure_ascii=False))
+    # Matches the layout: a breadcrumb carries the page name, not the whole
+    # SERP title, so everything from the first em dash is dropped.
+    doc = doc.replace("{{ page.title | split: ' — ' | first | jsonify }}",
+                      json.dumps((title or SITE_TITLE).split(" — ")[0],
+                                 ensure_ascii=False))
     doc = doc.replace("{{ site.url }}{{ page.url | replace: 'index.html', '' }}",
                       SITE_URL + url)
     doc = doc.replace("{{ site.url }}", SITE_URL)
@@ -238,6 +272,8 @@ for src, dest, url in PAGES:
                       ' class="is-active" aria-current="page"' if url == "/clock/" else "")
     doc = doc.replace("{% if page.body_class contains 'science-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
                       ' class="is-active" aria-current="page"' if "science-page" in body_class else "")
+    doc = doc.replace("{% if page.body_class contains 'convert-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
+                      ' class="is-active" aria-current="page"' if "convert-page" in body_class else "")
 
     doc = doc.replace("{{ content }}", content)
 
