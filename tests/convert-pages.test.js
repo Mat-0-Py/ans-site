@@ -45,6 +45,12 @@ var wiringBytes = fs.statSync(path.join(ROOT, "assets", "js", "converter.js")).s
 function unitBytes(quantityId) {
   return fs.statSync(path.join(ROOT, "assets", "js", "units", quantityId + ".js")).size;
 }
+// Quantity slugs come from the generator rather than a second hand-kept
+// copy: a quantity with no page entry then fails the check below instead of
+// silently matching a stale map.
+var quantityRoutes = {};
+GENERATOR.quantityPages.forEach(function (p) { quantityRoutes[p.quantity] = p.slug; });
+
 var permalinks = {};
 
 dirs.forEach(function (slug) {
@@ -101,8 +107,15 @@ dirs.forEach(function (slug) {
     Buffer.byteLength(html);
   check(weight <= 100 * 1024, slug + " stays within 100 KiB raw page budget",
     String(weight) + " bytes");
-  check(hub.indexOf('href="/convert/' + slug + '/"') >= 0,
-    slug + " is linked from the hub");
+  // The hub carries one card per quantity, so a pair page is reached through
+  // its quantity page. Every page must still be one click from something
+  // crawlable — an orphan would be reachable only from the sitemap.
+  var quantityPage = config && quantityRoutes[config[1]];
+  var quantityHtml = quantityPage
+    ? fs.readFileSync(path.join(CONVERT, quantityPage, "index.html"), "utf8") : "";
+  check(hub.indexOf('href="/convert/' + slug + '/"') >= 0 ||
+    quantityHtml.indexOf('href="/convert/' + slug + '/"') >= 0,
+    slug + " is linked from the hub or its quantity page");
 
   // Generated copy must read as English written for a visitor, not as a
   // description of how the site is built. These are the words that gave
@@ -131,20 +144,6 @@ dirs.forEach(function (slug) {
   }
 });
 
-// Each registry quantity has a dedicated quantity page (not merely a pair).
-var quantityRoutes = {
-  length: "length", mass: "mass", temperature: "temperature", volume: "volume",
-  area: "area", speed: "speed", time: "time", pressure: "pressure",
-  energy: "energy", power: "power", data: "data", angle: "angle", force: "force",
-  fuel: "fuel-economy", density: "density", torque: "torque", flow: "flow",
-  massflow: "mass-flow", frequency: "frequency", angularvelocity: "angular-velocity",
-  acceleration: "acceleration", datarate: "data-rate", charge: "charge",
-  illuminance: "illuminance", radioactivity: "radioactivity", dose: "dose",
-  magneticfield: "magnetic-field", viscosity: "viscosity",
-  kinematicviscosity: "kinematic-viscosity", amount: "amount-of-substance",
-  concentration: "concentration", specificenergy: "specific-energy",
-  thermalconductivity: "thermal-conductivity", evefficiency: "ev-efficiency"
-};
 C.QUANTITIES.forEach(function (q) {
   var slug = quantityRoutes[q.id];
   check(!!slug && fs.existsSync(path.join(CONVERT, slug, "index.html")),

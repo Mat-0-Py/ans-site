@@ -631,6 +631,27 @@ function frontMatter(title, description, slug) {
   ].join("\n");
 }
 
+// The hub carries one card per quantity, so this is where a reader finds
+// the individual pairs — and where each pair page gets its internal link.
+function commonConversions(qid) {
+  var entries = pairPages.filter(function (p) { return p.quantity === qid; })
+    .map(function (p) { return [p.slug, p.phrase]; })
+    .concat(handWritten.filter(function (h) {
+      return h.quantity === qid && h.label;
+    }).map(function (h) { return [h.slug, h.label]; }));
+  if (!entries.length) { return null; }
+  return [
+    '  <section class="convert-common" aria-labelledby="common-title">',
+    '    <h2 id="common-title">Common conversions</h2>',
+    '    <ul class="convert-pairs">',
+    entries.map(function (e) {
+      return '      <li><a href="/convert/' + e[0] + '/">' + esc(e[1]) + "</a></li>";
+    }).join("\n"),
+    "    </ul>",
+    "  </section>"
+  ].join("\n");
+}
+
 function relatedLinks(qid, currentSlug) {
   var candidates = [];
   var qSlug = quantitySlug[qid];
@@ -772,6 +793,8 @@ function quantityPage(page) {
     "    <p>" + esc(questionLine(q, from, to, page.value)) + "</p>",
     "  </section>",
     "",
+    commonConversions(q.id),
+    "",
     relatedLinks(q.id, page.slug),
     "",
     ownership(),
@@ -886,24 +909,37 @@ function hub() {
   ];
   groups.forEach(function (g) {
     lines.push('  <section class="convert-category" id="' + g[0] + '" aria-labelledby="' + g[0] + '-title">');
-    lines.push('    <div class="convert-category-head"><div><p class="eyebrow">Converter catalogue</p><h2 id="' + g[0] + '-title">' + esc(g[1]) + '</h2></div><p>Choose a general converter or jump straight to a common conversion pair.</p></div>');
+    lines.push('    <div class="convert-category-head"><div><p class="eyebrow">Converter catalogue</p><h2 id="' + g[0] + '-title">' + esc(g[1]) + '</h2></div><p>Pick the quantity; the units and the common pairs are on the page.</p></div>');
     lines.push('    <div class="convert-grid">');
     g[2].forEach(function (qid) {
       var qp = quantityPages.find(function (p) { return p.quantity === qid; });
       var q = C.quantity(qid);
-      var qFrom = C.unit(qid, qp.from), qTo = C.unit(qid, qp.to);
-      lines.push('      <a class="convert-card" href="/convert/' + qp.slug + '/"><span>' + esc(q.name) + '</span><strong>' + esc(q.name) + ' converter</strong><small>' + q.units.length + ' units, from ' + esc(qFrom.name.toLowerCase()) + ' to ' + esc(qTo.name.toLowerCase()) + '.</small></a>');
-      pairPages.filter(function (p) { return p.quantity === qid; }).forEach(function (p) {
-        var pf = C.unit(qid, p.from), pt = C.unit(qid, p.to);
-        lines.push('      <a class="convert-card" href="/convert/' + p.slug + '/"><span>' + esc(pf.symbol) + ' → ' + esc(pt.symbol) + '</span><strong>' + esc(p.phrase) + '</strong><small>' + relationship(q, pf, pt, 6) + '.</small></a>');
+      // One card per quantity. The hub used to carry a card for every pair
+      // page too, which put 139 boxes on one screen to choose between when
+      // the choice is made again on the next page anyway. The pairs are
+      // listed on their own quantity page instead, which is also the
+      // tidier link structure: hub to quantity to pair.
+      // Show the units this quantity has pair pages for — those are the
+      // popular ones by definition. Registry order would open the length
+      // card with "nm, µm".
+      var popular = [];
+      pairPages.concat(handWritten.filter(function (h) { return h.label && h.from; }))
+        .filter(function (p) { return p.quantity === qid; })
+        .forEach(function (p) {
+          [p.from, p.to].forEach(function (id) {
+            var u = C.unit(qid, id);
+            if (u && popular.indexOf(u.symbol) < 0) { popular.push(u.symbol); }
+          });
+        });
+      q.units.forEach(function (u) {
+        if (popular.indexOf(u.symbol) < 0) { popular.push(u.symbol); }
       });
-      handWritten.filter(function (h) {
-        return h.quantity === qid && h.label;
-      }).forEach(function (h) {
-        lines.push('      <a class="convert-card" href="/convert/' + h.slug + '/"><span>' +
-          esc(q.name) + '</span><strong>' + esc(h.label) + '</strong><small>' +
-          esc(h.blurb) + "</small></a>");
-      });
+      var sample = popular.slice(0, 5).join(", ");
+      // The card eyebrow is uppercased by the shared style, so it carries a
+      // label rather than a unit symbol — "KG" is not a unit.
+      lines.push('      <a class="convert-card" href="/convert/' + qp.slug + '/"><span>' +
+        q.units.length + ' units</span><strong>' + esc(q.name) + '</strong><small>' +
+        esc(sample) + (q.units.length > 5 ? " and more" : "") + ".</small></a>");
     });
     lines.push("    </div>");
     lines.push("  </section>");

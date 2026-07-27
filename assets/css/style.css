@@ -1973,6 +1973,21 @@ a.button-secondary:hover {
 
 .convert-pairs a:hover { border-color: var(--teal); color: var(--teal); }
 
+
+/* Common conversions on a quantity page — the pairs the hub no longer
+   lists, so every pair page still has a home to be linked from. */
+.convert-common {
+  margin: 34px 0 0;
+}
+
+.convert-common h2 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.convert-common .convert-pairs { margin-top: 14px; }
+
 /* Converter hub — the catalogue, in the same instrument language as the
    science hub but teal, and grouped by quantity. */
 .convert-hub {
