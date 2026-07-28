@@ -184,11 +184,14 @@
         var a = uFrom.value;
         uFrom.value = uTo.value;
         uTo.value = a;
-        // Keep the number the user is looking at on the side they typed in.
         var v = inFrom.value;
         inFrom.value = inTo.value;
         inTo.value = v;
-        source = source === "from" ? "to" : "from";
+        // Swap means "now convert the other way", so the left-hand box is the
+        // source again. Flipping the source instead left the display reporting
+        // "kip → kg" while the menus above it read From: kg, To: kip — the
+        // labels and the answer disagreeing about which way round it went.
+        source = "from";
         compute();
       });
     }

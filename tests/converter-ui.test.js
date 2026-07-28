@@ -133,6 +133,32 @@ check(fuel["in-from"].value === beforeTo && fuel["in-to"].value === beforeFrom,
 check(fuel["u-from"].value === "mpg_uk" && fuel["u-to"].value === "mpg_us",
   "swap exchanges units");
 
+// The display must report the direction the menus read. Flipping the source on
+// swap left the LCD saying "kip → kg" above menus reading From: kg, To: kip —
+// the labels and the answer disagreeing about which way round it went.
+function menuDirection(els, quantity) {
+  return C.unit(quantity, els["u-from"].value).symbol + " → " +
+    C.unit(quantity, els["u-to"].value).symbol;
+}
+check(fuel["lcd-label"].textContent === menuDirection(fuel, "fuel"),
+  "swap leaves the display direction matching the menus",
+  fuel["lcd-label"].textContent + " vs " + menuDirection(fuel, "fuel"));
+
+var swapped = setup("", { quantity: "mass", from: "kg", to: "kip_mass" }, 1);
+check(swapped["lcd-label"].textContent === menuDirection(swapped, "mass"),
+  "display direction matches the menus before any swap");
+swapped["convert-swap"].fire("click");
+check(swapped["lcd-label"].textContent === menuDirection(swapped, "mass"),
+  "and after one swap", swapped["lcd-label"].textContent);
+check(Math.abs(Number(swapped["in-to"].value) - 1) < 1e-12,
+  "the value that was in the From box is now the answer");
+// Typing in the right-hand box then swapping must not desynchronise it either.
+swapped["in-to"].value = "2";
+swapped["in-to"].fire("input");
+swapped["convert-swap"].fire("click");
+check(swapped["lcd-label"].textContent === menuDirection(swapped, "mass"),
+  "and after typing on the right then swapping", swapped["lcd-label"].textContent);
+
 // The LCD sub-line must state the affine rule in the form people know, and
 // must agree with the notation in the page's formula block.
 var toC = setup("", { quantity: "temperature", from: "F", to: "C" }, 20);
