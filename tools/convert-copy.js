@@ -568,7 +568,7 @@ var QUANTITY_HOOKS = {
   magneticfield: "Flux density in tesla and gauss, spanning the Earth's 50 µT and an MRI scanner's 3 T.",
   viscosity: "Resistance to shear, on a scale chosen so that water at 20 °C is almost exactly 1 centipoise.",
   kinematicviscosity: "Dynamic viscosity divided by density — the centistokes that oil grades are specified in.",
-  amount: "Moles: a count of entities, fixed at exactly 6.022 140 76×10²³ since the 2019 redefinition.",
+  amount: "Moles are a count of entities, fixed at exactly 6.022 140 76×10²³ since the 2019 redefinition. Grams are deliberately not in these menus: converting moles to grams needs the molar mass of the particular substance, so it is a calculation rather than a conversion.",
   concentration: "Amount per unit volume. Converting to mg/dL needs the substance's molar mass, so that is a calculation rather than a unit conversion.",
   specificenergy: "Energy per unit mass, from fuels to foods to the watt-hours per kilogram a battery manages.",
   thermalconductivity: "How readily a material carries heat — mineral wool is about 0.04 W/(m·K) and copper about 400.",

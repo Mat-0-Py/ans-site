@@ -588,6 +588,29 @@ equal("triangle zero angle rejected", rightTriangle({
 equal("triangle right angle rejected", rightTriangle({
   a: null, b: 3, c: null, theta: Math.PI / 2 }), null);
 
+
+// ---- making up a solution: c = m/(M V) ---------------------------------
+// Expected values are independent: 5.844 g of NaCl is 0.1 mol at M = 58.44
+// g/mol, and 0.1 mol in 100 mL is exactly 1 mol/L = 1000 mol/m3.
+var solution = P.chemistry.massConcentration;
+approx("solution concentration from mass", solution({ concentration: null,
+  mass: 5.844e-3, molarMass: 58.44e-3, volume: 100e-6 }).concentration, 1000, 1e-12);
+approx("solution reports the amount it implies", solution({ concentration: null,
+  mass: 5.844e-3, molarMass: 58.44e-3, volume: 100e-6 }).n, 0.1, 1e-12);
+approx("mass to weigh out for a target concentration", solution({ concentration: 100,
+  mass: null, molarMass: 58.44e-3, volume: 250e-6 }).mass, 100 * 58.44e-3 * 250e-6, 1e-15);
+approx("volume to make up to", solution({ concentration: 1000,
+  mass: 5.844e-3, molarMass: 58.44e-3, volume: null }).volume, 100e-6, 1e-12);
+approx("molar mass implied by a made-up solution", solution({ concentration: 1000,
+  mass: 5.844e-3, molarMass: null, volume: 100e-6 }).molarMass, 58.44e-3, 1e-12);
+
+// The one-step route must agree with chaining the two it replaces.
+var chainedAmount = P.chemistry.massMoles({ n: null, mass: 2.5e-3, molarMass: 40e-3 }).n;
+var chained = P.chemistry.concentration({ concentration: null, n: chainedAmount,
+  volume: 500e-6 }).concentration;
+approx("one step matches n = m/M then c = n/V", solution({ concentration: null,
+  mass: 2.5e-3, molarMass: 40e-3, volume: 500e-6 }).concentration, chained, 1e-12);
+
 // ---- report -----------------------------------------------------------
 console.log("\n" + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

@@ -492,6 +492,22 @@
       else if (n == null) { n = concentration * volume; }
       else if (volume == null) { volume = n / concentration; }
       return { concentration: concentration, n: n, volume: volume };
+    },
+    // Making up a solution in one step: c = m/(M V). The two relationships
+    // above chain to give this, but weighing a solid into a volumetric flask
+    // is one action at the bench, so it should be one calculation here.
+    massConcentration: function (o) {
+      var concentration = o.concentration, mass = o.mass;
+      var molarMass = o.molarMass, volume = o.volume;
+      if (concentration == null) { concentration = mass / (molarMass * volume); }
+      else if (mass == null) { mass = concentration * molarMass * volume; }
+      else if (molarMass == null) { molarMass = mass / (concentration * volume); }
+      else if (volume == null) { volume = mass / (molarMass * concentration); }
+      return {
+        concentration: concentration, mass: mass,
+        molarMass: molarMass, volume: volume,
+        n: mass / molarMass
+      };
     }
   };
 

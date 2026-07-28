@@ -526,7 +526,7 @@ function scienceLink(qid) {
     datarate: ["/science/binary-hex-converter/", "Binary and hexadecimal converter"],
     pressure: ["/science/pressure/", "Pressure calculator"],
     density: ["/science/density-mass-volume/", "Density, mass and volume calculator"],
-    amount: ["/science/moles-calculator/", "Moles calculator"]
+    amount: ["/science/moles-calculator/", "Moles to grams calculator"]
   };
   return links[qid] || null;
 }
