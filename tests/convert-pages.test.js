@@ -226,5 +226,50 @@ GENERATOR.pairPages.concat(GENERATOR.quantityPages).forEach(function (p) {
   });
 });
 
+
+// ---- advertised counts ----------------------------------------------------
+// The homepage and the two hubs each state how many pages exist, by hand, in
+// four places. They drifted once already — the homepage was still claiming 118
+// converters after the catalogue grew to 138 — so the numbers are checked
+// against the directories rather than trusted.
+var SCIENCE = path.join(ROOT, "science");
+var scienceCount = fs.readdirSync(SCIENCE).filter(function (name) {
+  return fs.existsSync(path.join(SCIENCE, name, "index.html"));
+}).length;
+var home = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+
+function stated(label, source, pattern) {
+  var match = pattern.exec(source);
+  check(!!match, label + " states a count");
+  return match ? parseInt(match[1], 10) : null;
+}
+
+check(stated("homepage strip (converters)", home.replace(/\s+/g, " "),
+  /(\d+) unit\s*converters/) === dirs.length,
+  "homepage strip converter count matches the catalogue");
+check(stated("homepage strip (science)", home.replace(/\s+/g, " "),
+  /(\d+) focused science calculators/) === scienceCount,
+  "homepage strip science count matches the catalogue");
+check(stated("homepage converter card", home, /<span>(\d+) focused pages/) === dirs.length,
+  "homepage converter card count matches the catalogue");
+check(stated("homepage science card", home, /<span>(\d+) focused instruments/) === scienceCount,
+  "homepage science card count matches the catalogue");
+check(stated("convert hub", hub, /<strong>(\d+)<\/strong><small>free converters/) === dirs.length,
+  "convert hub figure matches the catalogue");
+check(stated("science hub", fs.readFileSync(path.join(SCIENCE, "index.html"), "utf8"),
+  /<strong>(\d+)<\/strong><small>free calculators/) === scienceCount,
+  "science hub figure matches the catalogue");
+
+// The app ships on three platforms; anything naming only two is stale.
+[["layout", path.join(ROOT, "_layouts", "default.html")],
+ ["llms.txt", path.join(ROOT, "llms.txt")]].forEach(function (entry) {
+  var text = fs.readFileSync(entry[1], "utf8");
+  // The homepage's mac_available conditional legitimately carries the
+  // two-platform wording in its else branch; these two files have no such
+  // guard, so a bare "iPhone and iPad" there is simply out of date.
+  check(text.indexOf("iPhone and iPad") < 0,
+    entry[0] + " names Mac alongside iPhone and iPad");
+});
+
 console.log("\n" + pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

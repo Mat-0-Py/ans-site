@@ -566,7 +566,7 @@ function scripts(quantityId) {
 }
 
 // The one paragraph every page needs to make the same point. Said the same
-// way on every page it was the largest block of duplicate text on the site,
+// way on 118 pages it was the largest block of duplicate text on the site,
 // so it is phrased for the kind of quantity the page converts.
 function precisionParagraph(q) {
   var tail = " The editable box always holds a plain number at full working " +

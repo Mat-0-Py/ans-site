@@ -16,7 +16,7 @@ SITE = pathlib.Path(sys.argv[1])
 HTML_ONLY = "--html-only" in sys.argv[2:]
 OUT = SITE / "_preview"
 SITE_TITLE = "Ans"
-SITE_DESC = ("A proper scientific calculator for iPhone and iPad. £4.99 once, "
+SITE_DESC = ("A proper scientific calculator for iPhone, iPad and Mac. £4.99 once, "
              "with no subscriptions, ads, accounts or tracking.")
 SITE_URL = "https://anscalc.com"
 
@@ -198,7 +198,7 @@ for src, dest, url in PAGES:
     body_class = fm.get("body_class", "prose-page")
     og_image = fm.get("og_image", "/assets/images/social-card.png")
     og_image_alt = fm.get(
-        "og_image_alt", "Ans — a scientific calculator for iPhone and iPad.")
+        "og_image_alt", "Ans — a scientific calculator for iPhone, iPad and Mac.")
 
     doc = LAYOUT
 
@@ -257,7 +257,7 @@ for src, dest, url in PAGES:
         "{{ page.og_image | default: '/assets/images/social-card.png' }}",
         og_image)
     doc = doc.replace(
-        "{{ page.og_image_alt | default: 'Ans — a scientific calculator for iPhone and iPad.' | escape }}",
+        "{{ page.og_image_alt | default: 'Ans — a scientific calculator for iPhone, iPad and Mac.' | escape }}",
         html.escape(og_image_alt, quote=True))
     doc = doc.replace("{{ page.body_class | default: 'prose-page' }}", body_class)
 

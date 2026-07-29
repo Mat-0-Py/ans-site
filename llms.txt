@@ -3,7 +3,7 @@
 Ownership promise: A calculator you can own. £4.99 once. No subscriptions. No ads. No accounts. No tracking.
 Science tools promise: Free. No ads. No tracking. No account. Every tool shows its equation, units and stated assumptions.
 
-https://anscalc.com/ — Ans is a focused scientific calculator for iPhone and iPad with exact fractions, variables, replay editing and Home Screen widgets.
+https://anscalc.com/ — Ans is a focused scientific calculator for iPhone, iPad and Mac with exact fractions, variables, replay editing and Home Screen widgets.
 https://anscalc.com/stopwatch/ — A free online stopwatch with laps, timestamp-based timing and honest handling of device sleep.
 https://anscalc.com/clock/ — A free full-screen world clock that shows local time, UTC and a chosen time zone without an account.
 https://anscalc.com/science/ — Browse 36 free science and maths calculators for school, university, engineering, optics, chemistry and computing.
