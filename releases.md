@@ -10,6 +10,23 @@ permalink: /releases
 
 The permanent changelog for Ans. The newest version is listed first.
 
+## 1.3
+
+- **A Quick Tour** shows SHIFT, VAR, keeping and using variables, holding VAR
+  to open the Variable Explorer and browse physics constants, and switching
+  between fractions and decimals — demonstrated on the calculator itself,
+  with the keys pressing as you watch. It is offered once on a fresh install
+  and is always available from Settings. On iPhone and iPad; on the Mac, Help
+  covers the same ground.
+- Choose from **15 built-in physics constants** when setting a variable —
+  including the speed of light, Planck constant and particle masses. Values
+  follow the 2022 CODATA recommendations; choosing one also gives the variable
+  a helpful label.
+- With Haptic Feedback on, VAR now responds lightly as you touch it and gives
+  a firmer confirmation when a short hold opens the Variable Explorer.
+- **Help** has grown with it: what each ERROR means and how to get your
+  expression back, percentages and random numbers, and typing with a keyboard.
+
 ## 1.2
 
 - **Large SHIFT and VAR Labels** is a new option that moves each key's second

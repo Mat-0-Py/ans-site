@@ -571,6 +571,16 @@ a.button-secondary:hover {
   width: min(100%, 430px);
 }
 
+/* Two phone captures side by side, equal width — unlike .product-media-grid,
+   which is deliberately lopsided because it pairs a phone with an iPad. */
+.capture-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 70px);
+  align-items: start;
+  justify-items: center;
+}
+
 .product-capture-phone .capture-frame {
   border-radius: 52px;
 }
@@ -1077,7 +1087,8 @@ a.button-secondary:hover {
     min-height: 380px;
   }
 
-  .product-media-grid {
+  .product-media-grid,
+  .capture-pair {
     grid-template-columns: 1fr;
     gap: 60px;
   }
