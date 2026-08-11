@@ -1,17 +1,18 @@
 ---
 layout: default
-title: Privacy — Ans
-description: The Ans privacy policy. The app collects nothing; this website uses only Cloudflare's cookieless, privacy-first analytics — no tracking cookies, no cross-web tracking, no personal data.
+title: Privacy — Ans and Ans Graph
+description: The Ans and Ans Graph privacy policy. The apps collect nothing; this website uses only Cloudflare's cookieless, privacy-first analytics — no tracking cookies, no cross-web tracking, no personal data.
 body_class: prose-page
 permalink: /privacy
 ---
 
 # Privacy
 
-*Last updated: 16 July 2026*
+*Last updated: 3 August 2026*
 
-Ans is built to be private. The short version: **the app collects nothing,
-and this website uses only privacy-first, cookieless analytics.**
+Ans and Ans Graph are built to be private. The short version: **the apps
+collect nothing, and this website uses only privacy-first, cookieless
+analytics.**
 
 ## This website
 
@@ -24,8 +25,8 @@ surveillance-style analytics; those are not welcome here. The count is
 anonymous and aggregate, and you can verify it yourself: the only
 third-party request the site makes is Cloudflare's small analytics beacon.
 
-Everything below is about the **Ans app**, which goes further still and
-collects nothing at all.
+Everything below is about the apps, which go further still and collect
+nothing at all.
 
 ## What Ans stores
 
@@ -64,6 +65,19 @@ recent calculations, Ans stores up to 12 completed expression-and-result pairs
 in a private App Group container on your device. This information is available
 only to the Ans app and its widget extension. It is never transmitted, used for
 tracking or shared with another app or organisation.
+
+## Ans Graph
+
+Ans Graph is a separate, paid-once app with no subscription. It works fully
+offline and has no accounts, advertising, tracking, analytics SDK or
+third-party dependencies. The app makes no network connections: nothing you
+enter, draw or save leaves your device.
+
+Saved graphs and Ans Graph settings are stored locally on your device. The
+Ans Graph widget reads a small snapshot file from the app's own private App
+Group container so it can draw your graph on the Home Screen. That file is
+available only to Ans Graph and its widget extension. The widget sends
+nothing anywhere.
 
 ## Contact
 
