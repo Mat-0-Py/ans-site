@@ -253,9 +253,76 @@ sitemap: true
     background: rgba(242, 244, 247, 0.13);
   }
 
+  /* Glyph beside the text, not above it. Six stacked cards of heading-plus-
+     paragraph read as one wall of prose; putting the drawing in its own
+     column gives every row an anchor for the eye and costs no height. */
   .graph-evidence article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: clamp(16px, 2.4vw, 26px);
+    align-items: start;
     padding: clamp(22px, 3.2vw, 34px);
     background: var(--graphite-raised);
+  }
+
+  .graph-evidence article > h3,
+  .graph-evidence article > p {
+    grid-column: 2;
+  }
+
+  .graph-glyph {
+    grid-row: 1 / span 2;
+    width: clamp(66px, 7vw, 86px);
+    height: auto;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .glyph-curve {
+    stroke: var(--graph-teal);
+    stroke-width: 3;
+  }
+
+  .glyph-dash-long { stroke: var(--graph-sage); stroke-dasharray: 10 7; }
+  .glyph-dash-dot  { stroke: var(--white, #f2f4f7); stroke-dasharray: 2 6; }
+
+  /* Instruments are Instrument White and data is not: the brand addendum
+     draws bound handles and the trace crosshair in white precisely so an
+     instrument never shares a colour with the curve it measures. */
+  .glyph-rule {
+    stroke: var(--white, #f2f4f7);
+    stroke-width: 2;
+    opacity: 0.75;
+  }
+
+  .glyph-axis {
+    stroke: var(--white, #f2f4f7);
+    stroke-width: 1.5;
+    opacity: 0.32;
+  }
+
+  .glyph-page {
+    stroke: var(--white, #f2f4f7);
+    stroke-width: 2;
+    opacity: 0.32;
+  }
+
+  .glyph-dot {
+    fill: var(--graph-orchid);
+    stroke: none;
+  }
+
+  .glyph-chip {
+    fill: var(--graph-sage);
+    stroke: none;
+  }
+
+  .glyph-token {
+    fill: var(--graph-ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-style: italic;
   }
 
   .graph-evidence h3 {
@@ -578,12 +645,75 @@ sitemap: true
         <p class="graph-section-intro">A plotted line is the start, not the result. Ans Graph gives the important points a value, a place and an honest statement of what was found.</p>
       </div>
       <div class="graph-evidence">
-        <article><h3>Roots and intersections</h3><p>Find the candidates in the current view, step between them and see each coordinate on the graph.</p></article>
-        <article><h3>Gradients</h3><p>Choose a point and read the local slope with its tangent, so the number stays attached to the shape.</p></article>
-        <article><h3>Trace and value table</h3><p>Move along a curve for live coordinates, or compare functions at exact x-values in a table you can export.</p></article>
-        <article><h3>Constants in the language</h3><p>Fifteen CODATA 2022 physical constants are tokens in the expression language, not numbers you look up and paste. <em>h</em> is the Planck constant everywhere an expression can go, each one carrying its unit and an Exact, Derived or Measured badge — so <em>E</em> = <em>h</em> × <em>f</em> plots where it actually lives, at 10⁻³³.</p></article>
-        <article><h3>Readable without colour</h3><p>Every curve carries its own line pattern and token as well as its colour, so four functions on one graph stay four things when colour cannot carry them.</p></article>
-        <article><h3>Take it with you</h3><p>Export the plot as an image or a PDF, or the value table as CSV, straight to the files and apps you already use — from the device itself.</p></article>
+        <!-- Each glyph draws the thing its card is about — crossings on the
+             axis, a tangent touching its curve, a crosshair on a sampled
+             point. Decorative icons would have broken up the text just as
+             well, but this page's argument is that the app draws real
+             mathematics, and a row of generic symbols would quietly work
+             against it. Inline SVG, so no new files and no extra requests;
+             aria-hidden, because every one of them restates its heading. -->
+        <article>
+          <svg class="graph-glyph" viewBox="0 0 96 56" aria-hidden="true" focusable="false">
+            <path class="glyph-axis" d="M4 28H92" />
+            <path class="glyph-curve" d="M6 28C14 6 26 6 34 28S54 50 62 28 82 6 90 28" />
+            <circle class="glyph-dot" cx="34" cy="28" r="3.5" />
+            <circle class="glyph-dot" cx="62" cy="28" r="3.5" />
+          </svg>
+          <h3>Roots and intersections</h3>
+          <p>Find the candidates in the current view, step between them and see each coordinate on the graph.</p>
+        </article>
+
+        <article>
+          <svg class="graph-glyph" viewBox="0 0 96 56" aria-hidden="true" focusable="false">
+            <path class="glyph-axis" d="M4 48H92" />
+            <path class="glyph-curve" d="M8 46C36 46 60 30 88 10" />
+            <path class="glyph-rule" d="M40 40 84 18" />
+            <circle class="glyph-dot" cx="60" cy="30" r="3.5" />
+          </svg>
+          <h3>Gradients</h3>
+          <p>Choose a point and read the local slope with its tangent, so the number stays attached to the shape.</p>
+        </article>
+
+        <article>
+          <svg class="graph-glyph" viewBox="0 0 96 56" aria-hidden="true" focusable="false">
+            <path class="glyph-curve" d="M6 40C24 10 40 10 54 26 66 40 78 42 90 34" />
+            <path class="glyph-rule" d="M54 6V50M8 26H90" />
+            <circle class="glyph-dot" cx="54" cy="26" r="3.5" />
+          </svg>
+          <h3>Trace and value table</h3>
+          <p>Move along a curve for live coordinates, or compare functions at exact x-values in a table you can export.</p>
+        </article>
+
+        <article>
+          <svg class="graph-glyph" viewBox="0 0 96 56" aria-hidden="true" focusable="false">
+            <path class="glyph-axis" d="M12 50V6M12 50H92" />
+            <path class="glyph-curve" d="M12 50 88 14" />
+            <rect class="glyph-chip" x="52" y="30" width="26" height="17" rx="5" />
+            <text class="glyph-token" x="65" y="42.5" text-anchor="middle">h</text>
+          </svg>
+          <h3>Constants in the language</h3>
+          <p>Fifteen CODATA 2022 physical constants are tokens in the expression language, not numbers you look up and paste. <em>h</em> is the Planck constant everywhere an expression can go, each one carrying its unit and an Exact, Derived or Measured badge — so <em>E</em> = <em>h</em> × <em>f</em> plots where it actually lives, at 10⁻³³.</p>
+        </article>
+
+        <article>
+          <svg class="graph-glyph" viewBox="0 0 96 56" aria-hidden="true" focusable="false">
+            <path class="glyph-curve" d="M8 14H88" />
+            <path class="glyph-curve glyph-dash-long" d="M8 28H88" />
+            <path class="glyph-curve glyph-dash-dot" d="M8 42H88" />
+          </svg>
+          <h3>Readable without colour</h3>
+          <p>Every curve carries its own line pattern and token as well as its colour, so four functions on one graph stay four things when colour cannot carry them.</p>
+        </article>
+
+        <article>
+          <svg class="graph-glyph" viewBox="0 0 96 56" aria-hidden="true" focusable="false">
+            <rect class="glyph-page" x="10" y="6" width="52" height="44" rx="6" />
+            <path class="glyph-curve" d="M18 38C26 22 34 34 42 20 47 12 52 14 54 18" />
+            <path class="glyph-rule" d="M78 20V42M70 34l8 8 8-8" />
+          </svg>
+          <h3>Take it with you</h3>
+          <p>Export the plot as an image or a PDF, or the value table as CSV, straight to the files and apps you already use — from the device itself.</p>
+        </article>
       </div>
     </div>
   </section>
