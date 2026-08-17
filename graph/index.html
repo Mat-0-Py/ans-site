@@ -383,6 +383,22 @@ sitemap: true
     color: var(--graph-orchid);
   }
 
+  /* The strip's cells are `justify-items: center`, which sizes each child to
+     max-content — so a label wider than its cell overflows both sides rather
+     than wrapping, and on a phone the outer two ran off the screen. The
+     copy above is now inside the component's budget (the calculator's own
+     longest is 21 characters), and this keeps a future longer line wrapping
+     inside its cell instead of off the edge. */
+  .graph-page .promise-strip div {
+    padding-inline: 14px;
+  }
+
+  .graph-page .promise-strip strong,
+  .graph-page .promise-strip span {
+    max-width: 100%;
+    text-align: center;
+  }
+
   /* The promise strip is a shared component and its figures are Answer
      Orange, which is the scientific calculator's accent. On Graph's page the
      identity colour is Graph Orchid — the brand guide names it as "primary
@@ -568,10 +584,10 @@ sitemap: true
        because "what will this cost me, and what will it take from me" is
        what a person wants answered before they read a feature list. -->
   <section class="promise-strip" aria-label="Ans Graph promises">
-    <div><strong>Paid once</strong><span>One purchase, three platforms</span></div>
+    <div><strong>Paid once</strong><span>iPhone, iPad and Mac</span></div>
     <div><strong>No subscriptions</strong><span>No recurring charge</span></div>
     <div><strong>No ads</strong><span>No interruptions</span></div>
-    <div><strong>No tracking</strong><span>Fully offline, nothing collected</span></div>
+    <div><strong>No tracking</strong><span>Works fully offline</span></div>
   </section>
 
   <section class="mac-band section-block" id="mac" aria-labelledby="mac-title">
