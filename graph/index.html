@@ -6,7 +6,7 @@ body_class: tool-page graph-page
 permalink: /graph/
 og_image: /assets/images/graph-social-card.png
 og_image_alt: Ans Graph — see the area, drag the bounds, trust the answer.
-sitemap: false
+sitemap: true
 ---
 <style>
   .graph-page {
@@ -316,53 +316,18 @@ sitemap: false
     color: var(--graph-orchid);
   }
 
+  /* The promise strip is a shared component and its figures are Answer
+     Orange, which is the scientific calculator's accent. On Graph's page the
+     identity colour is Graph Orchid — the brand guide names it as "primary
+     Graph identity on dark surfaces" — so the strip takes the lilac here and
+     the two products stop looking like the same app twice. */
+  .graph-page .promise-strip strong {
+    color: var(--graph-orchid);
+  }
+
   .graph-devices {
     border-block: 1px solid var(--line);
     background: var(--graphite);
-  }
-
-  /* Two portraits on one row, the Mac's landscape shot beneath them.
-     Three equal columns was the obvious arrangement and it is wrong here:
-     the shots are 0.46:1, 0.75:1 and 1.53:1, so at equal widths the phone
-     stands about three times the height of the Mac and the row reads as a
-     mistake. Pairing the two portrait shapes and giving the landscape one
-     its own full-width row lets all three sit at a similar height. */
-  .graph-device-shots {
-    display: grid;
-    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-    gap: clamp(14px, 2vw, 26px);
-    align-items: end;
-  }
-
-  .graph-device-shots figure:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .graph-device-shots figure {
-    margin: 0;
-    display: grid;
-    gap: 12px;
-    justify-items: center;
-  }
-
-  /* Capped, not stretched. The section widens to the full shell below
-     860px, where an uncapped phone shot would be nearly a thousand pixels
-     tall on its own. */
-  .graph-device-shots img {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    max-height: 460px;
-    height: auto;
-    border: 1px solid rgba(242, 244, 247, 0.16);
-    border-radius: 14px;
-    background: var(--graph-ink);
-  }
-
-  .graph-device-shots figcaption {
-    color: var(--graph-orchid);
-    font-weight: 740;
-    font-size: 0.95rem;
   }
 
   .graph-device-grid {
@@ -374,11 +339,14 @@ sitemap: false
 
   .graph-device-list {
     display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
   }
 
-  .graph-device-list div {
+  .graph-device-list li {
     display: grid;
     min-height: 144px;
     place-items: center;
@@ -454,11 +422,12 @@ sitemap: false
       width: min(100% - 32px, 1180px);
     }
 
-    /* The pairing holds on a phone; only the cap comes down, so the two
-       portrait shots stay side by side rather than becoming two full-height
-       images nobody scrolls past. */
-    .graph-device-shots img {
-      max-height: 300px;
+    .graph-device-list {
+      grid-template-columns: 1fr;
+    }
+
+    .graph-device-list li {
+      min-height: 86px;
     }
   }
 
@@ -526,6 +495,81 @@ sitemap: false
     </div>
   </section>
 
+  <!-- The promises, in the homepage's own strip. Ans Graph's page used to
+       carry these only as three small pills in the hero and one paragraph at
+       the very bottom; the calculator states them in the third screenful,
+       because "what will this cost me, and what will it take from me" is
+       what a person wants answered before they read a feature list. -->
+  <section class="promise-strip" aria-label="Ans Graph promises">
+    <div><strong>Paid once</strong><span>One purchase, three platforms</span></div>
+    <div><strong>No subscriptions</strong><span>No recurring charge</span></div>
+    <div><strong>No ads</strong><span>No interruptions</span></div>
+    <div><strong>No tracking</strong><span>Fully offline, nothing collected</span></div>
+  </section>
+
+  <section class="mac-band section-block" id="mac" aria-labelledby="mac-title">
+    <div class="section-shell mac-band-inner">
+      <div class="mac-band-copy">
+        <p class="eyebrow">And on the Mac</p>
+        <h2 id="mac-title">A desktop instrument.</h2>
+        <p>
+          A resizable window with the function rail beside the plot, a menu
+          command for everything and a keyboard shortcut for most of it. Four
+          functions at once, each with its own colour, line pattern and token,
+          so they stay four things rather than a tangle.
+        </p>
+        <p class="mac-band-note">
+          Included in the same purchase: buy Ans Graph once and it is yours on
+          iPhone, iPad and Mac.
+        </p>
+      </div>
+
+      <figure class="mac-band-shot">
+        <img src="/assets/images/screenshots/graph-mac-four-functions.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph on a Mac: four functions plotted at once — 3 times sine x, x squared over 8 minus 5, 4 times cosine x and x over 2 — each in its own colour and line pattern">
+        <figcaption>Four curves at once, and you can still read them.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- The app itself, high and large, in the homepage's own product-media
+       components. This section used to be three small images most of a page
+       down, under "One universal purchase" — by which point a visitor had
+       read several hundred words without seeing the product. -->
+  <section class="product-media section-block" id="in-action" aria-labelledby="media-title">
+    <div class="section-shell product-media-heading">
+      <div>
+        <p class="eyebrow">The real app</p>
+        <h2 id="media-title">Hold it on iPhone.<br>Spread out on iPad.</h2>
+      </div>
+      <p>
+        The same instrument on both: the shaded area and its value on the
+        phone, and the function rail beside a full-height plot on the iPad.
+      </p>
+    </div>
+
+    <div class="section-shell product-media-grid">
+      <figure class="product-capture product-capture-phone">
+        <div class="capture-frame">
+          <img src="/assets/images/screenshots/graph-iphone-integral.png"
+               width="644" height="1400" loading="lazy" decoding="async"
+               alt="Ans Graph on iPhone: sine shaded from zero to pi, the integral reading approximately 2 with an estimated error below 1E−9 in the register beneath the plot">
+        </div>
+        <figcaption><strong>iPhone</strong><span>The area, the bounds and the answer in one hand.</span></figcaption>
+      </figure>
+
+      <figure class="product-capture product-capture-pad">
+        <div class="capture-frame">
+          <img src="/assets/images/screenshots/graph-ipad-table.png"
+               width="1350" height="1800" loading="lazy" decoding="async"
+               alt="Ans Graph on a 13-inch iPad: the function rail on the left with the value table open beside a full-height plot">
+        </div>
+        <figcaption><strong>iPad</strong><span>Functions, table and plot without swapping between them.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="graph-analysis graph-section" aria-labelledby="analysis-title">
     <div class="graph-shell graph-analysis-grid">
       <div class="graph-analysis-copy">
@@ -562,23 +606,17 @@ sitemap: false
         <h2 id="devices-title">Your graphs, on the screen in front of you.</h2>
         <p class="graph-section-intro">One purchase covers iPhone, iPad and Mac. Each layout is native to its screen, from a graph you can hold to a full desktop instrument.</p>
       </div>
-      <div class="graph-device-shots">
-        <figure>
-          <img src="/assets/images/screenshots/graph-iphone-integral.png" width="644" height="1400" loading="lazy" decoding="async"
-               alt="Ans Graph on iPhone: sine shaded from zero to pi, with the integral reading approximately 2 in the register below the plot.">
-          <figcaption>iPhone</figcaption>
-        </figure>
-        <figure>
-          <img src="/assets/images/screenshots/graph-ipad-table.png" width="1350" height="1800" loading="lazy" decoding="async"
-               alt="Ans Graph on iPad: the function rail beside the plot, with the value table open.">
-          <figcaption>iPad</figcaption>
-        </figure>
-        <figure>
-          <img src="/assets/images/screenshots/graph-mac-four-functions.png" width="2200" height="1440" loading="lazy" decoding="async"
-               alt="Ans Graph on Mac: four functions plotted at once in a resizable window, each with its own colour and line pattern.">
-          <figcaption>Mac</figcaption>
-        </figure>
-      </div>
+      <!-- No images here. They were moved up to the product-media and
+           mac-band sections near the top; repeating them at thumbnail size
+           beneath their own captions read as a contents page for a product
+           the visitor had already seen. This section keeps the argument —
+           one purchase, three native layouts — and lets the shots above
+           carry the evidence. -->
+      <ul class="graph-device-list" aria-label="Supported devices">
+        <li>iPhone</li>
+        <li>iPad</li>
+        <li>Mac</li>
+      </ul>
     </div>
   </section>
 

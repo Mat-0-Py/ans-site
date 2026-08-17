@@ -276,6 +276,8 @@ for src, dest, url in PAGES:
                       ' class="is-active" aria-current="page"' if url == "/stopwatch/" else "")
     doc = doc.replace("{% if page.url == '/clock/' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
                       ' class="is-active" aria-current="page"' if url == "/clock/" else "")
+    doc = doc.replace("{% if page.body_class contains 'graph-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
+                      ' class="is-active" aria-current="page"' if "graph-page" in body_class else "")
     doc = doc.replace("{% if page.body_class contains 'science-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
                       ' class="is-active" aria-current="page"' if "science-page" in body_class else "")
     doc = doc.replace("{% if page.body_class contains 'convert-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",

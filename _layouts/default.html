@@ -64,6 +64,7 @@
         </a>
         <nav class="site-nav family-nav" aria-label="Ans family">
           <a href="/"{% unless page.body_class contains 'tool-page' %} class="is-active"{% endunless %}{% if page.url == '/' %} aria-current="page"{% endif %}>Calculator</a>
+          <a href="/graph/"{% if page.body_class contains 'graph-page' %} class="is-active" aria-current="page"{% endif %}>Graph</a>
           <a href="/stopwatch/"{% if page.url == '/stopwatch/' %} class="is-active" aria-current="page"{% endif %}>Stopwatch</a>
           <a href="/clock/"{% if page.url == '/clock/' %} class="is-active" aria-current="page"{% endif %}>World clock</a>
           <a href="/science/"{% if page.body_class contains 'science-page' %} class="is-active" aria-current="page"{% endif %}>Science</a>
@@ -83,6 +84,7 @@
           <p>A calculator you can own.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/graph/">Graph</a>
           <a href="/stopwatch/">Stopwatch</a>
           <a href="/clock/">World clock</a>
           <a href="/science/">Science</a>

@@ -10,20 +10,7 @@ permalink: /releases
 
 The permanent changelog for Ans. The newest version is listed first.
 
-## 1.4
-
-- **Ans now accepts values sent from Ans Graph.** Send a result across from
-  the graph and it arrives on the calculator's input line, ready to be used in
-  the next calculation. Nothing is worked out on arrival: the value simply sits
-  there as though you had typed it, and it changes no answer, memory or stored
-  variable until you press a key. On iPhone, iPad and Mac.
-- **Paste on iPhone and iPad.** Hold the display and choose Paste to bring a
-  whole expression in from another app — the same thing ⌘V has always done on
-  the Mac, which until now had no equivalent on a phone.
-- Powers of ten now survive the journey in both directions. A pasted `×10^` is
-  the same power-of-ten the key gives you, so a value arriving as 1×10⁻⁵ stays
-  scientific instead of turning back into a fraction — and a result you copy
-  from Ans, such as 6.02E23, can now be pasted straight back in.
+<!-- 1.4's notes are written and held back until Ans Graph is on sale; they live in AnsGraph/LaunchAssets/WEBSITE-COPY.md. -->
 
 ## 1.3.1 — Mac only
 
