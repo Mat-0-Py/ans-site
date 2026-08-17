@@ -63,6 +63,12 @@ def resolve_site_liquid(text):
 PAGES = [
     # (source, output path, page.url)
     ("index.html", "index.html", "/"),
+    # Added 16 August 2026. The graph page was written on 3 August and this
+    # list was not updated with it, so the one page nobody could check by
+    # opening the live site was also the one page the preview would not
+    # render. It carries `sitemap: false` in its front matter until launch;
+    # this preview's sitemap is disposable, so that is not a conflict.
+    ("graph/index.html", "graph/index.html", "/graph/"),
     ("stopwatch/index.html", "stopwatch/index.html", "/stopwatch/"),
     ("clock/index.html", "clock/index.html", "/clock/"),
     ("science/index.html", "science/index.html", "/science/"),
