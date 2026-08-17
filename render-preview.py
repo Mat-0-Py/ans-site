@@ -68,6 +68,7 @@ PAGES = [
     # opening the live site was also the one page the preview would not
     # render. It carries `sitemap: false` in its front matter until launch;
     # this preview's sitemap is disposable, so that is not a conflict.
+    ("calculator/index.html", "calculator/index.html", "/calculator/"),
     ("graph/index.html", "graph/index.html", "/graph/"),
     ("stopwatch/index.html", "stopwatch/index.html", "/stopwatch/"),
     ("clock/index.html", "clock/index.html", "/clock/"),
@@ -268,8 +269,8 @@ for src, dest, url in PAGES:
     doc = doc.replace("{{ page.body_class | default: 'prose-page' }}", body_class)
 
     # Nav conditionals (must match _layouts/default.html exactly).
-    doc = doc.replace("{% unless page.body_class contains 'tool-page' %} class=\"is-active\"{% endunless %}",
-                      "" if "tool-page" in body_class else ' class="is-active"')
+    doc = doc.replace("{% if page.body_class contains 'calculator-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
+                      ' class="is-active" aria-current="page"' if "calculator-page" in body_class else "")
     doc = doc.replace("{% if page.url == '/' %} aria-current=\"page\"{% endif %}",
                       ' aria-current="page"' if url == "/" else "")
     doc = doc.replace("{% if page.url == '/stopwatch/' %} class=\"is-active\" aria-current=\"page\"{% endif %}",

@@ -2185,3 +2185,33 @@ a.button-secondary:hover {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Product lockup — the wordmark at title size with its product descriptor
+   beneath, used at the top of a product page so the page says what it is
+   before it says anything else.
+   Added 17 August 2026: the Graph page introduced itself this way and the
+   calculator page did not, which was most of why the two did not read as
+   siblings. Graph keeps its own .graph-lockup for now; this is the shared
+   form the calculator uses. */
+.product-lockup {
+  width: clamp(150px, 17vw, 196px);
+  margin: 0 0 22px;
+  color: var(--white);
+  text-align: center;
+}
+
+.product-lockup svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-lockup span {
+  display: block;
+  margin-top: -10px;
+  color: var(--white);
+  font-size: 0.86rem;
+  font-weight: 690;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}

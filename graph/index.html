@@ -49,8 +49,8 @@ sitemap: true
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
     align-items: center;
     gap: clamp(42px, 7vw, 96px);
-    min-height: 760px;
-    padding-block: 72px 104px;
+    min-height: 0;
+    padding-block: 56px 80px;
   }
 
   .graph-hero-copy,
@@ -60,10 +60,15 @@ sitemap: true
     min-width: 0;
   }
 
+  /* Trimmed 17 August 2026. At 24vw the lockup ran to 246px and the hero
+     reserved 760px of height for itself, so on a laptop the product name and
+     a headline were most of the first screenful and the instrument below it
+     was cut off. It is now the same size as the calculator's
+     `.product-lockup`, which is what makes the two pages read as a pair. */
   .graph-lockup {
-    width: clamp(174px, 24vw, 246px);
-    margin: 0 0 28px;
-    color: var(--graph-orchid);
+    width: clamp(150px, 17vw, 196px);
+    margin: 0 0 22px;
+    color: var(--white);
     text-align: center;
   }
 
@@ -75,9 +80,9 @@ sitemap: true
 
   .graph-lockup span {
     display: block;
-    margin-top: -12px;
+    margin-top: -10px;
     color: var(--white);
-    font-size: 0.92rem;
+    font-size: 0.86rem;
     font-weight: 690;
     letter-spacing: 0.24em;
     text-transform: uppercase;
@@ -85,12 +90,16 @@ sitemap: true
 
   .graph-eyebrow {
     margin: 0 0 16px;
-    color: var(--graph-orchid);
+    color: var(--teal);
     font-family: var(--mono);
     font-size: 0.78rem;
     font-weight: 750;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+  }
+
+  .graph-page h1 span {
+    color: var(--graph-orchid);
   }
 
   .graph-hero h1 {
@@ -475,7 +484,7 @@ sitemap: true
     }
 
     .graph-lockup {
-      width: 184px;
+      width: 150px;
     }
   }
 
@@ -484,7 +493,11 @@ sitemap: true
       width: min(100% - 32px, 1180px);
     }
 
-    .graph-hero h1 {
+    .graph-page h1 span {
+    color: var(--graph-orchid);
+  }
+
+  .graph-hero h1 {
       font-size: clamp(2.75rem, 13vw, 3.55rem);
     }
 
@@ -532,12 +545,12 @@ sitemap: true
         <svg viewBox="0 0 480 360" width="480" height="360" role="img" aria-labelledby="graph-mark-title">
           <title id="graph-mark-title">Ans Graph</title>
           <path fill="currentColor" fill-rule="evenodd" d="M117.966 70.739 L103.171 135.773 L132.867 135.773 Z M98.807 42 L137.231 42 L180.126 200.913 L148.727 200.913 L138.934 161.637 L96.891 161.637 L87.311 200.913 L55.912 200.913 Z M295.455 123.532 L295.455 200.913 L264.481 200.913 L264.481 128.322 Q264.481 115.336 260.809 109.748 Q257.137 104.16 248.834 104.16 Q240.426 104.16 235.583 111.717 Q230.74 119.275 230.74 132.686 L230.74 200.913 L199.766 200.913 L199.766 81.702 L230.74 81.702 L230.74 99.583 Q234.039 89.685 242.022 84.256 Q250.005 78.828 261.288 78.828 Q278.212 78.828 286.833 90.057 Q295.455 101.286 295.455 123.532 Z M415.999 85.427 L415.999 112.675 Q407.377 107.141 398.064 104.32 Q388.75 101.499 379.384 101.499 Q368.953 101.499 363.631 104.533 Q358.309 107.566 358.309 113.527 Q358.309 122.042 381.087 127.364 L382.258 127.683 L391.199 129.812 Q408.229 133.857 416.159 142.851 Q424.088 151.845 424.088 167.172 Q424.088 185.586 412.007 194.793 Q399.927 204 375.659 204 Q364.908 204 353.626 202.137 Q342.343 200.275 330.741 196.549 L330.741 169.301 Q341.066 175.155 351.763 178.242 Q362.46 181.329 372.465 181.329 Q383.429 181.329 389.07 178.135 Q394.711 174.942 394.711 168.875 Q394.711 162.915 390.72 159.721 Q386.728 156.528 371.72 152.909 L363.099 150.993 Q345.217 146.949 337.021 138.327 Q328.825 129.706 328.825 115.23 Q328.825 97.987 341.279 88.407 Q353.732 78.828 376.297 78.828 Q386.409 78.828 396.467 80.478 Q406.526 82.127 415.999 85.427 Z" />
-          <path d="M174 279 C185 268.266225 196 258.5 207 258.5 C218 258.5 229 268.266225 240 279 C251 289.733775 262 299.5 273 299.5 C284 299.5 295 289.733775 306 279" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="17" />
+          <path d="M174 279 C185 268.266225 196 258.5 207 258.5 C218 258.5 229 268.266225 240 279 C251 289.733775 262 299.5 273 299.5 C284 299.5 295 289.733775 306 279" fill="none" stroke="#b18aca" stroke-linecap="round" stroke-width="17" />
         </svg>
         <span>Graph</span>
       </div>
       <p class="graph-eyebrow">Graphing calculator for iPhone, iPad and Mac</p>
-      <h1 id="graph-title">see the area, drag the bounds, trust the answer</h1>
+      <h1 id="graph-title">See the area. Drag the bounds. <span>Trust the answer.</span></h1>
       <p class="graph-hero-lede">Ans Graph puts numerical integration where it belongs: the shaded region on the graph and the value beside it. Move either bound and both respond together.</p>
       <ul class="graph-ownership" aria-label="Ownership promise">
         <li>Paid once</li>
@@ -627,8 +640,8 @@ sitemap: true
         <h2 id="media-title">Hold it on iPhone.<br>Spread out on iPad.</h2>
       </div>
       <p>
-        The same instrument on both: the shaded area and its value on the
-        phone, and the function rail beside a full-height plot on the iPad.
+        The same instrument on both: the shaded area and its value in one
+        hand, and every function listed beside the plot on the larger screen.
       </p>
     </div>
 
@@ -644,11 +657,11 @@ sitemap: true
 
       <figure class="product-capture product-capture-pad">
         <div class="capture-frame">
-          <img src="/assets/images/screenshots/graph-ipad-table.png"
+          <img src="/assets/images/screenshots/graph-ipad-four-functions.png"
                width="1350" height="1800" loading="lazy" decoding="async"
-               alt="Ans Graph on a 13-inch iPad: the function rail on the left with the value table open beside a full-height plot">
+               alt="Ans Graph on a 13-inch iPad: four functions listed in the rail on the left, each in its own colour, beside a full-height plot">
         </div>
-        <figcaption><strong>iPad</strong><span>Functions, table and plot without swapping between them.</span></figcaption>
+        <figcaption><strong>iPad</strong><span>Every function in the rail, beside a full-height plot.</span></figcaption>
       </figure>
     </div>
   </section>
