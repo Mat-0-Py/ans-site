@@ -2577,7 +2577,9 @@ a.button-secondary:hover {
 .example-readout em {
   display: block;
   margin-top: 6px;
-  color: rgba(46, 52, 64, 0.7);
+  /* 0.8, not 0.7: at 70% this line measured 3.90:1 on the LCD, under the
+     4.5:1 AA floor for text this size. 0.8 gives 4.90:1 and looks the same. */
+  color: rgba(46, 52, 64, 0.8);
   font-family: var(--sans);
   font-size: 0.8rem;
   font-style: normal;
