@@ -27,6 +27,31 @@ LAYOUT = (SITE / "_layouts" / "default.html").read_text()
 CONFIG = (SITE / "_config.yml").read_text()
 
 
+def check_front_matter(path, front):
+    """Reject front matter that Jekyll's YAML parser would reject.
+
+    This renderer reads front matter with a regex, which is more forgiving
+    than real YAML — and on 18 August 2026 that difference put a broken page
+    on the live site. `description: A worked example: 20 m/s …` has an
+    unquoted `: ` inside a scalar, which is a YAML error; Jekyll abandoned the
+    front matter, treated the file as a *static* file and served it with no
+    layout, no stylesheet and no <head> at all. The preview had shown it
+    perfectly. A preview that is more permissive than the build is worse than
+    no preview, so the permissiveness stops here.
+    """
+    for line in front.splitlines():
+        m = re.match(r"^([A-Za-z_][\w-]*):\s+(.*)$", line)
+        if not m:
+            continue
+        key, value = m.groups()
+        if value and value[0] not in "\"'[{|>" and ": " in value:
+            sys.exit(
+                f"{path}: front matter would fail Jekyll's YAML parser.\n"
+                f"  {key}: {value}\n"
+                f"  An unquoted value cannot contain \": \" — wrap it in quotes."
+            )
+
+
 def config_value(key, default=""):
     m = re.search(rf"^{key}:\s*(.*)$", CONFIG, re.M)
     if not m:
@@ -205,7 +230,10 @@ def relativise(doc, depth, current_url):
 
 
 for src, dest, url in PAGES:
-    fm, body = front_matter((SITE / src).read_text())
+    raw = (SITE / src).read_text()
+    if raw.startswith("---"):
+        check_front_matter(src, raw.split("---", 2)[1])
+    fm, body = front_matter(raw)
     if src.endswith(".md"):
         content = markdown.markdown(body, extensions=["tables"])
     else:
