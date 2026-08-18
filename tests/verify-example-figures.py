@@ -225,6 +225,22 @@ range45 = (tan(radians(45)) + sqrt(tan(radians(45)) ** 2 + 4 * k45 * h)) / (2 * 
 check("  range at the textbook 45°", range45, 42.685, 5e-3)
 check("  what the optimum is worth over 45°", range_best - range45, 0.043, 5e-3)
 
+print("\n--- Additions from the 18 August review -----------------------------")
+i_m = 0.05 / 12
+monthly = 200 * (((1 + i_m) ** 240) - 1) / i_m
+check("£200 a month for 20 years at 5%", monthly, 82206.73, 0.005)
+check("  more than crediting £2,400 yearly", monthly - contrib_fv, 2848.44, 0.005)
+check("tan 40° (trajectory coefficient)", tan(radians(40)), 0.8390996312, 1e-9)
+check("9.81/(2×20²×cos²40°)", 9.81 / (2 * 400 * cos(radians(40)) ** 2), 0.02089638144, 1e-10)
+
+# Carbon dating sensitivity table.
+for frac, age_want, swing_want in ((0.50, 5730, 165), (0.22, 12517, 376),
+                                   (0.10, 19035, 829), (0.05, 24765, 1676)):
+    age = C14 * log(frac) / log(0.5)
+    swing = abs(C14 * log(frac - 0.01) / log(0.5) - C14 * log(frac + 0.01) / log(0.5)) / 2
+    check(f"age at {frac:.0%} left", age, age_want, 0.6)
+    check(f"  ±1 pp is worth", swing, swing_want, 0.6)
+
 print()
 if FAILURES:
     raise SystemExit(f"{len(FAILURES)} figure(s) disagree: " + ", ".join(FAILURES))
