@@ -245,7 +245,7 @@ permalink: /
   .handover-panel strong {
     display: block;
     margin-top: 5px;
-    font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+    font-size: clamp(0.92rem, 1.55vw, 1.2rem);
     letter-spacing: -0.02em;
   }
 
@@ -366,20 +366,24 @@ permalink: /
         worked out on arrival and nothing changes until you press a key — the
         value simply sits there, as though you had typed it.
       </p>
+      <p class="family-cta">
+        <a href="/examples/">See both used on one problem — worked examples →</a>
+        <small>Free · every sum shown</small>
+      </p>
     </div>
 
-    <div class="handover" aria-label="A result moving from Ans Graph to Ans Calculator">
+    <div class="handover" aria-label="A result moving from Ans Graph to Ans Calculator: the integral of one over one plus x squared, from zero to one, arrives as 0.7853981634 and multiplied by four gives pi">
       <div class="handover-panel">
-        <span>∫₀^π sin(x) dx</span>
-        <strong>≈ 2</strong>
+        <span>∫₀¹ 1/(1+x²) dx</span>
+        <strong>≈ 0.7853981634</strong>
       </div>
       <div class="handover-arrow" aria-hidden="true">
         <svg viewBox="0 0 46 16"><path d="M2 8h38M33 2l7 6-7 6" /></svg>
         Send
       </div>
       <div class="handover-panel">
-        <span>Ans</span>
-        <strong>2 × 4|</strong>
+        <span>Ans × 4 =</span>
+        <strong>3.141592654</strong>
       </div>
     </div>
   </div>

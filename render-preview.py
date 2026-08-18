@@ -158,6 +158,16 @@ for convert_source in sorted((SITE / "convert").glob("*/index.html")):
     route = "/" + convert_source.parent.relative_to(SITE).as_posix() + "/"
     PAGES.append((relative, relative, route))
 
+# Worked examples, discovered for the same reason: the section grows one page
+# at a time, and a hand-maintained list is how the graph page came to be the
+# only page the preview would not render.
+if (SITE / "examples" / "index.html").exists():
+    PAGES.append(("examples/index.html", "examples/index.html", "/examples/"))
+for example_source in sorted((SITE / "examples").glob("*/index.html")):
+    relative = example_source.relative_to(SITE).as_posix()
+    route = "/" + example_source.parent.relative_to(SITE).as_posix() + "/"
+    PAGES.append((relative, relative, route))
+
 if HTML_ONLY:
     PAGES = [page for page in PAGES if not page[0].endswith(".md")]
 elif markdown is None:
@@ -226,6 +236,8 @@ for src, dest, url in PAGES:
         crumb_name, crumb_url = "Science", "/science/"
     elif "convert-page" in body_class:
         crumb_name, crumb_url = "Convert", "/convert/"
+    elif "examples-page" in body_class:
+        crumb_name, crumb_url = "Examples", "/examples/"
     else:
         crumb_name = crumb_url = None
     if crumb_name:
@@ -283,6 +295,8 @@ for src, dest, url in PAGES:
                       ' class="is-active" aria-current="page"' if "science-page" in body_class else "")
     doc = doc.replace("{% if page.body_class contains 'convert-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
                       ' class="is-active" aria-current="page"' if "convert-page" in body_class else "")
+    doc = doc.replace("{% if page.body_class contains 'examples-page' %} class=\"is-active\" aria-current=\"page\"{% endif %}",
+                      ' class="is-active" aria-current="page"' if "examples-page" in body_class else "")
 
     doc = doc.replace("{{ content }}", content)
 

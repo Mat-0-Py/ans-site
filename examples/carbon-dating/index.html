@@ -1,0 +1,286 @@
+---
+layout: default
+title: Carbon Dating Worked Example — Half-Life and Radioactive Decay — Ans
+description: How radiocarbon dating works, in full. Halving on paper, then logarithms for any fraction, then a real sample at 22% modern carbon dated to about 12,500 years — with the answer found again on a graph.
+body_class: tool-page examples-page
+permalink: /examples/carbon-dating/
+og_image: /assets/images/social-card.png
+og_image_alt: Carbon dating worked example — halving, logarithms, and the age read off a curve.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Physics</p>
+  <h1>Carbon dating: reading an age out of what's left</h1>
+  <p class="example-standfirst">
+    A piece of charcoal from a hearth holds 22% of the carbon-14 that a living
+    thing would. How old is it? Halving is easy while the answer is a whole
+    number of half-lives; 22% is not. This page does the easy case on paper,
+    turns it into a logarithm that handles any fraction, dates the real sample,
+    and then shows the two places the method stops being a measurement.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE to A-level</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>Intersection</li>
+    <li>≈ 8 minutes</li>
+  </ul>
+
+  <div class="example-video">
+    <strong>Video</strong>
+    <span>Coming soon. Four rungs, in the order below, so the chapters and this page will match.</span>
+  </div>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Rung 1 — on paper</span>
+    <h2 id="the-sum-title">Half-life, while the answer is a whole number of halvings</h2>
+
+    <p>
+      A half-life is the time for half of whatever is left to decay — and the
+      "whatever is left" is the important part. It is not half of the original
+      each time; it is half of the current amount, so the sample never quite
+      reaches zero.
+    </p>
+
+    <p>
+      Start with 1,000 counts a minute from a source whose half-life is 5 days.
+      After 5 days: 500. After 10: 250. After 15: <strong>125</strong>. Three
+      halvings, so:
+    </p>
+
+    <div class="formula" aria-label="Radioactive decay by halving">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>N</mi><mo>=</mo><msub><mi>N</mi><mn>0</mn></msub><msup><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow><mrow><mi>t</mi><mo>/</mo><msub><mi>T</mi><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msub></mrow></msup></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>N₀</b> the amount at the start · <b>N</b> the amount left · <b>t</b> elapsed time · <b>T½</b> the half-life, in the same units as t</li>
+    </ul>
+
+    <ul class="example-keys" aria-label="1 0 0 0, multiply, 0 point 5, power, 3, equals">
+      <li><kbd class="is-number">1000</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">0.5</kbd></li>
+      <li><kbd>^</kbd></li>
+      <li><kbd class="is-number">3</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads 1000 times 0.5 to the power 3, result 125">
+      <span>1000×0.5<sup>3</sup></span>
+      <strong>125</strong>
+      <em>Counts a minute after 15 days — an eighth of the original</em>
+    </div>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="on-the-calculator" aria-labelledby="calc-title">
+    <span class="example-rung-label">Rung 2 — any fraction, not just halves</span>
+    <h2 id="calc-title">Turning the halving round with a logarithm</h2>
+
+    <p>
+      Now the question people actually ask: <em>when will only 10% be left?</em>
+      That is not a whole number of half-lives, and no amount of halving on
+      paper will land on it. The unknown is stuck in the exponent, and a
+      logarithm is the tool that brings it down:
+    </p>
+
+    <div class="formula" aria-label="Elapsed time from the fraction remaining">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>t</mi><mo>=</mo><msub><mi>T</mi><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msub><mo>&#8290;</mo><mfrac><mrow><mi>ln</mi><mo stretchy="false">(</mo><mi>N</mi><mo>/</mo><msub><mi>N</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mi>ln</mi><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow></math>
+    </div>
+
+    <p>
+      The base does not matter as long as both logarithms use the same one, so
+      the <b>ln</b> key does the whole job. With T½ = 5 days and N/N₀ = 0.1:
+    </p>
+
+    <ul class="example-keys" aria-label="5, multiply, ln, 0 point 1, close bracket, divide, ln, 0 point 5, close bracket, equals">
+      <li><kbd class="is-number">5</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd>ln</kbd></li>
+      <li><kbd class="is-number">0.1</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd>ln</kbd></li>
+      <li><kbd class="is-number">0.5</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The display reads 5 times ln 0.1 divided by ln 0.5, result 16.60964047">
+      <span>5×ln(0.1)÷ln(0.5)</span>
+      <strong>16.60964047</strong>
+      <em>16 days and about 15 hours to fall to a tenth</em>
+    </div>
+
+    <p class="example-note">
+      <b>Both logs are negative, and that is why the answer is positive.</b>
+      ln(0.1) = −2.302585093 and ln(0.5) = −0.6931471806; a negative divided by
+      a negative gives the positive 3.321928095 half-lives. If a decay answer
+      ever comes out negative, a sign has been dropped rather than time having
+      run backwards.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="take-it-further" aria-labelledby="dating-title">
+    <span class="example-rung-label">Rung 3 — the real sample</span>
+    <h2 id="dating-title">How to calculate the age of a sample from carbon-14</h2>
+
+    <p>
+      Living things exchange carbon with their surroundings, so they hold the
+      same proportion of radioactive carbon-14 as the atmosphere. That exchange
+      stops at death, and from then on the carbon-14 only decays, with a
+      half-life of <b>5,730 years</b>. Measure what fraction is left and the
+      same formula gives the time since it stopped.
+    </p>
+
+    <p>
+      Our charcoal is at <b>22%</b> of modern carbon:
+    </p>
+
+    <div class="example-readout" role="img" aria-label="The display reads 5730 times ln 0.22 divided by ln 0.5, result 12516.75279">
+      <span>5730×ln(0.22)÷ln(0.5)</span>
+      <strong>12516.75279</strong>
+      <em>About 12,500 years — a late-glacial hearth</em>
+    </div>
+
+    <p>
+      Quoting that as 12,516.75 years would be silly: the measurement of "22%"
+      is not good to eight figures. <strong>12,500 years</strong> is the honest
+      statement, and a real laboratory would give it as a figure plus an
+      uncertainty.
+    </p>
+
+    <h3>The same answer, found by looking</h3>
+
+    <p>
+      Plot what is left against time and put a line at the measured 22%. Where
+      they meet is the age — no rearranging, and a picture of how sharply the
+      answer depends on the measurement:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 100×0.5^(x/5730) &nbsp;&nbsp; <b>f₂(x) =</b> 22</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-carbon-intersection.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a decay curve falling from 100% crossing a horizontal line at 22%, with the intersection marked and read out at about 12,520 years.">
+      </div>
+      <figcaption><b>Intersection</b> — the curve meets 22% at <b>12,520 years</b>, which is the logarithm's 12,516.75 stated to the precision a 20,000-year-wide window earns.</figcaption>
+    </figure>
+
+    <p>
+      Drag the line up and down and watch how far the crossing moves. Near the
+      top of the curve a percentage point of measurement error is worth a
+      century or so; out at 5% remaining the curve is nearly flat and the same
+      error is worth a great deal more. That sensitivity <em>is</em> the reason
+      radiocarbon has a working limit, which is the next rung.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="where-it-breaks" aria-labelledby="breaks-title">
+    <span class="example-rung-label">Rung 4 — where it stops being a measurement</span>
+    <h2 id="breaks-title">Two things that make the answer not quite a date</h2>
+
+    <h3>The constant you use changes the answer</h3>
+
+    <p>
+      Libby's original half-life for carbon-14 was <b>5,568 years</b>; the
+      better modern value is <b>5,730</b>. Published radiocarbon ages are still
+      quoted on Libby's figure by convention, so the same sample gives two
+      different numbers depending on which constant is in the sum:
+    </p>
+
+    <table class="example-table">
+      <caption>The same 22% sample, dated with each half-life.</caption>
+      <thead>
+        <tr><th scope="col">Half-life used</th><th scope="col">Age</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>5,730 years (modern)</td><td>12,516.8 years</td></tr>
+        <tr><td>5,568 years (Libby, conventional)</td><td>12,162.9 years</td></tr>
+        <tr><td>Difference</td><td>353.9 years</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Three and a half centuries, from a constant rather than from the sample.
+      Neither number is wrong; a number quoted without saying which convention
+      it used is.
+    </p>
+
+    <h3>The curve runs out</h3>
+
+    <p>
+      At 50,000 years a sample has been through <strong>8.73 half-lives</strong>
+      and holds <strong>0.236%</strong> of its original carbon-14 — so little
+      that it is hard to tell from contamination by a trace of modern carbon.
+      Plot the curve out that far and the problem is obvious long before the
+      arithmetic says so: it flattens against the axis, and reading a date off
+      a flat line is reading noise.
+    </p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-carbon-limit.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: the carbon-14 decay curve plotted to 50,000 years, dropping steeply and then running almost flat along the axis below about 5 per cent.">
+      </div>
+      <figcaption>Out past 40,000 years the curve is nearly flat: a small error in the measurement is a large error in the date.</figcaption>
+    </figure>
+
+    <p class="example-note">
+      <b>And radiocarbon years are not calendar years.</b> The method assumes
+      the atmosphere always held the same proportion of carbon-14, and it did
+      not — it varies with the sun's activity and the Earth's magnetic field,
+      and fossil-fuel burning and 1950s bomb testing moved it sharply. Real
+      dates are therefore <em>calibrated</em> against tree rings and other dated
+      records. The arithmetic on this page is the raw radiocarbon age, which is
+      the input to that calibration rather than the finished date.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">Carbon-14 against time</h2>
+
+    <table class="example-table">
+      <caption>N = 100 × 0.5<sup>t/5730</sup>. Set the Ans Graph table to start 0, step 5730 for the first column.</caption>
+      <thead>
+        <tr><th scope="col">Age / years</th><th scope="col">Half-lives</th><th scope="col">Carbon-14 left</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>100%</td></tr>
+        <tr><td>5,730</td><td>1</td><td>50%</td></tr>
+        <tr><td>11,460</td><td>2</td><td>25%</td></tr>
+        <tr><td>12,517</td><td>2.18</td><td>22%</td></tr>
+        <tr><td>17,190</td><td>3</td><td>12.5%</td></tr>
+        <tr><td>50,000</td><td>8.73</td><td>0.236%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What this model ignores</h2>
+    <ul>
+      <li>The atmosphere is treated as having held a constant proportion of carbon-14. It has not, which is why real dates are calibrated rather than quoted straight from this sum.</li>
+      <li>The sample is assumed uncontaminated. A little modern carbon in an old sample makes it look far younger; old carbon in a young one does the reverse.</li>
+      <li>Only carbon-14 is considered — a single nuclide with a fixed half-life, no daughter activity and no new production in the sample.</li>
+      <li>The measured fraction is treated as exact. It never is, and the whole art of the method is in the uncertainty this page does not carry.</li>
+      <li>Below about 0.2% remaining the method stops discriminating, which in practice puts the ceiling near 50,000 years.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/compound-interest/">compound interest</a> — the same exponential with the sign the other way up — or <a href="/examples/quadratic-equations/">solving equations that have no formula</a>.</p>
+    <p class="science-related">Related free tools: <a href="/science/half-life/">half-life calculator</a> (this sum, done for you) &middot; <a href="/science/photon-energy/">photon energy</a> &middot; <a href="/science/de-broglie/">de Broglie wavelength</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Paid for once, and both work with the aeroplane mode on.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Carbon dating: reading an age out of what's left","description":"A worked example of radiocarbon dating: halving on paper, the logarithm that handles any fraction, a sample at 22% modern carbon dated to about 12,500 years, and the two things that stop the answer being a calendar date.","url":"https://anscalc.com/examples/carbon-dating/","educationalLevel":"GCSE to A-level","learningResourceType":"Worked example","teaches":["Half-life","Radioactive decay","Logarithms","Radiocarbon dating","Finding an intersection on a graph"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

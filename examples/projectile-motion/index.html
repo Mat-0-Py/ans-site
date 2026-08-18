@@ -1,0 +1,267 @@
+---
+layout: default
+title: Projectile Motion Worked Example — Range, Height and a Launch From Above Ground — Ans
+description: A projectile motion worked example: 20 m/s at 40° gives a 40.16 m range by formula, then the trajectory plotted with its apex and landing point found — and what changes when you throw from two metres up.
+body_class: tool-page examples-page
+permalink: /examples/projectile-motion/
+og_image: /assets/images/social-card.png
+og_image_alt: Projectile motion worked example — the range formula, the trajectory, and the symmetry that breaks.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Physics</p>
+  <h1>Projectile motion: the range formula, and where it stops working</h1>
+  <p class="example-standfirst">
+    Throw something at 20 m/s at 40° above the horizontal. How far does it go?
+    There is a formula for that, and it is exact — for a projectile that starts
+    and finishes at the same height. Nobody throws from ground level. This page
+    does the textbook case, plots the actual flight, and then raises the launch
+    point by two metres, which breaks the symmetry the formula depends on.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE to A-level</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>Roots</li>
+    <li>Extrema</li>
+    <li>≈ 9 minutes</li>
+  </ul>
+
+  <div class="example-video">
+    <strong>Video</strong>
+    <span>Coming soon. Four rungs, in the order below, so the chapters and this page will match.</span>
+  </div>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Rung 1 — on paper</span>
+    <h2 id="the-sum-title">The textbook case: level ground, no air</h2>
+
+    <p>
+      Split the launch into two independent motions. Horizontally there is no
+      force, so the speed stays at u cos θ. Vertically there is gravity, so the
+      projectile rises, stops and falls exactly as it would if thrown straight
+      up. The two are linked only by sharing a clock.
+    </p>
+
+    <p>
+      Landing back at launch height takes t = 2u sin θ ÷ g, and multiplying by
+      the horizontal speed gives the range:
+    </p>
+
+    <div class="formula" aria-label="Range, maximum height and time of flight for a projectile on level ground">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>R</mi><mo>=</mo><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><mi>sin</mi><mo stretchy="false">(</mo><mn>2</mn><mi>&#952;</mi><mo stretchy="false">)</mo></mrow><mi>g</mi></mfrac><mo>,</mo><mspace width="1.2em"></mspace><mi>H</mi><mo>=</mo><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><msup><mi>sin</mi><mn>2</mn></msup><mi>&#952;</mi></mrow><mrow><mn>2</mn><mi>g</mi></mrow></mfrac></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>u</b> launch speed · <b>θ</b> angle above the horizontal · <b>g</b> 9.81 m s⁻² · <b>R</b> range on level ground · <b>H</b> greatest height above the launch point</li>
+    </ul>
+
+    <p>Set the calculator to <b>DEG</b> and take the range first:</p>
+
+    <ul class="example-keys" aria-label="2 0, squared, sin, 8 0, close bracket, divide, 9 point 8 1, equals">
+      <li><kbd class="is-number">20</kbd></li>
+      <li><kbd>x²</kbd></li>
+      <li><kbd>sin</kbd></li>
+      <li><kbd class="is-number">80</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd class="is-number">9.81</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads 20 squared times sin 80 divided by 9.81, result 40.15526006">
+      <span>20²sin(80)÷9.81</span>
+      <strong>40.15526006</strong>
+      <em>Range in metres — call it 40.2 m</em>
+    </div>
+
+    <p>
+      The same two lines give <strong>H = 8.4236 m</strong> and a flight of
+      <strong>2.6209 s</strong>. And because sin(2θ) is symmetric about 90°, 40°
+      and 50° give exactly the same range — which is the first hint that this
+      formula is describing a very particular, very tidy situation.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Rung 2 — the actual flight</span>
+    <h2 id="graph-title">Plotting the trajectory rather than its endpoints</h2>
+
+    <p>
+      The formula gives two numbers. The path itself is a parabola, and you get
+      it by eliminating time between the horizontal and vertical motions:
+    </p>
+
+    <div class="formula" aria-label="The trajectory of a projectile">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>y</mi><mo>=</mo><mi>x</mi><mi>tan</mi><mi>&#952;</mi><mo>&#8722;</mo><mfrac><mrow><mi>g</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><msup><mi>u</mi><mn>2</mn></msup><msup><mi>cos</mi><mn>2</mn></msup><mi>&#952;</mi></mrow></mfrac></mrow></math>
+    </div>
+
+    <p>
+      With u = 20, θ = 40° and g = 9.81, tan θ = 0.8391 and the x² coefficient
+      is 0.02089638144. Ans Graph works in radians or degrees like the
+      calculator, so either type the trigonometry with the angle unit set to
+      <b>DEG</b>, or — as here — enter the two coefficients you have just worked
+      out, which keeps the plot honest about what it is:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 0.8390996312x-0.02089638144x^2</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-projectile-extremum.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a projectile trajectory arching from the origin to about 40 metres, with the highest point marked and read out near 8.42 metres.">
+      </div>
+      <figcaption><b>Extremum</b> puts the apex at <b>8.42 m</b>, directly above the halfway point — the same height the formula gave.</figcaption>
+    </figure>
+
+    <p>
+      <b>Root</b> then finds where it lands: <strong>40.16 m</strong>, with the
+      other root at the origin where it was thrown. Two analysis tools, two
+      numbers that already agreed with the algebra — which is the point of doing
+      it twice.
+    </p>
+
+    <p class="example-note">
+      <b>The apex is at half the range only because the ground is level.</b>
+      Symmetry is doing a lot of quiet work in the textbook case: same height up
+      and down, same speed at launch and landing, apex exactly halfway. Every
+      one of those is about to stop being true.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="take-it-further" aria-labelledby="further-title">
+    <span class="example-rung-label">Rung 3 — throwing from shoulder height</span>
+    <h2 id="further-title">Two metres up, and the formula is wrong</h2>
+
+    <p>
+      Nobody launches from the floor. Throw the same 20 m/s at 40° from
+      <b>2 m</b> above the ground and the projectile no longer lands at its
+      launch height, so R = u²sin(2θ)/g does not apply — it answers a different
+      question. The trajectory is the same curve lifted by 2:
+    </p>
+
+    <p class="example-entry-line"><b>f₂(x) =</b> 2+0.8390996312x-0.02089638144x^2</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-projectile-height.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: two projectile trajectories, one from the ground landing at about 40 metres and one starting two metres up and landing about two metres further on.">
+      </div>
+      <figcaption>The same throw from 2 m up carries <b>42.41 m</b> — and the landing point is a root, not a formula.</figcaption>
+    </figure>
+
+    <p>
+      <strong>42.41 m</strong> against 40.16 m: two metres of launch height buys
+      <strong>2.26 m</strong> of range, more than the height itself. The apex is
+      now 10.42 m above the ground and no longer sits halfway along; the
+      descending half is longer than the climbing half, and the projectile is
+      travelling faster when it lands than when it left.
+    </p>
+
+    <p>
+      There is a closed form for this case too — it is the positive root of a
+      quadratic in x, exactly as on the
+      <a href="/examples/quadratic-equations/">quadratics page</a>. But the
+      graph gives it without the rearrangement, and gives it as a picture that
+      makes the asymmetry obvious rather than something to be taken on trust.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="best-angle" aria-labelledby="angle-title">
+    <span class="example-rung-label">Rung 4 — and 45° is no longer best</span>
+    <h2 id="angle-title">The optimum angle, and how little it matters</h2>
+
+    <p>
+      On level ground the greatest range comes at 45°, because sin(2θ) peaks
+      there. Launch from a height and the best angle drops — it pays to spend
+      less of your speed going up, since the extra height is already given to
+      you:
+    </p>
+
+    <div class="formula" aria-label="Optimum launch angle from a height">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>&#952;</mi><mo>=</mo><msup><mi>tan</mi><mrow><mo>&#8722;</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mfrac><mi>u</mi><msqrt><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>g</mi><mi>h</mi></mrow></msqrt></mfrac><mo>)</mo></mrow></mrow></math>
+    </div>
+
+    <p>
+      With u = 20 and h = 2 that is <strong>43.66°</strong>, not 45°. But here
+      is the part worth knowing, and the reason to have the numbers rather than
+      the rule:
+    </p>
+
+    <table class="example-table">
+      <caption>Range from 2 m up, at 20 m/s, by launch angle.</caption>
+      <thead>
+        <tr><th scope="col">Angle</th><th scope="col">Range</th><th scope="col">Against the best</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>40°</td><td>42.41 m</td><td>−0.32 m</td></tr>
+        <tr><td>43.66° (optimum)</td><td>42.73 m</td><td>—</td></tr>
+        <tr><td>45° (the rule of thumb)</td><td>42.69 m</td><td>−0.04 m</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      The optimum is worth <strong>four centimetres</strong> over the textbook
+      45°. The curve of range against angle is almost flat near its peak, so the
+      precise angle barely matters — while the two metres of launch height was
+      worth 2.26 m. A model tells you which of its inputs deserve your
+      attention, and this one says: worry about the height, not the angle.
+    </p>
+
+    <p class="example-note">
+      <b>What is really missing is the air.</b> Every number on this page
+      assumes a vacuum. A real ball at 20 m/s loses range to drag — noticeably
+      for a light ball, less for a shot — and drag also pulls the best angle
+      down further, typically into the mid-thirties for a thrown ball. The
+      <a href="/examples/velocity-time-graph-area/">speed–time example</a> shows
+      what drag does to a much simpler motion; adding it here turns a formula
+      into a numerical simulation, which is a different kind of page.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">Both throws, side by side</h2>
+
+    <table class="example-table">
+      <caption>u = 20 m s⁻¹, θ = 40°, g = 9.81 m s⁻², no air resistance.</caption>
+      <thead>
+        <tr><th scope="col"></th><th scope="col">From the ground</th><th scope="col">From 2 m up</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Range</td><td>40.16 m</td><td>42.41 m</td></tr>
+        <tr><td>Apex above the ground</td><td>8.42 m</td><td>10.42 m</td></tr>
+        <tr><td>Apex at</td><td>half the range</td><td>before half</td></tr>
+        <tr><td>Best angle</td><td>45°</td><td>43.66°</td></tr>
+        <tr><td>Found by</td><td>formula</td><td>a root on the graph</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What this model ignores</h2>
+    <ul>
+      <li>No air resistance at all. This is the big one: a real throw falls short of these figures, and the lighter the object the further short.</li>
+      <li>No spin, so no lift or swerve — a struck or thrown ball with spin does not follow this curve.</li>
+      <li>Gravity is a constant 9.81 m s⁻² acting straight down, and the ground is flat and level.</li>
+      <li>The projectile is a point. Its size, and where on it you measure the launch height, are ignored.</li>
+      <li>The range formula in rung 1 applies only when the projectile lands at its launch height. Rung 3 is not a correction to it — it is a different calculation.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/velocity-time-graph-area/">area under a speed–time graph</a>, where the air resistance this page left out does its work.</p>
+    <p class="science-related">Related free tools: <a href="/science/projectile-motion/">projectile motion calculator</a> (rung 1, done for you) &middot; <a href="/science/suvat-calculator/">SUVAT calculator</a> &middot; <a href="/science/trigonometry-calculator/">trigonometry</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>, whose Root and Extremum tools did the work the formula could not.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Projectile motion: the range formula, and where it stops working","description":"A projectile motion worked example: range, height and flight time for 20 m/s at 40°, the trajectory plotted with its apex and landing found by Extremum and Root, and what changes when the launch is two metres above the ground.","url":"https://anscalc.com/examples/projectile-motion/","educationalLevel":"GCSE to A-level","learningResourceType":"Worked example","teaches":["Projectile range formula","Trajectory equation","Maximum height","Finding roots and extrema on a graph","Optimum launch angle"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

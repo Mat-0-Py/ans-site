@@ -1,0 +1,342 @@
+---
+layout: default
+title: Quadratic Formula Worked Example — Roots by Formula and by Graph — Ans
+description: Solving quadratics in full — factorising, then the quadratic formula with a, b and c stored in variables, then the roots found on a graph, and finally an equation with no formula at all.
+body_class: tool-page examples-page
+permalink: /examples/quadratic-equations/
+og_image: /assets/images/social-card.png
+og_image_alt: Quadratic equations worked example — the formula, the discriminant and the roots on a curve.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Mathematics</p>
+  <h1>Solving equations: by factorising, by formula, and by looking</h1>
+  <p class="example-standfirst">
+    Some quadratics factorise in your head. Most do not, and the formula exists
+    for those. Then there is the third kind — equations with no formula at all,
+    where the only honest methods are numerical. This page walks all three, and
+    the last one is solved twice: once by a graph and once by pressing a single
+    key over and over.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE to A-level</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>Variables</li>
+    <li>Roots</li>
+    <li>≈ 8 minutes</li>
+  </ul>
+
+  <div class="example-video">
+    <strong>Video</strong>
+    <span>Coming soon. Four rungs, in the order below, so the chapters and this page will match.</span>
+  </div>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Rung 1 — on paper</span>
+    <h2 id="the-sum-title">The case that factorises</h2>
+
+    <p>
+      Solve <b>x² − 5x + 6 = 0</b>. Look for two numbers that multiply to 6 and
+      add to −5: that is −2 and −3, so the expression is (x − 2)(x − 3), and a
+      product is zero only when one of its factors is. The roots are
+      <strong>x = 2</strong> and <strong>x = 3</strong>.
+    </p>
+
+    <p>
+      No calculator earns its keep here, and none is offered. What matters is
+      the idea it establishes: <em>solving</em> means finding where an
+      expression is zero, and that is the same question the next two rungs ask
+      in harder circumstances.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="on-the-calculator" aria-labelledby="calc-title">
+    <span class="example-rung-label">Rung 2 — when it will not factorise</span>
+    <h2 id="calc-title">The quadratic formula, with a, b and c stored</h2>
+
+    <p>
+      Now <b>2x² + 3x − 7 = 0</b>. Nothing obvious multiplies and adds, because
+      the roots are not whole numbers. The formula handles every quadratic there
+      is:
+    </p>
+
+    <div class="formula" aria-label="The quadratic formula">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>&#8722;</mo><mi>b</mi><mo>&#177;</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>&#8722;</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>a</b>, <b>b</b>, <b>c</b> the coefficients of ax² + bx + c = 0 · the part under the root, <b>b² − 4ac</b>, is the <b>discriminant</b></li>
+    </ul>
+
+    <p>
+      This is the calculation variables were made for: three numbers used four
+      times between them, and a formula you will want to run again on the next
+      question. Store them first — <b>STO</b> is the VAR function of <b>M+</b>,
+      and the letters sit on the VAR layer of <b>sin</b>, <b>cos</b> and
+      <b>tan</b>:
+    </p>
+
+    <ul class="example-keys" aria-label="Store 2 into A, 3 into B, minus 7 into C">
+      <li><kbd class="is-number">2</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li class="is-arrow" aria-hidden="true">then</li>
+      <li><kbd class="is-number">3</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li class="is-arrow" aria-hidden="true">then</li>
+      <li><kbd class="is-number">−7</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">C</kbd></li>
+    </ul>
+
+    <p>
+      Check the discriminant before anything else. It decides how many roots
+      there are, so it is worth its own line rather than being buried inside the
+      formula:
+    </p>
+
+    <ul class="example-keys" aria-label="VAR B, squared, minus, 4, VAR A, VAR C, equals">
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd>x²</kbd></li>
+      <li><kbd class="is-number">−</kbd></li>
+      <li><kbd class="is-number">4</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">C</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The display reads B squared minus 4 A C, result 65">
+      <span>B²−4AC</span>
+      <strong>65</strong>
+      <em>Positive, so there are two real roots</em>
+    </div>
+
+    <p>
+      Positive means two roots, zero means one repeated root, negative means
+      none on the real line — and 65 is not a perfect square, which is precisely
+      why nothing factorised. Now the formula itself, with the plus branch:
+    </p>
+
+    <ul class="example-keys" aria-label="open bracket, minus, VAR B, plus, square root, VAR B, squared, minus, 4, VAR A, VAR C, close bracket, close bracket, divide, open bracket, 2, VAR A, close bracket, equals">
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-number">−</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd>√</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd>x²</kbd></li>
+      <li><kbd class="is-number">−</kbd></li>
+      <li><kbd class="is-number">4</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">C</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-number">2</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The display reads open bracket minus B plus root B squared minus 4AC close bracket divided by 2A, result 1.265564437">
+      <span>(−B+√(B²−4AC))÷(2A)</span>
+      <strong>1.265564437</strong>
+      <em>The first root</em>
+    </div>
+
+    <p>
+      For the other one, press <kbd>▲</kbd> to bring the expression back, change
+      the <b>+</b> to a <b>−</b>, and evaluate again: <strong>−2.765564437</strong>.
+      That is the whole argument for typing it as one expression with the
+      coefficients in variables — the second root costs one keystroke, and the
+      next question costs three.
+    </p>
+
+    <p class="example-note">
+      <b>Check them without re-solving.</b> The two roots must add to −b/a and
+      multiply to c/a. Here that is −1.5 and −3.5, and 1.265564437 +
+      (−2.765564437) = −1.5 exactly. A check that uses different arithmetic from
+      the answer is worth more than reading the same sum twice.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Rung 3 — on the graph</span>
+    <h2 id="graph-title">The same roots, as a picture</h2>
+
+    <p>
+      A root is where the curve crosses the x-axis, so plotting the left-hand
+      side turns "solve it" into "look at it":
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 2x^2+3x-7</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-quadratic-roots.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: the parabola 2x squared plus 3x minus 7 crossing the x-axis twice, with a root marked and read out at about 1.2656.">
+      </div>
+      <figcaption><b>Root</b> finds each crossing in turn. At this zoom the register reads <b>1.27</b> and <b>−2.77</b> — the same two the formula gave as 1.265564437 and −2.765564437, stated to the precision a nine-unit window has earned.</figcaption>
+    </figure>
+
+    <p>
+      The register says how many roots are in the current view, which is a
+      guard the formula cannot offer: a curve dragged half out of the window has
+      roots you cannot see, and the app tells you so rather than quietly
+      reporting one of them.
+    </p>
+
+    <p>
+      The discriminant is visible here too. Slide the constant term up and the
+      whole parabola rises: the two crossings move together, meet when
+      b² − 4ac = 0, and then leave the axis entirely. That is what "no real
+      roots" looks like — a perfectly good curve that simply never gets there.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="take-it-further" aria-labelledby="further-title">
+    <span class="example-rung-label">Rung 4 — the equation with no formula</span>
+    <h2 id="further-title">Solving cos x = x</h2>
+
+    <p>
+      There is a quadratic formula, a cubic formula and a quartic formula. There
+      is no formula for <b>cos x = x</b> — not because nobody has found one, but
+      because no expression built from the usual operations can produce that
+      root. It has a perfectly definite value all the same, and two ordinary
+      instruments will find it.
+    </p>
+
+    <p>
+      On the graph, plot both sides and ask where they meet. Make sure the angle
+      unit is <b>RAD</b>; in degrees this is a different equation with a
+      different answer:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> cos(x) &nbsp;&nbsp; <b>f₂(x) =</b> x</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-cosx-intersection.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: the cosine curve crossing the line y equals x once, with the intersection marked and read out near 0.739.">
+      </div>
+      <figcaption>One crossing, near <b>0.739</b> — and the picture shows there is exactly one, which no amount of algebra was going to tell you.</figcaption>
+    </figure>
+
+    <h3>The same number, by pressing one key</h3>
+
+    <p>
+      On the calculator, put it in <b>RAD</b>, type any starting value, and take
+      the cosine of the answer over and over. Each result becomes the next
+      input, and the values walk in towards the crossing:
+    </p>
+
+    <ul class="example-keys" aria-label="cos, Ans, close bracket, equals, then replay and equals repeatedly">
+      <li><kbd class="is-number">1</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+      <li class="is-arrow" aria-hidden="true">then</li>
+      <li><kbd>cos</kbd></li>
+      <li><kbd class="is-number">Ans</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+      <li class="is-arrow" aria-hidden="true">then</li>
+      <li><kbd>▲</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+      <li class="is-arrow" aria-hidden="true">again and again</li>
+    </ul>
+
+    <table class="example-table">
+      <caption>Starting from 1, in radians. The answers close in on the crossing from alternating sides.</caption>
+      <thead>
+        <tr><th scope="col">Presses</th><th scope="col">Display</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>0.5403023059</td></tr>
+        <tr><td>2</td><td>0.8575532158</td></tr>
+        <tr><td>5</td><td>0.7013687736</td></tr>
+        <tr><td>10</td><td>0.7442373549</td></tr>
+        <tr><td>20</td><td>0.7391843998</td></tr>
+        <tr><td>50</td><td>0.7390851339</td></tr>
+        <tr><td>100</td><td>0.7390851332</td></tr>
+      </tbody>
+    </table>
+
+    <div class="example-readout" role="img" aria-label="The display reads cos Ans, result 0.7390851332">
+      <span>cos(Ans)</span>
+      <strong>0.7390851332</strong>
+      <em>Where cos x = x, to ten significant figures</em>
+    </div>
+
+    <p>
+      It settles because cosine is a contraction near that point: every pass
+      shrinks the distance to the answer by about a third. Start from 0, from
+      100, from anything — the same number comes back. It has a name, the
+      <b>Dottie number</b>, and no closed form; this is what "solving" means
+      when there is no formula to reach for.
+    </p>
+
+    <p class="example-note">
+      <b>Degrees would give a different answer.</b> In DEG the equation is
+      cos(x°) = x, which crosses near 0.9998 — a different question with a
+      different root. The angle unit is part of the equation, not a display
+      preference, which is why both apps show it on screen at all times.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">The three equations, side by side</h2>
+
+    <table class="example-table">
+      <caption>Every root on this page, and how it was found.</caption>
+      <thead>
+        <tr><th scope="col">Equation</th><th scope="col">Roots</th><th scope="col">Method</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>x² − 5x + 6 = 0</td><td>2 and 3</td><td>Factorising</td></tr>
+        <tr><td>2x² + 3x − 7 = 0</td><td>1.265564437, −2.765564437</td><td>Formula, and Root on the graph</td></tr>
+        <tr><td>cos x = x (radians)</td><td>0.7390851332</td><td>Intersection, and iteration</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What to watch</h2>
+    <ul>
+      <li>The formula is exact arithmetic; the graph's roots are numerical and come with a stated resolution. Where both are available, the formula is the one to quote.</li>
+      <li>A large b with a small ac can lose precision in b² − 4ac on any calculator. If the two roots come out suspiciously close in size, solve the well-conditioned root first and get the other from the product c/a.</li>
+      <li>Root and Intersection report only what is in the current view. Fit the curve before believing a count.</li>
+      <li>Iteration converges here because cosine is a contraction near the fixed point. The same trick diverges for other equations — it is a method with conditions, not a universal one.</li>
+      <li>The angle unit changes what cos x = x means. RAD throughout this page.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/projectile-motion/">projectile motion</a>, where a root is a landing point and an extremum is the top of a throw.</p>
+    <p class="science-related">Related free tools: <a href="/science/trigonometry-calculator/">right-triangle trigonometry</a> &middot; <a href="/science/">all 36 science and maths calculators</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Six variables, a replay key, and roots you can see.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Solving equations: by factorising, by formula, and by looking","description":"A worked example of solving quadratics: factorising, the quadratic formula with coefficients stored in variables, the discriminant, roots found on a graph, and an equation with no closed form solved by intersection and by iteration.","url":"https://anscalc.com/examples/quadratic-equations/","educationalLevel":"GCSE to A-level","learningResourceType":"Worked example","teaches":["Quadratic formula","Discriminant","Factorising quadratics","Finding roots on a graph","Fixed-point iteration"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

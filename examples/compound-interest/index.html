@@ -1,0 +1,423 @@
+---
+layout: default
+title: Compound Interest Worked Example — £10,000 Over 20 Years — Ans
+description: A full compound interest worked example. The formula derived, £10,000 at 5% for 20 years worked out to £26,532.98 on a calculator, then plotted — plus what changes when you add £200 a month.
+body_class: tool-page examples-page
+permalink: /examples/compound-interest/
+og_image: /assets/images/social-card.png
+og_image_alt: Compound interest worked example — the formula, the keystrokes and the curve.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Money</p>
+  <h1>Compound interest: what £10,000 becomes in 20 years</h1>
+  <p class="example-standfirst">
+    Someone puts £10,000 into a pension and leaves it alone. If it grows at 5% a
+    year, what is it worth after twenty years — and how much of that is growth
+    rather than the money they put in? We will do it on paper, do it on a
+    calculator, then plot it, and finish somewhere more useful: what happens
+    when you keep paying in, and what a 0.75% annual charge is actually taken
+    from.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE to real life</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>≈ 8 minutes</li>
+  </ul>
+
+  <div class="example-video">
+    <strong>Video</strong>
+    <span>Coming soon. It follows the five steps below in order, so the chapters and this page will match.</span>
+  </div>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Step 1 — on paper</span>
+    <h2 id="the-sum-title">Where the compound interest formula comes from</h2>
+
+    <p>
+      Growth of 5% in a year means the balance ends the year as 105% of what it
+      started as. That is a multiplication, not an addition: <b>× 1.05</b>. Do it
+      again the next year and the second year's growth is calculated on the
+      first year's growth as well — which is the whole idea, and the reason the
+      answer is not simply twenty lots of £500.
+    </p>
+
+    <p>
+      Multiplying by 1.05 twenty times is <b>1.05<sup>20</sup></b>, so the
+      general form is:
+    </p>
+
+    <div class="formula" aria-label="Compound interest formula">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo>=</mo><mi>P</mi><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>A</b> amount at the end · <b>P</b> the sum invested · <b>r</b> the annual growth rate as a decimal (5% → 0.05) · <b>n</b> the number of years</li>
+    </ul>
+
+    <p>
+      With P = 10,000, r = 0.05 and n = 20, the only hard part is
+      1.05<sup>20</sup> = 2.653297705, and then:
+    </p>
+
+    <p>
+      <strong>A = 10,000 × 2.653297705 = £26,532.98</strong>, of which
+      <strong>£16,532.98 is growth</strong>. Twenty lots of 5% of the original
+      £10,000 would have been only £10,000 — the extra £6,532.98 is the interest
+      that the interest earned.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="on-the-calculator" aria-labelledby="calc-title">
+    <span class="example-rung-label">Step 2 — on the calculator</span>
+    <h2 id="calc-title">How to work out compound interest on a scientific calculator</h2>
+
+    <p>
+      Typed straight in, using the power key — one expression, one press of
+      equals, no writing anything down in the middle:
+    </p>
+
+    <ul class="example-keys" aria-label="Keys: 1 0 0 0 0, multiply, 1 point 0 5, power, 2 0, equals">
+      <li><kbd class="is-number">10000</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">1.05</kbd></li>
+      <li><kbd>^</kbd></li>
+      <li><kbd class="is-number">20</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads 10000 times 1.05 to the power 20, with the result 26532.97705">
+      <span>10000×1.05<sup>20</sup></span>
+      <strong>26532.97705</strong>
+      <em>Ten significant figures — £26,532.98 to the penny</em>
+    </div>
+
+    <figure class="example-figure example-figure-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-calc-compound.png"
+             width="276" height="600" loading="lazy" decoding="async"
+             alt="Ans on iPhone showing 10000×1.05 to the power 20 on the input line and 26532.97705 as the result.">
+      </div>
+      <figcaption>Six keys and an equals. The expression stays on the line above the answer, so you can see what produced it.</figcaption>
+    </figure>
+
+    <p>
+      That answer is now in <b>Ans</b>, so the growth alone is
+      <kbd>Ans</kbd> <kbd class="is-number">−</kbd> <kbd class="is-number">10000</kbd>
+      <kbd class="is-number">=</kbd> without retyping it.
+    </p>
+
+    <h3>Storing the numbers so you can change one</h3>
+
+    <p>
+      The interesting question is rarely a single rate. Put the sum in
+      <b>A</b> and the rate in <b>B</b>, and the whole thing becomes reusable —
+      <b>STO</b> is the VAR function of the <b>M+</b> key, and the letters live
+      on the VAR layer of <b>sin</b>, <b>cos</b>, <b>tan</b> and <b>π</b>:
+    </p>
+
+    <ul class="example-keys" aria-label="Store 10000 into variable A, then store 0.05 into variable B">
+      <li><kbd class="is-number">10000</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li class="is-arrow" aria-hidden="true">then</li>
+      <li><kbd class="is-number">0.05</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+    </ul>
+
+    <p>
+      Now the calculation reads like the formula does, and a different rate is
+      one edit rather than a retype:
+    </p>
+
+    <ul class="example-keys" aria-label="Variable A, multiply, open bracket, 1, plus, variable B, close bracket, power, 2 0, equals">
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-number">1</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd>^</kbd></li>
+      <li><kbd class="is-number">20</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <p>
+      To try 7% instead, store the new rate in <b>B</b> and press <kbd>▲</kbd> to
+      bring the same expression back, then <kbd class="is-number">=</kbd>. The
+      expression is the model; the variables are the assumptions.
+    </p>
+
+    <h3>How long until it doubles?</h3>
+
+    <p>
+      Doubling means (1.05)<sup>n</sup> = 2, and the tool for pulling an
+      exponent down is a logarithm: n = ln 2 ÷ ln 1.05.
+    </p>
+
+    <ul class="example-keys" aria-label="ln, 2, close bracket, divide, ln, 1 point 0 5, close bracket, equals">
+      <li><kbd>ln</kbd></li>
+      <li><kbd class="is-number">2</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd>ln</kbd></li>
+      <li><kbd class="is-number">1.05</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The display reads ln 2 divided by ln 1.05, with the result 14.20669908">
+      <span>ln(2)÷ln(1.05)</span>
+      <strong>14.20669908</strong>
+      <em>14 years and about 10 weeks</em>
+    </div>
+
+    <p class="example-note">
+      <b>The rule of 72.</b> The mental shortcut says 72 ÷ 5 = 14.4 years, which
+      is 0.19 years — ten weeks — adrift here. It is a good estimate at rates
+      near 8% and gets steadily worse away from them. Now that you have the
+      exact expression, you never need the approximation.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Step 3 — on the graph</span>
+    <h2 id="graph-title">Plotting compound growth</h2>
+
+    <p>
+      A single answer tells you where you end up. The curve tells you how you
+      got there — and compound growth's shape is the point of it. In Ans Graph,
+      type the same formula with the years as <b>x</b>:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 10000×1.05^x</p>
+
+    <p>
+      Set the window to x from 0 to 20 and y from 0 to 30000 — <b>Window…</b>
+      takes the four numbers exactly, so the picture is the one you meant rather
+      than whatever fitted. What you are looking at is not a straight line, and
+      the gap from straight is the compounding:
+    </p>
+
+    <ul>
+      <li>the first ten years add <strong>£6,288.95</strong>;</li>
+      <li>the second ten years add <strong>£10,244.03</strong>.</li>
+    </ul>
+
+    <p>
+      Same rate, same money, nearly two-thirds more growth in the second decade
+      — because it starts from £16,288.95 rather than £10,000.
+    </p>
+
+    <h3>Reading the doubling time off the plot</h3>
+
+    <p>
+      Add a second function at the level you are interested in and let the app
+      find where they meet — the same answer the logarithm gave, arrived at by
+      looking rather than by trusting:
+    </p>
+
+    <p class="example-entry-line"><b>f₂(x) =</b> 20000</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-compound-doubling.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: the curve of 10000 times 1.05 to the power x crossing the horizontal line at 20000, with the intersection marked and read out at about x = 14.2067.">
+      </div>
+      <figcaption><b>Intersection</b> — the balance meets £20,000 at 14.21 years, which is where the logarithm said it would.</figcaption>
+    </figure>
+
+    <p class="example-note">
+      <b>Why it says 14.21 and not 14.20669908.</b> A view twenty years wide is
+      about a thousand pixels across, so one pixel is roughly a week: the
+      crossing is known to within a pixel and no further, and the register
+      states it to the precision the window has earned rather than padding it
+      out with digits it cannot stand behind. Zoom in and the decimals appear
+      as the resolution justifies them. The calculator's <b>14.20669908</b> is
+      exact because logarithms are arithmetic, not measurement — which is the
+      difference between the two instruments in one line.
+    </p>
+
+    <p>
+      The value table gives the same thing as a column: set the start to 0 and
+      the step to 1 and you have every year's balance, ready to scroll or to
+      export as a CSV file if you want it in a spreadsheet.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="take-it-further" aria-labelledby="further-title">
+    <span class="example-rung-label">Step 4 — the version that matters</span>
+    <h2 id="further-title">Compound interest with regular contributions</h2>
+
+    <p>
+      Almost nobody invests once and stops. Say the same person also pays in
+      £200 a month — £2,400 a year. Each year's contribution is invested for a
+      different length of time: the first for 19 more years, the last for none
+      at all. Adding those up:
+    </p>
+
+    <p>
+      2400 × 1.05<sup>19</sup> + 2400 × 1.05<sup>18</sup> + … + 2400 × 1.05<sup>0</sup>
+    </p>
+
+    <p>
+      That is a geometric series, and it collapses to a single expression — the
+      future value of an annuity:
+    </p>
+
+    <div class="formula" aria-label="Future value of a series of regular contributions">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>FV</mi><mo>=</mo><mi>C</mi><mo>&#8290;</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo>&#8722;</mo><mn>1</mn></mrow><mi>r</mi></mfrac></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>C</b> the amount paid in each year · <b>r</b> the annual growth rate · <b>n</b> the number of years</li>
+    </ul>
+
+    <p>On the calculator, in one line:</p>
+
+    <div class="example-readout" role="img" aria-label="The display reads 2400 times, open bracket, 1.05 to the power 20 minus 1, close bracket, divided by 0.05, with the result 79358.28985">
+      <span>2400×(1.05<sup>20</sup>−1)÷0.05</span>
+      <strong>79358.28985</strong>
+      <em>The contributions alone are worth £79,358.29</em>
+    </div>
+
+    <p>
+      Add the original lump sum and the total is <strong>£105,891.27</strong>.
+      Of that, <strong>£58,000 was paid in</strong> — £10,000 at the start and
+      £48,000 over twenty years — so <strong>£47,891.27 is growth</strong>.
+    </p>
+
+    <p>
+      Both together, on one plot, is where the difference stops being a number
+      and starts being obvious:
+    </p>
+
+    <p class="example-entry-line"><b>f₂(x) =</b> 10000×1.05^x+2400(1.05^x−1)/0.05</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-compound-contributions.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: two curves from 0 to 20 years. The lower one reaches about £26,500; the upper one, with £2,400 a year added, reaches about £105,900.">
+      </div>
+      <figcaption>The lump sum alone against the same lump sum with <b>£200 a month</b> added. The gap at year 20 is £79,358.29.</figcaption>
+    </figure>
+
+    <h3>What the rate is worth</h3>
+
+    <p>
+      Three rates on one plot answers the question people actually argue about.
+      Same £10,000, same twenty years:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 10000×1.03^x &nbsp;&nbsp; <b>f₂(x) =</b> 10000×1.05^x &nbsp;&nbsp; <b>f₃(x) =</b> 10000×1.07^x</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-compound-rates.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: three curves for 3%, 5% and 7% growth on £10,000, fanning apart over twenty years to about £18,000, £26,500 and £38,700.">
+      </div>
+      <figcaption>3% → <b>£18,061</b> · 5% → <b>£26,533</b> · 7% → <b>£38,697</b>. Four percentage points more than doubles the outcome.</figcaption>
+    </figure>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="the-charge" aria-labelledby="charge-title">
+    <span class="example-rung-label">Step 5 — the bit nobody shows you</span>
+    <h2 id="charge-title">What a 0.75% annual charge is actually taken from</h2>
+
+    <p>
+      A percentage fee is not charged on what you paid in, and not on what you
+      end with. It is charged on what the balance is <em>while you hold it</em>
+      — so the honest question is what the average balance was over the twenty
+      years. The average value of a function is its area divided by its width:
+    </p>
+
+    <div class="formula" aria-label="Average value of a function over an interval">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover><mi>A</mi><mo>&#175;</mo></mover><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mo>&#8722;</mo><mi>a</mi></mrow></mfrac><msubsup><mo>&#8747;</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mspace width="0.1em"></mspace><mi>d</mi><mi>x</mi></mrow></math>
+    </div>
+
+    <p>
+      Which is exactly what Ans Graph's integral does: choose <b>Integral</b>,
+      set the bounds to 0 and 20, and the region under the balance curve is
+      shaded with its value beside it.
+    </p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-compound-average-balance.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: the area under the balance curve from 0 to 20 years shaded, with the integral register reading approximately 338,859 and an estimated error line beneath it.">
+      </div>
+      <figcaption>The shaded area is <b>338,858.8117 pound-years</b>. Divided by the 20-year width, the average balance was <b>£16,942.94</b>.</figcaption>
+    </figure>
+
+    <p>
+      So a 0.75% annual management charge takes about
+      <strong>£127 a year</strong> — not the £75 that 0.75% of the starting
+      £10,000 suggests, and not the £199 that the final balance suggests. Over
+      twenty years that is roughly £2,500, which is why the number is worth
+      knowing before you agree to it.
+    </p>
+
+    <p class="example-note">
+      <b>Why the integral is approximate and the rest is not.</b> The register
+      shows an estimated error beneath the value because numerical integration
+      works by sampling — it is a very good estimate, not an exact statement.
+      The compound interest sums above are exact arithmetic. An instrument that
+      reports the difference is more useful than one that prints ten digits
+      either way.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">The figures, year by year</h2>
+
+    <table class="example-table">
+      <caption>£10,000 at 5%, with and without £2,400 a year paid in. Set the Ans Graph table to start 0, step 5.</caption>
+      <thead>
+        <tr><th scope="col">Year</th><th scope="col">Lump sum only</th><th scope="col">With £200/month</th><th scope="col">Paid in</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>£10,000.00</td><td>£10,000.00</td><td>£10,000</td></tr>
+        <tr><td>5</td><td>£12,762.82</td><td>£26,024.33</td><td>£22,000</td></tr>
+        <tr><td>10</td><td>£16,288.95</td><td>£46,475.89</td><td>£34,000</td></tr>
+        <tr><td>15</td><td>£20,789.28</td><td>£72,577.83</td><td>£46,000</td></tr>
+        <tr><td>20</td><td>£26,532.98</td><td>£105,891.27</td><td>£58,000</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What this model ignores</h2>
+    <ul>
+      <li>Growth is treated as a steady 5% every year. Real investments do not do this; a sequence of good and bad years averaging 5% does not end at the same place, and the order matters.</li>
+      <li>Contributions are added once a year, at the end of the year. Paying monthly gives a slightly higher result, because each payment is invested a little longer.</li>
+      <li>Charges, platform fees and tax are ignored except where the last step introduces one deliberately.</li>
+      <li>Inflation is ignored. £26,532.98 in twenty years does not buy what £26,532.98 buys today; at 2.5% inflation it is worth about £16,200 in today's money.</li>
+      <li>This is arithmetic, not financial advice. It shows how the numbers behave, not what anyone should do.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/mortgage-repayments/">the same mathematics running backwards — where a mortgage payment comes from</a>, or <a href="/examples/velocity-time-graph-area/">area under a speed–time graph</a>, where the integral above does the real work.</p>
+    <p class="science-related">Related free tools: <a href="/science/half-life/">half-life calculator</a> (the same exponential, decaying) &middot; <a href="/science/">all 36 science calculators</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Paid for once, no subscription, and they work with the aeroplane mode on.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Compound interest: what £10,000 becomes in 20 years","description":"A full compound interest worked example: the formula derived, £10,000 at 5% for 20 years worked out on a scientific calculator, plotted on a graphing calculator, then extended to regular contributions and the effect of an annual percentage charge.","url":"https://anscalc.com/examples/compound-interest/","educationalLevel":"GCSE to adult","learningResourceType":"Worked example","teaches":["Compound interest formula","Future value of regular contributions","Logarithms for doubling time","Average value of a function"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

@@ -4,6 +4,13 @@ Ownership promise: A calculator you can own. £4.99 once. No subscriptions. No a
 Science tools promise: Free. No ads. No tracking. No account. Every tool shows its equation, units and stated assumptions.
 
 https://anscalc.com/ — Ans is a focused scientific calculator for iPhone, iPad and Mac with exact fractions, variables, replay editing and Home Screen widgets.
+https://anscalc.com/examples/ — Worked examples that take one real question each from the formula to the keystrokes to the plot, with every figure verified.
+https://anscalc.com/examples/compound-interest/ — Compound interest worked in full: £10,000 at 5% for 20 years, the doubling time from logarithms, regular contributions, and what a 0.75% annual charge is levied on.
+https://anscalc.com/examples/velocity-time-graph-area/ — Distance from a speed–time graph: the GCSE rectangle and triangle, a car whose drag grows with speed, and a rocket burning its own mass, each integrated and checked.
+https://anscalc.com/examples/mortgage-repayments/ — The monthly mortgage repayment formula applied to £200,000 at 4.5% over 25 years, with the balance curve, its root, and the cost of a 30-year term.
+https://anscalc.com/examples/projectile-motion/ — Projectile range, height and flight time for 20 m/s at 40°, the trajectory's apex and landing found on a graph, and what a two-metre launch height changes.
+https://anscalc.com/examples/carbon-dating/ — Radiocarbon dating worked in full: halving, the logarithm for any fraction, a sample at 22% modern carbon, and why the answer is not a calendar date.
+https://anscalc.com/examples/quadratic-equations/ — Solving quadratics by factorising, by formula with the coefficients in variables, and by graph — plus cos x = x, which has no formula at all.
 https://anscalc.com/stopwatch/ — A free online stopwatch with laps, timestamp-based timing and honest handling of device sleep.
 https://anscalc.com/clock/ — A free full-screen world clock that shows local time, UTC and a chosen time zone without an account.
 https://anscalc.com/science/ — Browse 36 free science and maths calculators for school, university, engineering, optics, chemistry and computing.

@@ -121,10 +121,16 @@ a {
 }
 
 .site-nav,
+/* Wraps at every width, not only below 720px. The single-row version already
+   ran past a 768px-wide window with ten links — the row is 910px with the
+   Examples link that joined it on 17 August 2026 — and a footer that pushes
+   the whole document sideways is a horizontal scrollbar on every page. The
+   ≤720px rule below now only tightens the gap. */
 .footer-nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 30px;
+  gap: 16px 30px;
 }
 
 .site-nav a,
@@ -166,8 +172,18 @@ a {
   text-decoration-color: var(--orange);
 }
 
+/* Teal is the utility tools' accent — stopwatch, world clock, converters. The
+   two paid products and the section about them are not utilities, so they take
+   their own family colour back: the calculator page was underlining its own nav
+   item in the tools' colour. Science keeps violet (below) and Graph sets orchid
+   on its own page. */
 .tool-page .family-nav a.is-active {
   text-decoration-color: var(--teal);
+}
+
+.calculator-page .family-nav a.is-active,
+.examples-page .family-nav a.is-active {
+  text-decoration-color: var(--orange);
 }
 
 .hero {
@@ -1386,6 +1402,18 @@ a.button-secondary:hover {
   text-decoration-color: rgba(232, 131, 58, 0.65);
 }
 
+/* The one link in this block that is not about the calculator. Orange for
+   everything meant "from the maker of", which is true, but it also made Ans
+   Graph look like part of the calculator rather than the other instrument. */
+.tool-crosslink a.is-graph-link {
+  color: #b18aca;
+  text-decoration-color: rgba(177, 138, 202, 0.65);
+}
+
+.tool-crosslink a.is-graph-link:hover {
+  text-decoration-color: #b18aca;
+}
+
 .tool-crosslink p {
   margin: 0;
 }
@@ -2215,3 +2243,499 @@ a.button-secondary:hover {
   letter-spacing: 0.24em;
   text-transform: uppercase;
 }
+
+/* ---- Worked examples (Website-Private-Docs/EXAMPLES-DESIGN.md) ---------
+   The teaching section, and the only place both paid instruments appear on
+   one page doing one job. It introduces no seventh family accent: a page's
+   steps are keyed to the app each one uses — orange where the calculator is
+   working, orchid where Ans Graph is, and neutral where the answer comes off
+   paper. That is the family accent system used as a *legend*, so a reader
+   scanning the rail can see which instrument each rung belongs to before
+   reading a word of it. */
+
+.examples-page {
+  --paper: var(--muted);
+  --calc: var(--orange);
+  /* Graph Orchid, the product's own accent, not Science's Solar Violet. These
+     pages point at Ans Graph, so the purple on them should be the purple on
+     its own page and on the homepage's Graph half. 5.3:1 on the page ground. */
+  --graph: #b18aca;
+}
+
+.examples-shell {
+  width: min(100% - 40px, 1120px);
+  margin: 0 auto;
+  padding: 64px 0 88px;
+}
+
+.examples-page .eyebrow { color: var(--orange); }
+
+/* ---- Hub ---- */
+
+.examples-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  align-items: center;
+  gap: clamp(40px, 8vw, 100px);
+  padding-bottom: 44px;
+}
+
+.examples-hero h1 {
+  max-width: 16ch;
+  margin: 8px 0 18px;
+  font-size: clamp(42px, 6.5vw, 76px);
+  line-height: 0.98;
+}
+
+.examples-hero p:last-child {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.examples-hero-lcd {
+  display: grid;
+  padding: 22px;
+  border-radius: var(--radius-md);
+  background: var(--lcd);
+  color: var(--lcd-text);
+  box-shadow: inset 0 2px 10px rgba(46, 52, 64, 0.22);
+  font-family: var(--mono);
+}
+
+.examples-hero-lcd span,
+.examples-hero-lcd small {
+  color: var(--teal-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.examples-hero-lcd strong {
+  justify-self: end;
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.examples-hero-lcd small { justify-self: end; }
+
+/* The listing. Blog-shaped on purpose — a picture, a title and enough of a
+   summary to choose by — but each row is one whole link, so the picture and
+   the heading cannot disagree about where they go. */
+
+.examples-list {
+  display: grid;
+  gap: 14px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  margin: 0;
+  padding-inline: 0;
+}
+
+.example-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+  padding: clamp(18px, 2.4vw, 26px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--body-raised);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.example-entry:hover {
+  border-color: var(--orange);
+  transform: translateY(-1px);
+}
+
+/* Cropped to the plot, not shrunk to fit. A whole 2200px Mac window at card
+   size is a grey rectangle with a squint's worth of curve in it; holding a
+   16:10 box and biasing right shows the picture the card is actually about,
+   from the same file the page below uses at full size. */
+.example-entry img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 78% 50%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+
+.example-entry-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.example-entry h2 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.12;
+}
+
+.example-entry p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Chips: what a reader is committing to. Level, the apps used, and whether
+   there is a video yet — the last one is a promise the page has to keep, so
+   it is data on the page rather than a claim in the prose. */
+
+.example-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.example-tags li {
+  padding: 5px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.example-tags .is-calc { border-color: rgba(232, 131, 58, 0.5); color: var(--orange); }
+.example-tags .is-graph { border-color: rgba(177, 138, 202, 0.5); color: var(--graph); }
+
+/* ---- An example page ---- */
+
+.example-article {
+  width: min(100% - 40px, 900px);
+  margin: 0 auto;
+  padding: 56px 0 80px;
+}
+
+.example-article h1 {
+  margin: 8px 0 16px;
+  font-size: clamp(34px, 5.4vw, 58px);
+  line-height: 1.02;
+}
+
+.example-standfirst {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+}
+
+/* The video slot. It is empty today and says so; when the film exists the
+   same block takes the player. Nothing third-party loads until then — an
+   embed that is only a promise should not cost the reader a request. */
+
+.example-video {
+  display: grid;
+  gap: 6px;
+  margin: 30px 0 0;
+  padding: 18px 22px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+.example-video strong {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* The rungs. A numbered rail down the left, tinted by the instrument the
+   step uses, so the ladder is legible at a glance and on a phone. */
+
+.example-rung {
+  position: relative;
+  margin: 46px 0 0;
+  padding-left: clamp(20px, 4vw, 34px);
+  border-left: 2px solid var(--rung, var(--line-strong));
+  scroll-margin-top: 28px;
+}
+
+.example-rung > .example-rung-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--rung, var(--muted));
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.example-rung h2 {
+  margin: 0 0 14px;
+  font-size: clamp(25px, 3.4vw, 36px);
+  line-height: 1.1;
+}
+
+.example-rung p { color: var(--muted); }
+.example-rung p strong { color: var(--white); }
+
+.example-rung-paper { --rung: var(--paper); }
+.example-rung-calc { --rung: var(--calc); }
+.example-rung-graph { --rung: var(--graph); }
+
+/* Keycaps. Real key legends, in the real modifier colours, so a sequence on
+   the page can be followed on the device without translation. Anything
+   reached through SHIFT or VAR says so with its own cap rather than a
+   footnote. */
+
+.example-keys {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.example-keys li { display: flex; }
+
+.example-keys kbd {
+  min-width: 42px;
+  padding: 9px 11px;
+  border-radius: 9px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.35);
+  background: var(--key);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-align: center;
+}
+
+.example-keys .is-shift { background: var(--orange); color: #20262e; }
+.example-keys .is-var { background: var(--teal-dark); }
+.example-keys .is-number { background: var(--key-dark); }
+
+.example-keys .is-arrow {
+  min-width: 0;
+  padding: 9px 2px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+}
+
+/* What the display then reads. Same LCD as the instruments, at a size that
+   belongs inside prose rather than a size that shouts. */
+
+.example-readout {
+  margin: 22px 0;
+  padding: 16px 20px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--lcd);
+  color: var(--lcd-text);
+  box-shadow: inset 0 2px 10px rgba(46, 52, 64, 0.22);
+  font-family: var(--mono);
+}
+
+/* The sum is the half a reader has to follow — it is what they will type —
+   so it is sized against the answer the way the real two-line display does it,
+   at a bit over half its height, rather than as a caption. 0.78rem put a
+   12.5px expression above a 38px result and the working read as small print. */
+.example-readout span {
+  display: block;
+  color: rgba(46, 52, 64, 0.82);
+  font-size: clamp(16px, 2.8vw, 21px);
+  line-height: 1.35;
+  text-align: right;
+  overflow-x: auto;
+}
+
+.example-readout strong {
+  display: block;
+  margin-top: 4px;
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  overflow-x: auto;
+}
+
+.example-readout em {
+  display: block;
+  margin-top: 6px;
+  color: rgba(46, 52, 64, 0.7);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-style: normal;
+  text-align: right;
+}
+
+/* Expressions to type into Ans Graph — a transcription target, so it is
+   monospaced, selectable and never prettified into something that would not
+   parse if it were typed back in. */
+
+.example-entry-line {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--graph);
+  border-radius: var(--radius-sm);
+  background: var(--body-raised);
+  font-family: var(--mono);
+  font-size: 0.94rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.example-entry-line b {
+  color: var(--violet);
+  font-weight: 600;
+}
+
+/* Figures sit in the column, not across it. They used to break out to 1080px
+   past an 820px column, which reads as a misalignment rather than as emphasis
+   — so the column carries the extra width instead and everything shares one
+   left edge. A Mac capture is 2200px wide, so it is still well above 2× here. */
+
+.example-figure {
+  width: 100%;
+  margin: 34px 0;
+}
+
+.example-figure .capture-frame { border-radius: var(--radius-sm); }
+.example-figure img { border-radius: 6px; }
+
+.example-figure figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.example-figure figcaption b { color: var(--white); font-weight: 650; }
+
+/* Check-your-own-numbers. Deliberately a plain table: it is meant to be read
+   next to a device, and compared row by row. */
+
+.example-table {
+  width: 100%;
+  margin: 22px 0;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+}
+
+.example-table caption {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.example-table th,
+.example-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.example-table th:first-child,
+.example-table td:first-child { text-align: left; }
+
+.example-table thead th {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.example-table tbody tr:last-child td { border-bottom: 0; }
+
+/* The aside that stops a reader believing the model. Same job as the science
+   pages' assumptions block; the examples earn a second voice for the smaller
+   caveat that belongs beside one step rather than at the end. */
+
+.example-note {
+  margin: 22px 0;
+  padding: 14px 18px;
+  border-left: 2px solid var(--teal);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(91, 175, 166, 0.07);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.example-note b { color: var(--white); }
+
+.example-next {
+  display: grid;
+  gap: 12px;
+  margin: 52px 0 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.example-next a { color: var(--orange); font-weight: 650; }
+
+@media (max-width: 760px) {
+  .examples-shell { width: min(100% - 32px, 1120px); padding-top: 44px; }
+  .examples-hero { grid-template-columns: 1fr; gap: 24px; }
+  .examples-hero-lcd { width: min(100%, 260px); }
+  .example-entry { grid-template-columns: 1fr; }
+  .example-article { width: min(100% - 32px, 900px); }
+  .example-keys kbd { min-width: 36px; padding: 8px 9px; font-size: 0.82rem; }
+}
+
+/* A single key named mid-sentence ("press ▲") — same cap, sized to sit in a
+   line of prose rather than in a sequence. */
+.example-article p kbd,
+.example-article li kbd {
+  padding: 2px 7px;
+  border-radius: 6px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.35);
+  background: var(--key);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.85em;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+/* Diagrams drawn on the page rather than captured from an app: the paper
+   stage of an example, where there is no app in it yet. */
+.example-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  background: var(--body-raised);
+}
+
+/* A phone capture inside a step. The plot figures break the column because a
+   graph needs the width; a phone photographed at 1080px would be a poster of
+   a calculator, so this one is sized like the object it shows. */
+.example-figure-phone {
+  width: min(100%, 300px);
+  margin-inline: auto;
+}
+
+.example-figure-phone .capture-frame {
+  padding: 8px;
+  border-radius: 38px;
+}
+
+.example-figure-phone img { border-radius: 31px; }

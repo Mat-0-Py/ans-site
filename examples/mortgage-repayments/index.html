@@ -1,0 +1,306 @@
+---
+layout: default
+title: Mortgage Repayment Formula — Worked Example — Ans
+description: How the monthly mortgage payment formula works, applied to £200,000 at 4.5% over 25 years. The £1,111.66 payment worked out on a calculator, the balance plotted, and what a 30-year term really costs.
+body_class: tool-page examples-page
+permalink: /examples/mortgage-repayments/
+og_image: /assets/images/social-card.png
+og_image_alt: Mortgage repayments worked example — the formula, the payment and the falling balance.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Money</p>
+  <h1>Mortgage repayments: where the money actually goes</h1>
+  <p class="example-standfirst">
+    £200,000 borrowed at 4.5% over 25 years. The lender quotes £1,111.66 a
+    month. Where does that number come from, why does ten years of paying it
+    clear less than a third of the debt, and what does stretching the term to
+    30 years really cost? One formula answers all three, and the shape of the
+    balance curve answers the second one before the arithmetic does.
+  </p>
+
+  <ul class="example-tags">
+    <li>Real life</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>Roots</li>
+    <li>≈ 7 minutes</li>
+  </ul>
+
+  <div class="example-video">
+    <strong>Video</strong>
+    <span>Coming soon. It follows the four steps below in order, so the chapters and this page will match.</span>
+  </div>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Step 1 — on paper</span>
+    <h2 id="the-sum-title">Where the mortgage repayment formula comes from</h2>
+
+    <p>
+      Two things happen every month, in this order: the debt grows by one
+      month's interest, and then your payment comes off it. After
+      <b>n</b> months the original debt has grown to
+      <b>P(1+i)<sup>n</sup></b>, and each payment has been sitting there
+      growing too — the first for n−1 months, the last for none. The payments
+      form the same geometric series that appears in
+      <a href="/examples/compound-interest/">compound interest with regular
+      contributions</a>, and by the final month the two must cancel exactly.
+    </p>
+
+    <p>
+      Setting them equal and rearranging for the payment gives:
+    </p>
+
+    <div class="formula" aria-label="Monthly mortgage repayment formula">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>M</mi><mo>=</mo><mi>P</mi><mo>&#8290;</mo><mfrac><mrow><mi>i</mi><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mrow><mrow><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo>&#8722;</mo><mn>1</mn></mrow></mfrac></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>M</b> the monthly payment · <b>P</b> the amount borrowed · <b>i</b> the <em>monthly</em> interest rate · <b>n</b> the number of monthly payments</li>
+    </ul>
+
+    <p class="example-note">
+      <b>The two conversions people get wrong.</b> The rate must be monthly:
+      4.5% a year is <b>i = 0.045 ÷ 12 = 0.00375</b>. And the term must be in
+      months: 25 years is <b>n = 300</b>, not 25. Put a yearly rate against a
+      monthly term and the answer will look plausible and be nonsense.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="on-the-calculator" aria-labelledby="calc-title">
+    <span class="example-rung-label">Step 2 — on the calculator</span>
+    <h2 id="calc-title">Working out the monthly payment</h2>
+
+    <p>
+      The awkward part of this formula is that (1+i)<sup>n</sup> appears twice,
+      once on each side of the fraction. So work it out once and keep it. Two
+      things go into variables — the monthly rate, because it is the assumption
+      you will want to change, and that repeated power, because it is the
+      arithmetic you do not want to type twice:
+    </p>
+
+    <ul class="example-keys" aria-label="0.00375, VAR, STO, A">
+      <li><kbd class="is-number">0.00375</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+    </ul>
+
+    <p>
+      Now <b>(1+A)<sup>300</sup></b> into <b>B</b>. <b>STO</b> works out the
+      line it is given, so this needs no equals of its own:
+    </p>
+
+    <ul class="example-keys" aria-label="open bracket, 1, plus, VAR A, close bracket, power, 300, VAR, STO, B">
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-number">1</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd>^</kbd></li>
+      <li><kbd class="is-number">300</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads open bracket 1 plus A close bracket to the power 300, stored into B, with the result 3.073742528">
+      <span>(1+A)<sup>300</sup>→B</span>
+      <strong>3.073742528</strong>
+      <em>£1 at 0.375% a month becomes £3.07 over 25 years</em>
+    </div>
+
+    <p>
+      With both stored, the formula fits on the line looking like the formula:
+    </p>
+
+    <ul class="example-keys" aria-label="200000, multiply, VAR A, multiply, VAR B, divide, open bracket, VAR B, minus, 1, close bracket, equals">
+      <li><kbd class="is-number">200000</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd class="is-number">−</kbd></li>
+      <li><kbd class="is-number">1</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <figure class="example-figure example-figure-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-calc-mortgage.png"
+             width="276" height="600" loading="lazy" decoding="async"
+             alt="Ans on iPhone showing 200000×A×B÷(B−1) on the input line and 1111.664956 as the result.">
+      </div>
+      <figcaption><b>£1,111.66 a month.</b> The rate is in A and the repeated power is in B, so what is on the line is the formula rather than a wall of digits.</figcaption>
+    </figure>
+
+    <p>
+      The two totals that follow are one keypress each, because the payment is
+      still in <b>Ans</b>: <kbd>Ans</kbd> <kbd>×</kbd> <kbd>300</kbd>
+      <kbd>=</kbd> gives <strong>£333,499.49</strong> paid altogether, so the
+      interest is <strong>£133,499.49</strong> — two thirds of the house, again,
+      handed over for the privilege of not paying for it at once.
+    </p>
+
+    <p>
+      Because the assumption lives in <b>A</b>, trying a different deal is
+      storing a new rate and pressing <kbd>▲</kbd> twice — once to rebuild
+      <b>B</b>, once for the payment. That is the whole reason to use variables
+      rather than type 0.00375 four times: the model stays put on the screen and
+      the assumption moves underneath it.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Step 3 — on the graph</span>
+    <h2 id="graph-title">Why ten years of payments barely dents it</h2>
+
+    <p>
+      The single number £1,111.66 hides the thing worth knowing, which is how
+      the debt actually falls. After <b>x</b> months, what is left is the grown
+      debt minus the grown payments:
+    </p>
+
+    <div class="formula" aria-label="Outstanding mortgage balance after x months">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>B</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>P</mi><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><mi>x</mi></msup><mo>&#8722;</mo><mi>M</mi><mo>&#8290;</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><mi>x</mi></msup><mo>&#8722;</mo><mn>1</mn></mrow><mi>i</mi></mfrac></mrow></math>
+    </div>
+
+    <p>Typed into Ans Graph, with the months along the bottom:</p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 200000×1.00375^x−1111.66(1.00375^x−1)/0.00375</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-mortgage-balance.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a mortgage balance falling from £200,000, almost flat for the first years and steepening towards zero at month 300, with the root marked at the end.">
+      </div>
+      <figcaption>The balance is not a straight line down. <b>Root</b> finds the month it reaches zero — month 300, as designed.</figcaption>
+    </figure>
+
+    <p>
+      Trace to month 120 and the balance still reads
+      <strong>£145,317.70</strong>. Ten years in — £133,399 handed over —
+      and <strong>only 27% of the debt has gone</strong>. Early payments are
+      mostly interest because interest is charged on a balance that is still
+      almost the whole loan; only as the balance falls does more of the same
+      £1,111.66 start biting into the capital. That is the curve's shape, and it
+      is the argument for overpaying early rather than late.
+    </p>
+
+    <p class="example-note">
+      <b>Where the root lands, and why it isn't exactly 300.</b> Paying the real
+      £1,111.664956 clears the debt at month 300 to the penny. Paying the
+      rounded £1,111.66 leaves about £2.74 outstanding, so the plotted curve
+      crosses zero a fraction of a month later. That is not a rounding error in
+      the graph — it is what rounding your payment down actually does, and the
+      app is showing it rather than tidying it away.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="take-it-further" aria-labelledby="further-title">
+    <span class="example-rung-label">Step 4 — the decision</span>
+    <h2 id="further-title">What five more years costs</h2>
+
+    <p>
+      Stretching the same £200,000 over 30 years means n = 360. Nothing new to
+      store and nothing to retype: press <kbd>▲</kbd> back to the line that
+      built <b>B</b>, change the 300 to 360, and run the payment again.
+    </p>
+
+    <div class="example-readout" role="img" aria-label="The calculator display shows 200000 times A times B divided by open bracket B minus 1, with the result 1013.37062">
+      <span>(1+A)<sup>360</sup>→B &nbsp; then &nbsp; 200000×A×B÷(B−1)</span>
+      <strong>1013.37062</strong>
+      <em>£1,013.37 a month — £98.29 less</em>
+    </div>
+
+    <p>
+      Then plot both balances together and the trade is visible in one picture:
+    </p>
+
+    <p class="example-entry-line"><b>f₂(x) =</b> 200000×1.00375^x−1013.37(1.00375^x−1)/0.00375</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-mortgage-25-vs-30.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: two mortgage balance curves from £200,000, the 25-year one reaching zero at month 300 and the flatter 30-year one at month 360.">
+      </div>
+      <figcaption>The cheaper monthly payment is the curve that stays higher for longer — and pays interest on all of it.</figcaption>
+    </figure>
+
+    <table class="example-table">
+      <caption>£200,000 at 4.5%, the same money borrowed two ways.</caption>
+      <thead>
+        <tr><th scope="col"></th><th scope="col">25 years</th><th scope="col">30 years</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly payment</td><td>£1,111.66</td><td>£1,013.37</td></tr>
+        <tr><td>Payments made</td><td>300</td><td>360</td></tr>
+        <tr><td>Total paid</td><td>£333,499.49</td><td>£364,813.42</td></tr>
+        <tr><td>Interest</td><td>£133,499.49</td><td>£164,813.42</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Saving <strong>£98.29 a month</strong> costs
+      <strong>£31,313.93 in extra interest</strong>. Whether that is worth it is
+      not a mathematical question — money now is genuinely worth more than money
+      later, and a payment you can definitely afford beats one you cannot. But
+      it should be a decision made with the £31,313.93 in front of you, which
+      takes about ninety seconds to work out.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">The balance, five years at a time</h2>
+
+    <table class="example-table">
+      <caption>£200,000 at 4.5% over 25 years, paying £1,111.66 a month. Set the Ans Graph table to start 0, step 60.</caption>
+      <thead>
+        <tr><th scope="col">Month</th><th scope="col">Years in</th><th scope="col">Balance</th><th scope="col">Cleared</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>£200,000.00</td><td>0%</td></tr>
+        <tr><td>60</td><td>5</td><td>£175,716.14</td><td>12%</td></tr>
+        <tr><td>120</td><td>10</td><td>£145,317.70</td><td>27%</td></tr>
+        <tr><td>180</td><td>15</td><td>£107,265.07</td><td>46%</td></tr>
+        <tr><td>240</td><td>20</td><td>£59,630.94</td><td>70%</td></tr>
+        <tr><td>300</td><td>25</td><td>£2.74</td><td>100%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What this model ignores</h2>
+    <ul>
+      <li>One fixed interest rate for the whole term. Almost no UK mortgage works this way — a fixed period is followed by a reversion rate, and the payment is recalculated then.</li>
+      <li>A pure repayment mortgage with no fees, no overpayments, no payment holidays and no early-repayment charges.</li>
+      <li>Interest compounded monthly on the outstanding balance. Some lenders calculate daily, which changes the figures slightly.</li>
+      <li>The payment is treated as arriving at the end of each month, immediately after that month's interest.</li>
+      <li>This is arithmetic, not advice. It shows how a repayment behaves; it says nothing about which product anyone should take.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/compound-interest/">compound interest</a> — the same geometric series, seen from the side that is working for you.</p>
+    <p class="science-related">Related free tools: <a href="/science/">36 free science and maths calculators</a> &middot; <a href="/convert/">138 unit converters</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. No account, no upload, and nothing about your money leaves the device.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Mortgage repayments: where the money actually goes","description":"A worked example of the monthly mortgage repayment formula: £200,000 at 4.5% over 25 years giving £1,111.66 a month, the balance curve plotted and its root found, and the cost of a 30-year term.","url":"https://anscalc.com/examples/mortgage-repayments/","educationalLevel":"Adult","learningResourceType":"Worked example","teaches":["Mortgage repayment formula","Amortisation","Geometric series","Finding a root on a graph"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

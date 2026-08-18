@@ -1,0 +1,387 @@
+---
+layout: default
+title: Area Under a Velocity–Time Graph — Worked Example — Ans
+description: How to find distance from a speed–time graph. The GCSE rectangle-and-triangle method worked in full, then a real car whose drag grows with speed, then constant thrust in space — with the integral done on a graphing calculator.
+body_class: tool-page examples-page
+permalink: /examples/velocity-time-graph-area/
+og_image: /assets/images/social-card.png
+og_image_alt: Area under a speed–time graph — from a triangle you can do on paper to a curve you cannot.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Physics</p>
+  <h1>Area under a speed–time graph, when it isn't a triangle</h1>
+  <p class="example-standfirst">
+    The area under a speed–time graph is the distance travelled. At GCSE that
+    area is made of rectangles and triangles and you can find it with a ruler.
+    This page does that case properly, then breaks it twice: once with a car
+    whose drag grows with speed, and once with a rocket that is burning away its
+    own mass. Both are still speed–time graphs. Neither has a triangle in it.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE to A-level</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>≈ 9 minutes</li>
+  </ul>
+
+  <div class="example-video">
+    <strong>Video</strong>
+    <span>Coming soon. Four rungs, in the order below, so the chapters and this page will match.</span>
+  </div>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Rung 1 — on paper</span>
+    <h2 id="the-sum-title">The easy case: how to find distance from a velocity–time graph</h2>
+
+    <p>
+      A vehicle travels at a steady <b>8 m/s for 3 seconds</b>, then brakes
+      evenly and stops <b>2 seconds later</b>. How far has it gone?
+    </p>
+
+    <p>
+      Split the area into shapes you know. Under the flat part is a rectangle;
+      under the braking part is a triangle:
+    </p>
+
+    <figure class="example-figure">
+      <svg viewBox="0 0 640 360" role="img" aria-labelledby="vt-diagram-title">
+        <title id="vt-diagram-title">A speed–time graph: 8 metres per second held for 3 seconds, then falling to zero at 5 seconds. The rectangle beneath the flat section is 24 metres and the triangle beneath the sloping section is 8 metres.</title>
+        <g fill="none" stroke="rgba(242,244,247,0.14)" stroke-width="1">
+          <path d="M60 248H600M60 196H600M60 144H600M60 92H600" />
+        </g>
+        <rect x="60" y="92" width="270" height="208" fill="rgba(232,131,58,0.18)" />
+        <path d="M330 92 510 300 330 300Z" fill="rgba(91,175,166,0.22)" />
+        <g stroke="#aeb6c1" stroke-width="2" fill="none">
+          <path d="M60 40V300H610" />
+        </g>
+        <path d="M60 92H330L510 300" fill="none" stroke="#e8833a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <g fill="#f2f4f7" font-family="ui-monospace, Menlo, monospace" font-size="15">
+          <text x="176" y="215" text-anchor="middle">24 m</text>
+          <text x="390" y="270" text-anchor="middle">8 m</text>
+        </g>
+        <g fill="#aeb6c1" font-family="ui-monospace, Menlo, monospace" font-size="13">
+          <text x="48" y="97" text-anchor="end">8</text>
+          <text x="48" y="201" text-anchor="end">4</text>
+          <text x="48" y="305" text-anchor="end">0</text>
+          <text x="150" y="324" text-anchor="middle">1</text>
+          <text x="240" y="324" text-anchor="middle">2</text>
+          <text x="330" y="324" text-anchor="middle">3</text>
+          <text x="420" y="324" text-anchor="middle">4</text>
+          <text x="510" y="324" text-anchor="middle">5</text>
+          <text x="600" y="324" text-anchor="middle">6</text>
+          <text x="20" y="60" font-size="12">v / m s⁻¹</text>
+          <text x="600" y="348" text-anchor="end" font-size="12">t / s</text>
+        </g>
+      </svg>
+      <figcaption>Rectangle <b>8 × 3 = 24 m</b>, triangle <b>½ × 2 × 8 = 8 m</b>. Total <b>32 m</b>.</figcaption>
+    </figure>
+
+    <p>
+      On the calculator that is one line — and worth typing as one line, because
+      breaking it up is how the halving gets applied to the wrong term:
+    </p>
+
+    <ul class="example-keys" aria-label="8, multiply, 3, plus, 0 point 5, multiply, 2, multiply, 8, equals">
+      <li><kbd class="is-number">8</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">3</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd class="is-number">0.5</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">2</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">8</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads 8 times 3 plus 0.5 times 2 times 8, result 32">
+      <span>8×3+0.5×2×8</span>
+      <strong>32</strong>
+      <em>The distance travelled, in metres</em>
+    </div>
+
+    <p class="example-note">
+      <b>No app is needed for this rung, and none is offered.</b> A shape made of
+      straight lines is a ruler-and-arithmetic problem. Ans Graph plots
+      <b>y = f(x)</b> — one continuous expression — so a graph made of two
+      separate straight pieces is not what it is for. It becomes the right tool
+      exactly when the line stops being straight, which is the next rung.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-paper" id="where-it-breaks" aria-labelledby="breaks-title">
+    <span class="example-rung-label">Rung 2 — where the triangle lies</span>
+    <h2 id="breaks-title">A real car does not accelerate in a straight line</h2>
+
+    <p>
+      Put your foot down in a real car and the acceleration falls away as you
+      speed up. Air resistance grows with speed, so the <em>net</em> force
+      shrinks, and the speed–time graph bends over towards a top speed instead
+      of climbing forever. Taking the drag as proportional to speed gives the
+      standard first-order model:
+    </p>
+
+    <div class="formula" aria-label="Speed against time for a vehicle with linear drag">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>v</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>v</mi><mo>&#8734;</mo></msub><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>&#8722;</mo><msup><mi>e</mi><mrow><mo>&#8722;</mo><mi>t</mi><mo>/</mo><mi>&#964;</mi></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>v∞</b> the top speed it approaches but never reaches · <b>τ</b> the time constant: how quickly it gets there · <b>t</b> time from a standing start</li>
+    </ul>
+
+    <p>
+      Take <b>v∞ = 45 m/s</b> (just over 100 mph) and <b>τ = 8 s</b>. That car
+      passes 60 mph in <strong>7.25 seconds</strong>, which is an ordinary
+      family car, and at ten seconds it is doing
+      <strong>32.11 m/s — about 72 mph</strong>.
+    </p>
+
+    <p>
+      So: how far has it gone in those ten seconds? The GCSE instinct is a
+      triangle from 0 to 32.11 m/s, giving ½ × 10 × 32.11 =
+      <strong>160.54 m</strong>.
+    </p>
+
+    <p>
+      That is wrong, and not by a little. The real curve sits <em>above</em> the
+      straight line for the whole ten seconds — the car does most of its
+      accelerating early — so a triangle under-counts every metre of that gap.
+      The true answer is <strong>193.14 m</strong>. The triangle is out by
+      <strong>32.6 metres</strong>, about seven car lengths, on a ten-second
+      measurement.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Rung 3 — the area under a curve</span>
+    <h2 id="graph-title">Integrating the speed–time curve</h2>
+
+    <p>
+      Distance is the area under the curve whatever shape the curve is; the only
+      question is how you find the area. Three ways, and they should agree.
+    </p>
+
+    <h3>By hand: the trapezium rule</h3>
+
+    <p>
+      Slice the ten seconds into five strips of 2 s, take the speed at each
+      boundary, and treat each strip as a trapezium. Read the speeds off the
+      formula: 0, 9.954, 17.706, 23.744, 28.445 and 32.107 m/s. Then
+      distance ≈ 2 × [½(0 + 32.107) + 9.954 + 17.706 + 23.744 + 28.445]:
+    </p>
+
+    <div class="example-readout" role="img" aria-label="The calculator display shows the trapezium rule sum, result 191.805284">
+      <span>2×(0.5×(0+32.107284)+9.954+17.7061+23.7435+28.4454)</span>
+      <strong>191.805284</strong>
+      <em>Close, and slightly under — the curve bulges above every chord</em>
+    </div>
+
+    <h3>On the graph: the area, shaded</h3>
+
+    <p>Type the model straight in, with time as <b>x</b>:</p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 45(1−e^(−x/8))</p>
+
+    <p>
+      Choose <b>Integral</b>, set the bounds to 0 and 10, and the region under
+      the curve is shaded with its value beside it — <b>193.1417269</b>, agreeing
+      with the closed form below to every digit it prints. Drag either bound and
+      both the shading and the number follow, so "how far between the fourth and
+      seventh second?" is a gesture rather than a new calculation.
+    </p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-car-drag-integral.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a speed curve rising steeply then flattening towards 45 metres per second, with the area from 0 to 10 seconds shaded and the register reading approximately 193.14 with an estimated error beneath it.">
+      </div>
+      <figcaption>The shaded area is the distance travelled: <b>193.1417269 m</b>, with <b>estimated error &lt; 1E−7</b> printed beneath it rather than hidden.</figcaption>
+    </figure>
+
+    <h3>Exactly: the closed form</h3>
+
+    <p>
+      This particular integral can be done by hand, which makes it a good test
+      of the other two. Integrating the model term by term:
+    </p>
+
+    <div class="formula" aria-label="Distance travelled under linear drag">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>s</mi><mo>=</mo><msubsup><mo>&#8747;</mo><mn>0</mn><mi>T</mi></msubsup><mi>v</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mspace width="0.1em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><msub><mi>v</mi><mo>&#8734;</mo></msub><mrow><mo>[</mo><mi>T</mi><mo>+</mo><mi>&#964;</mi><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mo>&#8722;</mo><mi>T</mi><mo>/</mo><mi>&#964;</mi></mrow></msup><mo>&#8722;</mo><mn>1</mn><mo stretchy="false">)</mo><mo>]</mo></mrow></mrow></math>
+    </div>
+
+    <p>
+      With T = 10, v∞ = 45 and τ = 8 — note <b>e<sup>x</sup></b> is the SHIFT
+      function of the <b>ln</b> key:
+    </p>
+
+    <ul class="example-keys" aria-label="4 5, open bracket, 1 0, plus, 8, open bracket, SHIFT, e to the x, minus 1.25, close bracket, minus 1, close bracket, equals">
+      <li><kbd class="is-number">45</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-number">10</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd class="is-number">8</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-shift">SHIFT</kbd></li>
+      <li><kbd class="is-shift">e^</kbd></li>
+      <li><kbd class="is-number">−1.25</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">−</kbd></li>
+      <li><kbd class="is-number">1</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The display reads 45 times, open bracket, 10 plus 8 times, open bracket, e to the minus 1.25 minus 1, close brackets, result 193.1417269">
+      <span>45(10+8(e<sup>−1.25</sup>−1))</span>
+      <strong>193.1417269</strong>
+      <em>The exact answer, to ten significant figures</em>
+    </div>
+
+    <figure class="example-figure example-figure-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-calc-drag-distance.png"
+             width="276" height="600" loading="lazy" decoding="async"
+             alt="Ans on iPhone showing 45(10+8(e^(−1.25)−1)) on the input line and 193.1417269 as the result.">
+      </div>
+      <figcaption>The exact answer, against which the shaded area and the trapezium rule are both judged.</figcaption>
+    </figure>
+
+    <table class="example-table">
+      <caption>Three methods, one distance. Only one of them claims to be exact.</caption>
+      <thead>
+        <tr><th scope="col">Method</th><th scope="col">Distance</th><th scope="col">Error</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Triangle (uniform acceleration)</td><td>160.54 m</td><td>−32.61 m</td></tr>
+        <tr><td>Trapezium rule, 2 s strips</td><td>191.81 m</td><td>−1.34 m</td></tr>
+        <tr><td>Ans Graph integral</td><td>193.1417269 m</td><td>stated as &lt; 1E−7</td></tr>
+        <tr><td>Closed form</td><td>193.1417269 m</td><td>exact</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      The trapezium rule is out by 1.34 m because every straight chord cuts the
+      corner off a curve that bends downwards. Halve the strips to 1 s and it
+      improves to 192.81 m — still under, and still converging from the same
+      side. That systematic direction is worth more than the number: an error
+      you can predict the sign of is one you can allow for.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="take-it-further" aria-labelledby="rocket-title">
+    <span class="example-rung-label">Rung 4 — constant thrust in space</span>
+    <h2 id="rocket-title">When even the acceleration will not sit still</h2>
+
+    <p>
+      A spacecraft coasting far from anything fires its engine at constant
+      thrust. Nothing is slowing it down, so surely the speed–time graph is the
+      straight line from GCSE — constant force, constant acceleration?
+    </p>
+
+    <p>
+      No, because it is throwing its own mass out of the back. As the propellant
+      burns the vehicle gets lighter, so the same thrust produces more
+      acceleration every second, and the graph curves <em>upwards</em>. The
+      speed at time t is Tsiolkovsky's rocket equation:
+    </p>
+
+    <div class="formula" aria-label="Rocket equation: speed against time at constant thrust and mass flow">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>v</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>v</mi><mi>e</mi></msub><mo>&#8290;</mo><mi>ln</mi><mrow><mo>(</mo><mfrac><msub><mi>m</mi><mn>0</mn></msub><mrow><msub><mi>m</mi><mn>0</mn></msub><mo>&#8722;</mo><mover><mi>m</mi><mo>&#775;</mo></mover><mi>t</mi></mrow></mfrac><mo>)</mo></mrow></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>vₑ</b> exhaust speed · <b>m₀</b> starting mass · <b>ṁ</b> mass burned per second · <b>t</b> time since ignition</li>
+    </ul>
+
+    <p>
+      Take a 2,000 kg craft, an exhaust speed of 3,000 m/s, and 2 kg of
+      propellant a second for 500 seconds — half its mass gone in a little over
+      eight minutes. Plot the truth against the straight line that a fixed-mass
+      assumption predicts, where a = vₑṁ/m₀ = 3 m/s²:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 3000×ln(2000/(2000−2x)) &nbsp;&nbsp; <b>f₂(x) =</b> 3x</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-rocket-vs-uniform.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a curve bending upwards to about 2,079 metres per second at 500 seconds, plotted against a straight line reaching only 1,500 metres per second.">
+      </div>
+      <figcaption>Constant thrust, falling mass: <b>2,079 m/s</b> after the burn, against the <b>1,500 m/s</b> the straight line predicts.</figcaption>
+    </figure>
+
+    <p>
+      And the distance covered is, as ever, the area underneath. Shading it from
+      0 to 500 gives <strong>460.3 km</strong>, where the straight line's
+      triangle gives ½ × 3 × 500² = <strong>375 km</strong>. Assuming constant
+      acceleration would put the craft <strong>85 kilometres</strong> short of
+      where it actually is, after one eight-minute burn.
+    </p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-rocket-integral.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: the area under the rocket's speed curve from 0 to 500 seconds shaded, with the register reading approximately 460,279 metres.">
+      </div>
+      <figcaption>The area under the curve: <b>460,279 m</b> travelled during the burn.</figcaption>
+    </figure>
+
+    <p class="example-note">
+      <b>Watch the far end of that curve.</b> Push the upper bound towards 1,000
+      seconds and the model claims infinite speed — at t = 1,000 the craft has
+      burned all 2,000 kg of itself and the logarithm's argument goes to zero.
+      A model is only ever quoted inside the range where its assumptions hold,
+      and the graph makes the edge of that range visible instead of leaving it
+      in a footnote.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">The car, second by second</h2>
+
+    <table class="example-table">
+      <caption>v = 45(1 − e<sup>−t/8</sup>). Set the Ans Graph table to start 0, step 2 and compare the column.</caption>
+      <thead>
+        <tr><th scope="col">t / s</th><th scope="col">v / m s⁻¹</th><th scope="col">v / mph</th><th scope="col">Distance so far / m</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>0.000</td><td>0.0</td><td>0.00</td></tr>
+        <tr><td>2</td><td>9.954</td><td>22.3</td><td>10.37</td></tr>
+        <tr><td>4</td><td>17.706</td><td>39.6</td><td>38.35</td></tr>
+        <tr><td>6</td><td>23.744</td><td>53.1</td><td>80.05</td></tr>
+        <tr><td>8</td><td>28.445</td><td>63.6</td><td>132.44</td></tr>
+        <tr><td>10</td><td>32.107</td><td>71.8</td><td>193.14</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What these models ignore</h2>
+    <ul>
+      <li>Rung 1 assumes the braking is perfectly even, so the sloping section really is a straight line. Real brakes are not, though they are close enough for the mark scheme.</li>
+      <li>The car model takes drag as proportional to speed. Above walking pace real air resistance goes more like the square of speed, so the curve is a teaching model rather than a road test; the shape and the argument are right, the exact metres are not a measurement.</li>
+      <li>Gear changes, wheelspin, gradient, wind and the driver are all absent from a two-parameter model.</li>
+      <li>The rocket is in free space with no gravity and no drag, at constant thrust and constant mass flow. Launch from a planet adds gravity losses, which is why real launch profiles are not this curve.</li>
+      <li>Numerical integration is an estimate with a stated uncertainty. Where an exact closed form exists — as it does for both curves here — it is the thing to check against.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/compound-interest/">compound interest</a>, where the same exponential runs the other way, or <a href="/examples/mortgage-repayments/">mortgage repayments</a>.</p>
+    <p class="science-related">Related free tools: <a href="/science/suvat-calculator/">SUVAT calculator</a> (rung 1's uniform case, and exactly what rungs 2 and 4 are not allowed to use) &middot; <a href="/science/energy-work-power/">energy, work &amp; power</a> &middot; <a href="/science/projectile-motion/">projectile motion</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>, whose shaded integral with draggable bounds is the interaction rung 3 is built around.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Area under a speed–time graph, when it isn't a triangle","description":"How to find distance from a velocity–time graph: the GCSE rectangle and triangle method, then a car with speed-dependent drag, then a rocket at constant thrust, each integrated and checked against a closed form.","url":"https://anscalc.com/examples/velocity-time-graph-area/","educationalLevel":"GCSE to A-level","learningResourceType":"Worked example","teaches":["Area under a velocity-time graph","Distance from a speed-time graph","Trapezium rule","Numerical integration","Rocket equation"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
