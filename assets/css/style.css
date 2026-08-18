@@ -2423,16 +2423,19 @@ a.button-secondary:hover {
   padding: 56px 0 80px;
 }
 
+/* The same ceiling as every other page's h1 (`.tool-head h1`). At 58px these
+   pages ran 21% larger than the rest of the site at the same window width,
+   which does not read as emphasis — it reads as the browser being zoomed in. */
 .example-article h1 {
   margin: 8px 0 16px;
-  font-size: clamp(34px, 5.4vw, 58px);
-  line-height: 1.02;
+  font-size: clamp(34px, 6vw, 48px);
+  line-height: 1.06;
 }
 
 .example-standfirst {
   margin: 0;
   color: var(--muted);
-  font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
 }
 
 /* The video slot. It is empty today and says so; when the film exists the
@@ -2482,8 +2485,8 @@ a.button-secondary:hover {
 
 .example-rung h2 {
   margin: 0 0 14px;
-  font-size: clamp(25px, 3.4vw, 36px);
-  line-height: 1.1;
+  font-size: clamp(23px, 3vw, 32px);
+  line-height: 1.14;
 }
 
 .example-rung p { color: var(--muted); }
