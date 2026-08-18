@@ -15,7 +15,7 @@ og_image_alt: Carbon dating worked example — halving, logarithms, and the age 
     thing would. How old is it? Halving is easy while the answer is a whole
     number of half-lives; 22% is not. This page does the easy case on paper,
     turns it into a logarithm that handles any fraction, dates the real sample,
-    and then shows the two places the method stops being a measurement.
+    and then shows where the method stops being a measurement.
   </p>
 
   <ul class="example-tags">
@@ -26,13 +26,9 @@ og_image_alt: Carbon dating worked example — halving, logarithms, and the age 
     <li>≈ 8 minutes</li>
   </ul>
 
-  <div class="example-video">
-    <strong>Video</strong>
-    <span>Coming soon. Four rungs, in the order below, so the chapters and this page will match.</span>
-  </div>
 
   <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
-    <span class="example-rung-label">Rung 1 — on paper</span>
+    <span class="example-rung-label">Step 1 — on paper</span>
     <h2 id="the-sum-title">Half-life, while the answer is a whole number of halvings</h2>
 
     <p>
@@ -72,7 +68,7 @@ og_image_alt: Carbon dating worked example — halving, logarithms, and the age 
   </section>
 
   <section class="example-rung example-rung-calc" id="on-the-calculator" aria-labelledby="calc-title">
-    <span class="example-rung-label">Rung 2 — any fraction, not just halves</span>
+    <span class="example-rung-label">Step 2 — any fraction, not just halves</span>
     <h2 id="calc-title">Turning the halving round with a logarithm</h2>
 
     <p>
@@ -120,7 +116,7 @@ og_image_alt: Carbon dating worked example — halving, logarithms, and the age 
   </section>
 
   <section class="example-rung example-rung-calc" id="take-it-further" aria-labelledby="dating-title">
-    <span class="example-rung-label">Rung 3 — the real sample</span>
+    <span class="example-rung-label">Step 3 — the real sample</span>
     <h2 id="dating-title">How to calculate the age of a sample from carbon-14</h2>
 
     <p>
@@ -143,7 +139,7 @@ og_image_alt: Carbon dating worked example — halving, logarithms, and the age 
 
     <p>
       Quoting that as 12,516.75 years would be silly: the measurement of "22%"
-      is not good to eight figures. <strong>12,500 years</strong> is the honest
+      is not good to seven figures. <strong>12,500 years</strong> is the honest
       statement, and a real laboratory would give it as a figure plus an
       uncertainty.
     </p>
@@ -168,17 +164,35 @@ og_image_alt: Carbon dating worked example — halving, logarithms, and the age 
     </figure>
 
     <p>
-      Drag the line up and down and watch how far the crossing moves. Near the
-      top of the curve a percentage point of measurement error is worth a
-      century or so; out at 5% remaining the curve is nearly flat and the same
-      error is worth a great deal more. That sensitivity <em>is</em> the reason
-      radiocarbon has a working limit, which is the next rung.
+      Drag the line up and down and watch how far the crossing moves. The
+      steeper the curve is where it crosses, the less a measurement error
+      costs — and the curve flattens as it falls, so the same one-percentage-
+      point uncertainty is worth more and more:
+    </p>
+
+    <table class="example-table">
+      <caption>What ±1 percentage point in the measurement does to the date.</caption>
+      <thead>
+        <tr><th scope="col">Carbon-14 left</th><th scope="col">Age</th><th scope="col">±1 pp is worth</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>50%</td><td>5,730 yr</td><td>± 165 yr</td></tr>
+        <tr><td>22%</td><td>12,517 yr</td><td>± 376 yr</td></tr>
+        <tr><td>10%</td><td>19,035 yr</td><td>± 829 yr</td></tr>
+        <tr><td>5%</td><td>24,765 yr</td><td>± 1,676 yr</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Ten times the precision is needed at the old end to get the same answer,
+      and that sensitivity <em>is</em> the reason radiocarbon has a working
+      limit — which is the next step.
     </p>
   </section>
 
   <section class="example-rung example-rung-graph" id="where-it-breaks" aria-labelledby="breaks-title">
-    <span class="example-rung-label">Rung 4 — where it stops being a measurement</span>
-    <h2 id="breaks-title">Two things that make the answer not quite a date</h2>
+    <span class="example-rung-label">Step 4 — where it stops being a measurement</span>
+    <h2 id="breaks-title">What stops the answer being a date</h2>
 
     <h3>The constant you use changes the answer</h3>
 
@@ -279,7 +293,7 @@ og_image_alt: Carbon dating worked example — halving, logarithms, and the age 
   <div class="tool-crosslink">
     <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
     <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
-    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Paid for once, and both work with the aeroplane mode on.</p>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Paid for once, and both work with aeroplane mode on.</p>
   </div>
 </article>
 

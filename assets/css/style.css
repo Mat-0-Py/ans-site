@@ -2438,29 +2438,6 @@ a.button-secondary:hover {
   font-size: clamp(1rem, 1.5vw, 1.12rem);
 }
 
-/* The video slot. It is empty today and says so; when the film exists the
-   same block takes the player. Nothing third-party loads until then — an
-   embed that is only a promise should not cost the reader a request. */
-
-.example-video {
-  display: grid;
-  gap: 6px;
-  margin: 30px 0 0;
-  padding: 18px 22px;
-  border: 1px dashed var(--line-strong);
-  border-radius: var(--radius-sm);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.82rem;
-}
-
-.example-video strong {
-  color: var(--white);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 /* The rungs. A numbered rail down the left, tinted by the instrument the
    step uses, so the ladder is legible at a glance and on a phone. */
 
@@ -2744,3 +2721,79 @@ a.button-secondary:hover {
 }
 
 .example-figure-phone img { border-radius: 31px; }
+
+/* What the calculator is holding.
+   A key sequence tells you which buttons to press; it does not tell you what
+   the machine now contains, and "VAR STO A" means nothing to a reader who has
+   never used the VAR layer. This is the Variable Inspector's content as a
+   panel: the letter, the value in it, and what that value *is*. The letters
+   wear the VAR key's teal (4.7:1 on the LCD) so the connection to the keycap
+   above is made by colour rather than by explanation. */
+
+.example-vars {
+  margin: 22px 0;
+  padding: 16px 20px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--lcd);
+  color: var(--lcd-text);
+  box-shadow: inset 0 2px 10px rgba(46, 52, 64, 0.22);
+}
+
+.example-vars-title {
+  margin: 0 0 10px;
+  color: rgba(46, 52, 64, 0.72);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.example-vars dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.example-vars dl > div {
+  display: grid;
+  grid-template-columns: 2.2em minmax(0, auto) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 4px 14px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(46, 52, 64, 0.16);
+}
+
+.example-vars dl > div:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.example-vars dt {
+  color: var(--teal-dark);
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.example-vars dd {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.example-vars .example-vars-note {
+  color: rgba(46, 52, 64, 0.78);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  white-space: normal;
+}
+
+@media (max-width: 520px) {
+  .example-vars dl > div {
+    grid-template-columns: 2.2em minmax(0, 1fr);
+  }
+  .example-vars .example-vars-note { grid-column: 2; }
+}

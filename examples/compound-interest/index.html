@@ -26,10 +26,6 @@ og_image_alt: Compound interest worked example — the formula, the keystrokes a
     <li>≈ 8 minutes</li>
   </ul>
 
-  <div class="example-video">
-    <strong>Video</strong>
-    <span>Coming soon. It follows the five steps below in order, so the chapters and this page will match.</span>
-  </div>
 
   <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
     <span class="example-rung-label">Step 1 — on paper</span>
@@ -60,11 +56,14 @@ og_image_alt: Compound interest worked example — the formula, the keystrokes a
       1.05<sup>20</sup> = 2.653297705, and then:
     </p>
 
+    <div class="formula" aria-label="Ten thousand pounds multiplied by 1.05 to the power twenty is 26,532.98">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo>=</mo><mn>10</mn><mo>,</mo><mn>000</mn><mo>&#215;</mo><msup><mrow><mo stretchy="false">(</mo><mn>1.05</mn><mo stretchy="false">)</mo></mrow><mn>20</mn></msup><mo>=</mo><mn>10</mn><mo>,</mo><mn>000</mn><mo>&#215;</mo><mn>2.653297705</mn><mo>=</mo><mtext>&#163;26,532.98</mtext></mrow></math>
+    </div>
+
     <p>
-      <strong>A = 10,000 × 2.653297705 = £26,532.98</strong>, of which
-      <strong>£16,532.98 is growth</strong>. Twenty lots of 5% of the original
-      £10,000 would have been only £10,000 — the extra £6,532.98 is the interest
-      that the interest earned.
+      Of that, <strong>£16,532.98 is growth</strong>. Twenty lots of 5% of the
+      original £10,000 would have been only £10,000 — the extra £6,532.98 is the
+      interest that the interest earned.
     </p>
   </section>
 
@@ -128,7 +127,16 @@ og_image_alt: Compound interest worked example — the formula, the keystrokes a
       <li><kbd class="is-var">B</kbd></li>
     </ul>
 
+    <div class="example-vars" role="img" aria-label="The calculator now holds: A is 10000, the sum invested; B is 0.05, the annual growth rate.">
+      <p class="example-vars-title">The calculator now holds</p>
+      <dl>
+        <div><dt>A</dt><dd>10000</dd><dd class="example-vars-note">the sum invested</dd></div>
+        <div><dt>B</dt><dd>0.05</dd><dd class="example-vars-note">the annual growth rate, as a decimal</dd></div>
+      </dl>
+    </div>
+
     <p>
+      Hold <b>VAR</b> at any time to see that panel on the calculator itself.
       Now the calculation reads like the formula does, and a different rate is
       one edit rather than a retype:
     </p>
@@ -175,7 +183,7 @@ og_image_alt: Compound interest worked example — the formula, the keystrokes a
     <div class="example-readout" role="img" aria-label="The display reads ln 2 divided by ln 1.05, with the result 14.20669908">
       <span>ln(2)÷ln(1.05)</span>
       <strong>14.20669908</strong>
-      <em>14 years and about 10 weeks</em>
+      <em>14 years and about 11 weeks</em>
     </div>
 
     <p class="example-note">
@@ -291,6 +299,16 @@ og_image_alt: Compound interest worked example — the formula, the keystrokes a
       Add the original lump sum and the total is <strong>£105,891.27</strong>.
       Of that, <strong>£58,000 was paid in</strong> — £10,000 at the start and
       £48,000 over twenty years — so <strong>£47,891.27 is growth</strong>.
+    </p>
+
+    <p class="example-note">
+      <b>Paying monthly is worth more than paying yearly.</b> Everything above
+      credits the £2,400 once a year, at the year end. Paying £200 a month
+      instead means each payment starts earning sooner, so the same annuity
+      formula with r = 0.05 ÷ 12 and n = 240 gives <b>£82,206.73</b> —
+      <b>£2,848.44</b> more for exactly the same money. That is the difference
+      between a model and a direct debit, and it is why the assumptions below
+      are worth reading.
     </p>
 
     <p>
@@ -416,7 +434,7 @@ og_image_alt: Compound interest worked example — the formula, the keystrokes a
   <div class="tool-crosslink">
     <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
     <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
-    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Paid for once, no subscription, and they work with the aeroplane mode on.</p>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Paid for once, no subscription, and they work with aeroplane mode on.</p>
   </div>
 </article>
 
