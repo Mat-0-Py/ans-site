@@ -4,7 +4,7 @@
 Run this before publishing and after any edit to the figures. If a page says
 something this script does not, one of the two is wrong.
 """
-from math import atan, cos, degrees, exp, log, radians, sin, sqrt, tan
+from math import acos, asin, atan, cos, degrees, exp, factorial, log, pi, radians, sin, sqrt, tan
 
 FAILURES = []
 
@@ -240,6 +240,131 @@ for frac, age_want, swing_want in ((0.50, 5730, 165), (0.22, 12517, 376),
     swing = abs(C14 * log(frac - 0.01) / log(0.5) - C14 * log(frac + 0.01) / log(0.5)) / 2
     check(f"age at {frac:.0%} left", age, age_want, 0.6)
     check(f"  ±1 pp is worth", swing, swing_want, 0.6)
+
+print("\n--- 7. Simultaneous equations ----------------------------------------")
+xs, ys = 4.4, 1.4
+check("3x + 2y with x=4.4, y=1.4", 3 * xs + 2 * ys, 16.0, 1e-9)
+check("x - y", xs - ys, 3.0, 1e-9)
+check("on the line y = 8 - 1.5x", 8 - 1.5 * xs, ys, 1e-9)
+check("on the line y = x - 3", xs - 3, ys, 1e-9)
+for root in (3.0, -1.0):
+    check(f"x = {root:.0f} solves x^2 - 3 = 2x", (root ** 2 - 3) - 2 * root, 0.0, 1e-12)
+check("  y at x = 3", 3.0 ** 2 - 3, 6.0, 1e-12)
+check("  y at x = -1", (-1.0) ** 2 - 3, -2.0, 1e-12)
+
+for x in (0.0, 5.0, -3.0):
+    check(f"coincident pair agrees at x = {x:.0f}", (2.5 - 0.5 * x) - (2.5 - 0.5 * x), 0.0, 1e-12)
+    check(f"  and 2x + 4y = 10 holds there", 2 * x + 4 * (2.5 - 0.5 * x), 10.0, 1e-12)
+    check(f"  as does x + 2y = 5", x + 2 * (2.5 - 0.5 * x), 5.0, 1e-12)
+
+print("\n--- 8. Finding an angle ----------------------------------------------")
+check("7 divided by 12", 7 / 12, 0.5833333333, 1e-9)
+angle = degrees(asin(7 / 12))
+check("inverse sine of 7/12, in degrees", angle, 35.68533471, 1e-7)
+check("  the second solution, 180 - angle", 180 - angle, 144.3146653, 1e-6)
+check("adjacent side, root(144-49)", sqrt(144 - 49), 9.746794345, 1e-8)
+cosC = (25 + 49 - 64) / (2 * 5 * 7)
+check("cos C for a 5-7-8 triangle", cosC, 1 / 7, 1e-12)
+check("  the angle facing the 8", degrees(acos(cosC)), 81.7867893, 1e-7)
+check("a right angle would need c =", sqrt(25 + 49), 8.602325267, 1e-8)
+sinB = 7 * sin(radians(degrees(acos(cosC)))) / 8
+check("sine rule: sin B in the 5-7-8", sinB, 0.8660254038, 1e-9)
+check("  the acute answer it returns", degrees(asin(sinB)), 60.0, 1e-9)
+check("  the obtuse one it hides", 180 - degrees(asin(sinB)), 120.0, 1e-9)
+check("  which would leave, for corner A", 180 - 120 - degrees(acos(cosC)), -21.78678930, 1e-7)
+cosB = (25 + 64 - 49) / (2 * 5 * 8)
+check("cos rule for the same angle", cosB, 0.5, 1e-12)
+check("  and it is exactly 60", degrees(acos(cosB)), 60.0, 1e-9)
+
+print("\n--- 9. Saving for a goal ---------------------------------------------")
+i_s = 0.05 / 12
+check("monthly rate, 5% over 12", i_s, 0.0041666667, 1e-9)
+B = (1 + i_s) ** 96
+check("(1+i)^96", B, 1.490585468, 1e-8)
+check("annuity factor", (B - 1) / i_s, 117.7405123, 1e-6)
+payment = 20000 * i_s / (B - 1)
+check("payment for 20,000 in 8 years", payment, 169.8650669, 1e-6)
+check("  paid in over 96 months", payment * 96, 16307.04642, 1e-4)
+check("  interest, the rest of the 20,000", 20000 - payment * 96, 3692.95358, 1e-4)
+check("paying at the start of the month", payment / (1 + i_s), 169.1602326, 1e-6)
+check("  what that saves each month", payment - payment / (1 + i_s), 0.7048343, 1e-6)
+check("  and over the 96 of them", (payment - payment / (1 + i_s)) * 96, 67.66, 0.01)
+check("  interest does the rest", 20000 - payment * 96, 3692.95, 0.01)
+B10 = (1 + i_s) ** 120
+pay10 = 20000 * i_s / (B10 - 1)
+check("payment over 10 years", pay10, 128.80, 0.005)
+check("  smaller by (percent)", 100 * (1 - pay10 / payment), 24.2, 0.5)
+check("  paid in", pay10 * 120, 15455.72, 0.01)
+check("  interest", 20000 - pay10 * 120, 4544.28, 0.01)
+head = 5000 * B
+check("5,000 grows to", head, 7452.93, 0.005)
+pay_head = (20000 - head) * i_s / (B - 1)
+check("payment with that head start", pay_head, 106.5654668, 1e-5)
+check("  which saves", payment - pay_head, 63.30, 0.005)
+check("  paid in", pay_head * 96, 10230.28, 0.01)
+check("20,000 in today's money at 2.5%", 20000 / 1.025 ** 8, 16414.93, 0.01)
+
+print("\n--- 10. Gradient of a curve ------------------------------------------")
+check("straight line (9-3)/(4-1)", (9 - 3) / (4 - 1), 2.0, 1e-12)
+for width, want in ((1, 7.0), (0.5, 6.5), (0.1, 6.1), (0.01, 6.01), (0.001, 6.001)):
+    check(f"chord of x^2 at 3, h = {width}", ((3 + width) ** 2 - 9) / width, want, 1e-9)
+check("chords are exactly 6 + h", ((3 + 0.25) ** 2 - 9) / 0.25 - 6, 0.25, 1e-12)
+check("the rule: gradient of x^2 is 2x, at 3", 2 * 3, 6.0, 1e-12)
+check("secant on the whole span (16-1)/(4-1)", (16 - 1) / (4 - 1), 5.0, 1e-12)
+
+VINF, TAU = 45.0, 8.0
+for t, speed, accel in ((0, 0.00, 5.625), (2, 9.95, 4.381), (5, 20.91, 3.011), (10, 32.11, 1.612)):
+    check(f"car speed at t = {t}", VINF * (1 - exp(-t / TAU)), speed, 0.005)
+    check("  its gradient (acceleration)", (VINF / TAU) * exp(-t / TAU), accel, 0.001)
+check("initial tangent reaches 45 m/s at t = tau", 45 / (VINF / TAU), 8.0, 1e-12)
+
+for a, frac in ((1, "7/1"), (0.5, "13/2"), (0.1, "61/10"), (0.01, "601/100"), (0.001, "6001/1000")):
+    n, d = frac.split("/")
+    check(f"chord A={a}, exact as {frac}", ((3 + a) ** 2 - 9) / a, int(n) / int(d), 1e-9)
+    check(f"  centred chord at A={a}", ((3 + a) ** 2 - (3 - a) ** 2) / (2 * a), 6.0, 1e-12)
+
+print("\n--- 11. Percentage change --------------------------------------------")
+check("45 up 20%", 45 * 1.2, 54.0, 1e-9)
+check("45 down 20%", 45 * 0.8, 36.0, 1e-9)
+check("up then down", 45 * 1.2 * 0.8, 43.2, 1e-9)
+check("  the multiplier pair", 1.2 * 0.8, 0.96, 1e-12)
+check("  money lost", 45 - 45 * 1.2 * 0.8, 1.8, 1e-9)
+check("down then up, the same answer", 45 * 0.8 * 1.2, 43.2, 1e-9)
+check("  the rise on the way back", 45 * 0.8 * 0.2, 7.2, 1e-9)
+check("the rise, then the fall (money)", 45 * 0.2, 9.0, 1e-9)
+check("  and the discount that follows it", 54 * 0.2, 10.8, 1e-9)
+check("45 x 20% (the % key is just /100)", 45 * 0.2, 9.0, 1e-9)
+check("undoing a 20% rise needs (percent)", 100 * (1 - 1 / 1.2), 16.67, 0.005)
+check("two 10% rises (percent)", 100 * (1.1 ** 2 - 1), 21.0, 1e-9)
+check("reverse: 54 after 20% off", 54 / 0.8, 67.5, 1e-9)
+check("  the wrong answer, 54 x 1.2", 54 * 1.2, 64.8, 1e-9)
+check("  and it fails its own check", 64.8 * 0.8, 51.84, 1e-9)
+check("  67.50 x 0.8 returns 54", 67.5 * 0.8, 54.0, 1e-9)
+check("voucher first, then 20% off", (45 - 5) * 0.8, 32.0, 1e-12)
+check("  20% off, then the voucher", 45 * 0.8 - 5, 31.0, 1e-12)
+check("  the gap is 20% of the voucher", ((45 - 5) * 0.8) - (45 * 0.8 - 5), 0.2 * 5, 1e-12)
+check("VAT inside a 120 bill", 120 - 120 / 1.2, 20.0, 1e-9)
+check("2000 falling 10% a year, 5 years", 2000 * 0.9 ** 5, 1180.98, 0.005)
+check("  the total fall (percent)", 100 * (1 - 0.9 ** 5), 40.951, 0.001)
+check("  after 10 years", 2000 * 0.9 ** 10, 697.36, 0.005)
+check("  where the straight line says zero", 2000 - 200 * 10, 0.0, 1e-12)
+
+print("\n--- 12. Exact values -------------------------------------------------")
+check("1/3 + 1/6 is exactly 1/2", 1 / 3 + 1 / 6, 0.5, 1e-15)
+check("1/2 + 1/3 is exactly 5/6", 1 / 2 + 1 / 3, 5 / 6, 1e-15)
+check("1/3 + 0.5", 1 / 3 + 0.5, 0.8333333333, 1e-9)
+check("sin(pi) is exactly 0", sin(pi), 0.0, 1e-15)
+# sin of a rounded pi is catastrophic cancellation, so the last digits belong to
+# whichever engine computed them: Python says -4.102068570e-10 and Ans says
+# -4.102070669e-10, and the page must quote Ans. Verified via
+# Calculator.evaluateDisplay in AnsEngine, 19 August 2026.
+ANS_SIN_ROUNDED_PI = -4.102070669e-10
+check("sin(3.141592654), as Ans prints it", ANS_SIN_ROUNDED_PI, -4.102070669e-10, 1e-21)
+check("  Python agrees as far as it can", sin(3.141592654), ANS_SIN_ROUNDED_PI, 5e-16)
+check("root 2", sqrt(2), 1.414213562, 1e-9)
+check("69! (the engine prints 1.711224524E98)", factorial(69), 1.711224524e98, 1e90)
+check("70! is past the 1e100 ceiling", factorial(70), 1.197857167e100, 1e92)
+check("  and 69! is not", 1.0 if factorial(69) < 1e100 else 0.0, 1.0, 1e-12)
 
 print()
 if FAILURES:

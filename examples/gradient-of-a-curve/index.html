@@ -14,8 +14,8 @@ og_image_alt: Gradient of a curve — chords closing in on a tangent, and the ta
     A straight line has one gradient and you can measure it with a ruler. A
     curve is steeper in some places than others, so "the gradient" is not a
     number until you say <em>where</em>. This page finds the gradient of
-    y = x² at x = 3 four separate ways — by chords, by tangent, by algebra and
-    by looking — and then reads the gradient of a real speed curve, where it
+    y = x² at x = 3 four separate ways — by chords, by algebra, by tangent and
+    by the rule you may already know — and then reads the gradient of a real speed curve, where it
     turns out to be the acceleration.
   </p>
 
@@ -108,21 +108,21 @@ og_image_alt: Gradient of a curve — chords closing in on a tangent, and the ta
 
     <p>
       Store a smaller <b>A</b>, press <kbd>▲</kbd> to bring the expression back,
-      and press <kbd class="is-number">=</kbd>. Four keystrokes per row of this
-      table:
+      and press <kbd class="is-number">=</kbd>. A new value and two keys is a
+      whole row of this table:
     </p>
 
     <table class="example-table">
-      <caption>The chord gradient of y = x² from x = 3, as the chord narrows. The calculator shows each of these as an exact fraction until <b>Frac⇄Dec</b> is pressed.</caption>
+      <caption>The chord gradient of y = x² from x = 3, as the chord narrows. Every row arrives as an exact fraction; <b>Frac⇄Dec</b> gives the decimal beside it.</caption>
       <thead>
-        <tr><th scope="col">A (chord width)</th><th scope="col">Chord gradient</th></tr>
+        <tr><th scope="col">A (chord width)</th><th scope="col">Chord gradient</th><th scope="col">As Ans shows it</th></tr>
       </thead>
       <tbody>
-        <tr><td>1</td><td>7</td></tr>
-        <tr><td>0.5</td><td>6.5</td></tr>
-        <tr><td>0.1</td><td>6.1</td></tr>
-        <tr><td>0.01</td><td>6.01</td></tr>
-        <tr><td>0.001</td><td>6.001</td></tr>
+        <tr><td>1</td><td>7</td><td>7</td></tr>
+        <tr><td>0.5</td><td>6.5</td><td>13/2</td></tr>
+        <tr><td>0.1</td><td>6.1</td><td>61/10</td></tr>
+        <tr><td>0.01</td><td>6.01</td><td>601/100</td></tr>
+        <tr><td>0.001</td><td>6.001</td><td>6001/1000</td></tr>
       </tbody>
     </table>
 
@@ -159,6 +159,34 @@ og_image_alt: Gradient of a curve — chords closing in on a tangent, and the ta
       more on that on the <a href="/examples/exact-values/">exact values</a>
       page.
     </p>
+
+    <h3>Take the chord from both sides and something surprising happens</h3>
+    <p>
+      Every chord above ran from x = 3 forwards to 3 + A, so every one of them
+      overshoots: 7, 6.5, 6.1, 6.01. Straddle the point instead — from 3 − A to
+      3 + A — and the same experiment behaves completely differently:
+    </p>
+
+    <div class="example-readout" role="img" aria-label="The display reads open bracket, open bracket 3 plus A close bracket squared, minus open bracket 3 minus A close bracket squared, close bracket, divided by 2 A, result 6">
+      <span>((3+A)²−(3−A)²)÷(2A)</span>
+      <strong>6</strong>
+      <em>and it is 6 for every A you store — even A = 1</em>
+    </div>
+
+    <p>
+      Not 6.001, and not 6.0000001. Exactly <b>6</b>, from a chord as wide as
+      you like: A = 1 means a chord from x = 2 to x = 4, and it still reads 6.
+      The algebra says why in one line — (3+h)² − (3−h)² = 12h, so dividing by
+      2h leaves 6 with nothing to shrink. The two overshoots cancel because the
+      curve bends the same amount either side.
+    </p>
+    <p>
+      That is the <b>centred difference</b>, and it is what a numerical
+      derivative actually uses. On a parabola it is exact; on any other curve
+      it is not, but its error shrinks with the <em>square</em> of the chord
+      width where the one-sided version shrinks in step with it. It is the same
+      keystrokes and a better answer, which is a rare thing.
+    </p>
   </section>
 
   <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
@@ -183,7 +211,7 @@ og_image_alt: Gradient of a curve — chords closing in on a tangent, and the ta
     </figure>
 
     <p>
-      Four routes to the same answer: three chords narrowing, one algebraic
+      Four routes to the same answer: five chords narrowing, one algebraic
       cancellation, one tangent read off a plot, and the rule you may already
       know — that the gradient of x² is 2x, which at x = 3 is 6. When four
       methods that share no working agree, the answer is not in doubt.
@@ -263,6 +291,7 @@ og_image_alt: Gradient of a curve — chords closing in on a tangent, and the ta
       </thead>
       <tbody>
         <tr><td>Chord with h = 0.001</td><td>6001/1000, which is 6.001</td></tr>
+        <tr><td>Centred chord, any h at all</td><td>6, exactly</td></tr>
         <tr><td>Algebra: (6h + h²)/h = 6 + h, as h → 0</td><td>6, exactly</td></tr>
         <tr><td>Tangent on the graph</td><td>6</td></tr>
         <tr><td>The rule: gradient of x² is 2x</td><td>6</td></tr>
@@ -274,7 +303,7 @@ og_image_alt: Gradient of a curve — chords closing in on a tangent, and the ta
     <h2>What to watch</h2>
     <ul>
       <li>A chord is never the tangent. It approaches it as h shrinks, and the table shows the approach — but every row is an approximation, and only the algebra reaches the limit.</li>
-      <li>Chords taken from one side only, as here, converge from one side. A chord from 3 − h to 3 + h converges faster and is what a numerical derivative usually uses.</li>
+      <li>A one-sided chord approaches from one side and a centred one straddles the point. On y = x² the centred chord is exact at any width; that is a property of the parabola, not a general rule, so do not expect it on a curve that bends unevenly.</li>
       <li>The app's tangent is a numerical derivative with a stated uncertainty, not a symbolic one. Where a rule exists — 2x here — the rule is the thing to quote.</li>
       <li>Not every curve has a tangent everywhere. A sharp corner has no single direction at the corner, so no gradient there, however small you make h.</li>
       <li>Making h very small is not free: past a point, subtracting two nearly equal numbers loses precision faster than the shrinking chord gains it.</li>

@@ -255,7 +255,9 @@ og_image_alt: Saving for a goal — the payment you need, found by formula and b
         <tr><td>Growth factor over 96 months</td><td>(1+A)<sup>96</sup></td><td>1.490585468</td></tr>
         <tr><td>Annuity factor</td><td>(B−1) ÷ A</td><td>117.7405123</td></tr>
         <tr><td>Monthly payment</td><td>20000 ÷ 117.7405123</td><td>169.8650669</td></tr>
-        <tr><td>Total paid in</td><td>169.8650669 × 96</td><td>16,307.05</td></tr>
+        <tr><td>Total paid in</td><td>169.8650669 × 96</td><td>16307.04642</td></tr>
+        <tr><td>Interest earned</td><td>20000 − 16307.04642</td><td>3692.95358</td></tr>
+        <tr><td>Paying at the start of each month instead</td><td>169.8650669 ÷ (1+A)</td><td>169.1602326</td></tr>
       </tbody>
     </table>
   </section>
@@ -264,7 +266,7 @@ og_image_alt: Saving for a goal — the payment you need, found by formula and b
     <h2>What this model ignores</h2>
     <ul>
       <li>A fixed 5% for the whole eight years, compounded monthly. Real savings rates move, and a rate quoted as AER is not the same as 5% ÷ 12 applied monthly — close, but not identical.</li>
-      <li>Payments arrive at the end of each month. Paying at the start of the month earns one extra period of interest on every payment and needs slightly less.</li>
+      <li>Payments arrive at the end of each month. Paying at the start earns one extra month of interest on every payment, so the same goal needs <b>£169.16</b> rather than £169.87 — divide the answer by (1+A). Seventy pence a month, or £68 over the eight years.</li>
       <li>Tax on interest is ignored, as are ISA limits, bonuses, introductory rates and any account that restricts withdrawals.</li>
       <li>Inflation is ignored. £20,000 in eight years does not buy what £20,000 buys today; at 2.5% it is worth about £16,415 in today's money.</li>
       <li>This is arithmetic, not financial advice. It works out what a plan requires, not whether the plan is a good idea.</li>

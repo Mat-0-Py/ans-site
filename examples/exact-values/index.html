@@ -12,9 +12,9 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
   <h1>Exact answers, and where they run out</h1>
   <p class="example-standfirst">
     Most calculators turn everything into a decimal the moment you press
-    equals, and a decimal is a lossy copy of a fraction. This page shows what is
-    kept when a calculator refuses to do that — exact fractions, and π as π
-    rather than 3.141592654 — then finds the edge, because the edge is real and
+    equals, and a decimal is a lossy copy of most fractions. This page shows what is
+    kept when a calculator refuses to do that — exact fractions, and a π that
+    is still π when the next function asks — then finds the edge, because the edge is real and
     a page that only showed the good half would be advertising.
   </p>
 
@@ -102,17 +102,26 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
       <em>Exactly nothing, because π was never turned into digits</em>
     </div>
 
-    <div class="example-readout" role="img" aria-label="The display reads sine of 3.141592654, result minus 4.10206857 times ten to the minus ten">
+    <div class="example-readout" role="img" aria-label="The display reads sine of 3.141592654, result minus 4.102070669 times ten to the minus ten">
       <span>sin(3.141592654)</span>
-      <strong>−4.10206857×10⁻¹⁰</strong>
+      <strong>−4.102070669×10⁻¹⁰</strong>
       <em>The same question, asked with a rounded π</em>
     </div>
 
     <p>
+      <b>The display is not where the exactness lives.</b> Press π and = on
+      its own and you get <b>3.141592654</b> — ten figures, like any other
+      number, because that is what a ten-figure display can show. Nothing
+      symbolic appears on screen. What is kept is underneath, in the value the
+      <em>next</em> function receives, and the pair of answers above is the
+      proof: the same π that printed as digits went into sin as π.
+    </p>
+    <p>
       Four ten-billionths is not an error worth worrying about on its own. It is
-      worth understanding: the calculator holds exact multiples of π as
-      multiples of π, so anything that lands on one of them — sin(π), cos(2π),
-      tan(π) — comes out clean. Type the digits instead and you are asking a
+      worth understanding: the calculator holds rational multiples of π as
+      multiples of π, so anything that lands on a clean value comes out clean —
+      sin(π) and tan(π) are 0, cos(2π) is 1, and <b>sin(π÷6)</b> is exactly
+      <b>0.5</b> rather than 0.4999999999. Type the digits instead and you are asking a
       slightly different question, and getting an honest answer to it.
     </p>
 
@@ -166,8 +175,13 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
     <h2 id="limits-title">Where the exactness stops</h2>
 
     <p>
-      Ans keeps exact fractions and exact multiples of π. It does not keep
-      surds, and it cannot hold every number ever written.
+      Ans keeps two families exactly and no others: <b>fractions</b> with
+      whole-number tops and bottoms, and <b>rational multiples of π</b>. That
+      list is deliberate rather than unfinished — those two cover the answers
+      school and A-level work actually produces, and each has a compact exact
+      form a calculator can carry through a calculation without a computer
+      algebra system behind it. Everything else becomes a decimal at the point
+      it is computed. So there are no surds, and there is a ceiling.
     </p>
 
     <h3>√2 is a decimal here</h3>
@@ -221,7 +235,8 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
         <tr><td>1÷2+1÷3</td><td>5/6</td><td>yes</td></tr>
         <tr><td>1÷3+0.5</td><td>0.8333333333</td><td>no — a decimal was asked for</td></tr>
         <tr><td>sin(π)</td><td>0</td><td>yes, as a π multiple</td></tr>
-        <tr><td>sin(3.141592654)</td><td>−4.10206857×10⁻¹⁰</td><td>no — π was rounded first</td></tr>
+        <tr><td>sin(3.141592654)</td><td>−4.102070669×10⁻¹⁰</td><td>no — π was rounded first</td></tr>
+        <tr><td>π</td><td>3.141592654</td><td>yes, underneath — the display has no symbol for it</td></tr>
         <tr><td>√2</td><td>1.414213562</td><td>no — no surds are kept</td></tr>
         <tr><td>69!</td><td>1.711224524×10⁹⁸</td><td>within range</td></tr>
         <tr><td>70!</td><td>Math ERROR</td><td>past 10¹⁰⁰</td></tr>
@@ -235,7 +250,7 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
       <li>Exact fractions are held with whole-number tops and bottoms. A calculation that overflows those falls back to decimals silently — correct, but no longer exact.</li>
       <li>Only rational multiples of π are folded symbolically. π² and eπ are decimals like anything else.</li>
       <li>Trigonometric functions of ordinary angles are computed, not derived: sin(60°) is 0.8660254038, not √3/2. The exactness here is about fractions and π, not about surds.</li>
-      <li>Displayed answers are rounded to ten significant figures from fifteen held internally, so what you see is already one rounding away from what the next line will use.</li>
+      <li>Decimal answers are shown to ten significant figures from fifteen held internally, so what you see is already one rounding away from what the next line will use. A fraction has no such gap.</li>
       <li>The 10<sup>100</sup> ceiling is inclusive: 1×10⁹⁹ × 10 is a Math ERROR, not 10¹⁰⁰.</li>
     </ul>
   </section>

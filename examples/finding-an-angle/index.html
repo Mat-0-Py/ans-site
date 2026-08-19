@@ -77,7 +77,7 @@ og_image_alt: Finding an angle — SOHCAHTOA, the inverse sine, and all the answ
     <div class="example-readout" role="img" aria-label="The calculator display reads inverse sine of 7 divided by 12, result 35.68533471">
       <span>sin⁻¹(7÷12)</span>
       <strong>35.68533471</strong>
-      <em>35.7° to one decimal place</em>
+      <em>35.69° to two decimal places</em>
     </div>
 
     <figure class="example-figure example-figure-phone">
@@ -229,9 +229,9 @@ og_image_alt: Finding an angle — SOHCAHTOA, the inverse sine, and all the answ
       <li><kbd class="is-number">=</kbd></li>
     </ul>
 
-    <div class="example-readout" role="img" aria-label="The display reads inverse cosine of A squared plus B squared minus C squared over 2AB, result 81.78678930">
+    <div class="example-readout" role="img" aria-label="The display reads inverse cosine of A squared plus B squared minus C squared over 2AB, result 81.7867893">
       <span>cos⁻¹((A²+B²−C²)÷(2AB))</span>
-      <strong>81.78678930</strong>
+      <strong>81.7867893</strong>
       <em>81.8° — and the cosine itself was 1⁄7, exactly</em>
     </div>
 
@@ -250,6 +250,16 @@ og_image_alt: Finding an angle — SOHCAHTOA, the inverse sine, and all the answ
       answer, and both may fit the triangle. Prefer the cosine rule when you
       have the choice.
     </p>
+    <p>
+      This triangle shows it happening. Having found C = 81.79°, the sine rule
+      gives the angle facing the 7 cm side as sin B = 7 sin C ÷ 8 = 0.8660254038,
+      and sin⁻¹ of that is <strong>60°</strong> — but 180° − 60° = <b>120°</b>
+      has the same sine, and nothing in the sine rule chooses between them. Only
+      the angle sum does: 120° would leave −21.79° for the third corner, which no
+      triangle can have. The cosine rule never asks the question, because
+      cos B = (5² + 8² − 7²) ÷ (2 × 5 × 8) = 0.5 gives 60° and only 60°. The
+      sine is ambiguous; the cosine is not.
+    </p>
   </section>
 
   <section class="example-rung" id="check" aria-labelledby="check-title">
@@ -265,7 +275,8 @@ og_image_alt: Finding an angle — SOHCAHTOA, the inverse sine, and all the answ
         <tr><td>Angle from opposite 7, hypotenuse 12</td><td>sin⁻¹(7÷12)</td><td>35.68533471°</td></tr>
         <tr><td>The other solution in 0°–360°</td><td>180 − 35.68533471</td><td>144.3146653°</td></tr>
         <tr><td>Adjacent side, by Pythagoras</td><td>√(12²−7²)</td><td>9.746794345 cm</td></tr>
-        <tr><td>Angle facing the 8 cm side of a 5-7-8</td><td>cos⁻¹((5²+7²−8²)÷(2×5×7))</td><td>81.78678930°</td></tr>
+        <tr><td>Angle facing the 7 cm side of a 5-7-8</td><td>cos⁻¹((5²+8²−7²)÷(2×5×8))</td><td>60°, exactly</td></tr>
+        <tr><td>Angle facing the 8 cm side of a 5-7-8</td><td>cos⁻¹((5²+7²−8²)÷(2×5×7))</td><td>81.7867893°</td></tr>
       </tbody>
     </table>
   </section>
