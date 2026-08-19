@@ -14,6 +14,9 @@ https://anscalc.com/examples/quadratic-equations/ — Solving quadratics by fact
 https://anscalc.com/examples/simultaneous-equations/ — Simultaneous equations by substitution and as the crossing of two lines, plus a parallel pair with no solution and a line-and-curve pair with two.
 https://anscalc.com/examples/finding-an-angle/ — Finding an angle with SOHCAHTOA and inverse sine, the second solution the calculator does not return, and the cosine rule for a triangle with no right angle.
 https://anscalc.com/examples/saving-for-a-goal/ — How much to save each month to reach £20,000, with the annuity formula rearranged for the payment and the answer found again on a graph.
+https://anscalc.com/examples/gradient-of-a-curve/ — The gradient of a curve found four ways: chords narrowing on 6, the algebra, the tangent tool, and the rule — then the gradient of a speed curve read as acceleration.
+https://anscalc.com/examples/percentage-change/ — Percentage change as multipliers, why a 20% rise then a 20% fall leaves 96%, reverse percentages for an original price, and repeated decline over five years.
+https://anscalc.com/examples/exact-values/ — Exact fractions and exact π on a calculator, why sin(π) is 0 where sin(3.141592654) is not, and the 10^100 ceiling where the answer becomes Math ERROR.
 https://anscalc.com/stopwatch/ — A free online stopwatch with laps, timestamp-based timing and honest handling of device sleep.
 https://anscalc.com/clock/ — A free full-screen world clock that shows local time, UTC and a chosen time zone without an account.
 https://anscalc.com/science/ — Browse 36 free science and maths calculators for school, university, engineering, optics, chemistry and computing.

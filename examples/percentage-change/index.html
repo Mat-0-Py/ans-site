@@ -1,0 +1,232 @@
+---
+layout: default
+title: Percentage Change and Reverse Percentages — Worked Example — Ans
+description: "Percentage increase and decrease as multipliers, why +20% then −20% leaves you 4% down, how to find an original price before a discount, and what repeated percentage change does over five years."
+body_class: tool-page examples-page
+permalink: /examples/percentage-change/
+og_image: /assets/images/social-card.png
+og_image_alt: Percentage change — multipliers, the 20% trap, and reverse percentages.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Money</p>
+  <h1>Percentage change, and why +20% then −20% doesn't get you back</h1>
+  <p class="example-standfirst">
+    Percentages look like the easiest arithmetic on the page and produce more
+    wrong answers than anything else here. The reason is that they are
+    multipliers pretending to be additions. Once you treat a percentage change
+    as a number you multiply by, the awkward cases — undoing a rise, finding a
+    price before a discount, five years of decline — all become the same sum.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE to real life</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>≈ 7 minutes</li>
+  </ul>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Step 1 — on paper</span>
+    <h2 id="the-sum-title">Every percentage change is a multiplier</h2>
+
+    <p>
+      A 20% increase means you end with the original <em>plus</em> a fifth of
+      it — which is 120% of what you started with, so the sum is
+      <b>× 1.2</b>. A 20% decrease leaves 80%, so it is <b>× 0.8</b>. Write
+      the change as a multiplier and the arithmetic stops being two steps:
+    </p>
+
+    <div class="formula" aria-label="New value equals original times, open bracket, one plus the change over one hundred, close bracket">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>new</mtext><mo>=</mo><mtext>original</mtext><mo>&#215;</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mfrac><mtext>change %</mtext><mn>100</mn></mfrac><mo stretchy="false">)</mo></mrow></mrow></math>
+    </div>
+
+    <p>
+      So £45 with 20% added is 45 × 1.2 = <strong>£54</strong>, and £45 with
+      20% taken off is 45 × 0.8 = <strong>£36</strong>. One multiplication each,
+      no working out the 20% separately and then remembering what to do with it.
+    </p>
+
+    <p class="example-note">
+      <b>The % key does one thing: ÷ 100.</b> On Ans, <b>45 × 20%</b> is
+      <b>9</b> — the size of the increase, not the new total. That is
+      deliberate: percent keys that guess whether you meant to add or multiply
+      guess wrong often enough to be dangerous, and a key that always means the
+      same thing can be trusted inside a longer expression.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="on-the-calculator" aria-labelledby="calc-title">
+    <span class="example-rung-label">Step 2 — the trap</span>
+    <h2 id="calc-title">Adding 20% and taking 20% off are not opposites</h2>
+
+    <p>
+      A shop raises a £45 item by 20%, then holds a 20% off sale. Back where it
+      started? Multipliers say otherwise — and they are one line on the
+      calculator:
+    </p>
+
+    <ul class="example-keys" aria-label="4 5, multiply, 1 point 2, multiply, 0 point 8, equals">
+      <li><kbd class="is-number">45</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">1.2</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">0.8</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads 45 times 1.2 times 0.8, result 43.2">
+      <span>45×1.2×0.8</span>
+      <strong>43.2</strong>
+      <em>£1.80 below where it started</em>
+    </div>
+
+    <figure class="example-figure example-figure-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-calc-percentage.png"
+             width="276" height="600" loading="lazy" decoding="async"
+             alt="Ans on iPhone showing 45×1.2×0.8 on the input line and 43.2 as the result.">
+      </div>
+      <figcaption>Both multipliers on one line, so the order is visible and the answer is not assembled from two half-remembered steps.</figcaption>
+    </figure>
+
+    <p>
+      1.2 × 0.8 = <strong>0.96</strong>, so whatever the price was, this pair of
+      changes leaves <strong>96%</strong> of it: a 4% fall. And the order makes
+      no difference — 0.8 × 1.2 is the same 0.96 — which is worth knowing,
+      because the intuition that "the second 20% is bigger because the price was
+      higher" gets the right answer for the wrong reason.
+    </p>
+
+    <p>
+      To actually undo a 20% rise you divide by 1.2, which is a 16.67%
+      reduction, not a 20% one. Percentages do not have opposites; multipliers
+      have reciprocals.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="take-it-further" aria-labelledby="reverse-title">
+    <span class="example-rung-label">Step 3 — backwards</span>
+    <h2 id="reverse-title">Reverse percentages: the price before the discount</h2>
+
+    <p>
+      A coat costs <b>£54</b> in a sale marked <b>20% off</b>. What was it
+      before? The tempting move is to add 20% back — 54 × 1.2 = £64.80 — and it
+      is wrong, because the 20% was taken off the <em>original</em>, not off the
+      sale price.
+    </p>
+
+    <p>
+      Multipliers make it obvious. Something was multiplied by 0.8 to give 54,
+      so undo the multiplication:
+    </p>
+
+    <div class="formula" aria-label="Original equals fifty four divided by nought point eight, which is sixty seven pounds fifty">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mtext>original</mtext><mo>=</mo><mfrac><mn>54</mn><mn>0.8</mn></mfrac><mo>=</mo><mtext>&#163;67.50</mtext></mrow></math>
+    </div>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads 54 divided by 0.8, result 67.5">
+      <span>54÷0.8</span>
+      <strong>67.5</strong>
+      <em>The original price — £2.70 more than adding 20% back suggests</em>
+    </div>
+
+    <p>
+      Check it forwards: 67.50 × 0.8 = 54 exactly. The wrong answer fails the
+      same check — 64.80 × 0.8 = £51.84, not £54 — and that check costs one
+      keypress, which is why it is worth doing every time.
+    </p>
+
+    <p class="example-note">
+      <b>The same trap, wearing a suit.</b> VAT works identically: a £120 bill
+      including 20% VAT contains £20 of VAT, not £24, because the £120 is
+      120% of the net. Divide by 1.2 to get £100. Anyone who multiplies by 0.8
+      instead arrives at £96 and is out by four pounds on every invoice.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Step 4 — repeated change</span>
+    <h2 id="graph-title">Five years of −10% is not −50%</h2>
+
+    <p>
+      A £2,000 asset losing 10% of its value each year. Ten per cent five times
+      sounds like half of it gone. It is not, because each year's 10% is taken
+      from a smaller amount than the year before — the multiplier is applied
+      again, not the subtraction:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 2000×0.9^x &nbsp;&nbsp; <b>f₂(x) =</b> 2000-200x</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-percentage-decay.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a curve falling from 2000 and flattening, plotted against a straight line falling to zero at ten years.">
+      </div>
+      <figcaption>The curve is the truth; the straight line is what "10% a year" sounds like. By year ten it says nothing is left, while <b>£697</b> actually is.</figcaption>
+    </figure>
+
+    <p>
+      After five years: 2000 × 0.9<sup>5</sup> = <strong>£1,180.98</strong>,
+      where the straight line predicts £1,000. The total fall is
+      <strong>40.95%</strong>, not 50% — and the gap only widens, because the
+      curve is approaching zero without ever arriving while the line simply runs
+      out at ten years.
+    </p>
+
+    <p>
+      This is the <a href="/examples/compound-interest/">compound interest</a>
+      curve upside down. Growth and decay are the same arithmetic with the
+      multiplier on either side of 1, which is why an interest rate and a
+      depreciation rate behave so differently from the way they are usually
+      described in words.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">Every sum on this page</h2>
+
+    <table class="example-table">
+      <caption>Percentages as multipliers.</caption>
+      <thead>
+        <tr><th scope="col">Question</th><th scope="col">Sum</th><th scope="col">Answer</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>£45 up 20%</td><td>45 × 1.2</td><td>£54.00</td></tr>
+        <tr><td>£45 down 20%</td><td>45 × 0.8</td><td>£36.00</td></tr>
+        <tr><td>Up 20%, then down 20%</td><td>45 × 1.2 × 0.8</td><td>£43.20</td></tr>
+        <tr><td>20% of £45, using the % key</td><td>45 × 20%</td><td>£9.00</td></tr>
+        <tr><td>£54 after 20% off — the original</td><td>54 ÷ 0.8</td><td>£67.50</td></tr>
+        <tr><td>VAT inside a £120 bill</td><td>120 − 120 ÷ 1.2</td><td>£20.00</td></tr>
+        <tr><td>£2,000 losing 10% a year for 5</td><td>2000 × 0.9<sup>5</sup></td><td>£1,180.98</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What to watch</h2>
+    <ul>
+      <li>Percentage changes multiply, they do not add. Two 10% rises are 21%, not 20%, and the difference grows with the number of steps.</li>
+      <li>A percentage is always <em>of</em> something. Most errors in this topic are about which quantity it was a percentage of, not about the arithmetic.</li>
+      <li>Percentage points and per cent are different units. Moving from 4% to 5% is one percentage point and a 25% increase, and both statements are true at once.</li>
+      <li>The % key divides by 100 and nothing else. It does not know whether you meant to add the result on.</li>
+      <li>Money is rounded to the penny at each real-world step, which is not the same as rounding once at the end. For a single sale it does not matter; across a year of invoices it does.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/compound-interest/">compound interest</a>, which is this page's multiplier applied twenty times in your favour.</p>
+    <p class="science-related">Related free tools: <a href="/science/">36 free science and maths calculators</a> &middot; <a href="/convert/">138 unit converters</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. A % key that means exactly one thing, every time.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Percentage change, and why +20% then −20% doesn't get you back","description":"A worked example of percentage change: increases and decreases as multipliers, why a 20% rise followed by a 20% fall leaves 96%, reverse percentages for finding an original price, and repeated percentage decline over five years.","url":"https://anscalc.com/examples/percentage-change/","educationalLevel":"GCSE to adult","learningResourceType":"Worked example","teaches":["Percentage increase and decrease","Multipliers","Reverse percentages","VAT","Repeated percentage change"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>
