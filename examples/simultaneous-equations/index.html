@@ -1,0 +1,250 @@
+---
+layout: default
+title: Simultaneous Equations Worked Example — By Elimination and By Graph — Ans
+description: "Solving simultaneous equations in full. 3x + 2y = 16 and x − y = 3 by substitution, then the same answer found where two lines cross, then a pair with no solution and a pair with two."
+body_class: tool-page examples-page
+permalink: /examples/simultaneous-equations/
+og_image: /assets/images/social-card.png
+og_image_alt: Simultaneous equations worked example — two lines, one crossing, and the cases where that changes.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Mathematics</p>
+  <h1>Simultaneous equations: where two lines cross</h1>
+  <p class="example-standfirst">
+    Two equations, two unknowns, one answer that satisfies both. On paper you
+    eliminate a letter; on a graph you look for the crossing. They are the same
+    thing seen from two directions, and knowing that is what saves you when a
+    pair has no solution at all — or two.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>Intersection</li>
+    <li>≈ 6 minutes</li>
+  </ul>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Step 1 — on paper</span>
+    <h2 id="the-sum-title">Solving simultaneous equations by substitution</h2>
+
+    <p>
+      Solve these together:
+    </p>
+
+    <div class="formula" aria-label="Three x plus two y equals sixteen, and x minus y equals three">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mtable columnalign="left"><mtr><mtd><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>16</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>x</mi><mo>&#8722;</mo><mi>y</mi><mo>=</mo><mn>3</mn></mrow></mtd></mtr></mtable></math>
+    </div>
+
+    <p>
+      The second equation is easy to rearrange, so use it: <b>x = y + 3</b>.
+      Put that into the first in place of x:
+    </p>
+
+    <p>
+      3(y + 3) + 2y = 16 → 3y + 9 + 2y = 16 → 5y = 7 → <strong>y = 1.4</strong>,
+      and then x = 1.4 + 3 = <strong>x = 4.4</strong>.
+    </p>
+
+    <p>
+      Always put both numbers back into <em>both</em> original equations, not
+      just the one you rearranged — a slip in the substitution will still
+      satisfy the equation you took it from:
+    </p>
+
+    <ul class="example-keys" aria-label="3, multiply, 4 point 4, plus, 2, multiply, 1 point 4, equals">
+      <li><kbd class="is-number">3</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">4.4</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd class="is-number">2</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-number">1.4</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads 3 times 4.4 plus 2 times 1.4, result 16">
+      <span>3×4.4+2×1.4</span>
+      <strong>16</strong>
+      <em>The first equation, satisfied exactly</em>
+    </div>
+
+    <figure class="example-figure example-figure-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-calc-simultaneous.png"
+             width="276" height="600" loading="lazy" decoding="async"
+             alt="Ans on iPhone showing 3×4.4+2×1.4 on the input line and 16 as the result.">
+      </div>
+      <figcaption>Both numbers back in the original equation. A check that uses the equation you did <em>not</em> rearrange is the one worth doing.</figcaption>
+    </figure>
+
+    <p>
+      And 4.4 − 1.4 = 3 for the second. Two ticks, and the answer is
+      <strong>x = 4.4, y = 1.4</strong>.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Step 2 — on the graph</span>
+    <h2 id="graph-title">The same answer, as a crossing</h2>
+
+    <p>
+      A graph plots <b>y</b> against <b>x</b>, so each equation has to be
+      rearranged into the form y = something. That rearrangement is the whole
+      preparation, and it is worth doing carefully:
+    </p>
+
+    <p>
+      3x + 2y = 16 → 2y = 16 − 3x → <b>y = 8 − 1.5x</b>, and
+      x − y = 3 → <b>y = x − 3</b>.
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 8-1.5x &nbsp;&nbsp; <b>f₂(x) =</b> x-3</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-simultaneous-intersection.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: two straight lines crossing at a single point, with the intersection marked and read out at 4.4, 1.4.">
+      </div>
+      <figcaption><b>Intersection</b> reads <b>(4.4, 1.4)</b> — the same pair the algebra gave, arrived at by looking.</figcaption>
+    </figure>
+
+    <p>
+      That is what "solving simultaneously" means geometrically: a point that
+      lies on both lines at once. The algebra finds it by removing a letter; the
+      graph finds it by removing nothing and simply looking at where the two
+      constraints agree.
+    </p>
+
+    <p class="example-note">
+      <b>Rearranging is where marks are lost, not solving.</b> The commonest
+      error in this whole topic is a sign — writing y = 3 − x instead of
+      y = x − 3. The graph catches it instantly: the wrong line has the wrong
+      slope and crosses somewhere absurd. If your crossing does not look like
+      your answer, suspect the rearrangement before the arithmetic.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="take-it-further" aria-labelledby="none-title">
+    <span class="example-rung-label">Step 3 — the pair with no answer</span>
+    <h2 id="none-title">When the lines never meet</h2>
+
+    <p>
+      Not every pair has a solution. Try these two:
+    </p>
+
+    <div class="formula" aria-label="Two x plus four y equals ten, and x plus two y equals eight">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mtable columnalign="left"><mtr><mtd><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>8</mn></mrow></mtd></mtr></mtable></math>
+    </div>
+
+    <p>
+      Eliminate x by halving the first: x + 2y = 5. But the second says
+      x + 2y = 8. The same quantity cannot be 5 and 8, so there is <em>no</em>
+      solution — and on paper that appears as a contradiction with no obvious
+      picture attached to it.
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> 2.5-0.5x &nbsp;&nbsp; <b>f₂(x) =</b> 4-0.5x</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-simultaneous-parallel.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: two parallel straight lines with the same slope, never meeting, and the register reporting no intersection in this view.">
+      </div>
+      <figcaption>Same gradient, different intercept: parallel lines. The register says <b>no intersection in this view</b> rather than inventing one.</figcaption>
+    </figure>
+
+    <p>
+      The picture is the explanation. Both equations describe lines of gradient
+      −0.5; they are the same direction held at different heights, so they run
+      alongside each other forever. Had the second been x + 2y = 5 the two lines
+      would have lain exactly on top of one another instead — the same equation
+      twice, and infinitely many solutions rather than none.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="two-answers" aria-labelledby="two-title">
+    <span class="example-rung-label">Step 4 — the pair with two</span>
+    <h2 id="two-title">When one of them is not a straight line</h2>
+
+    <p>
+      Nothing about "simultaneous" requires straight lines. Take a curve and a
+      line together:
+    </p>
+
+    <div class="formula" aria-label="y equals x squared minus three, and y equals two x">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mtable columnalign="left"><mtr><mtd><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>&#8722;</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi></mrow></mtd></mtr></mtable></math>
+    </div>
+
+    <p>
+      Setting them equal gives x² − 3 = 2x, or <b>x² − 2x − 3 = 0</b> — which is
+      a quadratic, and factorises as (x − 3)(x + 1). So x = 3 or x = −1, and the
+      matching y values are 6 and −2.
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> x^2-3 &nbsp;&nbsp; <b>f₂(x) =</b> 2x</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-simultaneous-curve.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a parabola and a straight line crossing at two separate points, with one intersection marked and read out at 3, 6.">
+      </div>
+      <figcaption>Two crossings, so two solutions: <b>(3, 6)</b> and <b>(−1, −2)</b>. The register counts them, so neither can be missed.</figcaption>
+    </figure>
+
+    <p>
+      This is where the graph stops being a check and starts being the safer
+      method. Nothing in the algebra announces how many answers to expect; the
+      picture does, before any solving happens. And when the resulting quadratic
+      will not factorise, the
+      <a href="/examples/quadratic-equations/">quadratic formula</a> finishes the
+      job — or the app's Intersection tool skips it entirely.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">The three pairs, side by side</h2>
+
+    <table class="example-table">
+      <caption>Every pair on this page, and what the graph shows for it.</caption>
+      <thead>
+        <tr><th scope="col">Pair</th><th scope="col">Solutions</th><th scope="col">On the graph</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>3x + 2y = 16, x − y = 3</td><td>x = 4.4, y = 1.4</td><td>one crossing</td></tr>
+        <tr><td>2x + 4y = 10, x + 2y = 8</td><td>none</td><td>parallel lines</td></tr>
+        <tr><td>y = x² − 3, y = 2x</td><td>(3, 6) and (−1, −2)</td><td>two crossings</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What to watch</h2>
+    <ul>
+      <li>Every equation must be rearranged to y = … before it can be plotted. A vertical line, x = 4, cannot be drawn as a function of x at all — solve that pair by substitution instead.</li>
+      <li>Intersection reports only what is in the current view. Two curves can cross again off-screen; fit the plot before trusting a count.</li>
+      <li>The graph's coordinates are numerical and stated to the resolution the window earns. Where the algebra gives exact values — 4.4 and 1.4 here — those are the ones to quote.</li>
+      <li>"No solution" and "infinitely many solutions" look completely different on a graph and nearly identical on paper. That is the strongest reason to sketch a pair you are unsure about.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/quadratic-equations/">quadratic equations</a>, which is where step 4 leads when the factorising stops working.</p>
+    <p class="science-related">Related free tools: <a href="/science/">36 free science and maths calculators</a> &middot; <a href="/science/trigonometry-calculator/">right-triangle trigonometry</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>, whose Intersection tool counts the answers before you look for them.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Simultaneous equations: where two lines cross","description":"A worked example of simultaneous equations: solved by substitution, checked, then found again as the intersection of two lines — plus a pair with no solution and a line-and-curve pair with two.","url":"https://anscalc.com/examples/simultaneous-equations/","educationalLevel":"GCSE","learningResourceType":"Worked example","teaches":["Simultaneous equations","Substitution and elimination","Finding an intersection on a graph","Parallel lines and no solution"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

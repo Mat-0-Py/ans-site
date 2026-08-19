@@ -1,0 +1,288 @@
+---
+layout: default
+title: How Much to Save a Month — Worked Example — Ans
+description: "Working out the monthly saving needed to reach £20,000 in eight years. The annuity formula rearranged for the payment, £169.87 on a calculator, then the same answer found on a graph of goal against payment."
+body_class: tool-page examples-page
+permalink: /examples/saving-for-a-goal/
+og_image: /assets/images/social-card.png
+og_image_alt: Saving for a goal — the payment you need, found by formula and by graph.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Money</p>
+  <h1>How much to save a month to reach £20,000</h1>
+  <p class="example-standfirst">
+    Most savings sums run forwards: put this much away, see what it becomes.
+    The question people actually have runs the other way — <em>I need £20,000
+    in eight years, so what do I have to pay in?</em> That is the same formula
+    rearranged, and it is worth doing deliberately, because the rearrangement
+    is where the mistakes are.
+  </p>
+
+  <ul class="example-tags">
+    <li>Real life</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>Variables</li>
+    <li>Intersection</li>
+    <li>≈ 7 minutes</li>
+  </ul>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Step 1 — on paper</span>
+    <h2 id="the-sum-title">Turning the savings formula round</h2>
+
+    <p>
+      Paying a fixed amount in every month, with interest on the growing pot,
+      gives the same geometric series that appears in
+      <a href="/examples/compound-interest/">compound interest</a>. Forwards, it
+      says what a regular payment becomes:
+    </p>
+
+    <div class="formula" aria-label="Future value equals payment times, open bracket, one plus i to the power n, minus one, close bracket, over i">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>FV</mi><mo>=</mo><mi>P</mi><mo>&#8290;</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo>&#8722;</mo><mn>1</mn></mrow><mi>i</mi></mfrac></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>FV</b> the amount you want at the end · <b>P</b> the payment each period · <b>i</b> the interest rate <em>per period</em> · <b>n</b> the number of periods</li>
+    </ul>
+
+    <p>
+      You know FV and want P, so divide instead of multiply. The whole fraction
+      moves to the bottom:
+    </p>
+
+    <div class="formula" aria-label="Payment equals future value times i, over, open bracket one plus i to the power n minus one close bracket">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>P</mi><mo>=</mo><mi>FV</mi><mo>&#8290;</mo><mfrac><mi>i</mi><mrow><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo>&#8722;</mo><mn>1</mn></mrow></mfrac></mrow></math>
+    </div>
+
+    <p class="example-note">
+      <b>Per period, not per year.</b> Saving monthly at 5% a year means
+      <b>i = 0.05 ÷ 12 = 0.0041666…</b> and <b>n = 8 × 12 = 96</b>. Mixing a
+      yearly rate with a monthly count is the single commonest error in this
+      whole family of calculations, and it makes the answer wrong by a factor
+      of about twelve — plausible enough to go unnoticed.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="on-the-calculator" aria-labelledby="calc-title">
+    <span class="example-rung-label">Step 2 — on the calculator</span>
+    <h2 id="calc-title">The payment, in one line</h2>
+
+    <p>
+      Store the monthly rate, because it is the number you will want to change
+      when someone offers you a better account:
+    </p>
+
+    <ul class="example-keys" aria-label="0.05, divide, 12, VAR, STO, A">
+      <li><kbd class="is-number">0.05</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd class="is-number">12</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+    </ul>
+
+    <p>
+      Then the growth factor into <b>B</b>, exactly as on the
+      <a href="/examples/mortgage-repayments/">mortgage page</a> — <b>STO</b>
+      works out the line it is given, so no equals is needed:
+    </p>
+
+    <ul class="example-keys" aria-label="open bracket, 1, plus, VAR A, close bracket, power, 96, VAR, STO, B">
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-number">1</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd>^</kbd></li>
+      <li><kbd class="is-number">96</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+    </ul>
+
+    <div class="example-vars" role="img" aria-label="The calculator now holds: A is 0.0041666667, the monthly rate; B is 1.490586, the growth factor over 96 months.">
+      <p class="example-vars-title">The calculator now holds</p>
+      <dl>
+        <div><dt>A</dt><dd>0.0041666667</dd><dd class="example-vars-note">the monthly rate — 5% ÷ 12</dd></div>
+        <div><dt>B</dt><dd>1.490585468</dd><dd class="example-vars-note">(1+A)<sup>96</sup> — what £1 becomes in eight years</dd></div>
+      </dl>
+    </div>
+
+    <p>With both held, the rearranged formula is short enough to read:</p>
+
+    <ul class="example-keys" aria-label="20000, multiply, VAR A, divide, open bracket, VAR B, minus, 1, close bracket, equals">
+      <li><kbd class="is-number">20000</kbd></li>
+      <li><kbd class="is-number">×</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd class="is-number">−</kbd></li>
+      <li><kbd class="is-number">1</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The display reads 20000 times A divided by, open bracket, B minus 1, close bracket, result 169.8650669">
+      <span>20000×A÷(B−1)</span>
+      <strong>169.8650669</strong>
+      <em>£169.87 a month — round up, never down</em>
+    </div>
+
+    <figure class="example-figure example-figure-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-calc-saving.png"
+             width="276" height="600" loading="lazy" decoding="async"
+             alt="Ans on iPhone showing 20000 times A divided by, open bracket, B minus 1, close bracket, and 169.8650669 as the result.">
+      </div>
+      <figcaption><b>£169.87 a month.</b> The rate is in A and the growth factor in B, so the line on screen is the rearranged formula rather than a wall of digits.</figcaption>
+    </figure>
+
+    <p>
+      Over the eight years that is <strong>£16,307</strong> of your own money and
+      <strong>£3,693</strong> of interest. Rounding the payment <em>up</em> to
+      £170 matters here in a way it did not for the mortgage: rounding down
+      leaves you short of the goal, and a goal is the whole point.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Step 3 — on the graph</span>
+    <h2 id="graph-title">Putting the payment on the x-axis</h2>
+
+    <p>
+      Every graph so far in these examples has had time along the bottom. It
+      does not have to. Here the useful question is what happens as the
+      <em>payment</em> changes, so let x be the monthly payment and plot what
+      each one reaches after 96 months:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> x(1.0041666667^96-1)/0.0041666667 &nbsp;&nbsp; <b>f₂(x) =</b> 20000</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-saving-intersection.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph: a straight line rising with monthly payment, crossing a horizontal line at 20,000 near a payment of 170.">
+      </div>
+      <figcaption><b>Intersection</b> reads <b>(169.9, 20000)</b> — the £169.87 the formula gave, stated to the precision a £300-wide window earns.</figcaption>
+    </figure>
+
+    <p>
+      The line is straight, which is worth a moment. Compound interest is famous
+      for curving, and the total certainly curves against <em>time</em> — but
+      against the payment it is perfectly proportional: double what you put in
+      each month and you double what you end with. All the curvature lives in
+      the factor 117.74, not in x.
+    </p>
+
+    <p>
+      And that makes the graph genuinely useful rather than decorative. Slide
+      along it and you can read off what any budget reaches, or what any target
+      costs, without solving anything again. Choosing what goes on the x-axis is
+      part of the modelling, and time is only the habitual answer.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="take-it-further" aria-labelledby="further-title">
+    <span class="example-rung-label">Step 4 — the two things that help most</span>
+    <h2 id="further-title">Starting earlier, and starting with something</h2>
+
+    <p>
+      Two changes are worth testing, and both are one keypress now that the
+      model is in variables.
+    </p>
+
+    <h3>Give it ten years instead of eight</h3>
+
+    <p>
+      Bring back the line that built <b>B</b>, change 96 to 120, and run the
+      payment again. The goal drops to <strong>£128.80 a month</strong> — a
+      <strong>24% smaller</strong> payment for two more years of patience, and
+      the interest earned rises from £3,693 to £4,544.
+    </p>
+
+    <h3>Start with £5,000 already saved</h3>
+
+    <p>
+      A lump sum you already hold grows on its own, so it only has to be
+      subtracted from the target before the payment is worked out. The £5,000
+      becomes 5000 × B = <strong>£7,452.93</strong> by itself, leaving
+      £12,547.07 for the payments to cover:
+    </p>
+
+    <div class="example-readout" role="img" aria-label="The display reads open bracket 20000 minus 5000 B close bracket times A divided by open bracket B minus 1 close bracket, result 106.5654668">
+      <span>(20000−5000B)×A÷(B−1)</span>
+      <strong>106.5654668</strong>
+      <em>£106.57 a month — £63.30 less, for the same goal</em>
+    </div>
+
+    <table class="example-table">
+      <caption>Reaching £20,000 at 5% a year, compounded monthly.</caption>
+      <thead>
+        <tr><th scope="col">Plan</th><th scope="col">Monthly payment</th><th scope="col">You pay in</th><th scope="col">Interest does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>8 years from nothing</td><td>£169.87</td><td>£16,307</td><td>£3,693</td></tr>
+        <tr><td>10 years from nothing</td><td>£128.80</td><td>£15,456</td><td>£4,544</td></tr>
+        <tr><td>8 years, £5,000 already saved</td><td>£106.57</td><td>£10,230 + £5,000</td><td>£4,770</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Time is the cheapest ingredient in every row. Two extra years cut the
+      monthly cost by £41 and let interest do a quarter more of the work — which
+      is the same lesson the
+      <a href="/examples/compound-interest/">compound interest example</a>
+      reaches from the other direction, and the reason both pages exist.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">The working, in order</h2>
+
+    <table class="example-table">
+      <caption>£20,000 in 8 years at 5% a year, paid monthly. i = 0.05 ÷ 12, n = 96.</caption>
+      <thead>
+        <tr><th scope="col">Quantity</th><th scope="col">Expression</th><th scope="col">Value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly rate</td><td>0.05 ÷ 12</td><td>0.0041666667</td></tr>
+        <tr><td>Growth factor over 96 months</td><td>(1+A)<sup>96</sup></td><td>1.490585468</td></tr>
+        <tr><td>Annuity factor</td><td>(B−1) ÷ A</td><td>117.7405123</td></tr>
+        <tr><td>Monthly payment</td><td>20000 ÷ 117.7405123</td><td>169.8650669</td></tr>
+        <tr><td>Total paid in</td><td>169.8650669 × 96</td><td>16,307.05</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What this model ignores</h2>
+    <ul>
+      <li>A fixed 5% for the whole eight years, compounded monthly. Real savings rates move, and a rate quoted as AER is not the same as 5% ÷ 12 applied monthly — close, but not identical.</li>
+      <li>Payments arrive at the end of each month. Paying at the start of the month earns one extra period of interest on every payment and needs slightly less.</li>
+      <li>Tax on interest is ignored, as are ISA limits, bonuses, introductory rates and any account that restricts withdrawals.</li>
+      <li>Inflation is ignored. £20,000 in eight years does not buy what £20,000 buys today; at 2.5% it is worth about £16,415 in today's money.</li>
+      <li>This is arithmetic, not financial advice. It works out what a plan requires, not whether the plan is a good idea.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/compound-interest/">compound interest</a>, the same series read forwards, or <a href="/examples/mortgage-repayments/">mortgage repayments</a>, where the same rearrangement works against you.</p>
+    <p class="science-related">Related free tools: <a href="/science/">36 free science and maths calculators</a> &middot; <a href="/convert/">138 unit converters</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. No account, no upload, and nothing about your money leaves the device.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"How much to save a month to reach £20,000","description":"A worked example of saving towards a goal: the annuity formula rearranged for the payment, £169.87 a month worked out on a calculator, the same answer found on a graph of total against payment, and what starting earlier or with a lump sum changes.","url":"https://anscalc.com/examples/saving-for-a-goal/","educationalLevel":"Adult","learningResourceType":"Worked example","teaches":["Annuity formula","Rearranging for the payment","Regular saving","Finding an intersection on a graph"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

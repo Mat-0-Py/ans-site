@@ -1,0 +1,298 @@
+---
+layout: default
+title: How to Find an Angle — SOHCAHTOA Worked Example — Ans
+description: "Finding an angle in a right-angled triangle with SOHCAHTOA and inverse sine, why the calculator gives only one of the answers, and the cosine rule for triangles with no right angle."
+body_class: tool-page examples-page
+permalink: /examples/finding-an-angle/
+og_image: /assets/images/social-card.png
+og_image_alt: Finding an angle — SOHCAHTOA, the inverse sine, and all the answers the calculator does not show you.
+---
+<article class="example-article">
+  <p class="eyebrow">Worked example · Mathematics</p>
+  <h1>Finding an angle, and why the calculator gives you only one</h1>
+  <p class="example-standfirst">
+    A right-angled triangle with a 7 cm side opposite the angle and a 12 cm
+    hypotenuse. What is the angle? SOHCAHTOA and the inverse sine key answer it
+    in one line — and then hand back a single number where the equation has
+    infinitely many. This page finds the angle, shows the answers the calculator
+    left out, and finishes with a triangle that has no right angle at all.
+  </p>
+
+  <ul class="example-tags">
+    <li>GCSE to A-level</li>
+    <li class="is-calc">Ans calculator</li>
+    <li class="is-graph">Ans Graph</li>
+    <li>Intersection</li>
+    <li>≈ 7 minutes</li>
+  </ul>
+
+  <section class="example-rung example-rung-paper" id="the-sum" aria-labelledby="the-sum-title">
+    <span class="example-rung-label">Step 1 — on paper</span>
+    <h2 id="the-sum-title">SOHCAHTOA: choosing the right ratio</h2>
+
+    <p>
+      Label the triangle from the angle you want. The <b>hypotenuse</b> is the
+      long side facing the right angle; the <b>opposite</b> faces your angle;
+      the <b>adjacent</b> is the one left over. Here you have the opposite
+      (7 cm) and the hypotenuse (12 cm), so of the three ratios only one uses
+      both:
+    </p>
+
+    <figure class="example-figure">
+      <svg viewBox="0 0 640 340" role="img" aria-labelledby="tri-title">
+        <title id="tri-title">A right-angled triangle with the hypotenuse 12 centimetres, the side opposite the marked angle 7 centimetres, and the adjacent side 9.75 centimetres.</title>
+        <path d="M90 280 H500 V85 Z" fill="rgba(232,131,58,0.12)" stroke="#e8833a" stroke-width="4" stroke-linejoin="round" />
+        <path d="M500 250 H470 V280" fill="none" stroke="#aeb6c1" stroke-width="3" />
+        <path d="M138 280 A48 48 0 0 0 122 250" fill="none" stroke="#5bafa6" stroke-width="3" />
+        <g fill="#f2f4f7" font-family="ui-monospace, Menlo, monospace" font-size="16">
+          <text x="150" y="268">θ</text>
+          <text x="290" y="308" text-anchor="middle">adjacent 9.75</text>
+          <text x="520" y="190">opposite 7</text>
+          <text x="270" y="170" text-anchor="middle" transform="rotate(-25 270 170)">hypotenuse 12</text>
+        </g>
+      </svg>
+      <figcaption>Opposite and hypotenuse are known, so <b>sin</b> is the ratio that fits: <b>SOH</b>.</figcaption>
+    </figure>
+
+    <div class="formula" aria-label="Sine of theta equals opposite over hypotenuse">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>sin</mi><mi>&#952;</mi><mo>=</mo><mfrac><mtext>opposite</mtext><mtext>hypotenuse</mtext></mfrac><mo>=</mo><mfrac><mn>7</mn><mn>12</mn></mfrac><mo>=</mo><mn>0.5833333333</mn></mrow></math>
+    </div>
+
+    <p>
+      That gives the <em>sine</em> of the angle, not the angle. To go backwards
+      from a ratio to an angle you need the inverse — <b>sin⁻¹</b>, the SHIFT
+      function of the <b>sin</b> key. Check the display says <b>DEG</b> first:
+    </p>
+
+    <ul class="example-keys" aria-label="SHIFT, inverse sine, 7, divide, 1 2, close bracket, equals">
+      <li><kbd class="is-shift">SHIFT</kbd></li>
+      <li><kbd class="is-shift">sin⁻¹</kbd></li>
+      <li><kbd class="is-number">7</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd class="is-number">12</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The calculator display reads inverse sine of 7 divided by 12, result 35.68533471">
+      <span>sin⁻¹(7÷12)</span>
+      <strong>35.68533471</strong>
+      <em>35.7° to one decimal place</em>
+    </div>
+
+    <figure class="example-figure example-figure-phone">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-calc-angle.png"
+             width="276" height="600" loading="lazy" decoding="async"
+             alt="Ans on iPhone showing inverse sine of 7 divided by 12 on the input line and 35.68533471 as the result.">
+      </div>
+      <figcaption><b>DEG</b> in the corner of the display, which is half the answer. The other half is that the division sits inside the bracket.</figcaption>
+    </figure>
+
+    <p class="example-note">
+      <b>Divide inside the bracket, not before it.</b> Typing 7 ÷ 12 first and
+      then taking sin⁻¹ of the answer gives the same number here — but the
+      moment the ratio is part of a longer expression, the bracket is what keeps
+      the division underneath the inverse rather than beside it.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-graph" id="on-the-graph" aria-labelledby="graph-title">
+    <span class="example-rung-label">Step 2 — where the triangle stops</span>
+    <h2 id="graph-title">The equation has more answers than the key gives back</h2>
+
+    <p>
+      Ask the question without the triangle — <em>solve sin θ = 0.5833</em> —
+      and 35.69° is only the first answer. The sine of an angle repeats: it
+      rises to 1 at 90°, comes back down through the same values, and then does
+      the whole thing again every 360°. Plot both sides and the extra answers
+      are simply there to be counted:
+    </p>
+
+    <p class="example-entry-line"><b>f₁(x) =</b> sin(x) &nbsp;&nbsp; <b>f₂(x) =</b> 0.5833333333</p>
+
+    <figure class="example-figure">
+      <div class="capture-frame">
+        <img src="/assets/images/examples/examples-angle-solutions.png"
+             width="2200" height="1440" loading="lazy" decoding="async"
+             alt="Ans Graph in degrees: a sine wave crossing a horizontal line at about 0.583 twice between 0 and 360 degrees, with one intersection marked near 35.7 degrees.">
+      </div>
+      <figcaption>Between 0° and 360° there are <b>two</b> crossings: <b>35.69°</b> and <b>144.31°</b>. The calculator returns the first and says nothing about the second.</figcaption>
+    </figure>
+
+    <p>
+      The second one is 180° − 35.69° = <strong>144.31°</strong>, and you can
+      see why from the shape: the sine curve is symmetric about its peak at 90°,
+      so every value below 1 is reached once on the way up and once on the way
+      down. Widen the window to 720° and there are four crossings; keep going and
+      there is no end to them.
+    </p>
+
+    <p>
+      In a right-angled triangle the second answer is discarded, because an
+      angle of 144.31° will not fit alongside a right angle. That is a fact
+      about the <em>triangle</em>, not about the equation — and when the same
+      trigonometry turns up in waves, oscillations or bearings, the discarded
+      answer is often the one you needed.
+    </p>
+
+    <p class="example-note">
+      <b>Why the key can only give one.</b> sin⁻¹ has to be a function: one
+      input, one output. Since sine takes the value 0.5833 infinitely often,
+      the inverse is defined to return just the angle between −90° and 90° — the
+      <em>principal value</em>. It is a convention that makes the key usable,
+      not a statement that the other answers do not exist.
+    </p>
+  </section>
+
+  <section class="example-rung example-rung-calc" id="take-it-further" aria-labelledby="cosine-title">
+    <span class="example-rung-label">Step 3 — no right angle at all</span>
+    <h2 id="cosine-title">The cosine rule, when SOHCAHTOA does not apply</h2>
+
+    <p>
+      SOHCAHTOA needs a right angle. Take a triangle with sides <b>5</b>,
+      <b>7</b> and <b>8</b> and no right angle anywhere, and all three ratios
+      are useless — there is no hypotenuse to divide by. The cosine rule works
+      on any triangle:
+    </p>
+
+    <div class="formula" aria-label="c squared equals a squared plus b squared minus two a b cosine C">
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mi>c</mi><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>&#8722;</mo><mn>2</mn><mi>a</mi><mi>b</mi><mi>cos</mi><mi>C</mi></mrow></math>
+      <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>cos</mi><mi>C</mi><mo>=</mo><mfrac><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>&#8722;</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>a</mi><mi>b</mi></mrow></mfrac></mrow></math>
+    </div>
+    <ul class="formula-legend">
+      <li><b>C</b> is the angle you want · <b>c</b> is the side facing it · <b>a</b> and <b>b</b> are the other two, in either order</li>
+    </ul>
+
+    <p>
+      Getting that pairing right is the whole difficulty, so put the sides in
+      variables and let the letters carry it. To find the angle facing the
+      8 cm side, that side is <b>c</b>:
+    </p>
+
+    <ul class="example-keys" aria-label="Store 5 into A, 7 into B, 8 into C">
+      <li><kbd class="is-number">5</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li class="is-arrow" aria-hidden="true">then</li>
+      <li><kbd class="is-number">7</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li class="is-arrow" aria-hidden="true">then</li>
+      <li><kbd class="is-number">8</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">STO</kbd></li>
+      <li><kbd class="is-var">C</kbd></li>
+    </ul>
+
+    <div class="example-vars" role="img" aria-label="The calculator now holds: A is 5, B is 7, C is 8 — the three sides of the triangle.">
+      <p class="example-vars-title">The calculator now holds</p>
+      <dl>
+        <div><dt>A</dt><dd>5</dd><dd class="example-vars-note">one side beside the angle</dd></div>
+        <div><dt>B</dt><dd>7</dd><dd class="example-vars-note">the other side beside it</dd></div>
+        <div><dt>C</dt><dd>8</dd><dd class="example-vars-note">the side facing the angle — the one that must go on its own</dd></div>
+      </dl>
+    </div>
+
+    <p>
+      Now the rule reads exactly as it is written, with <b>cos⁻¹</b> on the
+      SHIFT layer of the <b>cos</b> key:
+    </p>
+
+    <ul class="example-keys" aria-label="SHIFT, inverse cosine, open bracket, VAR A squared plus VAR B squared minus VAR C squared, close bracket, divide, open bracket, 2, VAR A, VAR B, close bracket, close bracket, equals">
+      <li><kbd class="is-shift">SHIFT</kbd></li>
+      <li><kbd class="is-shift">cos⁻¹</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd>x²</kbd></li>
+      <li><kbd class="is-number">+</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd>x²</kbd></li>
+      <li><kbd class="is-number">−</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">C</kbd></li>
+      <li><kbd>x²</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">÷</kbd></li>
+      <li><kbd>(</kbd></li>
+      <li><kbd class="is-number">2</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">A</kbd></li>
+      <li><kbd class="is-var">VAR</kbd></li>
+      <li><kbd class="is-var">B</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd>)</kbd></li>
+      <li><kbd class="is-number">=</kbd></li>
+    </ul>
+
+    <div class="example-readout" role="img" aria-label="The display reads inverse cosine of A squared plus B squared minus C squared over 2AB, result 81.78678930">
+      <span>cos⁻¹((A²+B²−C²)÷(2AB))</span>
+      <strong>81.78678930</strong>
+      <em>81.8° — and the cosine itself was 1⁄7, exactly</em>
+    </div>
+
+    <p>
+      Just under a right angle, which is what a 5-7-8 triangle looks like: had
+      the third side been exactly √74 ≈ 8.60, the angle would have been 90° and
+      Pythagoras would have applied. The cosine rule <em>is</em> Pythagoras with
+      a correction term — when C = 90°, cos C = 0 and the last term vanishes.
+    </p>
+
+    <p class="example-note">
+      <b>cos⁻¹ has no second answer to lose.</b> Between 0° and 180° — every
+      angle a triangle can contain — cosine takes each value exactly once, so
+      the inverse is unambiguous. It is the sine rule that suffers here: given a
+      side and its opposite angle it can return either an acute or an obtuse
+      answer, and both may fit the triangle. Prefer the cosine rule when you
+      have the choice.
+    </p>
+  </section>
+
+  <section class="example-rung" id="check" aria-labelledby="check-title">
+    <span class="example-rung-label">Check your own numbers</span>
+    <h2 id="check-title">The angles on this page</h2>
+
+    <table class="example-table">
+      <caption>All in degrees. Set the angle unit before typing anything at all.</caption>
+      <thead>
+        <tr><th scope="col">Question</th><th scope="col">Expression</th><th scope="col">Answer</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Angle from opposite 7, hypotenuse 12</td><td>sin⁻¹(7÷12)</td><td>35.68533471°</td></tr>
+        <tr><td>The other solution in 0°–360°</td><td>180 − 35.68533471</td><td>144.3146653°</td></tr>
+        <tr><td>Adjacent side, by Pythagoras</td><td>√(12²−7²)</td><td>9.746794345 cm</td></tr>
+        <tr><td>Angle facing the 8 cm side of a 5-7-8</td><td>cos⁻¹((5²+7²−8²)÷(2×5×7))</td><td>81.78678930°</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="assumptions" aria-label="Assumptions">
+    <h2>What to watch</h2>
+    <ul>
+      <li>The angle unit is part of the question, not a preference. Everything here is DEG; in RAD the same keystrokes give 0.6227 and 1.4274 instead, and both are correct answers to a different question.</li>
+      <li>SOHCAHTOA applies only to right-angled triangles. With no right angle you need the sine or cosine rule, whatever the sides look like.</li>
+      <li>sin⁻¹ and tan⁻¹ return the principal value only. Where the context allows an obtuse angle — waves, bearings, anything periodic — the second solution has to be found by hand or by looking at a graph.</li>
+      <li>sin⁻¹ of anything above 1 is a Math ERROR rather than a large angle: a ratio greater than 1 means the "opposite" side has been given as longer than the hypotenuse, which no triangle allows.</li>
+      <li>Rounding an angle and then using it in the next step is how a two-stage triangle problem drifts. Keep the full display value in <b>Ans</b>, or store it.</li>
+    </ul>
+  </section>
+
+  <div class="example-next">
+    <p><strong>Next:</strong> <a href="/examples/projectile-motion/">projectile motion</a>, where an angle you choose decides how far the throw goes.</p>
+    <p class="science-related">Related free tools: <a href="/science/trigonometry-calculator/">right-triangle trigonometry calculator</a> (this sum, done for you) &middot; <a href="/convert/degrees-to-radians/">degrees to radians</a></p>
+  </div>
+
+  <ul class="tool-ownership" aria-label="Promise"><li><strong>Free</strong></li><li>No ads</li><li>No tracking</li><li>No account</li><li>Every sum shown in full</li></ul>
+
+  <div class="tool-crosslink">
+    <a class="tool-crosslink-icon" href="/calculator/" aria-label="Ans scientific calculator"><img src="/assets/images/apple-touch-icon.png" alt="" width="64" height="64"></a>
+    <a class="tool-crosslink-icon" href="/graph/" aria-label="Ans Graph"><img src="/assets/images/graph-app-icon.png" alt="" width="64" height="64"></a>
+    <p>Worked on <a href="/calculator/">Ans — a scientific calculator you can own</a> and <a class="is-graph-link" href="/graph/">Ans Graph</a>. Both keep the angle unit on screen, because it changes the answer.</p>
+  </div>
+</article>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","LearningResource"],"headline":"Finding an angle, and why the calculator gives you only one","description":"A worked example of finding an angle: SOHCAHTOA and inverse sine in a right-angled triangle, the second solution the calculator does not return, and the cosine rule for a triangle with no right angle.","url":"https://anscalc.com/examples/finding-an-angle/","educationalLevel":"GCSE to A-level","learningResourceType":"Worked example","teaches":["SOHCAHTOA","Inverse sine","Principal values","Cosine rule","Solving trigonometric equations"],"inLanguage":"en-GB","isPartOf":{"@type":"CollectionPage","name":"Ans Worked Examples","url":"https://anscalc.com/examples/"},"publisher":{"@type":"Organization","name":"Ans","url":"https://anscalc.com"}}</script>

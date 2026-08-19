@@ -2626,12 +2626,18 @@ a.button-secondary:hover {
   text-align: left;
 }
 
+/* `overflow-wrap: anywhere` is what lets the table shrink. A monospace cell
+   like cos⁻¹((5²+7²−8²)÷(2×5×7)) offers no break opportunity, so its
+   min-content width became the table's, and the trigonometry page pushed the
+   whole document 8px sideways at 500px. Breaking such a cell mid-token is
+   ugly; a horizontal scrollbar on the page is worse. */
 .example-table th,
 .example-table td {
   padding: 9px 12px;
   border-bottom: 1px solid var(--line);
   text-align: right;
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
 }
 
 .example-table th:first-child,
