@@ -23,12 +23,14 @@
 
     {% comment %}
       Safari's native, dismissible Smart App Banner. Keep this contextual:
-      it belongs on the Ans sales journey and the worked examples that use
-      the app, not on unrelated free tools or policy/support pages.
+      it belongs on the Ans product journey, worked examples and science
+      tools. Keep it off general converters, utilities and policy/support
+      pages. Safari decides whether the visitor's platform displays it; the
+      banner is primarily an iPhone/iPad conversion aid.
 
       Do not add app-argument until the app has a verified deep-link route.
     {% endcomment %}
-    {% if page.url == '/' or page.body_class contains 'calculator-page' or page.body_class contains 'examples-page' %}
+    {% if page.url == '/' or page.body_class contains 'calculator-page' or page.body_class contains 'graph-page' or page.body_class contains 'examples-page' or page.body_class contains 'science-page' %}
     <meta name="apple-itunes-app" content="app-id={{ site.appstore_id }}">
     {% endif %}
 

@@ -24,11 +24,11 @@ personal data.** There are no ads or sponsored placements, advertising
 pixels, data brokers, or surveillance-style analytics; those are not welcome
 here. The count is anonymous and aggregate.
 
-On pages that directly relate to Ans Calculator, Safari may show Apple's
-native Smart App Banner, which links to our own App Store listing. This is our
-own product link, not a paid placement or third-party advertisement. Safari
-may contact Apple to retrieve the App Store information it displays; Ans
-receives no personal data from that lookup.
+On the home page, product pages, worked examples and science tools, Safari may
+show Apple's native Smart App Banner for Ans Calculator. This is our own
+product link, not a paid placement or third-party advertisement. Safari may
+contact Apple to retrieve the App Store information it displays; Ans receives
+no personal data from that lookup.
 
 Everything below is about the apps, which go further still and collect
 nothing at all.
