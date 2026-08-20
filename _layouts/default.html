@@ -22,6 +22,17 @@
     <meta name="twitter:card" content="summary_large_image">
 
     {% comment %}
+      Safari's native, dismissible Smart App Banner. Keep this contextual:
+      it belongs on the Ans sales journey and the worked examples that use
+      the app, not on unrelated free tools or policy/support pages.
+
+      Do not add app-argument until the app has a verified deep-link route.
+    {% endcomment %}
+    {% if page.url == '/' or page.body_class contains 'calculator-page' or page.body_class contains 'examples-page' %}
+    <meta name="apple-itunes-app" content="app-id={{ site.appstore_id }}">
+    {% endif %}
+
+    {% comment %}
       Breadcrumbs for the two catalogue families. Google still renders these
       in the result itself, so a hub page's name appears above the title —
       worth having on every page that sits under a hub, not just Science.

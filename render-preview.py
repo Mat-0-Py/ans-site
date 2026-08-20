@@ -64,6 +64,7 @@ def config_value(key, default=""):
 
 SITE_VARS = {
     "appstore_url": config_value("appstore_url"),
+    "appstore_id": config_value("appstore_id"),
     "mac_available": config_value("mac_available", False),
 }
 
@@ -246,6 +247,28 @@ for src, dest, url in PAGES:
         "og_image_alt", "Ans — a scientific calculator for iPhone, iPad and Mac.")
 
     doc = LAYOUT
+
+    # Smart App Banner: the production layout intentionally limits this to
+    # the sales journey and worked examples. Resolve that page-aware Liquid
+    # here so the disposable preview exercises the same scope.
+    smart_banner_pattern = re.compile(
+        r"    {% comment %}\n"
+        r"      Safari's native, dismissible Smart App Banner\..*?"
+        r"    {% endcomment %}\n"
+        r"    {% if page\.url == '/' or page\.body_class contains 'calculator-page' or page\.body_class contains 'examples-page' %}\n"
+        r"(    <meta name=\"apple-itunes-app\" content=\"app-id={{ site\.appstore_id }}\">)\n"
+        r"    {% endif %}\n",
+        re.S)
+    smart_banner_match = smart_banner_pattern.search(doc)
+    if not smart_banner_match:
+        sys.exit("Smart App Banner template missing from layout")
+    show_smart_banner = (
+        url == "/"
+        or "calculator-page" in body_class
+        or "examples-page" in body_class
+    )
+    replacement = smart_banner_match.group(1) + "\n" if show_smart_banner else ""
+    doc = smart_banner_pattern.sub(replacement, doc)
 
     # Breadcrumbs: the layout now serves both catalogue families through a
     # {% assign %}, so the preview resolves the family here and renders the

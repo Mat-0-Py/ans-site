@@ -36,19 +36,23 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
       same thing in:
     </p>
 
-    <ul class="example-keys" aria-label="1, divide, 3, plus, 1, divide, 6, equals">
+    <ul class="example-keys" aria-label="open bracket, 1, divide, 3, close bracket, plus, open bracket, 1, divide, 6, close bracket, equals">
+      <li><kbd>(</kbd></li>
       <li><kbd class="is-number">1</kbd></li>
       <li><kbd class="is-number">÷</kbd></li>
       <li><kbd class="is-number">3</kbd></li>
+      <li><kbd>)</kbd></li>
       <li><kbd class="is-number">+</kbd></li>
+      <li><kbd>(</kbd></li>
       <li><kbd class="is-number">1</kbd></li>
       <li><kbd class="is-number">÷</kbd></li>
       <li><kbd class="is-number">6</kbd></li>
+      <li><kbd>)</kbd></li>
       <li><kbd class="is-number">=</kbd></li>
     </ul>
 
     <div class="example-readout" role="img" aria-label="The calculator display reads 1 divided by 3 plus 1 divided by 6, with the result one half as a fraction">
-      <span>1÷3+1÷6</span>
+      <span>(1÷3)+(1÷6)</span>
       <strong>1/2</strong>
       <em>A fraction in, a fraction out — nothing was rounded on the way</em>
     </div>
@@ -57,7 +61,7 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
       <div class="capture-frame">
         <img src="/assets/images/examples/examples-calc-exact.png"
              width="276" height="600" loading="lazy" decoding="async"
-             alt="Ans on iPhone showing 1÷3+1÷6 on the input line and the result displayed as the fraction one half.">
+             alt="Ans on iPhone showing open bracket 1 divided by 3 close bracket plus open bracket 1 divided by 6 close bracket on the input line and the result displayed as the fraction one half.">
       </div>
       <figcaption>The answer arrives as <b>1/2</b>, not 0.5. <b>Frac⇄Dec</b> — SHIFT on the fraction key — swaps between the two, in both directions.</figcaption>
     </figure>
@@ -72,7 +76,7 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
     <p class="example-note">
       <b>One decimal point changes the whole line.</b> Ans shows a fraction
       unless your input contained a decimal point or a ×10^ exponent — so
-      <b>1÷3+1÷6</b> gives 1/2, while <b>1÷3+0.5</b> gives 0.8333333333. The
+      <b>(1÷3)+(1÷6)</b> gives 1/2, while <b>(1÷3)+0.5</b> gives 0.8333333333. The
       rule is that the calculator answers in the language you asked in, and the
       moment you introduce a decimal you have said you want decimals.
     </p>
@@ -231,9 +235,9 @@ og_image_alt: Exact values — fractions kept as fractions, π kept as π, and t
         <tr><th scope="col">Expression</th><th scope="col">Answer</th><th scope="col">Kept exactly?</th></tr>
       </thead>
       <tbody>
-        <tr><td>1÷3+1÷6</td><td>1/2</td><td>yes, as a fraction</td></tr>
-        <tr><td>1÷2+1÷3</td><td>5/6</td><td>yes</td></tr>
-        <tr><td>1÷3+0.5</td><td>0.8333333333</td><td>no — a decimal was asked for</td></tr>
+        <tr><td>(1÷3)+(1÷6)</td><td>1/2</td><td>yes, as a fraction</td></tr>
+        <tr><td>(1÷2)+(1÷3)</td><td>5/6</td><td>yes</td></tr>
+        <tr><td>(1÷3)+0.5</td><td>0.8333333333</td><td>no — a decimal was asked for</td></tr>
         <tr><td>sin(π)</td><td>0</td><td>yes, as a π multiple</td></tr>
         <tr><td>sin(3.141592654)</td><td>−4.102070669×10⁻¹⁰</td><td>no — π was rounded first</td></tr>
         <tr><td>π</td><td>3.141592654</td><td>yes, underneath — the display has no symbol for it</td></tr>

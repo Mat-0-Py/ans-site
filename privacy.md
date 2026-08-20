@@ -8,7 +8,7 @@ permalink: /privacy
 
 # Privacy
 
-*Last updated: 3 August 2026*
+*Last updated: 20 August 2026*
 
 Ans and Ans Graph are built to be private. The short version: **the apps
 collect nothing, and this website uses only privacy-first, cookieless
@@ -20,10 +20,15 @@ Privacy is baked into everything we do. This website uses Cloudflare's
 privacy-first, **cookieless** analytics to count page visits and see which
 pages are useful — that is the only measurement here. **We do not use
 tracking cookies, we do not track you across the web, and we never collect
-personal data.** There are no advertising pixels, no data brokers, and no
-surveillance-style analytics; those are not welcome here. The count is
-anonymous and aggregate, and you can verify it yourself: the only
-third-party request the site makes is Cloudflare's small analytics beacon.
+personal data.** There are no ads or sponsored placements, advertising
+pixels, data brokers, or surveillance-style analytics; those are not welcome
+here. The count is anonymous and aggregate.
+
+On pages that directly relate to Ans Calculator, Safari may show Apple's
+native Smart App Banner, which links to our own App Store listing. This is our
+own product link, not a paid placement or third-party advertisement. Safari
+may contact Apple to retrieve the App Store information it displays; Ans
+receives no personal data from that lookup.
 
 Everything below is about the apps, which go further still and collect
 nothing at all.
