@@ -23,14 +23,30 @@
 
     {% comment %}
       Safari's native, dismissible Smart App Banner. Keep this contextual:
-      it belongs on the Ans product journey, worked examples and science
-      tools. Keep it off general converters, utilities and policy/support
-      pages. Safari decides whether the visitor's platform displays it; the
-      banner is primarily an iPhone/iPad conversion aid.
+      the home page, the calculator's own page, and the worked examples,
+      which exist to show that calculator being used. Safari decides whether
+      the visitor's platform displays it; the banner is primarily an
+      iPhone/iPad conversion aid.
+
+      Two exclusions are deliberate and should not be re-added casually:
+
+      - The 36 science tools and the 138 converters are free, and each one
+        carries the "Free · No ads · No tracking · No account" promise in
+        its footer. A banner with an icon, a price and an install button is
+        what a visitor reads as an app ad, whatever we call it, and most of
+        that traffic arrives from a search and sees one page. Keeping the
+        promise intact is worth more than the conversions.
+
+      - The graph page. This tag can only carry one app id and it is the
+        calculator's, while that page is about Ans Graph and says on the
+        same screen that Graph is not on the App Store yet. A banner there
+        offers a different, purchasable app to someone who came to read
+        about this one. Add 'graph-page' back when Graph has its own id,
+        together with a site.graph_appstore_id to point it at.
 
       Do not add app-argument until the app has a verified deep-link route.
     {% endcomment %}
-    {% if page.url == '/' or page.body_class contains 'calculator-page' or page.body_class contains 'graph-page' or page.body_class contains 'examples-page' or page.body_class contains 'science-page' %}
+    {% if page.url == '/' or page.body_class contains 'calculator-page' or page.body_class contains 'examples-page' %}
     <meta name="apple-itunes-app" content="app-id={{ site.appstore_id }}">
     {% endif %}
 

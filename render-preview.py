@@ -249,13 +249,14 @@ for src, dest, url in PAGES:
     doc = LAYOUT
 
     # Smart App Banner: the production layout intentionally limits this to
-    # product, worked-example and science pages. Resolve that page-aware
-    # Liquid here so the disposable preview exercises the same scope.
+    # the home page, the calculator page and the worked examples — see the
+    # comment there for why the science tools and the graph page are out.
+    # Resolve that page-aware Liquid here so the preview shows the same scope.
     smart_banner_pattern = re.compile(
         r"    {% comment %}\n"
         r"      Safari's native, dismissible Smart App Banner\..*?"
         r"    {% endcomment %}\n"
-        r"    {% if page\.url == '/' or page\.body_class contains 'calculator-page' or page\.body_class contains 'graph-page' or page\.body_class contains 'examples-page' or page\.body_class contains 'science-page' %}\n"
+        r"    {% if page\.url == '/' or page\.body_class contains 'calculator-page' or page\.body_class contains 'examples-page' %}\n"
         r"(    <meta name=\"apple-itunes-app\" content=\"app-id={{ site\.appstore_id }}\">)\n"
         r"    {% endif %}\n",
         re.S)
@@ -265,9 +266,7 @@ for src, dest, url in PAGES:
     show_smart_banner = (
         url == "/"
         or "calculator-page" in body_class
-        or "graph-page" in body_class
         or "examples-page" in body_class
-        or "science-page" in body_class
     )
     replacement = smart_banner_match.group(1) + "\n" if show_smart_banner else ""
     doc = smart_banner_pattern.sub(replacement, doc)
